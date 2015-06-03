@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2015 �?06 ??03 ??17:04
+-- 產生時間： 2015 �?06 ??03 ??18:10
 -- 伺服器版本: 5.6.16
 -- PHP 版本： 5.5.19
 
@@ -4724,7 +4724,7 @@ INSERT INTO `evie_options` (`option_id`, `option_name`, `option_value`, `autoloa
 (97, 'cron', 'a:9:{i:1433360700;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1433376000;a:1:{s:27:"woocommerce_scheduled_sales";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1433380456;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1433384717;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1433386854;a:1:{s:28:"woocommerce_cleanup_sessions";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1433427953;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1433430054;a:1:{s:30:"woocommerce_tracker_send_event";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1433430057;a:1:{s:24:"update_wpml_config_index";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (101, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:1:{i:0;O:8:"stdClass":10:{s:8:"response";s:6:"latest";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.2.2.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.2.2.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.2.2-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.2.2-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.2.2";s:7:"version";s:5:"4.2.2";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1433343066;s:15:"version_checked";s:5:"4.2.2";s:12:"translations";a:0:{}}', 'yes'),
 (106, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1433343070;s:7:"checked";a:1:{s:4:"evie";s:5:"7.0.3";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'yes'),
-(109, '_transient_random_seed', '4eff942fc4a2511b759e72d766d960ab', 'yes'),
+(109, '_transient_random_seed', 'dfb4275859f02b1d9d959669e2fdd281', 'yes'),
 (110, '_site_transient_timeout_browser_83271fd20a6687ffcd0d1b6f7ad13cdd', '1433600754', 'yes'),
 (111, '_site_transient_browser_83271fd20a6687ffcd0d1b6f7ad13cdd', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:7:"Firefox";s:7:"version";s:4:"38.0";s:10:"update_url";s:23:"http://www.firefox.com/";s:7:"img_src";s:50:"http://s.wordpress.org/images/browsers/firefox.png";s:11:"img_src_ssl";s:49:"https://wordpress.org/images/browsers/firefox.png";s:15:"current_version";s:2:"16";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
 (114, 'can_compress_scripts', '1', 'yes'),
@@ -5022,7 +5022,7 @@ INSERT INTO `evie_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VAL
 (112, 16, '_thumbnail_id', '17'),
 (113, 16, 'total_sales', '0'),
 (114, 18, '_edit_last', '1'),
-(115, 18, '_edit_lock', '1433038230:1'),
+(115, 18, '_edit_lock', '1433344558:1'),
 (116, 18, 'Spec', '100ml / 3.38 fl.oz.'),
 (117, 18, '_visibility', 'visible'),
 (118, 18, '_stock_status', 'instock'),
@@ -5455,7 +5455,7 @@ INSERT INTO `evie_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VAL
 (589, 106, '_thumbnail_id', '23'),
 (590, 106, '_dp_original', '22'),
 (591, 107, '_edit_last', '1'),
-(592, 107, '_edit_lock', '1433343177:1'),
+(592, 107, '_edit_lock', '1433344406:1'),
 (593, 107, '_thumbnail_id', '23'),
 (595, 107, '_dp_original', '106');
 

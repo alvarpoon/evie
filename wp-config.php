@@ -26,7 +26,7 @@ switch ($_SERVER['SERVER_NAME']) {
 		define('DB_PASSWORD', 'root');
 		define('DB_HOST', 'localhost');
 
-	case "anbig.nowwhat.hk":
+	case "evie.nowwhat.hk":
 		define('DB_NAME', 'nowwhat_evie');
 		define('WP_SITEURL',  'http://evie.nowwhat.hk' );
     	define('WP_HOME', 'http://evie.nowwhat.hk' );
