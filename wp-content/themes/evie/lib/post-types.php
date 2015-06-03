@@ -1,6 +1,6 @@
 <?php
 
-/*add_post_type_support('page', 'excerpt');*/
+add_post_type_support('page', 'excerpt');
 
 // mainpaage banner
 add_action('init', 'mainpage_banner_register');

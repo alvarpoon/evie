@@ -6,13 +6,13 @@ function create_stocklist_taxonomies() {
       'stocklist',
       array(
           'labels' => array(
-              'name' => 'Stocklist Region',
-              'add_new_item' => 'Add Stocklist Region',
-              'new_item_name' => 'New Stocklist Region'
+              'name' => 'Stocklist Location',
+              'add_new_item' => 'Add Stocklist Location',
+              'new_item_name' => 'New Stocklist Location'
           ),
           'show_ui' => true,
           'show_tagcloud' => false,
-          'hierarchical' => false
+          'hierarchical' => true
       )
   );
 }
