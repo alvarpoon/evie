@@ -15,20 +15,28 @@
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'evie');
 
-/** MySQL database username */
-define('DB_USER', 'root');
+switch ($_SERVER['SERVER_NAME']) {
 
-/** MySQL database password */
-define('DB_PASSWORD', 'root');
+	case "local.evie.com":
+		define('DB_NAME', 'evie');
+		define('WP_SITEURL',  'http://local.evie.com' );
+    	define('WP_HOME', 'http://local.evie.com' );
+		define('DB_USER', 'root');
+		define('DB_PASSWORD', 'root');
+		define('DB_HOST', 'localhost');
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+	case "anbig.nowwhat.hk":
+		define('DB_NAME', 'nowwhat_evie');
+		define('WP_SITEURL',  'http://evie.nowwhat.hk' );
+    	define('WP_HOME', 'http://evie.nowwhat.hk' );
+		define('DB_USER', 'nowwhat');
+		define('DB_PASSWORD', '20273214');
+		define('DB_HOST', 'localhost');
+}
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8mb4');
+define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
