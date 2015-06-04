@@ -6883,6 +6883,14 @@ button.close {
     display: none !important;
   }
 }
+body {
+  font-family: Arial, sans serif !important;
+}
+@media (min-width: 992px) {
+  .main {
+    margin-top: 162px;
+  }
+}
 .comment-list ol {
   list-style: none;
 }
@@ -6922,6 +6930,182 @@ figure.alignnone {
   .sidebar {
     float: left;
     width: 33.33333333%;
+  }
+}
+footer {
+  background: url(../img/sprites/border_footer.jpg) repeat-x #eaebeb;
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+footer .social-link-container {
+  margin-bottom: 15px;
+  text-align: left;
+}
+footer .footer-link-container .footer_link {
+  padding-left: 0;
+}
+footer .footer-link-container .footer_link:first-child > li {
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+footer .footer-link-container .footer_link:first-child > li > a {
+  font-weight: bold;
+}
+footer .footer-link-container .footer_link li {
+  list-style: none;
+}
+footer .footer-link-container .footer_link li a {
+  color: #000;
+}
+footer .footer-link-container .footer_link .sub-menu {
+  margin-top: 10px;
+  padding-left: 0;
+}
+footer .copyright {
+  text-transform: uppercase;
+  font-size: 11px;
+}
+footer .copyright span {
+  display: inline-block;
+  margin: 0 5px;
+}
+footer .copyright a {
+  color: #000;
+}
+@media (min-width: 992px) {
+  footer .social-link-container {
+    margin-bottom: 15px;
+    text-align: right;
+  }
+  footer .footer-link-container .footer_link:first-child > li {
+    float: left;
+    margin-right: 40px;
+  }
+  footer .footer-link-container .footer_link:first-child > li:last-child {
+    margin-right: 0;
+  }
+  footer .footer-link-container .footer_link .sub-menu {
+    margin-top: 10px;
+    padding-left: 0;
+  }
+}
+.navbar-default {
+  background: #fff;
+  border: none;
+}
+.navbar-fixed-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse {
+  overflow-y: scroll;
+}
+.navbar-brand {
+  width: 100px;
+  height: auto;
+  position: relative;
+  z-index: 999;
+}
+.navbar-toggle {
+  margin-top: 25px;
+}
+@media (min-width: 992px) {
+  .navbar-brand {
+    width: auto;
+    height: auto;
+  }
+  .main-menu {
+    position: relative;
+  }
+  .main-menu .navbar-nav {
+    margin-top: 110px;
+  }
+  .main-menu .navbar-nav > li {
+    /*.sub-menu > li > a{
+				margin-bottom:10px;
+				display:inline-block;
+			}*/
+  }
+  .main-menu .navbar-nav > li:hover > a {
+    font-weight: bold;
+  }
+  .main-menu .navbar-nav > li:hover .sub-menu {
+    display: block;
+  }
+  .main-menu .navbar-nav > li.menu-products .sub-menu {
+    width: 615px;
+    left: -40px;
+  }
+  .main-menu .navbar-nav > li.menu-products .sub-menu:after {
+    left: 12%;
+  }
+  .main-menu .navbar-nav > li.menu-about-evie .sub-menu {
+    width: 180px;
+    left: -30px;
+  }
+  .main-menu .navbar-nav > li.menu-about-evie .sub-menu:after {
+    left: 42%;
+  }
+  .main-menu .navbar-nav > li.menu-buzz .sub-menu {
+    width: 180px;
+    left: -50px;
+  }
+  .main-menu .navbar-nav > li.menu-buzz .sub-menu:after {
+    left: 42%;
+  }
+  .main-menu .navbar-nav > li .sub-menu {
+    position: absolute;
+    display: none;
+    padding: 20px 40px;
+    background: #F5E8E5;
+    -webkit-box-shadow: 0px 9px 18px -7px rgba(87, 84, 87, 0.7);
+    box-shadow: 0px 9px 18px -7px rgba(87, 84, 87, 0.7);
+  }
+  .main-menu .navbar-nav > li .sub-menu:after {
+    font-size: 0px;
+    line-height: 0%;
+    width: 0px;
+    border-bottom: 10px solid #F5E8E5;
+    border-left: 10px solid rgba(255, 255, 255, 0);
+    border-right: 10px solid rgba(255, 255, 255, 0);
+    content: ' ';
+    position: absolute;
+    top: -10px;
+  }
+  .main-menu .navbar-nav > li .sub-menu li {
+    list-style: none;
+  }
+  .main-menu .navbar-nav > li .sub-menu li.menu-by-category {
+    width: 200px;
+    float: left;
+  }
+  .main-menu .navbar-nav > li .sub-menu li.menu-by-concern {
+    width: 200px;
+    float: left;
+    margin-right: 20px;
+  }
+  .main-menu .navbar-nav > li .sub-menu li.menu-gift-value-sets,
+  .main-menu .navbar-nav > li .sub-menu li.menu-whats-new,
+  .main-menu .navbar-nav > li .sub-menu li.menu-top-rated {
+    padding-bottom: 8px;
+  }
+  .main-menu .navbar-nav > li .sub-menu li a {
+    color: #000;
+  }
+  .main-menu .navbar-nav > li .sub-menu .sub-menu {
+    display: block;
+    position: relative!important;
+    padding: 0!important;
+    margin-top: 8px;
+    width: 100%;
+    left: 0!important;
+    -webkit-box-shadow: none!important;
+            box-shadow: none!important;
+  }
+  .main-menu .navbar-nav > li .sub-menu .sub-menu:after {
+    display: none!important;
+  }
+  .main-menu .navbar-nav > li .sub-menu .sub-menu li {
+    float: none;
+    width: 100%;
+    font-size: 12px;
   }
 }
 /*# sourceMappingURL=main.css.map */

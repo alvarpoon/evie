@@ -1,0 +1,161 @@
+//===============================================================================
+//===============================================================================
+// Base
+//===============================================================================
+//===============================================================================
+
+.navbar-default{
+	background:#fff;
+	border:none;
+}
+
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse{
+	overflow-y:scroll;
+}
+
+.navbar-brand{
+	width:100px;
+	height:auto;
+	position:relative;
+	z-index:999;
+}
+
+.navbar-toggle{
+	margin-top:25px;
+}
+
+//===============================================================================
+//===============================================================================
+// tablet
+//===============================================================================
+//===============================================================================
+@media (min-width: @screen-sm-min) {
+	
+}
+
+//===============================================================================
+//===============================================================================
+// Desktop
+//===============================================================================
+//===============================================================================
+@media (min-width: @screen-md-min) {
+
+	.navbar-brand{
+		width:auto;
+		height:auto;
+	}
+	.main-menu{
+		position:relative;
+		.navbar-nav{
+			margin-top: 110px;
+		}
+		.navbar-nav > li{
+			&:hover{
+				& > a{
+					font-weight:bold;
+				}
+				.sub-menu{
+					display:block;
+				}
+			}
+			&.menu-products{
+				.sub-menu{
+					width:615px;	
+					left:-40px;
+					&:after{
+						left:12%;
+					}
+				}
+			}
+			&.menu-about-evie{
+				.sub-menu{
+					width:180px;
+					left:-30px;
+					&:after{
+						left:42%;
+					}
+				}
+			}
+			&.menu-buzz{
+				.sub-menu{
+					width:180px;
+					left:-50px;
+					&:after{
+						left:42%;
+					}
+				}
+			}
+			.sub-menu{
+				position:absolute;
+				display:none;
+				padding:20px 40px;
+				background:#F5E8E5;
+				-webkit-box-shadow: 0px 9px 18px -7px rgba(87,84,87,0.7);
+				-moz-box-shadow: 0px 9px 18px -7px rgba(87,84,87,0.7);
+				box-shadow: 0px 9px 18px -7px rgba(87,84,87,0.7);
+				
+				&:after{
+					font-size: 0px; line-height: 0%; width: 0px;
+					border-bottom: 10px solid #F5E8E5;
+					//border-left: 10px solid #f6f6f6;
+					//border-right: 10px solid #f6f6f6;
+					border-left: 10px solid rgba(255,255,255,0);
+					border-right: 10px solid rgba(255,255,255,0);
+					content:' ';
+					position:absolute;
+					top:-10px;
+					//left:12%;
+				}
+				li{
+					list-style:none;
+					&.menu-by-category{
+						width:200px;	
+						float:left;
+					}
+					&.menu-by-concern{
+						width:200px;
+						float:left;
+						margin-right:20px;
+					}
+					&.menu-gift-value-sets, &.menu-whats-new, &.menu-top-rated{
+						padding-bottom:8px;
+					}
+					a{
+						color:#000;
+					}
+				}
+				
+				.sub-menu{
+					display:block;
+					position:relative!important;
+					padding:0!important;
+					margin-top:8px;
+					width:100%;
+					left:0!important;
+					box-shadow:none!important;
+					&:after{
+						display:none!important;
+					}
+					li{
+						float:none;
+						width:100%;
+						font-size:12px;
+					}
+				}
+			}
+			/*.sub-menu > li > a{
+				margin-bottom:10px;
+				display:inline-block;
+			}*/
+		}
+	}
+}
+
+//===============================================================================
+//===============================================================================
+// Wide desktop
+//===============================================================================
+//===============================================================================
+@media (min-width: @screen-lg-min) {
+
+}
