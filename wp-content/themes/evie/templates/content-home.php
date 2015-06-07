@@ -1,6 +1,6 @@
 <section class="home-banner container">
 	<div class="row">
-        <div class="col-md-8 col-lg-8" id="main-banner-container" >
+        <div class="col-md-12 col-lg-12" id="main-banner-container" >
             <div id="main-banner">
             <?
                 $args = array( 'numberposts' => -1, 'post_type' => 'mainpage_banner', 'post_status' => 'publish', 'order' => 'ASC', 'orderby' => 'menu_order', 'suppress_filters' => 0);
@@ -10,12 +10,12 @@
                 $page_url = get_field("page_link",$result->ID);
             ?>
                 <div class="main-banner-item">
-                    <img src="<?=$url[0]?>" />
+                    <img class="img-responsive" src="<?=$url[0]?>" />
                     <div class="main-banner-text-container">
                         <span class="hero-txt">
                             <?=apply_filters('the_content', $result->post_content);?>
                         </span>
-                        <a class="btn-find-out-more" href="<?=$page_url?>"><?_e('Find out more');?></a>
+                        <!--<a class="btn-find-out-more" href="<?=$page_url?>"><?_e('Find out more');?></a>-->
                     </div>
                 </div>
             <? endforeach;?>
@@ -30,4 +30,50 @@
             </div>
         </div>
 	</div>
+</section>
+<section class="promotion-banner container">
+	<div class="row">
+    	<div class="col-md-6">
+        	<? 
+				$banner_img_left = get_field("left_banner",$post->ID);
+				$banner_link_left = get_field("left_banner_link", $post->ID);
+			?>
+            <div class="well well-feature" href="<?=$banner_link_left?>" style="background-image:url(<?=$banner_img_left['url']?>);">
+            	<div class="hidden-lg hidden-md">
+                	<img src="<?=$banner_img_left['url']?>" class="img-responsive" />
+                </div>
+                <a href="<?=$banner_link_left?>"></a>
+            </div>
+        </div>
+        <div class="col-md-6">
+        	<? 
+				$banner_img_right = get_field("right_banner",$post->ID);
+				$banner_link_right = get_field("right_banner_link", $post->ID);
+			?>
+            <div class="well well-feature" href="<?=$banner_link_right?>" style="background-image:url(<?=$banner_img_right['url']?>);">
+            	<div class="hidden-lg hidden-md">
+                	<img src="<?=$banner_img_right['url']?>" class="img-responsive" />
+                </div>
+                <a href="<?=$banner_link_right?>"></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="best-seller container">
+	<div class="best-seller-title-container clearfix">
+    	<div class="col-xs-2 best-seller-title-left"></div>
+        <div class="col-xs-8 best-seller-title-center">bestsellers</div>
+        <div class="col-xs-2 best-seller-title-right"></div>
+    </div>
+	<div class="row">
+    	<?
+        	$best_sellers = get_field("best_seller", $post->ID);
+			foreach( $best_sellers as $best_seller ){
+		?>
+        	<div class="col-xs-12 col-md-3">
+            	<? echo do_shortcode('[product id="'.$best_seller->ID.'"]'); ?>
+                
+            </div>
+        <? } ?>
+    </div>
 </section>
