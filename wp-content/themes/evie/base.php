@@ -10,11 +10,14 @@
   <?php
     do_action('get_header');
     get_template_part('templates/header-top-navbar');
+	$template_name = get_post_meta( $post->ID, '_wp_page_template', true );
   ?>
 
-      <main class="main" role="main">
-        <?php include roots_template_path(); ?>
-      </main>
+  <main class="main" role="main">
+  	<div id="main-content">
+	    <?php include roots_template_path(); ?>
+    </div>
+  </main>
 
   <?php get_template_part('templates/footer'); ?>
 
