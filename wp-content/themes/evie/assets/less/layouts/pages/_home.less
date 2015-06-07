@@ -104,7 +104,22 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
-	
+	.promotion-banner{
+		.well-feature{
+			background-size:cover;
+			height:201px;
+		}
+		.well[href]{
+			cursor:pointer;
+			&:hover{
+				border-width:1px;
+				border-color:#dfdfdf;
+				-webkit-box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
+				-moz-box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
+				box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
+			}
+		}
+	}
 }
 
 //===============================================================================
@@ -117,16 +132,6 @@
 		.well-feature{
 			background-size:cover;
 			height:265px;
-		}
-		.well[href]{
-			cursor:pointer;
-			&:hover{
-				border-width:1px;
-				border-color:#dfdfdf;
-				-webkit-box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
-				-moz-box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
-				box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
-			}
 		}
 	}
 }

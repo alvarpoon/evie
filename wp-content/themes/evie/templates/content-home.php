@@ -33,25 +33,25 @@
 </section>
 <section class="promotion-banner container">
 	<div class="row">
-    	<div class="col-md-6">
+    	<div class="col-sm-6 col-md-6">
         	<? 
 				$banner_img_left = get_field("left_banner",$post->ID);
 				$banner_link_left = get_field("left_banner_link", $post->ID);
 			?>
             <div class="well well-feature" href="<?=$banner_link_left?>" style="background-image:url(<?=$banner_img_left['url']?>);">
-            	<div class="hidden-lg hidden-md">
+            	<div class="hidden-lg hidden-md hidden-sm">
                 	<img src="<?=$banner_img_left['url']?>" class="img-responsive" />
                 </div>
                 <a href="<?=$banner_link_left?>"></a>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6 col-md-6">
         	<? 
 				$banner_img_right = get_field("right_banner",$post->ID);
 				$banner_link_right = get_field("right_banner_link", $post->ID);
 			?>
             <div class="well well-feature" href="<?=$banner_link_right?>" style="background-image:url(<?=$banner_img_right['url']?>);">
-            	<div class="hidden-lg hidden-md">
+            	<div class="hidden-lg hidden-md hidden-sm">
                 	<img src="<?=$banner_img_right['url']?>" class="img-responsive" />
                 </div>
                 <a href="<?=$banner_link_right?>"></a>
@@ -70,7 +70,7 @@
         	$best_sellers = get_field("best_seller", $post->ID);
 			foreach( $best_sellers as $best_seller ){
 		?>
-        	<div class="col-xs-12 col-md-3">
+        	<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             	<? echo do_shortcode('[product id="'.$best_seller->ID.'"]'); ?>
                 
             </div>

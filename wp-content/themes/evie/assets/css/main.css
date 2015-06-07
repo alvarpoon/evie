@@ -7073,11 +7073,11 @@ footer .copyright a {
 .best-seller .woocommerce .products .product .button {
   display: none;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .promotion-banner .well-feature {
     -webkit-background-size: cover;
             background-size: cover;
-    height: 265px;
+    height: 201px;
   }
   .promotion-banner .well[href] {
     cursor: pointer;
@@ -7087,6 +7087,13 @@ footer .copyright a {
     border-color: #dfdfdf;
     -webkit-box-shadow: inset 0px 0px 8px 2px #bfbfbf;
     box-shadow: inset 0px 0px 8px 2px #bfbfbf;
+  }
+}
+@media (min-width: 992px) {
+  .promotion-banner .well-feature {
+    -webkit-background-size: cover;
+            background-size: cover;
+    height: 265px;
   }
 }
 @media (min-width: 1200px) {
@@ -7164,7 +7171,7 @@ footer .copyright a {
   font-size: 12px;
   background: #F5E8E5;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .navbar-collapse.collapse {
     display: inline-block !important;
   }
