@@ -82,7 +82,11 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
-	
+
+	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+		background:none;
+		font-weight:bold;
+	}	
 
 	.navbar-collapse.collapse{
 		display:inline-block!important;
@@ -99,6 +103,7 @@
 	.searchBox-container{
 		display:block;
 	}
+	
 	.nav-container{
 		margin-top:110px;
 		.main-menu{

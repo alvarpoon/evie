@@ -7313,6 +7313,12 @@ footer .copyright a {
   background: #F5E8E5;
 }
 @media (min-width: 768px) {
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > .active > a:focus {
+    background: none;
+    font-weight: bold;
+  }
   .navbar-collapse.collapse {
     display: inline-block !important;
   }
