@@ -31,11 +31,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php endif; ?>
 
 		<?php do_action( 'woocommerce_archive_description' ); ?>
-        
-        <div style="margin-top:10px;">
 
 		<?php if ( have_posts() ) : ?>
-
+			
+            <div class="container">
+            
 			<?php woocommerce_product_loop_start(); ?>
 
 				<?php woocommerce_product_subcategories(); ?>
@@ -47,6 +47,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php endwhile; // end of the loop. ?>
 
 			<?php woocommerce_product_loop_end(); ?>
+            
+            
 
 			<?php
 				/**
@@ -60,9 +62,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
 
 			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
+            
+            </div>
 
 		<?php endif; ?>
-       	
-        </div>
         
 <?php //get_footer( 'shop' ); ?>

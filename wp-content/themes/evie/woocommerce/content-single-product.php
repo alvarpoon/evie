@@ -45,11 +45,12 @@ if ( ! defined( 'ABSPATH' ) ) {
         <div class="summary entry-summary">
                     
             <div class="product-title">
-                <h1><?=$post->post_title?></h1>
-                <?=$post->post_excerpt?>
+                <h1><? the_title(); ?></h1>
+                <? the_excerpt(); ?>
             </div>
             <div class="product-content">
-                <?=$post->post_content?>
+                <!--<?=$post->post_content?>-->
+                <? the_content(); ?>
             </div>
             <div class="product-spec">
                 <?=get_field("spec",$post->ID);?>

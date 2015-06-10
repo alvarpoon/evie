@@ -6892,6 +6892,7 @@ body {
 .breadcrumb-container {
   background: #F5E8E5;
   padding: 10px 0;
+  margin-bottom: 10px;
   -webkit-box-shadow: 0px 3px 5px 0px rgba(245, 232, 229, 0.5);
   box-shadow: 0px 3px 5px 0px rgba(245, 232, 229, 0.5);
 }
@@ -7124,11 +7125,8 @@ footer .copyright a {
     height: 323px;
   }
 }
-.single-product .product {
-  margin-top: 10px;
-}
 .single-product .product .product-title {
-  padding-bottom: 12px;
+  padding-bottom: 5px;
   margin-bottom: 30px;
   background: url(../img/sprites/border_double.png) repeat-x bottom;
 }
@@ -7196,36 +7194,49 @@ footer .copyright a {
   color: #000;
   display: block;
 }
-.single-product .product .upsells-container .product-item-brief-wrapper {
-  position: relative;
-  height: 60px;
-}
-.single-product .product .upsells-container .product-item-brief-wrapper .product-item-brief-content {
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
-}
-.single-product .product .upsells-container .product-item-brief-wrapper .product-item-brief-content .product-series {
-  font-size: 12px;
-}
 .single-product .upsells {
   text-align: center;
   display: inline-block;
   text-transform: uppercase;
   width: 100%;
 }
-.single-product ul.products li.product {
+ul.products li.product {
   text-align: center;
 }
-.single-product ul.products li.product a {
+ul.products li.product a {
   color: #000;
   text-transform: uppercase;
 }
-.single-product ul.products li.product .button,
-.single-product ul.products li.product .product_type_simple {
+ul.products li.product .button,
+ul.products li.product .product_type_simple {
   display: none;
+}
+ul.products li.product .find-out-more {
+  border: 1px solid #000;
+  width: 50%;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+}
+.product-item-brief-wrapper {
+  position: relative;
+  height: 60px;
+}
+.product-item-brief-wrapper.withExcerpt {
+  height: 110px;
+}
+.product-item-brief-wrapper .product-item-brief-content {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.product-item-brief-wrapper .product-item-brief-content .product-series {
+  font-size: 12px;
+}
+.product-item-brief-wrapper .product-item-brief-content .product-short-content {
+  font-size: 12px;
 }
 @media (min-width: 768px) {
   .single-product .product .product-other-detail-container .product-other-detail-item {

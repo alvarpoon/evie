@@ -6,9 +6,9 @@
 
 .single-product{
 	.product{
-		margin-top:10px;
+		//margin-top:10px;
 		.product-title{
-			padding-bottom:12px;
+			padding-bottom:5px;
 			margin-bottom:30px;
 			background:url(../img/sprites/border_double.png) repeat-x bottom;
 			h1{
@@ -77,20 +77,6 @@
 				color:#000;
 				display:block;
 			}
-			.product-item-brief-wrapper{
-				position:relative;
-				height:60px;
-				.product-item-brief-content{
-					position:absolute;
-					bottom:0;
-					text-align:center;
-					text-transform:uppercase;
-					width:100%;
-					.product-series{
-						font-size:12px;
-					}
-				}
-			}
 		}
 	}
 	.upsells{
@@ -98,18 +84,45 @@
 		display:inline-block;
 		text-transform:uppercase;
 		width:100%;
+	}	
+}
+
+ul.products li.product{
+	text-align:center;
+	a{
+		color:#000;
+		text-transform:uppercase;
 	}
-	ul.products li.product{
+	.button, .product_type_simple{
+		display:none;
+	}
+	.find-out-more{
+		border:1px solid #000;
+		width:50%;
+		font-size:16px;
+		display:block;
+		margin:0 auto;
+	}
+}
+.product-item-brief-wrapper{
+	position:relative;
+	height:60px;
+	&.withExcerpt{
+		height:110px;
+	}
+	.product-item-brief-content{
+		position:absolute;
+		bottom:0;
 		text-align:center;
-		a{
-			color:#000;
-			text-transform:uppercase;
+		text-transform:uppercase;
+		width:100%;
+		.product-series{
+			font-size:12px;
 		}
-		.button, .product_type_simple{
-			display:none;
+		.product-short-content{
+			font-size:12px;
 		}
 	}
-	
 }
 
 //===============================================================================
