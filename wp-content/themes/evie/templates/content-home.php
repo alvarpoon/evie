@@ -69,10 +69,20 @@
     	<?
         	$best_sellers = get_field("best_seller", $post->ID);
 			foreach( $best_sellers as $best_seller ){
+				$best_seller_content = get_post($best_seller);
 		?>
-        	<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        	<!--<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             	<? echo do_shortcode('[product id="'.$best_seller->ID.'"]'); ?>
                 
+            </div>-->
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 best-seller-item">
+                <a href="<?=get_permalink($best_seller)?>"><?=get_the_post_thumbnail( $best_seller->ID, 'full' );?></a>
+                <div class="product-item-brief-wrapper">
+                    <div class="product-item-brief-content">
+                        <div class="product-series"><?=get_field("series",$best_seller);?></div>
+                        <a href="<?=get_permalink($best_seller)?>"><?=$best_seller_content->post_title?></a>
+                    </div>
+                </div>
             </div>
         <? } ?>
     </div>

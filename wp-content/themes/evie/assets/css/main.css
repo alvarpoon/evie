@@ -7061,6 +7061,22 @@ footer .copyright a {
 }
 .best-seller {
   margin-top: 40px;
+  margin-bottom: 40px;
+  /*.woocommerce{
+		.products{
+			.product{
+				width:100%;
+				text-align:center;
+				text-transform:uppercase;
+				a{
+					color:#000;
+				}
+				.button{
+					display:none;
+				}
+			}
+		}
+	}*/
 }
 .best-seller .best-seller-title-container {
   margin-bottom: 40px;
@@ -7082,16 +7098,16 @@ footer .copyright a {
   height: 51px;
   background: url(../img/sprites/bg_bestseller.png) no-repeat right;
 }
-.best-seller .woocommerce .products .product {
-  width: 100%;
+.best-seller .best-seller-item {
   text-align: center;
   text-transform: uppercase;
 }
-.best-seller .woocommerce .products .product a {
+.best-seller .best-seller-item a {
   color: #000;
 }
-.best-seller .woocommerce .products .product .button {
-  display: none;
+.best-seller .best-seller-item img {
+  width: 100%;
+  height: auto;
 }
 @media (min-width: 768px) {
   .promotion-banner .well-feature {
