@@ -46,6 +46,28 @@ var Roots = {
     init: function() {
       // JavaScript to be fired on the about us page
     }
+  },
+  media_coverage: {
+    init: function(){
+		$(".fancybox-effects-c").fancybox({
+			wrapCSS    : 'fancybox-custom',
+			//closeClick : true,
+			closeBtn  : true,
+			openEffect : 'none',
+			padding: 0,
+
+			helpers : {
+				title : {
+					type : 'inside'
+				},
+				overlay : {
+					css : {
+						'background' : 'rgba(238,238,238,0.85)'
+					}
+				}
+			}
+		});
+	}
   }
 };
 

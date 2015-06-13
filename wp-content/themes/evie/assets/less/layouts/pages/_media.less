@@ -4,45 +4,41 @@
 //===============================================================================
 //===============================================================================
 
-body{
-	font-family: Arial, sans serif !important;
-}
-
-.main{
-	padding-top:110px;
-}
-
-.breadcrumb-container{
-	background:#F5E8E5;
-	padding:10px 0;	
-	margin-bottom:10px;
-	-webkit-box-shadow: 0px 3px 5px 0px rgba(245,232,229,0.5);
-	-moz-box-shadow: 0px 3px 5px 0px rgba(245,232,229,0.5);
-	box-shadow: 0px 3px 5px 0px rgba(245,232,229,0.5);
-	.woocommerce-breadcrumb{
-		font-weight:bold;
-		color:#000;
-		text-transform:uppercase;
-		margin-bottom:0;
-		a{
-			color:#000;
-			font-weight:normal!important;
+.media-coverage-section{
+	text-align:center;
+	margin-top:40px;
+	.media-coverage-title-container{
+		margin-bottom:40px;
+		.media-coverage-title-left{
+			height:51px;
+			background:url(../img/sprites/bg_bestseller.png) no-repeat left;
 		}
-		.fa{
-			margin:0 7px;
+		.media-coverage-title-center{
+			height:51px;
+			font-size:20px;
+			line-height:240%;
+			font-weight:bold;
+			text-transform:uppercase;
+			text-align:center;
+			background:url(../img/sprites/bg_bestseller.png) no-repeat center;
+		}
+		.media-coverage-title-right{
+			height:51px;
+			background:url(../img/sprites/bg_bestseller.png) no-repeat right;
 		}
 	}
-}
-
-.fancybox-close {
-	background:url(../img/sprites/fancybox_close_override.png) no-repeat !important;
-    position: absolute;
-    top: 0!important;
-    right: 0!important;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    z-index: 8040;
+	.media-item-container{
+		margin-bottom:40px;
+		.img-responsive{
+			max-width:none;
+			width:100%;
+		}
+		.media-headline{
+			margin:10px 0;
+			height:65px;
+			font-size:13px;
+		}
+	}
 }
 
 //===============================================================================
@@ -51,7 +47,6 @@ body{
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
-
 }
 
 //===============================================================================
@@ -60,16 +55,7 @@ body{
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-md-min) {
-	.main{
-		padding-top:165px;
-	}
-	div.col-sm-7.five-three {
-    	width: 60% !important;
-    }
-
-    div.col-sm-5.five-two {
-    	width: 40% !important;
-    }
+	
 }
 
 //===============================================================================
