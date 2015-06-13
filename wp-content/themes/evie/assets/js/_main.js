@@ -29,6 +29,16 @@ var Roots = {
   home: {
     init: function() {
       // JavaScript to be fired on the home page
+	  $(document).ready(function() {
+			$("#main-banner").owlCarousel({
+				slideSpeed : 300,
+				paginationSpeed : 400,
+				singleItem : true,
+				autoplay:true,
+				autoplayTimeout:1000,
+			    autoplayHoverPause:true
+			});
+	  });
     }
   },
   // About us page, note the change from about-us to about_us.

@@ -44,8 +44,8 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 ?>
 
 <li <?php post_class( $classes ); ?>>
-
-	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
+	<? //print_r($post); ?>
+	<?php //do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
 	<a href="<?php the_permalink(); ?>">
 
@@ -58,8 +58,13 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 			 */
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
-
-		<h3><?php the_title(); ?></h3>
+		<div class="product-item-brief-wrapper withExcerpt">
+            <div class="product-item-brief-content">
+                <div class="product-series"><?=get_field("series",$post->ID);?></div>
+                <h3><? the_title(); ?></h3>
+                <div class="product-short-content"><? the_excerpt(); ?></div>
+            </div>
+        </div>
 
 		<?php
 			/**
@@ -72,16 +77,6 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 		?>
 
 	</a>
-
-	<?php
-
-		/**
-		 * woocommerce_after_shop_loop_item hook
-		 *
-		 * @hooked woocommerce_template_loop_add_to_cart - 10
-		 */
-		do_action( 'woocommerce_after_shop_loop_item' );
-
-	?>
-
+    
+    <a href="<? the_permalink(); ?>" class="find-out-more">VIEW</a>
 </li>
