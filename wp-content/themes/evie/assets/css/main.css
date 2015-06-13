@@ -6919,6 +6919,32 @@ body {
   cursor: pointer;
   z-index: 8040;
 }
+.headline-title-container {
+  margin-bottom: 40px;
+}
+.headline-title-container .headline-title-left {
+  height: 51px;
+  background: url(../img/sprites/bg_bestseller.png) no-repeat left;
+}
+.headline-title-container .headline-title-center {
+  height: 51px;
+  font-size: 20px;
+  line-height: 240%;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  background: url(../img/sprites/bg_bestseller.png) no-repeat center;
+}
+.headline-title-container .headline-title-right {
+  height: 51px;
+  background: url(../img/sprites/bg_bestseller.png) no-repeat right;
+}
+.img-border {
+  border: 1px solid #E1E1E1;
+}
+.img-center {
+  margin: 0 auto;
+}
 @media (min-width: 992px) {
   .main {
     padding-top: 165px;
@@ -7093,26 +7119,6 @@ footer .copyright a {
 			}
 		}
 	}*/
-}
-.best-seller .best-seller-title-container {
-  margin-bottom: 40px;
-}
-.best-seller .best-seller-title-container .best-seller-title-left {
-  height: 51px;
-  background: url(../img/sprites/bg_bestseller.png) no-repeat left;
-}
-.best-seller .best-seller-title-container .best-seller-title-center {
-  height: 51px;
-  font-size: 20px;
-  line-height: 240%;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-  background: url(../img/sprites/bg_bestseller.png) no-repeat center;
-}
-.best-seller .best-seller-title-container .best-seller-title-right {
-  height: 51px;
-  background: url(../img/sprites/bg_bestseller.png) no-repeat right;
 }
 .best-seller .best-seller-item {
   text-align: center;
@@ -7293,26 +7299,6 @@ ul.products li.product .find-out-more {
   text-align: center;
   margin-top: 40px;
 }
-.media-coverage-section .media-coverage-title-container {
-  margin-bottom: 40px;
-}
-.media-coverage-section .media-coverage-title-container .media-coverage-title-left {
-  height: 51px;
-  background: url(../img/sprites/bg_bestseller.png) no-repeat left;
-}
-.media-coverage-section .media-coverage-title-container .media-coverage-title-center {
-  height: 51px;
-  font-size: 20px;
-  line-height: 240%;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-  background: url(../img/sprites/bg_bestseller.png) no-repeat center;
-}
-.media-coverage-section .media-coverage-title-container .media-coverage-title-right {
-  height: 51px;
-  background: url(../img/sprites/bg_bestseller.png) no-repeat right;
-}
 .media-coverage-section .media-item-container {
   margin-bottom: 40px;
 }
@@ -7324,6 +7310,83 @@ ul.products li.product .find-out-more {
   margin: 10px 0;
   height: 65px;
   font-size: 13px;
+}
+.promotion-section {
+  text-align: center;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+.promotion-section .headline-title-container {
+  margin-bottom: 10px;
+}
+.promotion-section .headline-content {
+  margin-bottom: 80px;
+}
+.promotion-section .promotion_1_container {
+  padding-bottom: 55px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #231F20;
+}
+.promotion-section .promotion_1_container .promotion_1_headline {
+  width: 80%;
+  margin: 0 auto 25px auto;
+  padding-bottom: 25px;
+  position: relative;
+}
+.promotion-section .promotion_1_container .promotion_1_headline:after {
+  position: absolute;
+  content: " ";
+  height: 1px;
+  width: 20%;
+  margin-left: -10%;
+  left: 50%;
+  bottom: 0;
+  background-color: #231F20;
+}
+.promotion-section .promotion_1_container .promotion_1_headline h2 {
+  font-size: 38px;
+  margin: 20px 0;
+}
+.promotion-section .promotion_1_container .promotion_1_headline h3 {
+  font-size: 17.5px;
+  margin-top: 0;
+}
+.promotion-section .promotion_1_container .promotion_1_content {
+  width: 80%;
+  margin: 0 auto;
+}
+.promotion-section .promotion_1_container .promotion_1_image img {
+  margin: 0 auto;
+}
+.promotion-section .promotion_2_container h2,
+.promotion-section .promotion_3_container h2 {
+  font-size: 28px;
+  margin: 20px 0;
+}
+.promotion-section .promotion_2_container h3,
+.promotion-section .promotion_3_container h3 {
+  font-size: 16px;
+  margin-top: 0;
+}
+.promotion-section .promotion_2_container .promotion_content_container,
+.promotion-section .promotion_3_container .promotion_content_container {
+  width: 80%;
+  margin: 0 auto;
+}
+.promotion-section .col-same-height.col-sm-6 {
+  float: none;
+  display: table-cell;
+}
+.promotion-section .col-same-height.col-sm-6:first-child {
+  border-right: 1px solid #231F20;
+}
+.promotion-section .more-special-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
 }
 .navbar-default {
   background: #fff;

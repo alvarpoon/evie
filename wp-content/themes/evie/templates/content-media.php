@@ -1,10 +1,10 @@
 <section class="media-coverage-section container">
   <div class="col-xs-12">
     <div class="row">
-      <div class="media-coverage-title-container clearfix">
-    	<div class="col-xs-2 media-coverage-title-left"></div>
-      	<div class="col-xs-8 media-coverage-title-center">MEDIA COVERAGE</div>
-      	<div class="col-xs-2 media-coverage-title-right"></div>
+      <div class="headline-title-container clearfix">
+    	<div class="col-xs-2 headline-title-left"></div>
+      	<div class="col-xs-8 headline-title-center">MEDIA COVERAGE</div>
+      	<div class="col-xs-2 headline-title-right"></div>
       </div>
       <div class="media-item-container">
 			<?

@@ -60,10 +60,10 @@
     </div>
 </section>
 <section class="best-seller container">
-	<div class="best-seller-title-container clearfix">
-    	<div class="col-xs-2 best-seller-title-left"></div>
-        <div class="col-xs-8 best-seller-title-center">bestsellers</div>
-        <div class="col-xs-2 best-seller-title-right"></div>
+	<div class="headline-title-container clearfix">
+    	<div class="col-xs-2 headline-title-left"></div>
+        <div class="col-xs-8 headline-title-center">bestsellers</div>
+        <div class="col-xs-2 headline-title-right"></div>
     </div>
 	<div class="row">
     	<?
