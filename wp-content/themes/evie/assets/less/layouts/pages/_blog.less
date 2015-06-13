@@ -4,85 +4,96 @@
 //===============================================================================
 //===============================================================================
 
-.promotion-section{
-	text-align:center;
-	margin-top:40px;
-	padding-bottom:40px;
+.blog-section{
+	padding-top:40px;
 	.headline-title-container{
-		margin-bottom:10px;
-	}
-	.headline-content{
-		margin-bottom:80px;
-	}	
-	.promotion_1_container{
-		padding-bottom:55px;
-		margin-bottom:30px;
-		border-bottom:1px solid #231F20;
-		.promotion_1_headline{
-			width:80%;
-			margin:0 auto 25px auto;
-			padding-bottom:25px;
-			position:relative;
-			&:after{
-				position:absolute;
-				content: " ";
-				height:1px;
-				width:20%;
-				margin-left:-10%;
-				left:50%;
-				bottom:0;
-				background-color:#231F20;
-			}
-			h2{
-				font-size:38px;
-				margin:20px 0;
-				font-family: "PlayfairDisplay";
-			}
-			h3{
-				font-size:17.5px;
-				margin-top:0;
-				font-weight:bold;
-			}
-		}
-		.promotion_1_content{
-			width:80%;
-			margin:0 auto;
-		}
-		.promotion_1_image{
-			img{
-				margin:0 auto;
-			}
-		}
-	}
-	.promotion_2_container, .promotion_3_container{
-		h2{
-			font-size:28px;
-			margin:20px 0;
-			font-family: "PlayfairDisplay";
-		}
-		h3{
-			font-size:16px;
-			margin-top:0;
-			font-weight:bold;
-		}
-		.promotion_content_container{
-			width:80%;
-			margin:0 auto;
-		}
-	}
-	.col-same-height{
+		background:url(../img/sprites/bg_blog_title.png) no-repeat center;
 		margin-bottom:20px;
+		.headline-title-left{
+			height:110px;
+			background:url(../img/sprites/bg_blog_title_left.png) no-repeat left;
+		}
+		.headline-title-center{
+			font-size: 23px;
+			font-weight: bold;
+			height: 110px;
+			letter-spacing: 3px;
+			line-height: 480%;
+			text-align: center;
+			text-transform: uppercase;
+			background:none;
+		}
+		.headline-title-right{
+			height:110px;
+			background:url(../img/sprites/bg_blog_title_right.png) no-repeat right;
+		}
 	}
-	
-	.more-special-title{
-		font-size:20px;
-		text-transform:uppercase;
-		font-weight:bold;	
-		width:100%;
-		text-align:center;
+	.blog-link-container{
 		margin-bottom:50px;
+		.blog-nav{
+			text-align:left;
+			a{
+				display:inline-block;
+				margin-right:15px;
+				color:#000;
+				&:hover{
+					text-decoration:none;
+				}
+			}
+		}
+		.social-media-container{
+			text-align:right;
+		}
 	}
-}
+	.blog-post-item{
+		border-bottom:1px solid #918F90;
+		padding-bottom:30px;
+		margin-bottom:50px;
+		.blog-post-title{
+			text-align:center;
+			font-family: "PlayfairDisplay";
+			font-weight:bold;
+			margin-bottom:25px;
+			h2{
+				font-size:37px;
+			}
+		}
+		.img-link{
+			display:block;
+			margin-bottom:15px;
+			.img-responsive{
+				max-width:none;
+				width:100%;
+			}
+		}
+		.blog-post-detail{
+			background:#F1F1F1;
+			text-align:center;
+			padding:5px 5%;
+			margin-bottom:35px;
+			p{
+				margin-bottom:0;
+			}
+			strong{
+				display:block;
+				font-family: "PlayfairDisplay";
+				font-size:14px;
+			}
+		}
+		.blog-post-excerpt{
+			float:none;
+			margin:0 auto;
+			.read-more{
+				margin-top:25px;
+				a{
+					text-decoration:underline;
+					font-style:italic;
+					color:#000;
+				}
+			}
+		}
+	}
+}	
 
 //===============================================================================
 //===============================================================================
@@ -90,16 +101,7 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
-	.col-same-height{
-		&.col-sm-6{
-			float:none;
-			display:table-cell;
-			margin-bottom:0;
-			&:first-child{
-				border-right:1px solid #231F20;
-			}
-		}
-	}
+
 }
 
 //===============================================================================

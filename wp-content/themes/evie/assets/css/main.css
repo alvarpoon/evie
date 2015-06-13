@@ -7040,6 +7040,13 @@ body {
 .img-center {
   margin: 0 auto;
 }
+.main-content-wrapper {
+  margin: 0 auto;
+  float: none;
+}
+.noPadding {
+  padding: 0;
+}
 @media (min-width: 992px) {
   .main {
     padding-top: 165px;
@@ -7483,10 +7490,12 @@ ul.products li.product .find-out-more {
 .promotion-section .promotion_1_container .promotion_1_headline h2 {
   font-size: 38px;
   margin: 20px 0;
+  font-family: "PlayfairDisplay";
 }
 .promotion-section .promotion_1_container .promotion_1_headline h3 {
   font-size: 17.5px;
   margin-top: 0;
+  font-weight: bold;
 }
 .promotion-section .promotion_1_container .promotion_1_content {
   width: 80%;
@@ -7499,23 +7508,21 @@ ul.products li.product .find-out-more {
 .promotion-section .promotion_3_container h2 {
   font-size: 28px;
   margin: 20px 0;
+  font-family: "PlayfairDisplay";
 }
 .promotion-section .promotion_2_container h3,
 .promotion-section .promotion_3_container h3 {
   font-size: 16px;
   margin-top: 0;
+  font-weight: bold;
 }
 .promotion-section .promotion_2_container .promotion_content_container,
 .promotion-section .promotion_3_container .promotion_content_container {
   width: 80%;
   margin: 0 auto;
 }
-.promotion-section .col-same-height.col-sm-6 {
-  float: none;
-  display: table-cell;
-}
-.promotion-section .col-same-height.col-sm-6:first-child {
-  border-right: 1px solid #231F20;
+.promotion-section .col-same-height {
+  margin-bottom: 20px;
 }
 .promotion-section .more-special-title {
   font-size: 20px;
@@ -7524,6 +7531,143 @@ ul.products li.product .find-out-more {
   width: 100%;
   text-align: center;
   margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+  .col-same-height.col-sm-6 {
+    float: none;
+    display: table-cell;
+    margin-bottom: 0;
+  }
+  .col-same-height.col-sm-6:first-child {
+    border-right: 1px solid #231F20;
+  }
+}
+.blog-section {
+  padding-top: 40px;
+}
+.blog-section .headline-title-container {
+  background: url(../img/sprites/bg_blog_title.png) no-repeat center;
+  margin-bottom: 20px;
+}
+.blog-section .headline-title-container .headline-title-left {
+  height: 110px;
+  background: url(../img/sprites/bg_blog_title_left.png) no-repeat left;
+}
+.blog-section .headline-title-container .headline-title-center {
+  font-size: 23px;
+  font-weight: bold;
+  height: 110px;
+  letter-spacing: 3px;
+  line-height: 480%;
+  text-align: center;
+  text-transform: uppercase;
+  background: none;
+}
+.blog-section .headline-title-container .headline-title-right {
+  height: 110px;
+  background: url(../img/sprites/bg_blog_title_right.png) no-repeat right;
+}
+.blog-section .blog-link-container {
+  margin-bottom: 50px;
+}
+.blog-section .blog-link-container .blog-nav {
+  text-align: left;
+}
+.blog-section .blog-link-container .blog-nav a {
+  display: inline-block;
+  margin-right: 15px;
+  color: #000;
+}
+.blog-section .blog-link-container .blog-nav a:hover {
+  text-decoration: none;
+}
+.blog-section .blog-link-container .social-media-container {
+  text-align: right;
+}
+.blog-section .blog-post-item {
+  border-bottom: 1px solid #918F90;
+  padding-bottom: 30px;
+  margin-bottom: 50px;
+}
+.blog-section .blog-post-item .blog-post-title {
+  text-align: center;
+  font-family: "PlayfairDisplay";
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.blog-section .blog-post-item .blog-post-title h2 {
+  font-size: 37px;
+}
+.blog-section .blog-post-item .img-link {
+  display: block;
+  margin-bottom: 15px;
+}
+.blog-section .blog-post-item .img-link .img-responsive {
+  max-width: none;
+  width: 100%;
+}
+.blog-section .blog-post-item .blog-post-detail {
+  background: #F1F1F1;
+  text-align: center;
+  padding: 5px 5%;
+  margin-bottom: 35px;
+}
+.blog-section .blog-post-item .blog-post-detail p {
+  margin-bottom: 0;
+}
+.blog-section .blog-post-item .blog-post-detail strong {
+  display: block;
+  font-family: "PlayfairDisplay";
+  font-size: 14px;
+}
+.blog-section .blog-post-item .blog-post-excerpt {
+  float: none;
+  margin: 0 auto;
+}
+.blog-section .blog-post-item .blog-post-excerpt .read-more {
+  margin-top: 25px;
+}
+.blog-section .blog-post-item .blog-post-excerpt .read-more a {
+  text-decoration: underline;
+  font-style: italic;
+  color: #000;
+}
+.ingredient-section {
+  text-align: center;
+  margin-top: 40px;
+}
+.ingredient-section .ingredient-item-container .ingreditent-row {
+  margin-bottom: 40px;
+}
+.ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2 {
+  text-align: center;
+  font-family: "PlayfairDisplay";
+  text-transform: uppercase;
+  font-size: 23px;
+  color: #000;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2 span {
+  display: inline-block;
+}
+.ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2:before,
+.ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2:after {
+  position: absolute;
+  top: 51%;
+  overflow: hidden;
+  width: 10px;
+  height: 2px;
+  content: '\a0';
+  background-color: #000;
+}
+.ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2:before {
+  margin-left: -15px;
+  text-align: right;
+}
+.ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2:after {
+  margin-left: 5px;
 }
 .navbar-default {
   background: #fff;
@@ -7618,7 +7762,7 @@ ul.products li.product .find-out-more {
 .search-form .search-field {
   font-family: "Novecento";
   font-weight: 300;
-  font-size: 11px;
+  font-size: 12px;
 }
 @media (min-width: 768px) {
   .navbar-default .navbar-nav > .active > a,

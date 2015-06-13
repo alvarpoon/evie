@@ -4,83 +4,44 @@
 //===============================================================================
 //===============================================================================
 
-.promotion-section{
+.ingredient-section{
 	text-align:center;
 	margin-top:40px;
-	padding-bottom:40px;
-	.headline-title-container{
-		margin-bottom:10px;
-	}
-	.headline-content{
-		margin-bottom:80px;
-	}	
-	.promotion_1_container{
-		padding-bottom:55px;
-		margin-bottom:30px;
-		border-bottom:1px solid #231F20;
-		.promotion_1_headline{
-			width:80%;
-			margin:0 auto 25px auto;
-			padding-bottom:25px;
-			position:relative;
-			&:after{
-				position:absolute;
-				content: " ";
-				height:1px;
-				width:20%;
-				margin-left:-10%;
-				left:50%;
-				bottom:0;
-				background-color:#231F20;
-			}
-			h2{
-				font-size:38px;
-				margin:20px 0;
-				font-family: "PlayfairDisplay";
-			}
-			h3{
-				font-size:17.5px;
-				margin-top:0;
-				font-weight:bold;
+	.ingredient-item-container{
+		.ingreditent-row{
+			margin-bottom:40px;
+			.ingredient-content{
+				h2{
+					text-align:center;
+					font-family: "PlayfairDisplay";
+					text-transform:uppercase;
+					font-size:23px;
+					color:#000;
+					position: relative;
+					z-index: 1;
+					overflow: hidden;
+					span{
+						display:inline-block;
+					}
+				}
+				h2:before, h2:after {
+					position: absolute;
+					top: 51%;
+					overflow: hidden;
+					width: 10px;
+					height: 2px;
+					content: '\a0';
+					background-color: #000;
+				}
+				h2:before {
+					margin-left: -15px;
+					text-align: right;
+				}
+				h2:after {
+					margin-left: 5px;
+				}
 			}
 		}
-		.promotion_1_content{
-			width:80%;
-			margin:0 auto;
-		}
-		.promotion_1_image{
-			img{
-				margin:0 auto;
-			}
-		}
-	}
-	.promotion_2_container, .promotion_3_container{
-		h2{
-			font-size:28px;
-			margin:20px 0;
-			font-family: "PlayfairDisplay";
-		}
-		h3{
-			font-size:16px;
-			margin-top:0;
-			font-weight:bold;
-		}
-		.promotion_content_container{
-			width:80%;
-			margin:0 auto;
-		}
-	}
-	.col-same-height{
-		margin-bottom:20px;
-	}
-	
-	.more-special-title{
-		font-size:20px;
-		text-transform:uppercase;
-		font-weight:bold;	
-		width:100%;
-		text-align:center;
-		margin-bottom:50px;
 	}
 }
 
@@ -90,16 +51,6 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
-	.col-same-height{
-		&.col-sm-6{
-			float:none;
-			display:table-cell;
-			margin-bottom:0;
-			&:first-child{
-				border-right:1px solid #231F20;
-			}
-		}
-	}
 }
 
 //===============================================================================

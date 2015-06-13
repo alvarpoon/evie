@@ -1,9 +1,9 @@
 <section class="media-coverage-section container">
-  <div class="col-xs-12">
+  <div class="col-xs-12 col-sm-12 col-md-10 main-content-wrapper">
     <div class="row">
       <div class="headline-title-container clearfix">
     	<div class="col-xs-2 headline-title-left"></div>
-      	<div class="col-xs-8 headline-title-center">MEDIA COVERAGE</div>
+      	<div class="col-xs-8 headline-title-center"><? the_title(); ?></div>
       	<div class="col-xs-2 headline-title-right"></div>
       </div>
       <div class="media-item-container">
@@ -34,15 +34,7 @@
 						echo '</div></div>';
 					}
 					$count++;
-            ?>
-            
-          <!--<div class="col-sm-5 five-two">
-            <div class="row">
-              <div class="col-sm-6"> Col 4 </div>
-              <div class="col-sm-6"> Col 5 </div>
-            </div>
-          </div>-->
-          <? endforeach;?>
+            	endforeach; ?>
       </div>
     </div>
     <!-- end outer row --> 
