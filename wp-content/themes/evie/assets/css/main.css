@@ -6883,8 +6883,100 @@ button.close {
     display: none !important;
   }
 }
+@font-face {
+  font-family: 'Novecento';
+  src: url('../fonts/2E3E6E_0_0.eot');
+  src: url('../fonts/2E3E6E_0_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/2E3E6E_0_0.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/2E3E6E_0_0.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/2E3E6E_0_0.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  
+  /* IE9 Compat Modes */
+  /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Novecento';
+  src: url('../fonts/2E3E6E_1_0.eot');
+  src: url('../fonts/2E3E6E_1_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/2E3E6E_1_0.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/2E3E6E_1_0.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/2E3E6E_1_0.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  
+  /* IE9 Compat Modes */
+  /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Novecento';
+  src: url('../fonts/2E3E6E_2_0.eot');
+  src: url('../fonts/2E3E6E_2_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/2E3E6E_2_0.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/2E3E6E_2_0.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/2E3E6E_2_0.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  
+  /* IE9 Compat Modes */
+  /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Novecento';
+  src: url('../fonts/2E3E6E_2_0.eot');
+  src: url('../fonts/2E3E6E_2_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/2E3E6E_2_0.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/2E3E6E_2_0.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/2E3E6E_2_0.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  
+  /* IE9 Compat Modes */
+  /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Novecento';
+  src: url('../fonts/2E3E6E_3_0.eot');
+  src: url('../fonts/2E3E6E_3_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/2E3E6E_3_0.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/2E3E6E_3_0.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/2E3E6E_3_0.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  
+  /* IE9 Compat Modes */
+  /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Novecento';
+  src: url('../fonts/2E3E6E_4_0.eot');
+  src: url('../fonts/2E3E6E_4_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/2E3E6E_4_0.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/2E3E6E_4_0.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/2E3E6E_4_0.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  
+  /* IE9 Compat Modes */
+  /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Novecento';
+  src: url('../fonts/2E3E6E_5_0.eot');
+  src: url('../fonts/2E3E6E_5_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/2E3E6E_5_0.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/2E3E6E_5_0.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/2E3E6E_5_0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  
+  /* IE9 Compat Modes */
+  /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'PlayfairDisplay';
+  src: url('../fonts/PlayfairDisplay-Regular.eot');
+  src: url('../fonts/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/PlayfairDisplay-Regular.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/PlayfairDisplay-Regular.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  
+  /* IE9 Compat Modes */
+  /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Aileron';
+  src: url('../fonts/Aileron-Light.eot');
+  src: url('../fonts/Aileron-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/Aileron-Light.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/Aileron-Light.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/Aileron-Light.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  
+  /* IE9 Compat Modes */
+  /* Safari, Android, iOS */
+}
 body {
-  font-family: Arial, sans serif !important;
+  font-family: "Aileron" !important;
+  font-weight: 200;
+  font-size: 15px;
 }
 .main {
   padding-top: 110px;
@@ -6897,14 +6989,17 @@ body {
   box-shadow: 0px 3px 5px 0px rgba(245, 232, 229, 0.5);
 }
 .breadcrumb-container .woocommerce-breadcrumb {
-  font-weight: bold;
+  font-weight: 600;
+  font-family: "Novecento";
   color: #000;
   text-transform: uppercase;
   margin-bottom: 0;
+  font-size: 11px;
+  letter-spacing: 1px;
 }
 .breadcrumb-container .woocommerce-breadcrumb a {
   color: #000;
-  font-weight: normal!important;
+  font-weight: 500;
 }
 .breadcrumb-container .woocommerce-breadcrumb .fa {
   margin: 0 7px;
@@ -7007,20 +7102,24 @@ footer .social-link-container {
   text-align: left;
 }
 footer .footer-link-container .footer_link {
+  font-size: 12px;
   padding-left: 0;
+  font-family: "Novecento";
+  letter-spacing: 1px;
 }
 footer .footer-link-container .footer_link:first-child > li {
   padding-bottom: 20px;
   text-transform: uppercase;
 }
 footer .footer-link-container .footer_link:first-child > li > a {
-  font-weight: bold;
+  font-weight: 600;
 }
 footer .footer-link-container .footer_link li {
   list-style: none;
 }
 footer .footer-link-container .footer_link li a {
   color: #000;
+  font-weight: 400;
 }
 footer .footer-link-container .footer_link .sub-menu {
   margin-top: 10px;
@@ -7029,6 +7128,8 @@ footer .footer-link-container .footer_link .sub-menu {
 footer .copyright {
   text-transform: uppercase;
   font-size: 11px;
+  font-family: "Novecento";
+  font-weight: 400;
 }
 footer .copyright span {
   display: inline-block;
@@ -7120,13 +7221,6 @@ footer .copyright a {
 		}
 	}*/
 }
-.best-seller .best-seller-item {
-  text-align: center;
-  text-transform: uppercase;
-}
-.best-seller .best-seller-item a {
-  color: #000;
-}
 .best-seller .best-seller-item img {
   width: 100%;
   height: auto;
@@ -7170,9 +7264,25 @@ footer .copyright a {
 }
 .single-product .product .product-title h1 {
   margin-top: 75px;
+  font-family: "PlayfairDisplay";
+  font-weight: 400;
+  font-size: 29px;
+}
+.single-product .product .product-title p {
+  font-family: "Novecento";
+  font-weight: 300;
+  font-size: 15.4px;
+}
+.single-product .product .product-spec {
+  font-family: "PlayfairDisplay";
+  font-weight: 400;
+  font-size: 13.3px;
 }
 .single-product .product .product-content {
   margin-bottom: 15px;
+}
+.single-product .product .product-content p {
+  line-height: 170%;
 }
 .single-product .product .product-other-detail-container {
   padding-bottom: 30px;
@@ -7220,6 +7330,12 @@ footer .copyright a {
   display: inline-block;
   padding-bottom: 5px;
   margin-bottom: 25px;
+  font-family: "PlayfairDisplay";
+  font-weight: 400;
+}
+.single-product .product .product-other-detail-container .product-other-detail-item p {
+  font-size: 13px;
+  line-height: 170%;
 }
 .single-product .product .upsells-container {
   margin-bottom: 40px;
@@ -7227,6 +7343,10 @@ footer .copyright a {
 .single-product .product .upsells-container h2 {
   text-align: center;
   text-transform: uppercase;
+  font-family: "Novecento";
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 22px;
 }
 .single-product .product .upsells-container a {
   color: #000;
@@ -7252,9 +7372,12 @@ ul.products li.product .product_type_simple {
 ul.products li.product .find-out-more {
   border: 1px solid #000;
   width: 50%;
-  font-size: 16px;
+  font-size: 13.4px;
   display: block;
   margin: 0 auto;
+  font-family: "PlayfairDisplay";
+  font-weight: 400;
+  letter-spacing: 2px;
 }
 .product-item-brief-wrapper {
   position: relative;
@@ -7267,11 +7390,25 @@ ul.products li.product .find-out-more {
   position: absolute;
   bottom: 0;
   text-align: center;
-  text-transform: uppercase;
   width: 100%;
 }
 .product-item-brief-wrapper .product-item-brief-content .product-series {
-  font-size: 12px;
+  font-size: 10.5px;
+  font-family: "Novecento";
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.product-item-brief-wrapper .product-item-brief-content a {
+  text-align: center;
+  font-family: "PlayfairDisplay";
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  text-transform: none;
+}
+.product-item-brief-wrapper .product-item-brief-content img {
+  width: 100%;
+  height: auto;
 }
 .product-item-brief-wrapper .product-item-brief-content .product-short-content {
   font-size: 12px;
@@ -7454,6 +7591,35 @@ ul.products li.product .find-out-more {
   font-size: 12px;
   background: #F5E8E5;
 }
+#menu-primary-navigation > li a {
+  font-family: "Novecento";
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+#menu-primary-navigation .sub-menu > li a {
+  font-family: "Novecento";
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 11px;
+}
+#menu-primary-navigation .sub-menu .sub-menu li a {
+  font-family: "PlayfairDisplay";
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 8.5px;
+  text-transform: none;
+}
+.language-menu a {
+  font-family: "Novecento";
+  font-weight: 300;
+  font-size: 10.5px;
+}
+.search-form .search-field {
+  font-family: "Novecento";
+  font-weight: 300;
+  font-size: 11px;
+}
 @media (min-width: 768px) {
   .navbar-default .navbar-nav > .active > a,
   .navbar-default .navbar-nav > .active > a:hover,
@@ -7473,6 +7639,9 @@ ul.products li.product .find-out-more {
   }
   .searchBox-container {
     display: block;
+    position: absolute;
+    right: 15px;
+    top: 60px;
   }
   .nav-container {
     margin-top: 110px;
@@ -7494,7 +7663,7 @@ ul.products li.product .find-out-more {
     display: block;
   }
   .nav-container .main-menu .navbar-nav > li.menu-products .sub-menu {
-    width: 615px;
+    width: 610px;
     left: -36px;
   }
   .nav-container .main-menu .navbar-nav > li.menu-products .sub-menu:after {
@@ -7517,7 +7686,7 @@ ul.products li.product .find-out-more {
   .nav-container .main-menu .navbar-nav > li .sub-menu {
     position: absolute;
     display: none;
-    padding: 20px 40px;
+    padding: 20px 30px;
     background: #F5E8E5;
     -webkit-box-shadow: 0px 9px 18px -7px rgba(87, 84, 87, 0.7);
     box-shadow: 0px 9px 18px -7px rgba(87, 84, 87, 0.7);
@@ -7570,6 +7739,23 @@ ul.products li.product .find-out-more {
     float: none;
     width: 100%;
     font-size: 12px;
+  }
+}
+@media (min-width: 992px) {
+  .searchBox-container {
+    top: 124px;
+    right: 15px;
+  }
+  .searchBox-container .search-field {
+    width: 160px!important;
+  }
+}
+@media (min-width: 1200px) {
+  .searchBox-container {
+    right: 10px;
+  }
+  .searchBox-container .search-field {
+    width: 230px!important;
   }
 }
 /* 

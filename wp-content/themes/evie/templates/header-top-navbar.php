@@ -22,7 +22,7 @@
 					endif;
 				?>
             </nav>
-            <div class="searchBox-container">
+            <div class="searchBox-container clearfix">
 	            <?php get_search_form(); ?>
             </div>
          </div>
