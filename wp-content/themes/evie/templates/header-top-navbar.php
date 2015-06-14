@@ -1,7 +1,7 @@
 <header class="banner navbar navbar-default navbar-fixed-top" role="banner">
 	<div class="container mainnav-container">
     	<div class="language-menu clearfix">
-            <div class="subscribe-container" style=""><a href="#">STAY CONNECTED</a><span>|</span><a href="#">Enquiries/Order</a></div>
+            <div class="subscribe-container" style=""><a href="#connect-popup">STAY CONNECTED</a><span>|</span><a href="#">Enquiries/Order</a></div>
             <div class="" style="float:left;">ENG<span>|</span>繁<span>|</span>簡</div>
         </div>
     	<div class="navbar-header">

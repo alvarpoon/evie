@@ -6973,13 +6973,33 @@ button.close {
   /* IE9 Compat Modes */
   /* Safari, Android, iOS */
 }
+@font-face {
+  font-family: 'Aileron';
+  src: url('../fonts/aileron-lightitalic-webfont.eot');
+  src: url('../fonts/aileron-lightitalic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/aileron-lightitalic-webfont.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/aileron-lightitalic-webfont.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/aileron-lightitalic-webfont.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  
+  /* IE9 Compat Modes */
+  /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Aileron';
+  src: url('../fonts/aileron-semibold-webfont.eot');
+  src: url('../fonts/aileron-semibold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/aileron-semibold-webfont.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/aileron-semibold-webfont.woff') format('woff'), /* Pretty Modern Browsers */ url('../fonts/aileron-semibold-webfont.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  
+  /* IE9 Compat Modes */
+  /* Safari, Android, iOS */
+}
 body {
   font-family: "Aileron" !important;
   font-weight: 200;
   font-size: 15px;
 }
 .main {
-  padding-top: 110px;
+  padding-top: 50px;
 }
 .breadcrumb-container {
   background: #F5E8E5;
@@ -7023,11 +7043,15 @@ body {
 }
 .headline-title-container .headline-title-center {
   height: 51px;
-  font-size: 20px;
+  font-size: 15px;
+  padding: 6px 0 0;
+  /*font-size:22px;*/
   line-height: 240%;
-  font-weight: bold;
   text-transform: uppercase;
   text-align: center;
+  font-family: "Novecento";
+  font-weight: 600;
+  letter-spacing: 4px;
   background: url(../img/sprites/bg_bestseller.png) no-repeat center;
 }
 .headline-title-container .headline-title-right {
@@ -7047,9 +7071,19 @@ body {
 .noPadding {
   padding: 0;
 }
+@media (min-width: 768px) {
+  .main {
+    padding-top: 150px;
+  }
+  .headline-title-container .headline-title-center {
+    font-size: 22px;
+    padding-top: inherit;
+    padding-bottom: inherit;
+  }
+}
 @media (min-width: 992px) {
   .main {
-    padding-top: 165px;
+    padding-top: 150px;
   }
   div.col-sm-7.five-three {
     width: 60% !important;
@@ -7162,6 +7196,9 @@ footer .copyright a {
     padding-left: 0;
   }
 }
+.home .main {
+  padding-top: 100px;
+}
 .home-banner .owl-wrapper-outer {
   -webkit-box-shadow: 0px 7px 13px -3px #7d7c7d;
   box-shadow: 0px 7px 13px -3px #7d7c7d;
@@ -7233,6 +7270,9 @@ footer .copyright a {
   height: auto;
 }
 @media (min-width: 768px) {
+  .home .main {
+    padding-top: 150px;
+  }
   .promotion-banner .well-feature {
     -webkit-background-size: cover;
             background-size: cover;
@@ -7454,6 +7494,8 @@ ul.products li.product .find-out-more {
   margin: 10px 0;
   height: 65px;
   font-size: 13px;
+  font-family: "PlayfairDisplay";
+  font-weight: 400;
 }
 .promotion-section {
   text-align: center;
@@ -7493,13 +7535,21 @@ ul.products li.product .find-out-more {
   font-family: "PlayfairDisplay";
 }
 .promotion-section .promotion_1_container .promotion_1_headline h3 {
-  font-size: 17.5px;
+  font-size: 17.6px;
   margin-top: 0;
-  font-weight: bold;
+  font-family: "Aileron";
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 .promotion-section .promotion_1_container .promotion_1_content {
   width: 80%;
   margin: 0 auto;
+  font-size: 13px;
+}
+.promotion-section .promotion_1_container .promotion_1_content p em {
+  font-family: "PlayfairDisplay";
+  font-style: normal;
+  font-weight: 400;
 }
 .promotion-section .promotion_1_container .promotion_1_image img {
   margin: 0 auto;
@@ -7514,7 +7564,8 @@ ul.products li.product .find-out-more {
 .promotion-section .promotion_3_container h3 {
   font-size: 16px;
   margin-top: 0;
-  font-weight: bold;
+  font-family: "Aileron";
+  font-weight: 600;
 }
 .promotion-section .promotion_2_container .promotion_content_container,
 .promotion-section .promotion_3_container .promotion_content_container {
@@ -7525,12 +7576,14 @@ ul.products li.product .find-out-more {
   margin-bottom: 20px;
 }
 .promotion-section .more-special-title {
-  font-size: 20px;
+  font-size: 22px;
   text-transform: uppercase;
-  font-weight: bold;
   width: 100%;
   text-align: center;
   margin-bottom: 50px;
+  font-family: "Novecento";
+  font-weight: 600;
+  letter-spacing: 4px;
 }
 @media (min-width: 768px) {
   .col-same-height.col-sm-6 {
@@ -7554,8 +7607,6 @@ ul.products li.product .find-out-more {
   background: url(../img/sprites/bg_blog_title_left.png) no-repeat left;
 }
 .blog-section .headline-title-container .headline-title-center {
-  font-size: 23px;
-  font-weight: bold;
   height: 110px;
   letter-spacing: 3px;
   line-height: 480%;
@@ -7575,8 +7626,11 @@ ul.products li.product .find-out-more {
 }
 .blog-section .blog-link-container .blog-nav a {
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 13px;
   color: #000;
+  font-family: "Novecento";
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 .blog-section .blog-link-container .blog-nav a:hover {
   text-decoration: none;
@@ -7592,11 +7646,14 @@ ul.products li.product .find-out-more {
 .blog-section .blog-post-item .blog-post-title {
   text-align: center;
   font-family: "PlayfairDisplay";
-  font-weight: bold;
+  font-weight: 400;
   margin-bottom: 25px;
 }
 .blog-section .blog-post-item .blog-post-title h2 {
   font-size: 37px;
+}
+.blog-section .blog-post-item .blog-post-title p {
+  font-size: 14px;
 }
 .blog-section .blog-post-item .img-link {
   display: block;
@@ -7614,11 +7671,13 @@ ul.products li.product .find-out-more {
 }
 .blog-section .blog-post-item .blog-post-detail p {
   margin-bottom: 0;
+  font-size: 14px;
 }
 .blog-section .blog-post-item .blog-post-detail strong {
   display: block;
   font-family: "PlayfairDisplay";
   font-size: 14px;
+  font-weight: 400;
 }
 .blog-section .blog-post-item .blog-post-excerpt {
   float: none;

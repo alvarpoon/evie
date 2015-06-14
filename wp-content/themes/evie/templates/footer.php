@@ -26,4 +26,10 @@
     </div>
   </div>
 </footer>
+<div id="connect-popup" style="display:none;">
+  <h2><?=_e('Stay Connected');?></h2>
+  <p><?=_e('Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor suscipit');?></p>
+  <?=do_shortcode('[contact-form-7 id="105" title="Contact form 1"]'); ?>
+</div>
 <?php wp_footer(); ?> 

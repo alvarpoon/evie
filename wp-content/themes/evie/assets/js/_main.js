@@ -23,6 +23,26 @@ var Roots = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+      $(document).ready(function() {
+        $(".menu-get-connected a").fancybox({
+          wrapCSS    : 'fancybox-custom',
+          //closeClick : true,
+          closeBtn  : true,
+          openEffect : 'none',
+          padding: 0,
+
+          helpers : {
+            title : {
+              type : 'inside'
+            },
+            overlay : {
+              css : {
+                'background' : 'rgba(238,238,238,0.85)'
+              }
+            }
+          }
+        });
+      });
     }
   },
   // Home page
