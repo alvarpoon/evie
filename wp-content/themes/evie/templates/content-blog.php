@@ -1,3 +1,4 @@
+<? woocommerce_breadcrumb(); ?>
 <section class="blog-section container">
 	<div class="col-xs-12 col-sm-10 col-md-10 main-content-wrapper">
 		<div class="row">
