@@ -5842,7 +5842,7 @@ var Roots = {
     init: function() {
       // JavaScript to be fired on all pages
       $(document).ready(function() {
-        $(".menu-get-connected a").fancybox({
+        $(".subscribe-container a").fancybox({
           wrapCSS    : 'fancybox-custom',
           //closeClick : true,
           closeBtn  : true,
