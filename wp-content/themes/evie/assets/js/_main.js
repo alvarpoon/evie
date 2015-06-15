@@ -42,6 +42,8 @@ var Roots = {
             }
           }
         });
+		
+		initStayConnect();
       });
     }
   },
@@ -111,5 +113,19 @@ var UTIL = {
 };
 
 $(document).ready(UTIL.loadEvents);
+
+function initStayConnect(){
+	$('#toggle_connect').click(function(){
+		if(!$('#connect-popup').is(':visible')){
+			$('#connect-popup').show();
+		}
+	});
+	
+	$(document).click(function(event) { 
+		if(!$(event.target).closest('#connect-popup').length && event.target.id !== 'toggle_connect') {
+			$('#connect-popup').hide();
+		}        
+	});
+}
 
 })(jQuery); // Fully reference jQuery after this point.
