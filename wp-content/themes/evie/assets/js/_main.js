@@ -117,13 +117,13 @@ $(document).ready(UTIL.loadEvents);
 function initStayConnect(){
 	$('#toggle_connect').click(function(){
 		if(!$('#connect-popup').is(':visible')){
-			$('#connect-popup').show();
+			$('#connect-popup').fadeIn();
 		}
 	});
 	
 	$(document).click(function(event) { 
 		if(!$(event.target).closest('#connect-popup').length && event.target.id !== 'toggle_connect') {
-			$('#connect-popup').hide();
+			$('#connect-popup').fadeOut();
 		}        
 	});
 }

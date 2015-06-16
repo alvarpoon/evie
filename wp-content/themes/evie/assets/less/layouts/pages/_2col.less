@@ -4,7 +4,40 @@
 //===============================================================================
 //===============================================================================
 
-
+.story-section{	
+	margin-top:40px;
+	padding-bottom:50px;
+	.feature-image{
+		margin-bottom:50px;
+	}
+	.headline-content{
+		text-align:center;
+		margin-bottom:50px;
+		h2{
+			font-family: "PlayfairDisplay";
+			font-size:23px;
+		}
+	}
+	
+	.col-pattern{
+		background:url(../img/section_bg.png) repeat-y;
+		padding-bottom: 1000px; 
+		margin-bottom: -980px;
+	}
+	
+	.right-content{
+		h3, h4{
+			font-family: "PlayfairDisplay";
+		}
+		h4{
+			margin-bottom:20px;
+		}
+		p{
+			font-size:13px;
+		}
+	}
+	
+}
 
 //===============================================================================
 //===============================================================================
@@ -21,7 +54,14 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-md-min) {
-	
+	.story-section{
+		.col-same-height{
+			height: 100%;
+			float:none;
+			display:table-cell;
+			overflow:hidden;
+		}	
+	}
 }
 
 //===============================================================================
