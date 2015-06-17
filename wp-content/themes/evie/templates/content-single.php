@@ -67,22 +67,22 @@
             	<?
 	               	$prev_post = get_previous_post();
 					if (!empty( $prev_post )){
-						previous_post_link('%link', '<i class="fa fa-angle-left"></i> Previous Page');
+						previous_post_link('%link', '<i class="fa fa-angle-left"></i> Previous Post');
 				 	} else { 
-						echo '<i class="fa fa-angle-left"></i> Previous Page';	
+						echo '<i class="fa fa-angle-left"></i> Previous Post';	
 					} ?>
                 </div>
                <!-- <div class="next">
-	    	        <?php next_post_link('%link', 'Next Page <i class="fa fa-angle-right"></i>'); ?>
+	    	        <?php next_post_link('%link', 'Next Post <i class="fa fa-angle-right"></i>'); ?>
                 </div>-->
                 
                 <div class="next">
             	<?
 	               	$next_post = get_next_post();
 					if (!empty( $next_post )){
-						next_post_link('%link', 'Next Page <i class="fa fa-angle-right"></i>');
+						next_post_link('%link', 'Next Post <i class="fa fa-angle-right"></i>');
 				 	} else { 
-						echo 'Next Page <i class="fa fa-angle-right"></i>';	
+						echo 'Next Post <i class="fa fa-angle-right"></i>';	
 					} ?>
                 </div>
             </div>
