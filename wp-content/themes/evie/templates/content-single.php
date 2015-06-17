@@ -15,7 +15,7 @@
   </article>
 <?php //endwhile; ?>-->
 
-<section class="blog-section container">
+<section class="blog-section main-section-container container">
 	<div class="col-xs-12 col-sm-10 col-md-10 main-content-wrapper">
 		<div class="row">
 			<div class="headline-title-container clearfix">
@@ -55,11 +55,39 @@
 							<a href="<?php the_permalink(); ?>">READ MORE ></a>
 						</div>-->
 						<?php the_content(); ?>
+                        <div class="read-more">
+	                        <a href="/buzz/our-blog/"><i class="fa fa-angle-left"></i> BACK</a>
+                        </div>
 					</div>
 
 				</div>
 			<?php endwhile; ?>
-			
+            <div class="pagination clearfix">
+            	<div class="previous">
+            	<?
+	               	$prev_post = get_previous_post();
+					if (!empty( $prev_post )){
+						previous_post_link('%link', '<i class="fa fa-angle-left"></i> Previous Page');
+				 	} else { 
+						echo '<i class="fa fa-angle-left"></i> Previous Page';	
+					} ?>
+                </div>
+               <!-- <div class="next">
+	    	        <?php next_post_link('%link', 'Next Page <i class="fa fa-angle-right"></i>'); ?>
+                </div>-->
+                
+                <div class="next">
+            	<?
+	               	$next_post = get_next_post();
+					if (!empty( $next_post )){
+						next_post_link('%link', 'Next Page <i class="fa fa-angle-right"></i>');
+				 	} else { 
+						echo 'Next Page <i class="fa fa-angle-right"></i>';	
+					} ?>
+                </div>
+            </div>
+            
+            
 			<!--<?php if ($wp_query->max_num_pages > 1) : ?>
 			  <nav class="post-nav">
 				<ul class="pager">

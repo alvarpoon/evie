@@ -4,43 +4,60 @@
 //===============================================================================
 //===============================================================================
 
-.ingredient-section{
-	text-align:center;
-	/*margin-top:40px;*/
-	.ingredient-item-container{
-		.ingreditent-row{
-			margin-bottom:40px;
-			.ingredient-content{
-				h2{
-					text-align:center;
-					font-family: "PlayfairDisplay";
-					text-transform:uppercase;
-					font-size:23px;
-					color:#000;
-					position: relative;
-					z-index: 1;
-					overflow: hidden;
-					span{
-						display:inline-block;
-					}
-				}
-				h2:before, h2:after {
-					position: absolute;
-					top: 51%;
-					overflow: hidden;
-					width: 10px;
-					height: 2px;
-					content: '\a0';
-					background-color: #000;
-				}
-				h2:before {
-					margin-left: -15px;
-					text-align: right;
-				}
-				h2:after {
-					margin-left: 5px;
-				}
-			}
+.two-col-section{	
+	/*margin-top:40px;
+	padding-bottom:50px;*/
+	.feature-image{
+		margin-bottom:50px;
+	}
+	.headline-content{
+		text-align:center;
+		margin-bottom:50px;
+		h2{
+			font-family: "PlayfairDisplay";
+			font-size:23px;
+		}
+	}
+	
+	.col-pattern{
+		background:url(../img/section_bg.png) repeat-y;
+		padding-bottom: 1000px; 
+		margin-bottom: -980px;
+	}
+	
+	.right-content{
+		padding-right:50px;
+		h3, h4{
+			font-family: "PlayfairDisplay";
+		}
+		h4{
+			margin-bottom:20px;
+		}
+		p{
+			font-size:13px;
+		}
+	}
+	
+}
+
+.contact-us{
+	.left-content{
+		font-family: "PlayfairDisplay";
+		text-align:right;
+		h2{
+			font-size:40px;
+			margin-top:0;
+		}
+	}
+	.right-content{
+		vertical-align: top;
+		p{
+			font-size:16px;
+			margin-bottom:30px;
+		}
+		a{
+			color:#000;
+			text-decoration:underline;
 		}
 	}
 }
@@ -51,15 +68,23 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
+
 }
 
 //===============================================================================
-//===============================================================================
+//=============================================================================== 
 // Desktop
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-md-min) {
-	
+	.two-col-section{
+		.col-same-height{
+			height: 100%;
+			float:none;
+			display:table-cell;
+			overflow:hidden;
+		}	
+	}
 }
 
 //===============================================================================
