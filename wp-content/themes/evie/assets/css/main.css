@@ -7110,6 +7110,25 @@ body {
   line-height: 100%;
   padding: 0 20px;
 }
+.main-section-container {
+  margin-top: 40px;
+  padding-bottom: 50px;
+}
+.pagination {
+  width: 100%;
+  text-transform: uppercase;
+  color: #999A9E;
+  font-size: 15px;
+}
+.pagination .next {
+  float: right;
+}
+.pagination .previous {
+  float: left;
+}
+.pagination a {
+  color: #000;
+}
 @media (min-width: 768px) {
   .main {
     padding-top: 165px;
@@ -7341,7 +7360,7 @@ footer .copyright a {
   }
 }
 .product-category-section {
-  margin-top: 40px;
+  /*margin-top:40px;*/
   text-align: center;
 }
 .product-category-section .headline-title-container {
@@ -7524,7 +7543,7 @@ ul.products li.product .find-out-more {
 }
 .media-coverage-section {
   text-align: center;
-  margin-top: 40px;
+  /*margin-top:40px;*/
 }
 .media-coverage-section .media-item-container {
   margin-bottom: 40px;
@@ -7542,8 +7561,8 @@ ul.products li.product .find-out-more {
 }
 .promotion-section {
   text-align: center;
-  margin-top: 40px;
-  padding-bottom: 40px;
+  /*margin-top:40px;
+	padding-bottom:40px;*/
 }
 .promotion-section .headline-title-container {
   margin-bottom: 10px;
@@ -7639,7 +7658,7 @@ ul.products li.product .find-out-more {
   }
 }
 .blog-section {
-  padding-top: 40px;
+  /*padding-top:40px;*/
 }
 .blog-section .headline-title-container {
   background: url(../img/sprites/bg_blog_title.png) no-repeat center;
@@ -7684,7 +7703,10 @@ ul.products li.product .find-out-more {
 .blog-section .blog-post-item {
   border-bottom: 1px solid #918F90;
   padding-bottom: 30px;
-  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.blog-section .blog-post-item:first-child {
+  margin-top: 0;
 }
 .blog-section .blog-post-item .blog-post-title {
   text-align: center;
@@ -7736,7 +7758,7 @@ ul.products li.product .find-out-more {
 }
 .ingredient-section {
   text-align: center;
-  margin-top: 40px;
+  /*margin-top:40px;*/
 }
 .ingredient-section .ingredient-item-container .ingreditent-row {
   margin-bottom: 40px;
@@ -7771,43 +7793,105 @@ ul.products li.product .find-out-more {
 .ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2:after {
   margin-left: 5px;
 }
-.story-section {
-  margin-top: 40px;
-  padding-bottom: 50px;
+.two-col-section {
+  /*margin-top:40px;
+	padding-bottom:50px;*/
 }
-.story-section .feature-image {
+.two-col-section .feature-image {
   margin-bottom: 50px;
 }
-.story-section .headline-content {
+.two-col-section .headline-content {
   text-align: center;
   margin-bottom: 50px;
 }
-.story-section .headline-content h2 {
+.two-col-section .headline-content h2 {
   font-family: "PlayfairDisplay";
   font-size: 23px;
 }
-.story-section .col-pattern {
+.two-col-section .col-pattern {
   background: url(../img/section_bg.png) repeat-y;
   padding-bottom: 1000px;
   margin-bottom: -980px;
 }
-.story-section .right-content h3,
-.story-section .right-content h4 {
+.two-col-section .right-content {
+  padding-right: 50px;
+}
+.two-col-section .right-content h3,
+.two-col-section .right-content h4 {
   font-family: "PlayfairDisplay";
 }
-.story-section .right-content h4 {
+.two-col-section .right-content h4 {
   margin-bottom: 20px;
 }
-.story-section .right-content p {
+.two-col-section .right-content p {
   font-size: 13px;
 }
+.contact-us .left-content {
+  font-family: "PlayfairDisplay";
+  text-align: right;
+}
+.contact-us .left-content h2 {
+  font-size: 40px;
+  margin-top: 0;
+}
+.contact-us .right-content {
+  vertical-align: top;
+}
+.contact-us .right-content p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+.contact-us .right-content a {
+  color: #000;
+  text-decoration: underline;
+}
 @media (min-width: 992px) {
-  .story-section .col-same-height {
+  .two-col-section .col-same-height {
     height: 100%;
     float: none;
     display: table-cell;
     overflow: hidden;
   }
+}
+.stocklist-section .headline-title-container {
+  margin-bottom: 20px;
+}
+.stocklist-section .stocklist-link-container {
+  padding: 0 10px;
+}
+.stocklist-section .stocklist-link-container a {
+  display: inline-block;
+  margin-right: 15px;
+  color: #000;
+  text-transform: uppercase;
+}
+.stocklist-section .stocklist-container {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+.stocklist-section .stocklist-container h2 {
+  border-bottom: 1px solid #c9c8c8;
+  margin-bottom: 50px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: "PlayfairDisplay";
+}
+.stocklist-section .stocklist-container .stocklist-row .stocklist-item {
+  padding: 0 50px 20px 50px;
+}
+.stocklist-section .stocklist-container .stocklist-row .stocklist-item h4 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.stocklist-section .stocklist-container .stocklist-row .stocklist-item:first-child {
+  border-right: 2px solid #C9C8C8;
+}
+.stocklist-section .stocklist-container .stocklist-row:last-child .stocklist-item {
+  padding-bottom: 0;
 }
 .navbar-default {
   background: #fff;

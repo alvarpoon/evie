@@ -4,63 +4,53 @@
 //===============================================================================
 //===============================================================================
 
-.two-col-section{	
-	/*margin-top:40px;
-	padding-bottom:50px;*/
-	.feature-image{
-		margin-bottom:50px;
+.stocklist-section{	
+	.headline-title-container{
+		margin-bottom:20px;
 	}
-	.headline-content{
+	.stocklist-link-container{
+		padding:0 10px;
+		a{
+			display:inline-block;
+			margin-right:15px;
+			color:#000;
+			text-transform:uppercase;
+		}
+	}
+	.stocklist-container{
 		text-align:center;
+		font-size:16px;
 		margin-bottom:50px;
 		h2{
-			font-family: "PlayfairDisplay";
-			font-size:23px;
-		}
-	}
-	
-	.col-pattern{
-		background:url(../img/section_bg.png) repeat-y;
-		padding-bottom: 1000px; 
-		margin-bottom: -980px;
-	}
-	
-	.right-content{
-		padding-right:50px;
-		h3, h4{
+			border-bottom:1px solid #c9c8c8;
+			margin-bottom:50px;
+			display:inline-block;
+			text-transform:uppercase;
 			font-family: "PlayfairDisplay";
 		}
-		h4{
-			margin-bottom:20px;
-		}
-		p{
-			font-size:13px;
+		.stocklist-row{
+			.stocklist-item{
+				padding:0 50px 20px 50px;
+				h4{
+					font-weight:bold;
+					text-transform:uppercase;
+					font-size:16px;
+					margin-top:0;
+					margin-bottom:5px;
+				}
+				&:first-child{
+					border-right:2px solid #C9C8C8;
+				}
+			}
+			&:last-child{
+				.stocklist-item{
+					padding-bottom:0;
+				}
+			}
 		}
 	}
-	
 }
 
-.contact-us{
-	.left-content{
-		font-family: "PlayfairDisplay";
-		text-align:right;
-		h2{
-			font-size:40px;
-			margin-top:0;
-		}
-	}
-	.right-content{
-		vertical-align: top;
-		p{
-			font-size:16px;
-			margin-bottom:30px;
-		}
-		a{
-			color:#000;
-			text-decoration:underline;
-		}
-	}
-}
 
 //===============================================================================
 //===============================================================================
@@ -77,14 +67,7 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-md-min) {
-	.two-col-section{
-		.col-same-height{
-			height: 100%;
-			float:none;
-			display:table-cell;
-			overflow:hidden;
-		}	
-	}
+
 }
 
 //===============================================================================
