@@ -23,7 +23,7 @@
 			.stocklist-item{
 				padding:0 50px 20px 50px;
 				h4{
-					font-weight:bold;
+					font-weight:600;
 					text-transform:uppercase;
 					font-size:16px;
 					margin-top:0;
@@ -31,11 +31,6 @@
 				}
 				&:first-child{
 					border-right:2px solid #C9C8C8;
-				}
-			}
-			&:last-child{
-				.stocklist-item{
-					padding-bottom:0;
 				}
 			}
 		}
@@ -49,7 +44,9 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
-
+	.stocklist-section .stocklist-container .stocklist-row:last-child .stocklist-item {
+	  padding-bottom: 0;
+	}
 }
 
 //===============================================================================

@@ -7086,6 +7086,7 @@ body {
   left: 50%;
   margin-left: -260px;
   text-align: center;
+  z-index: 1040;
 }
 #connect-popup h2 {
   text-transform: uppercase;
@@ -7093,7 +7094,7 @@ body {
 }
 #connect-popup input[type=email] {
   border: medium none;
-  height: 56px;
+  height: 46px;
   line-height: 100%;
   margin-right: 10px;
   padding: 0 20px;
@@ -7105,7 +7106,7 @@ body {
   font-family: "Novecento";
   font-size: 19px;
   font-weight: 700;
-  height: 56px;
+  height: 46px;
   letter-spacing: 2px;
   line-height: 100%;
   padding: 0 20px;
@@ -7192,7 +7193,7 @@ body {
 }
 @media (min-width: 768px) {
   .main {
-    padding-top: 165px;
+    padding-top: 181px;
   }
   .headline-title-container .headline-title-center {
     font-size: 22px;
@@ -7274,6 +7275,7 @@ footer .footer-link-container .footer_link:first-child > li > a {
 footer .footer-link-container .footer_link li {
   list-style: none;
   margin-right: 4%!important;
+  text-align: center;
 }
 footer .footer-link-container .footer_link li a {
   color: #000;
@@ -7295,6 +7297,11 @@ footer .copyright span {
 }
 footer .copyright a {
   color: #000;
+}
+@media (min-width: 768px) {
+  footer .footer-link-container .footer_link li {
+    text-align: left;
+  }
 }
 @media (min-width: 992px) {
   footer .social-link-container {
@@ -7601,6 +7608,26 @@ ul.products li.product .find-out-more {
   .single-product ul.products li.product:last-child {
     margin-right: 0!important;
   }
+  .woocommerce #content div.product div.images,
+  .woocommerce div.product div.images,
+  .woocommerce-page #content div.product div.images,
+  .woocommerce-page div.product div.images {
+    margin-top: 75px;
+  }
+}
+@media (min-width: 1200px) {
+  .woocommerce #content div.product div.summary,
+  .woocommerce div.product div.summary,
+  .woocommerce-page #content div.product div.summary,
+  .woocommerce-page div.product div.summary {
+    padding-right: 8.33%;
+  }
+  .woocommerce #content div.product div.images,
+  .woocommerce div.product div.images,
+  .woocommerce-page #content div.product div.images,
+  .woocommerce-page div.product div.images {
+    padding-left: 8.33%;
+  }
 }
 .media-coverage-section {
   text-align: center;
@@ -7868,6 +7895,7 @@ ul.products li.product .find-out-more {
 .two-col-section .headline-content h2 {
   font-family: "PlayfairDisplay";
   font-size: 23px;
+  line-height: 130%;
 }
 .two-col-section .col-pattern {
   background: url(../img/section_bg.png) repeat-y;
@@ -7880,27 +7908,37 @@ ul.products li.product .find-out-more {
 .two-col-section .right-content h3,
 .two-col-section .right-content h4 {
   font-family: "PlayfairDisplay";
+  line-height: 150%;
 }
 .two-col-section .right-content h4 {
   margin-bottom: 20px;
+  font-size: 16px;
 }
 .two-col-section .right-content p {
   font-size: 13px;
+  line-height: 150%;
 }
 .contact-us .left-content {
   font-family: "PlayfairDisplay";
   text-align: right;
 }
 .contact-us .left-content h2 {
-  font-size: 40px;
+  font-size: 46px;
   margin-top: 0;
 }
 .contact-us .right-content {
   vertical-align: top;
 }
-.contact-us .right-content p {
+.contact-us .right-content p,
+.contact-us .right-content h3 {
   font-size: 16px;
   margin-bottom: 30px;
+}
+.contact-us .right-content h3 {
+  font-weight: 600;
+  font-family: "Aileron";
+  margin-bottom: 0;
+  margin-top: 0;
 }
 .contact-us .right-content a {
   color: #000;
@@ -7933,7 +7971,7 @@ ul.products li.product .find-out-more {
   padding: 0 50px 20px 50px;
 }
 .stocklist-section .stocklist-container .stocklist-row .stocklist-item h4 {
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 16px;
   margin-top: 0;
@@ -7942,8 +7980,10 @@ ul.products li.product .find-out-more {
 .stocklist-section .stocklist-container .stocklist-row .stocklist-item:first-child {
   border-right: 2px solid #C9C8C8;
 }
-.stocklist-section .stocklist-container .stocklist-row:last-child .stocklist-item {
-  padding-bottom: 0;
+@media (min-width: 768px) {
+  .stocklist-section .stocklist-container .stocklist-row:last-child .stocklist-item {
+    padding-bottom: 0;
+  }
 }
 .navbar-default {
   background: #fff;
@@ -7983,6 +8023,7 @@ ul.products li.product .find-out-more {
 .language-menu .subscribe-container {
   float: left;
   margin-right: 30px;
+  letter-spacing: 1px;
 }
 .language-menu .subscribe-container a {
   color: #603913;
@@ -8014,7 +8055,7 @@ ul.products li.product .find-out-more {
 }
 #menu-primary-navigation > li a {
   font-family: "Novecento";
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 1px;
   font-size: 13px;
 }
@@ -8042,6 +8083,9 @@ ul.products li.product .find-out-more {
   font-size: 12px;
 }
 @media (min-width: 768px) {
+  .navbar-default {
+    height: 181px;
+  }
   .navbar-default .navbar-nav > .active > a,
   .navbar-default .navbar-nav > .active > a:hover,
   .navbar-default .navbar-nav > .active > a:focus {
@@ -8054,6 +8098,7 @@ ul.products li.product .find-out-more {
   .navbar-brand {
     width: auto;
     height: auto;
+    padding-top: 35px;
   }
   .language-menu {
     display: block;
@@ -8065,7 +8110,7 @@ ul.products li.product .find-out-more {
     top: 60px;
   }
   .nav-container {
-    margin-top: 110px;
+    margin-top: 132px;
   }
   .nav-container .main-menu {
     position: relative;
@@ -8111,6 +8156,7 @@ ul.products li.product .find-out-more {
     background: #F5E8E5;
     -webkit-box-shadow: 0px 9px 18px -7px rgba(87, 84, 87, 0.7);
     box-shadow: 0px 9px 18px -7px rgba(87, 84, 87, 0.7);
+    margin-top: -1px;
   }
   .nav-container .main-menu .navbar-nav > li .sub-menu:after {
     font-size: 0px;
@@ -8137,7 +8183,8 @@ ul.products li.product .find-out-more {
   }
   .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-gift-value-sets,
   .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-whats-new,
-  .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-top-rated {
+  .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-top-rated,
+  .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-bestsellers {
     padding-bottom: 8px;
   }
   .nav-container .main-menu .navbar-nav > li .sub-menu li a {
@@ -8160,11 +8207,12 @@ ul.products li.product .find-out-more {
     float: none;
     width: 100%;
     font-size: 12px;
+    line-height: 120%;
   }
 }
 @media (min-width: 992px) {
   .searchBox-container {
-    top: 124px;
+    top: 140px;
     right: 15px;
   }
   .searchBox-container .search-field {
