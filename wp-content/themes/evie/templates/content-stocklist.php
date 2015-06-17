@@ -1,4 +1,16 @@
-<? woocommerce_breadcrumb(); ?>
+<? woocommerce_breadcrumb(); 
+
+	if( isset($_GET['location']) ){
+		$location = $_GET['location'];
+	}else{
+		$location = '';
+	}
+	
+	$stocklist_categories = get_categories('taxonomy=stocklist_category&type=stocklist'); 
+	
+	$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
+	$full_uri = 'http://'.$_SERVER['HTTP_HOST'].$uri_parts[0];
+?>
 <section class="stocklist-section main-section-container container">
 	<div class="col-xs-12 col-sm-12 col-md-10 main-content-wrapper">
         <div class="row">
@@ -7,15 +19,30 @@
             <div class="col-xs-8 headline-title-center"><? the_title(); ?></div>
             <div class="col-xs-2 headline-title-right"></div>
           </div>
-          <div class="stocklist-link-container clearfix">
-            <a href="#">LOCATIONS</a>
-          </div>	
-          
-          
-          <?          
-			$stocklist_categories = get_categories('taxonomy=stocklist_category&type=stocklist'); 
-			
+          <div class="under-title-link-container clearfix">
+            <ul>
+				<li><a href="javascript:;">LOCATIONS</a>
+					<ul class="sub-menu">
+						<li><a href="<?=$full_uri?>">All</a></li>
+						<? 
+						foreach($stocklist_categories as $stocklist_category){
+							if($location == $stocklist_category->slug){
+								$current_class = 'active';
+							}else{
+								$current_class = '';
+							}?>
+							<li><a class="<?=$current_class?>" href="<?=$full_uri.'?location='.$stocklist_category->slug ?>"><?=$stocklist_category->name?></a></li>
+						<? } ?>
+					</ul>
+				</li>
+			</ul>
+          </div>
+		  
+          <?			
 			foreach ($stocklist_categories as $stocklist_category){ 
+				if($location !== $stocklist_category->slug && $location !== ''){
+					continue;
+				}
 				echo '<div class="stocklist-container">';
 				echo '<h2>'. $stocklist_category->name .'</h2>';
             	$args= array(

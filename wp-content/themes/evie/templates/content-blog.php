@@ -1,4 +1,30 @@
-<? woocommerce_breadcrumb(); ?>
+<? 
+	woocommerce_breadcrumb(); 
+
+	if( isset($_GET['category']) ){
+		$blog_cat = $_GET['category'];
+	}else{
+		$blog_cat = '';
+	}
+	
+	if( isset($_GET['y']) ){
+		$year = $_GET['y'];
+	}else{
+		$year = '';
+	}	
+	
+	$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
+	$full_uri = 'http://'.$_SERVER['HTTP_HOST'].$uri_parts[0];
+	
+	$args = array(
+		'orderby' => 'name',
+		'parent' => 0
+	);
+	$categories = get_categories( $args );
+		/*foreach ( $categories as $category ) {
+			echo '<a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a><br/>';
+		}*/
+?>
 <section class="blog-section main-section-container container">
 	<div class="col-xs-12 col-sm-10 col-md-10 main-content-wrapper">
 		<div class="row">
@@ -7,13 +33,37 @@
 				<div class="col-xs-8 headline-title-center">EVIE BLOG</div>
 				<div class="col-xs-2 headline-title-right"></div>
 			</div>
-			<div class="blog-link-container clearfix">
+			<!--<div class="blog-link-container clearfix">
 				<div class="blog-nav col-sm-5">
 					<a href="#">CATEGORIES</a>
 					<a href="#">ARCHIVES</a>
 				</div>
 				<div class="social-media-container col-sm-7">area for social media</div>
-			</div>		
+			</div>	-->
+			<div class="under-title-link-container clearfix row">
+    	        <div class="col-sm-5">
+					<ul>
+						<li>
+							<a href="javascript:;">CATEGORIES</a>
+							<ul class="sub-menu">
+								<li><a href="<?=$full_uri?>?category=<?=$blog_cat?>&y=<?=$year?>">All</a></li>
+								<?
+									foreach ( $categories as $category ) {
+										//echo '<a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a><br/>';
+										echo '<li><a href="'.$full_uri.'?category='.$category->slug.'&y='.$year.'">'.$category->name.'</a></li>';
+									}	
+								?>
+							</ul>
+						</li>
+						<li><a href="javascript:;">ARCHIVES</a>
+							<ul class="sub-menu">
+								<li><a href="<?=$full_uri?>">All</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="social-media-container col-sm-7">area for social media</div>
+			</div>
 			<?php query_posts('post_type=post&post_status=publish&posts_per_page=10&paged='. get_query_var('paged')); ?>
 
 			<?php if (!have_posts()) : ?>
