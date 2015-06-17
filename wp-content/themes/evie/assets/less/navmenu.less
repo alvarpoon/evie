@@ -46,6 +46,7 @@
 	.subscribe-container{
 		float:left; 
 		margin-right:30px;
+		letter-spacing: 1px;
 		a{
 			color:#603913;
 		}
@@ -79,7 +80,7 @@
 #menu-primary-navigation{
 	&>li a{
 		font-family: "Novecento";
-		font-weight: 500;
+		font-weight: 300;
 		letter-spacing: 1px;
 		font-size: 13px;
 	}
@@ -122,7 +123,9 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
-
+	.navbar-default{
+		height: 181px;
+	}
 	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
 		background:none;
 		font-weight:bold;
@@ -135,6 +138,7 @@
 	.navbar-brand{
 		width:auto;
 		height:auto;
+		padding-top: 35px;
 	}
 	.language-menu{
 		display:block;
@@ -148,7 +152,7 @@
 	}
 	
 	.nav-container{
-		margin-top:110px;
+		  margin-top: 132px;
 		.main-menu{
 			position:relative;
 			.navbar-nav{
@@ -199,6 +203,7 @@
 					-webkit-box-shadow: 0px 9px 18px -7px rgba(87,84,87,0.7);
 					-moz-box-shadow: 0px 9px 18px -7px rgba(87,84,87,0.7);
 					box-shadow: 0px 9px 18px -7px rgba(87,84,87,0.7);
+					margin-top: -1px;
 					
 					&:after{
 						font-size: 0px; line-height: 0%; width: 0px;
@@ -223,7 +228,7 @@
 							float:left;
 							margin-right:20px;
 						}
-						&.menu-gift-value-sets, &.menu-whats-new, &.menu-top-rated{
+						&.menu-gift-value-sets, &.menu-whats-new, &.menu-top-rated, &.menu-bestsellers{
 							padding-bottom:8px;
 						}
 						a{
@@ -246,6 +251,7 @@
 							float:none;
 							width:100%;
 							font-size:12px;
+							line-height: 120%;
 						}
 					}
 				}
@@ -265,7 +271,7 @@
 //===============================================================================
 @media (min-width: @screen-md-min) {
 	.searchBox-container{
-	    top: 124px;
+	    top: 140px;
 		right: 15px;
 		.search-field{
 			  width: 160px!important;

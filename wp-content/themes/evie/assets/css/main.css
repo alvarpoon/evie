@@ -7132,7 +7132,7 @@ body {
 }
 @media (min-width: 768px) {
   .main {
-    padding-top: 165px;
+    padding-top: 181px;
   }
   .headline-title-container .headline-title-center {
     font-size: 22px;
@@ -7971,6 +7971,7 @@ ul.products li.product .find-out-more {
 .language-menu .subscribe-container {
   float: left;
   margin-right: 30px;
+  letter-spacing: 1px;
 }
 .language-menu .subscribe-container a {
   color: #603913;
@@ -8001,7 +8002,7 @@ ul.products li.product .find-out-more {
 }
 #menu-primary-navigation > li a {
   font-family: "Novecento";
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 1px;
   font-size: 13px;
 }
@@ -8029,6 +8030,9 @@ ul.products li.product .find-out-more {
   font-size: 12px;
 }
 @media (min-width: 768px) {
+  .navbar-default {
+    height: 181px;
+  }
   .navbar-default .navbar-nav > .active > a,
   .navbar-default .navbar-nav > .active > a:hover,
   .navbar-default .navbar-nav > .active > a:focus {
@@ -8041,6 +8045,7 @@ ul.products li.product .find-out-more {
   .navbar-brand {
     width: auto;
     height: auto;
+    padding-top: 35px;
   }
   .language-menu {
     display: block;
@@ -8052,7 +8057,7 @@ ul.products li.product .find-out-more {
     top: 60px;
   }
   .nav-container {
-    margin-top: 110px;
+    margin-top: 132px;
   }
   .nav-container .main-menu {
     position: relative;
@@ -8098,6 +8103,7 @@ ul.products li.product .find-out-more {
     background: #F5E8E5;
     -webkit-box-shadow: 0px 9px 18px -7px rgba(87, 84, 87, 0.7);
     box-shadow: 0px 9px 18px -7px rgba(87, 84, 87, 0.7);
+    margin-top: -1px;
   }
   .nav-container .main-menu .navbar-nav > li .sub-menu:after {
     font-size: 0px;
@@ -8124,7 +8130,8 @@ ul.products li.product .find-out-more {
   }
   .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-gift-value-sets,
   .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-whats-new,
-  .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-top-rated {
+  .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-top-rated,
+  .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-bestsellers {
     padding-bottom: 8px;
   }
   .nav-container .main-menu .navbar-nav > li .sub-menu li a {
@@ -8147,11 +8154,12 @@ ul.products li.product .find-out-more {
     float: none;
     width: 100%;
     font-size: 12px;
+    line-height: 120%;
   }
 }
 @media (min-width: 992px) {
   .searchBox-container {
-    top: 124px;
+    top: 140px;
     right: 15px;
   }
   .searchBox-container .search-field {
