@@ -25,7 +25,7 @@ function roots_scripts() {
       'css'       => '/assets/css/main.css',
       'js'        => '/assets/js/scripts.js',
       'modernizr' => '/assets/vendor/modernizr/modernizr.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js',
+      'jquery'    => '//code.jquery.com/jquery-1.11.1.min.js',
       'owl_carousel'    => '/assets/js/plugins/owl.carousel.js'
     );
   } else {
@@ -35,7 +35,7 @@ function roots_scripts() {
       'css'       => '/assets/css/main.min.css?' . $assets['assets/css/main.min.css']['hash'],
       'js'        => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
       'modernizr' => '/assets/js/vendor/modernizr.min.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+      'jquery'    => '//code.jquery.com/jquery-1.11.1.min.js',
       'owl_carousel'    => '/assets/js/plugins/owl.carousel.js'
     );
   }
