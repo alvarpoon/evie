@@ -7985,6 +7985,53 @@ ul.products li.product .find-out-more {
     padding-bottom: 0;
   }
 }
+.testimonial-section .headline-title-container {
+  margin-bottom: 20px;
+}
+.testimonial-section .testimonial-container {
+  margin-top: 50px;
+}
+.testimonial-section .testimonial-container .testimonial-item {
+  font-size: 16px;
+  padding: 40px 110px;
+}
+.testimonial-section .testimonial-container .testimonial-item .rating-container .fa {
+  margin-right: 5px;
+  color: #9B7E00;
+  font-size: 20px;
+}
+.testimonial-section .testimonial-container .testimonial-item .testimonial-header {
+  margin-bottom: 20px;
+}
+.testimonial-section .testimonial-container .testimonial-item .testimonial-header h2 {
+  margin: 5px 0 10px 0;
+  text-transform: uppercase;
+  font-family: "PlayfairDisplay";
+  font-size: 35px;
+}
+.testimonial-section .testimonial-container .testimonial-item .testimonial-header .commenter {
+  font-family: "PlayfairDisplay";
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+  margin: 0 15px 0 5px;
+}
+.testimonial-section .testimonial-container .testimonial-item .testimonial-header .date {
+  font-family: "PlayfairDisplay";
+  font-style: italic;
+  font-size: 20px;
+}
+.testimonial-section .testimonial-container .testimonial-item:nth-child(odd) {
+  background: #F5E8E5;
+}
+.testimonial-section .testimonial-container .testimonial-item:nth-child(even) {
+  background: #FAFAFA;
+}
+@media (min-width: 768px) {
+  .stocklist-section .stocklist-container .stocklist-row:last-child .stocklist-item {
+    padding-bottom: 0;
+  }
+}
 .navbar-default {
   background: #fff;
   border: none;

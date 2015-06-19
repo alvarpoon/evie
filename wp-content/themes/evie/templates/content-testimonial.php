@@ -40,6 +40,10 @@
 	);
 	$concern_categories = get_categories( $concern_args );
 	
+	//$testimonal_categories = get_categories('taxonomy=testimonial_category&type=testimonial'); 
+	$testimonal_args = array('post_type' => 'testimonial');
+	$loop = new WP_Query( $testimonal_args );
+	
 	$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
 	$full_uri = 'http://'.$_SERVER['HTTP_HOST'].$uri_parts[0];
 ?>
@@ -52,7 +56,7 @@
             <div class="col-xs-2 headline-title-right"></div>
           </div>
         </div>
-		<div class="under-title-link-container clearfix">
+		<div class="under-title-link-container clearfix row">
             <ul>
 				<li><a href="javascript:;">BY PRODUCTS</a>
 					<ul class="sub-menu">
@@ -83,6 +87,31 @@
 					</ul>
 				</li>
 			</ul>
-          </div>
+    	</div>
+        <div class="testimonial-container">
+        	
+            	<?
+                
+				while ( $loop->have_posts() ) : $loop->the_post();
+					$rating = get_field("rating", $post->ID);
+					$commenter = get_field("commenter_name", $post->ID);
+				?>
+                	<div class="testimonial-item">
+                    	<div class="rating-container">
+						<? for ($i = 1; $i <= $rating; $i++) {
+							echo '<i class="fa fa-star"></i>';
+						   } ?>
+                        </div>
+                        <div class="testimonial-header">
+	                        <h2 class="entry-title"><? the_title(); ?></h2>
+    	                    &mdash; <span class="commenter"><?=$commenter?></span> <span class="date"><?=get_the_date('F j, Y'); ?></span>
+                        </div>
+                        <div class="entry-content">
+                            <? the_content(); ?>
+                        </div>
+                    </div>
+                    
+				<?php endwhile;?>
+        </div>
    	</div>
 </section>
