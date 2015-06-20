@@ -63,8 +63,19 @@ footer{
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
-	footer .footer-link-container .footer_link li{
-		text-align: left;
+	footer{
+		.footer-link-container{
+			.footer_link{
+				li{
+					text-align: left;
+				}
+	
+				&:first-child > li{
+					float:left;
+					width:45%;
+				}
+			}
+		}
 	}
 }
 
@@ -83,6 +94,7 @@ footer{
 			.footer_link{
 				&:first-child > li{
 					float:left;
+					width:auto;
 					margin-right:40px;
 					&:last-child{
 						margin-right:0;

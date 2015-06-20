@@ -7302,6 +7302,10 @@ footer .copyright a {
   footer .footer-link-container .footer_link li {
     text-align: left;
   }
+  footer .footer-link-container .footer_link:first-child > li {
+    float: left;
+    width: 45%;
+  }
 }
 @media (min-width: 992px) {
   footer .social-link-container {
@@ -7310,6 +7314,7 @@ footer .copyright a {
   }
   footer .footer-link-container .footer_link:first-child > li {
     float: left;
+    width: auto;
     margin-right: 40px;
   }
   footer .footer-link-container .footer_link:first-child > li:last-child {
@@ -7397,6 +7402,9 @@ footer .copyright a {
   .home .main {
     padding-top: 150px;
   }
+  .home-banner.container {
+    width: 100%;
+  }
   .promotion-banner .well-feature {
     -webkit-background-size: cover;
             background-size: cover;
@@ -7420,9 +7428,6 @@ footer .copyright a {
   }
 }
 @media (min-width: 1200px) {
-  .home-banner.container {
-    width: 100%;
-  }
   .promotion-banner .well-feature {
     height: 260px;
   }
