@@ -3,56 +3,71 @@
 // Base
 //===============================================================================
 //===============================================================================
-//.content-info { }
-footer{
-	background:url(../img/sprites/border_footer.jpg) repeat-x #EAEBEB;
-	padding-top:60px;
-	padding-bottom:20px;
-	.social-link-container{
-		margin-bottom:15px;
-		text-align:left;
-	}
-	.footer-link-container{
-		.footer_link{
-			font-size: 12px;
-			padding-left:0;
-			font-family: "Novecento";
-			letter-spacing: 1px;
 
-			&:first-child > li{
-				padding-bottom:20px;
-				text-transform:uppercase;
-			}
-			&:first-child > li > a{
-				font-weight: 600;
-			}
-			li{
-				list-style:none;
-				margin-right:4%!important;
-				text-align: center;
-				a{
-					color:#000;
-					font-weight: 400;
-				}
-			}
-			.sub-menu{
-				margin-top:10px;
-				padding-left:0;
-			}
+.two-col-section{	
+	/*margin-top:40px;
+	padding-bottom:50px;*/
+	.feature-image{
+		margin-bottom:50px;
+	}
+	.headline-content{
+		text-align:center;
+		margin-bottom:50px;
+		h2{
+			font-family: "PlayfairDisplay";
+			font-size:23px;
+			line-height: 130%;
 		}
 	}
-	.copyright{
-		text-transform:uppercase;
-		font-size:11px;
-		font-family: "Novecento";
-		font-weight: 400;
-		
-		span{
-			display:inline-block;
-			margin:0 5px;
+	
+	.col-pattern{
+		background:url(../img/section_bg.png) repeat-y;
+		padding-bottom: 1000px; 
+		margin-bottom: -980px;
+	}
+	
+	.right-content{
+		padding-right:50px;
+		h3, h4{
+			font-family: "PlayfairDisplay";
+			line-height: 150%;
+		}
+		h4{
+			margin-bottom:20px;
+			font-size: 16px;
+		}
+		p{
+			font-size:13px;
+			line-height: 150%;
+		}
+	}
+	
+}
+
+.contact-us{
+	.left-content{
+		font-family: "PlayfairDisplay";
+		text-align:right;
+		h2{
+			font-size:46px;
+			margin-top:0;
+		}
+	}
+	.right-content{
+		vertical-align: top;
+		p,h3{
+			font-size:16px;
+			margin-bottom:30px;
+		}
+		h3{
+			font-weight: 600;
+			font-family: "Aileron";
+			 margin-bottom: 0;
+			   margin-top: 0;
 		}
 		a{
 			color:#000;
+			text-decoration:underline;
 		}
 	}
 }
@@ -63,37 +78,22 @@ footer{
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
-	footer .footer-link-container .footer_link li{
-		text-align: left;
-	}
+
 }
 
 //===============================================================================
-//===============================================================================
+//=============================================================================== 
 // Desktop
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-md-min) {
-	footer{
-		.social-link-container{
-			margin-bottom:15px;
-			text-align:right;
-		}
-		.footer-link-container{
-			.footer_link{
-				&:first-child > li{
-					float:left;
-					margin-right:40px;
-					&:last-child{
-						margin-right:0;
-					}
-				}
-				.sub-menu{
-					margin-top:10px;
-					padding-left:0;
-				}
-			}
-		}
+	.two-col-section{
+		.col-same-height{
+			height: 100%;
+			float:none;
+			display:table-cell;
+			overflow:hidden;
+		}	
 	}
 }
 

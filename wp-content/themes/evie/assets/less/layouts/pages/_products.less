@@ -4,6 +4,14 @@
 //===============================================================================
 //===============================================================================
 
+.product-category-section{
+	/*margin-top:40px;*/
+	text-align:center;
+	.headline-title-container{
+		margin-bottom:10px;
+	}
+}
+
 .single-product{
 	.product{
 		//margin-top:10px;
@@ -198,6 +206,10 @@ ul.products li.product{
 			}
 		}
 	}
+
+	.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images{
+		margin-top: 75px;
+	}
 }
 
 //===============================================================================
@@ -215,5 +227,10 @@ ul.products li.product{
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-lg-min) {
-
+	.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary{
+		padding-right: 8.33%;
+	}
+	.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images{
+		padding-left: 8.33%;
+	}
 }

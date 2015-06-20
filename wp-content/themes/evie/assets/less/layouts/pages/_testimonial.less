@@ -3,59 +3,54 @@
 // Base
 //===============================================================================
 //===============================================================================
-//.content-info { }
-footer{
-	background:url(../img/sprites/border_footer.jpg) repeat-x #EAEBEB;
-	padding-top:60px;
-	padding-bottom:20px;
-	.social-link-container{
-		margin-bottom:15px;
-		text-align:left;
-	}
-	.footer-link-container{
-		.footer_link{
-			font-size: 12px;
-			padding-left:0;
-			font-family: "Novecento";
-			letter-spacing: 1px;
 
-			&:first-child > li{
-				padding-bottom:20px;
-				text-transform:uppercase;
-			}
-			&:first-child > li > a{
-				font-weight: 600;
-			}
-			li{
-				list-style:none;
-				margin-right:4%!important;
-				text-align: center;
-				a{
-					color:#000;
-					font-weight: 400;
+.testimonial-section{	
+	.headline-title-container{
+		margin-bottom:20px;
+	}
+	.testimonial-container{
+		margin-top:50px;
+		.testimonial-item{
+			font-size:16px;
+			padding:40px 110px;
+			.rating-container{
+				.fa{
+					margin-right:5px;
+					color:#9B7E00;
+					font-size:20px;
 				}
 			}
-			.sub-menu{
-				margin-top:10px;
-				padding-left:0;
+			.testimonial-header{
+				margin-bottom:20px;
+				h2{
+					margin:5px 0 10px 0;
+					text-transform:uppercase;
+					font-family: "PlayfairDisplay";
+					font-size:35px;
+				}
+				.commenter{
+					font-family: "PlayfairDisplay";
+					font-weight:bold;
+					font-size:20px;
+					display:inline-block;
+					margin:0 15px 0 5px;
+				}
+				.date{
+					font-family: "PlayfairDisplay";
+					font-style:italic;
+					font-size:20px;
+				}
 			}
-		}
-	}
-	.copyright{
-		text-transform:uppercase;
-		font-size:11px;
-		font-family: "Novecento";
-		font-weight: 400;
-		
-		span{
-			display:inline-block;
-			margin:0 5px;
-		}
-		a{
-			color:#000;
+			&:nth-child(odd){
+				background:#F5E8E5;
+			}
+			&:nth-child(even){
+				background:#FAFAFA;
+			}
 		}
 	}
 }
+
 
 //===============================================================================
 //===============================================================================
@@ -63,38 +58,18 @@ footer{
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
-	footer .footer-link-container .footer_link li{
-		text-align: left;
+	.stocklist-section .stocklist-container .stocklist-row:last-child .stocklist-item {
+	  padding-bottom: 0;
 	}
 }
 
 //===============================================================================
-//===============================================================================
+//=============================================================================== 
 // Desktop
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-md-min) {
-	footer{
-		.social-link-container{
-			margin-bottom:15px;
-			text-align:right;
-		}
-		.footer-link-container{
-			.footer_link{
-				&:first-child > li{
-					float:left;
-					margin-right:40px;
-					&:last-child{
-						margin-right:0;
-					}
-				}
-				.sub-menu{
-					margin-top:10px;
-					padding-left:0;
-				}
-			}
-		}
-	}
+
 }
 
 //===============================================================================

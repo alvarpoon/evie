@@ -1,4 +1,5 @@
-<section class="media-coverage-section container">
+<? woocommerce_breadcrumb(); ?>
+<section class="media-coverage-section main-section-container container">
   <div class="col-xs-12 col-sm-12 col-md-10 main-content-wrapper">
     <div class="row">
       <div class="headline-title-container clearfix">

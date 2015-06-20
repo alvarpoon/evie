@@ -13,7 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-//get_header( 'shop' ); ?>
+//get_header( 'shop' ); 
+?>
 	<?php
 		/**
 		 * woocommerce_before_main_content hook
@@ -29,42 +30,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
 
 		<?php endif; ?>
-
-		<?php do_action( 'woocommerce_archive_description' ); ?>
-
-		<?php if ( have_posts() ) : ?>
-			
-            <div class="container">
-            
-			<?php woocommerce_product_loop_start(); ?>
-
-				<?php woocommerce_product_subcategories(); ?>
-
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php wc_get_template_part( 'content', 'product' ); ?>
-
-				<?php endwhile; // end of the loop. ?>
-
-			<?php woocommerce_product_loop_end(); ?>
-            
-            
-
-			<?php
-				/**
-				 * woocommerce_after_shop_loop hook
-				 *
-				 * @hooked woocommerce_pagination - 10
-				 */
-				do_action( 'woocommerce_after_shop_loop' );
-			?>
-
-		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
-
-			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
-            
+		<section class="product-category-section container">
+		<div class="col-sm-10 main-content-wrapper">
+            <div class="headline-title-container clearfix">
+                <div class="col-xs-2 headline-title-left"></div>
+                <div class="col-xs-8 headline-title-center"><?php woocommerce_page_title(); ?></div>
+                <div class="col-xs-2 headline-title-right"></div>
             </div>
-
-		<?php endif; ?>
+    
+            <?php if ( have_posts() ) : ?>
+                    
+                    <?php do_action( 'woocommerce_archive_description' ); ?>
+                    
+                    <?php woocommerce_product_loop_start(); ?>
         
+                        <?php woocommerce_product_subcategories(); ?>
+        
+                        <?php while ( have_posts() ) : the_post(); ?>
+        
+                            <?php wc_get_template_part( 'content', 'product' ); ?>
+        
+                        <?php endwhile; // end of the loop. ?>
+        
+                    <?php woocommerce_product_loop_end(); ?>
+                    
+                    
+        
+                    <?php
+                        /**
+                         * woocommerce_after_shop_loop hook
+                         *
+                         * @hooked woocommerce_pagination - 10
+                         */
+                        do_action( 'woocommerce_after_shop_loop' );
+                    ?>
+        
+                <?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
+        
+                    <?php wc_get_template( 'loop/no-products-found.php' ); ?>
+    
+            <?php endif; ?>
+   
+        </div>
+        </section>
 <?php //get_footer( 'shop' ); ?>

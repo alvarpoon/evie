@@ -11,7 +11,7 @@ body{
 }
 
 .main{
-	padding-top:110px;
+	padding-top:50px;
 }
 
 .breadcrumb-container{
@@ -58,11 +58,15 @@ body{
 	}
 	.headline-title-center{
 		height:51px;
-		font-size:20px;
+		font-size: 15px;
+  		padding: 6px 0 0;
+		/*font-size:22px;*/
 		line-height:240%;
-		font-weight:bold;
 		text-transform:uppercase;
 		text-align:center;
+		font-family: "Novecento";
+		font-weight: 600;
+		letter-spacing: 4px;
 		background:url(../img/sprites/bg_bestseller.png) no-repeat center;
 	}
 	.headline-title-right{
@@ -88,13 +92,154 @@ body{
 	padding:0;
 }
 
+.term-description{
+	text-align:center;
+	margin-bottom:40px;
+}
+
+#connect-popup{
+	position:fixed;
+	background:#F1F1F1;
+	-webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.6);
+	-moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.6);
+	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.6);
+	width:520px;
+	//height:220px;
+	padding:40px;
+	top:30%;
+	left:50%;
+	margin-left:-260px;
+	text-align:center;
+	z-index: 1040;
+	h2{
+		text-transform:uppercase;
+		font-family: "Novecento";
+	}
+	input[type=email]{
+		border: medium none;
+		height: 46px;
+		line-height: 100%;
+		margin-right: 10px;
+		padding: 0 20px;
+		width: 70%;
+	}
+	input[type=submit]{
+		background: #f6d8d3 none repeat scroll 0 0;
+		border: medium none;
+		font-family: "Novecento";
+		font-size: 19px;
+		font-weight: 700;
+		height: 46px;
+		letter-spacing: 2px;
+		line-height: 100%;
+		padding: 0 20px;
+	}
+}
+
+.main-section-container{
+	margin-top:40px;
+	padding-bottom:50px;
+}
+
+.pagination{
+	width:100%;
+	text-transform:uppercase;	
+	color:#999A9E;
+	font-size:15px;
+	.next{
+		float:right;
+	}
+	.previous{
+		float:left;
+	}
+	a{
+		color:#000;
+		
+	}
+}
+
+.under-title-link-container{
+	padding:0 10px;
+	ul{
+		padding-left:0;
+		& > li{
+			&:hover{
+				.sub-menu{
+					display:block;
+				}
+			}
+		}
+		li{
+			list-style:none;
+			position:relative;
+			float:left;
+			a{
+				display:inline-block;
+				margin-right:15px;
+				color:#000;
+				text-transform:uppercase;
+				padding-bottom:20px;
+				font-family: "Novecento";
+				font-size: 13px;
+				font-weight: 300;
+				letter-spacing: 1px;
+			}
+			.sub-menu{
+				background: #f5e8e5 none repeat scroll 0 0;
+				box-shadow: 0 9px 18px -7px rgba(87, 84, 87, 0.7);
+				display: none;
+				padding: 20px 30px;
+				position: absolute;
+				top:30px;
+				z-index:999;
+				&:after{
+					border-bottom: 10px solid #f5e8e5;
+					border-left: 10px solid rgba(255, 255, 255, 0);
+					border-right: 10px solid rgba(255, 255, 255, 0);
+					content: " ";
+					font-size: 0;
+					line-height: 0;
+					position: absolute;
+					top: -10px;
+					width: 0;
+				}
+				li{
+					float:none;
+					a{
+						display:inline-block;
+						white-space: nowrap;
+						padding-bottom:0;
+						font-size:11px;
+						//font-weight:300;
+						//letter-spacing:1px;
+						&.active{
+							font-weight:500;
+						}
+					}
+				}
+			}
+		}
+	}
+	.social-media-container{
+		text-align:right;
+	}
+}
+
 //===============================================================================
 //===============================================================================
 // tablet
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
+	.main{
+		padding-top:181px;
+	}
 
+	.headline-title-container .headline-title-center{
+		font-size: 22px;
+		  padding-top: inherit;
+  		padding-bottom: inherit;
+	}
 }
 
 //===============================================================================
@@ -103,9 +248,6 @@ body{
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-md-min) {
-	.main{
-		padding-top:165px;
-	}
 	div.col-sm-7.five-three {
     	width: 60% !important;
     }

@@ -3,59 +3,40 @@
 // Base
 //===============================================================================
 //===============================================================================
-//.content-info { }
-footer{
-	background:url(../img/sprites/border_footer.jpg) repeat-x #EAEBEB;
-	padding-top:60px;
-	padding-bottom:20px;
-	.social-link-container{
-		margin-bottom:15px;
-		text-align:left;
-	}
-	.footer-link-container{
-		.footer_link{
-			font-size: 12px;
-			padding-left:0;
-			font-family: "Novecento";
-			letter-spacing: 1px;
 
-			&:first-child > li{
-				padding-bottom:20px;
-				text-transform:uppercase;
-			}
-			&:first-child > li > a{
-				font-weight: 600;
-			}
-			li{
-				list-style:none;
-				margin-right:4%!important;
-				text-align: center;
-				a{
-					color:#000;
-					font-weight: 400;
+.stocklist-section{	
+	.headline-title-container{
+		margin-bottom:20px;
+	}
+	.stocklist-container{
+		text-align:center;
+		font-size:16px;
+		margin-bottom:50px;
+		h2{
+			border-bottom:1px solid #c9c8c8;
+			margin-bottom:50px;
+			display:inline-block;
+			text-transform:uppercase;
+			font-family: "PlayfairDisplay";
+		}
+		.stocklist-row{
+			.stocklist-item{
+				padding:0 50px 20px 50px;
+				h4{
+					font-weight:600;
+					text-transform:uppercase;
+					font-size:16px;
+					margin-top:0;
+					margin-bottom:5px;
+				}
+				&:first-child{
+					border-right:2px solid #C9C8C8;
 				}
 			}
-			.sub-menu{
-				margin-top:10px;
-				padding-left:0;
-			}
-		}
-	}
-	.copyright{
-		text-transform:uppercase;
-		font-size:11px;
-		font-family: "Novecento";
-		font-weight: 400;
-		
-		span{
-			display:inline-block;
-			margin:0 5px;
-		}
-		a{
-			color:#000;
 		}
 	}
 }
+
 
 //===============================================================================
 //===============================================================================
@@ -63,38 +44,18 @@ footer{
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
-	footer .footer-link-container .footer_link li{
-		text-align: left;
+	.stocklist-section .stocklist-container .stocklist-row:last-child .stocklist-item {
+	  padding-bottom: 0;
 	}
 }
 
 //===============================================================================
-//===============================================================================
+//=============================================================================== 
 // Desktop
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-md-min) {
-	footer{
-		.social-link-container{
-			margin-bottom:15px;
-			text-align:right;
-		}
-		.footer-link-container{
-			.footer_link{
-				&:first-child > li{
-					float:left;
-					margin-right:40px;
-					&:last-child{
-						margin-right:0;
-					}
-				}
-				.sub-menu{
-					margin-top:10px;
-					padding-left:0;
-				}
-			}
-		}
-	}
+
 }
 
 //===============================================================================

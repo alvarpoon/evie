@@ -23,6 +23,28 @@ var Roots = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+      $(document).ready(function() {
+        $(".subscribe-container a").fancybox({
+          wrapCSS    : 'fancybox-custom',
+          //closeClick : true,
+          closeBtn  : true,
+          openEffect : 'none',
+          padding: 0,
+
+          helpers : {
+            title : {
+              type : 'inside'
+            },
+            overlay : {
+              css : {
+                'background' : 'rgba(238,238,238,0.85)'
+              }
+            }
+          }
+        });
+		
+		initStayConnect();
+      });
     }
   },
   // Home page
@@ -91,5 +113,19 @@ var UTIL = {
 };
 
 $(document).ready(UTIL.loadEvents);
+
+function initStayConnect(){
+	$('#toggle_connect').click(function(){
+		if(!$('#connect-popup').is(':visible')){
+			$('#connect-popup').fadeIn();
+		}
+	});
+	
+	$(document).click(function(event) { 
+		if(!$(event.target).closest('#connect-popup').length && event.target.id !== 'toggle_connect') {
+			$('#connect-popup').fadeOut();
+		}        
+	});
+}
 
 })(jQuery); // Fully reference jQuery after this point.
