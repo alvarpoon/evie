@@ -20,14 +20,8 @@
                 </div>
             <? endforeach;?>
             </div>
-            <div>
-                <div class="custom-banner-control-right">
-                    <div class="custom-banner-next"></div>
-                </div>
-                <div class="custom-banner-control-left">
-                    <div class="custom-banner-prev"></div>
-                </div>
-            </div>
+			<div class="custom-banner-next"></div>			
+			<div class="custom-banner-prev"></div>
         </div>
 	</div>
 </section>

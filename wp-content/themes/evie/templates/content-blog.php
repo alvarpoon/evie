@@ -8,9 +8,9 @@
 	}
 	
 	if( isset($_GET['y']) ){
-		$year = $_GET['y'];
+		$blog_year = $_GET['y'];
 	}else{
-		$year = '';
+		$blog_year = '';
 	}	
 	
 	$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
@@ -46,25 +46,33 @@
 						<li>
 							<a href="javascript:;">CATEGORIES</a>
 							<ul class="sub-menu">
-								<li><a href="<?=$full_uri?>?category=<?=$blog_cat?>&y=<?=$year?>">All</a></li>
+								<li><a href="<?=$full_uri?>?category=&y=<?=$year?>">All</a></li>
 								<?
 									foreach ( $categories as $category ) {
+										//print_r($category);
 										//echo '<a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a><br/>';
-										echo '<li><a href="'.$full_uri.'?category='.$category->slug.'&y='.$year.'">'.$category->name.'</a></li>';
+										echo '<li><a href="'.$full_uri.'?category='.$category->cat_ID.'&y='.$blog_year.'">'.$category->name.'</a></li>';
 									}	
 								?>
 							</ul>
 						</li>
 						<li><a href="javascript:;">ARCHIVES</a>
 							<ul class="sub-menu">
-								<li><a href="<?=$full_uri?>">All</a></li>
+								<li><a href="<?=$full_uri?>?category=<?=$blog_cat?>&y=">All</a></li>
+									<?
+									$years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts ORDER BY post_date DESC");
+									foreach($years as $year) : 
+										echo '<li><a href="'.$full_uri.'?category='.$blog_cat.'&y='.$year.'">'.$year.'</a></li>';
+									 endforeach; ?>
 							</ul>
 						</li>
 					</ul>
 				</div>
 				<div class="social-media-container col-sm-7">area for social media</div>
 			</div>
-			<?php query_posts('post_type=post&post_status=publish&posts_per_page=10&paged='. get_query_var('paged')); ?>
+			<?php 
+				query_posts( 'post_type=post&post_status=publish&posts_per_page=1&paged='. get_query_var('paged').'&cat='.$blog_cat.'&year='.$blog_year );
+			?>
 
 			<?php if (!have_posts()) : ?>
 			  <div class="alert alert-warning">
@@ -93,13 +101,32 @@
 			<?php endwhile; ?>
 			
 			<?php if ($wp_query->max_num_pages > 1) : ?>
-			  <nav class="post-nav">
-				<ul class="pager">
-				  <li class="previous"><?php next_posts_link(__('&larr; Older posts', 'roots')); ?></li>
-				  <li class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'roots')); ?></li>
-				</ul>
-			  </nav>
+			  <div class="pagination clearfix">
+            	<div class="previous">
+				  	<? 	
+						if ($next_url = next_posts($wp_query->max_num_pages, false)){
+							?><a href="<?= $next_url ?>"><i class="fa fa-angle-left"></i> Previous Post</a><?php
+						} else {
+							?><a href="#" class="disabled"><i class="fa fa-angle-left"></i> Previous Post</a><?php
+						}
+					?>
+				</div>
+				<div class="next">
+					<? 	
+						$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; 
+						
+						if($paged == 1){
+							?><a href="#" class="disabled">Next Post <i class="fa fa-angle-right"></i></a><?php
+						}else{
+							$prev_url = previous_posts(false);
+							?><a href="<?= $prev_url ?>">Next Post <i class="fa fa-angle-right"></i></a><?php
+						}  
+					?>
+				</div>
+			  </div>
+			  
 			<?php endif; ?>
+			
 		</div>
 	</div>
 </section>

@@ -7130,6 +7130,9 @@ body {
 .pagination a {
   color: #000;
 }
+.pagination a.disabled {
+  color: #999A9E;
+}
 .under-title-link-container {
   padding: 0 10px;
 }
@@ -7188,8 +7191,41 @@ body {
 .under-title-link-container ul li .sub-menu li a.active {
   font-weight: 500;
 }
+.under-title-link-container ul li .sub-menu li label {
+  white-space: nowrap;
+  padding-bottom: 0;
+  font-size: 11px;
+  font-family: "Novecento";
+  font-weight: 300;
+  text-transform: uppercase;
+  display: block;
+  line-height: 22px;
+  margin-bottom: 0;
+}
+.under-title-link-container ul li .sub-menu li label input {
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
 .under-title-link-container .social-media-container {
   text-align: right;
+}
+.under-title-link-container .right-link {
+  text-align: right;
+}
+.under-title-link-container .right-link ul li {
+  float: right;
+}
+.under-title-link-container .right-link ul li a {
+  display: inline-block;
+  margin-right: 0;
+  color: #000;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  font-family: "Novecento";
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 @media (min-width: 768px) {
   .main {
@@ -7328,21 +7364,64 @@ footer .copyright a {
 .home .main {
   padding-top: 100px;
 }
-.home-banner .owl-wrapper-outer {
+.home-banner {
+  position: relative;
+}
+.home-banner .owl-stage-outer {
   -webkit-box-shadow: 0px 7px 13px -3px #7d7c7d;
   box-shadow: 0px 7px 13px -3px #7d7c7d;
 }
-.home-banner .owl-theme .owl-controls {
-  margin-top: 50px;
+.home-banner .owl-controls {
+  margin-top: 50px!important;
 }
-.home-banner .owl-theme .owl-controls .owl-page span {
-  background-color: #EA8B9C;
+.home-banner .owl-controls .owl-nav {
+  display: none;
+}
+.home-banner .owl-controls .owl-dots .owl-dot span {
+  background-color: #ECD1DA;
   width: 8px;
   height: 8px;
+}
+.home-banner .owl-controls .owl-dots .owl-dot.active span,
+.home-banner .owl-controls .owl-dots .owl-dot:hover span {
+  background-color: #EA8B9C;
 }
 .home-banner .main-banner-item .img-responsive {
   max-width: none;
   width: 100%;
+}
+.home-banner #main-banner-container {
+  /*&:hover{
+			.custom-banner-prev{
+				display:block;	
+			}
+			
+			.custom-banner-next{
+				display:block;
+			}
+		}*/
+}
+.home-banner #main-banner-container .custom-banner-prev {
+  position: absolute;
+  left: 0;
+  top: 35%;
+  width: 90px;
+  height: 90px;
+  background: url(../img/sprites/slider_arrow_left.png) no-repeat;
+  z-index: 999;
+  cursor: pointer;
+  display: none;
+}
+.home-banner #main-banner-container .custom-banner-next {
+  position: absolute;
+  right: 0;
+  top: 35%;
+  width: 90px;
+  height: 90px;
+  background: url(../img/sprites/slider_arrow_right.png) no-repeat;
+  z-index: 999;
+  cursor: pointer;
+  display: none;
 }
 .promotion-banner {
   margin-top: 35px;
@@ -7400,7 +7479,7 @@ footer .copyright a {
 }
 @media (min-width: 768px) {
   .home .main {
-    padding-top: 150px;
+    padding-top: 181px;
   }
   .home-banner.container {
     width: 100%;
@@ -7416,8 +7495,11 @@ footer .copyright a {
   .promotion-banner .well[href]:hover {
     border-width: 1px;
     border-color: #dfdfdf;
-    -webkit-box-shadow: inset 0px 0px 8px 2px #bfbfbf;
-    box-shadow: inset 0px 0px 8px 2px #bfbfbf;
+    /*-webkit-box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
+				-moz-box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
+				box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);*/
+    -webkit-box-shadow: inset 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
   }
 }
 @media (min-width: 992px) {
@@ -7426,10 +7508,34 @@ footer .copyright a {
             background-size: cover;
     height: 211px;
   }
+  .home-banner #main-banner-container .custom-banner-prev {
+    top: 35%;
+  }
+  .home-banner #main-banner-container .custom-banner-next {
+    top: 35%;
+  }
+  .home-banner #main-banner-container:hover .custom-banner-prev {
+    display: block;
+  }
+  .home-banner #main-banner-container:hover .custom-banner-next {
+    display: block;
+  }
 }
 @media (min-width: 1200px) {
   .promotion-banner .well-feature {
     height: 260px;
+  }
+  .home-banner #main-banner-container .custom-banner-prev {
+    top: 40%;
+  }
+  .home-banner #main-banner-container .custom-banner-next {
+    top: 40%;
+  }
+  .home-banner #main-banner-container:hover .custom-banner-prev {
+    display: block;
+  }
+  .home-banner #main-banner-container:hover .custom-banner-next {
+    display: block;
   }
 }
 .product-category-section {
@@ -8000,10 +8106,12 @@ ul.products li.product .find-out-more {
   font-size: 16px;
   padding: 40px 110px;
 }
-.testimonial-section .testimonial-container .testimonial-item .rating-container .fa {
+.testimonial-section .testimonial-container .testimonial-item .rating-container .star {
   margin-right: 5px;
-  color: #9B7E00;
-  font-size: 20px;
+  display: inline-block;
+  background: url(../img/sprites/icon_star.png) no-repeat;
+  width: 20px;
+  height: 19px;
 }
 .testimonial-section .testimonial-container .testimonial-item .testimonial-header {
   margin-bottom: 20px;
@@ -8280,11 +8388,75 @@ ul.products li.product .find-out-more {
   }
 }
 /* 
- * 	Core Owl Carousel CSS File
- *	v1.3.3
+ *  Owl Carousel - Animate Plugin
  */
-/* clearfix */
-.owl-carousel .owl-wrapper:after {
+.owl-carousel .animated {
+  -webkit-animation-duration: 1000ms;
+  -o-animation-duration: 1000ms;
+     animation-duration: 1000ms;
+  -webkit-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+     animation-fill-mode: both;
+}
+.owl-carousel .owl-animated-in {
+  z-index: 0;
+}
+.owl-carousel .owl-animated-out {
+  z-index: 1;
+}
+.owl-carousel .fadeOut {
+  -webkit-animation-name: fadeOut;
+  -o-animation-name: fadeOut;
+     animation-name: fadeOut;
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* 
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+  -webkit-transition: height 500ms ease-in-out;
+  -o-transition: height 500ms ease-in-out;
+  transition: height 500ms ease-in-out;
+}
+/* 
+ *  Core Owl Carousel CSS File
+ */
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1;
+}
+.owl-carousel .owl-stage {
+  position: relative;
+  -ms-touch-action: pan-Y;
+}
+.owl-carousel .owl-stage:after {
   content: ".";
   display: block;
   clear: both;
@@ -8292,56 +8464,136 @@ ul.products li.product .find-out-more {
   line-height: 0;
   height: 0;
 }
-/* display none until init */
-.owl-carousel {
-  display: none;
+.owl-carousel .owl-stage-outer {
   position: relative;
-  width: 100%;
-  -ms-touch-action: pan-y;
-}
-.owl-carousel .owl-wrapper {
-  display: none;
-  position: relative;
+  overflow: hidden;
+  /* fix for flashing background */
   -webkit-transform: translate3d(0px, 0px, 0px);
 }
-.owl-carousel .owl-wrapper-outer {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-.owl-carousel .owl-wrapper-outer.autoHeight {
-  -webkit-transition: height 500ms ease-in-out;
-  -o-transition: height 500ms ease-in-out;
-  transition: height 500ms ease-in-out;
-}
-.owl-carousel .owl-item {
-  float: left;
-}
-.owl-controls .owl-page,
-.owl-controls .owl-buttons div {
+.owl-carousel .owl-controls .owl-nav .owl-prev,
+.owl-carousel .owl-controls .owl-nav .owl-next,
+.owl-carousel .owl-controls .owl-dot {
   cursor: pointer;
-}
-.owl-controls {
+  cursor: hand;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-/* mouse grab icon */
-.grabbing {
-  cursor: url(grabbing.png) 8 8, move;
+.owl-carousel.owl-loaded {
+  display: block;
 }
-/* fix */
-.owl-carousel .owl-wrapper,
+.owl-carousel.owl-loading {
+  opacity: 0;
+  display: block;
+}
+.owl-carousel.owl-hidden {
+  opacity: 0;
+}
+.owl-carousel .owl-refresh .owl-item {
+  display: none;
+}
 .owl-carousel .owl-item {
+  position: relative;
+  min-height: 1px;
+  float: left;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+  -webkit-transform-style: preserve-3d;
+}
+.owl-carousel.owl-text-select-on .owl-item {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+}
+.owl-carousel .owl-grab {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: -o-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+}
+.owl-carousel.owl-rtl {
+  direction: rtl;
+}
+.owl-carousel.owl-rtl .owl-item {
+  float: right;
+}
+/* No Js */
+.no-js .owl-carousel {
+  display: block;
+}
+/* 
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease;
+  -o-transition: opacity 400ms ease;
+  transition: opacity 400ms ease;
+}
+.owl-carousel .owl-item img {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+/* 
+ * 	Owl Carousel - Video Plugin
+ */
+.owl-carousel .owl-video-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000;
+}
+.owl-carousel .owl-video-play-icon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: url("owl.video.play.png") no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: scale 100ms ease;
+  -o-transition: scale 100ms ease;
+  transition: scale 100ms ease;
+}
+.owl-carousel .owl-video-play-icon:hover {
+  -webkit-transition: scale(1.3, 1.3);
+  -o-transition: scale(1.3, 1.3);
+  transition: scale(1.3, 1.3);
+}
+.owl-carousel .owl-video-playing .owl-video-tn,
+.owl-carousel .owl-video-playing .owl-video-play-icon {
+  display: none;
+}
+.owl-carousel .owl-video-tn {
+  opacity: 0;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  -webkit-transition: opacity 400ms ease;
+  -o-transition: opacity 400ms ease;
+  transition: opacity 400ms ease;
+}
+.owl-carousel .owl-video-frame {
+  position: relative;
+  z-index: 1;
 }
 /*
 * 	Owl Carousel Owl Demo Theme 
@@ -8412,6 +8664,51 @@ ul.products li.product .find-out-more {
 .owl-item.loading {
   min-height: 150px;
   background: url(AjaxLoader.gif) no-repeat center center;
+}
+.owl-theme .owl-controls {
+  margin-top: 10px;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.owl-theme .owl-controls .owl-nav [class*=owl-] {
+  color: #fff;
+  font-size: 14px;
+  margin: 5px;
+  padding: 4px 7px;
+  background: #d6d6d6;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.owl-theme .owl-controls .owl-nav [class*=owl-]:hover {
+  background: #869791;
+  color: #fff;
+  text-decoration: none;
+}
+.owl-theme .owl-controls .owl-nav .disabled {
+  opacity: .5;
+  cursor: default;
+}
+.owl-theme .owl-dots .owl-dot {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+.owl-theme .owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  background: #d6d6d6;
+  display: block;
+  -webkit-backface-visibility: visible;
+  -webkit-transition: opacity 200ms ease;
+  -o-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  border-radius: 30px;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #869791;
 }
 /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
 .fancybox-wrap,
