@@ -52,13 +52,24 @@ var Roots = {
     init: function() {
       // JavaScript to be fired on the home page
 	  $(document).ready(function() {
-			$("#main-banner").owlCarousel({
-				slideSpeed : 300,
-				paginationSpeed : 400,
-				singleItem : true,
+			var owl = $("#main-banner");
+			owl.owlCarousel({
+				loop:true,
+				nav:true,
 				autoplay:true,
-				autoplayTimeout:1000,
-			    autoplayHoverPause:true
+				autoplayTimeout:5000,
+				autoplayHoverPause:true,
+				responsive:{
+					0:{
+						items:1
+					}
+				}
+			});
+			$('.custom-banner-prev').on('click',function(){
+				owl.trigger('prev.owl.carousel');
+			});
+			$('.custom-banner-next').on('click',function(){
+				owl.trigger('next.owl.carousel');
 			});
 	  });
     }
@@ -90,6 +101,13 @@ var Roots = {
 			}
 		});
 	}
+  },
+  testimonials: {
+	init: function(){
+		$(document).ready(function(){
+			updateCheckBoxValue();
+		});
+	}  
   }
 };
 
@@ -125,6 +143,20 @@ function initStayConnect(){
 		if(!$(event.target).closest('#connect-popup').length && event.target.id !== 'toggle_connect') {
 			$('#connect-popup').fadeOut();
 		}        
+	});
+}
+
+function updateCheckBoxValue(){
+	$('.checkbox-container input[type=checkbox]').each(function(){
+		$(this).change(function(){
+			if($(this).attr('id') === 'concern_all'){
+				if($(this).prop('checked')){
+					$(':checkbox[name='+ $(this).attr('name') +']').attr('checked',$(this).attr('checked'));
+				}else{
+					$(':checkbox[name='+ $(this).attr('name') +']').attr('checked',$(this).attr('checked'));
+				}
+			}
+		});
 	});
 }
 

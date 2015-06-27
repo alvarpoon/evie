@@ -12,6 +12,7 @@
 		$concern = '';
 	}
 	
+	
 	$product_cat = 29;
 	$product_result = get_term_by('id', $product_cat,'testimonial_category');
 	
@@ -39,11 +40,7 @@
 		'parent'      		   	   => $concern_cat
 	);
 	$concern_categories = get_categories( $concern_args );
-	
-	//$testimonal_categories = get_categories('taxonomy=testimonial_category&type=testimonial'); 
-	$testimonal_args = array('post_type' => 'testimonial');
-	$loop = new WP_Query( $testimonal_args );
-	
+		
 	$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
 	$full_uri = 'http://'.$_SERVER['HTTP_HOST'].$uri_parts[0];
 ?>
@@ -57,40 +54,80 @@
           </div>
         </div>
 		<div class="under-title-link-container clearfix row">
-            <ul>
-				<li><a href="javascript:;">BY PRODUCTS</a>
-					<ul class="sub-menu">
-						<li><a href="<?=$full_uri?>">All</a></li>
-						<? 
-						foreach($product_categories as $product_category){
-							if($product == $product_category->slug){
-								$current_class = 'active';
-							}else{
-								$current_class = '';
-							}?>
-							<li><a class="<?=$current_class?>" href="<?=$full_uri.'?product='.$product_category->slug ?>"><?=$product_category->name?></a></li>
-						<? } ?>
-					</ul>
-				</li>
-				<li><a href="javascript:;">BY CONCERN</a>
-					<ul class="sub-menu">
-						<li><a href="<?=$full_uri?>">All</a></li>
-						<? 
-						foreach($concern_categories as $concern_category){
-							if($location == $concern_category->slug){
-								$current_class = 'active';
-							}else{
-								$current_class = '';
-							}?>
-							<li><a class="<?=$current_class?>" href="<?=$full_uri.'?concern='.$concern_category->slug ?>"><?=$concern_category->name?></a></li>
-						<? } ?>
-					</ul>
-				</li>
-			</ul>
+			<div class="col-xs-6 noPadding checkbox-container">
+				<form id="testimonial_form" name="testimonial_form" method="post">
+				<ul>
+					<li><a href="javascript:;">BY PRODUCTS</a>
+						<ul class="sub-menu">
+							<?
+								if($product == ''){
+									echo '<li><label><input type="checkbox" id="product_all" name="product_cat[]" value="" checked=checked />All</label></li>';		
+								}else{
+									echo '<li><label><input type="checkbox" id="product_all" name="product_cat[]" value="" />All</label></li>';		
+								}
+							?>
+							
+							<? 
+							foreach($product_categories as $product_category){
+								//print_r($product_category);
+								if($product == $product_category->slug || $product == ''){
+									$checked = 'checked=checked';
+								}else{
+									$checked = '';
+								}?>								
+								<li><label class="clearfix"><input type="checkbox" name="product_cat[]" value="<?=$product_category->slug ?>" <?=$checked ?> /><?=$product_category->name?></label></li>
+								
+							<? } ?>
+						</ul>
+					</li>
+					<li><a href="javascript:;">BY CONCERN</a>
+						<ul class="sub-menu">
+							<?
+								if($concern == ''){
+									echo '<li><label><input type="checkbox" id="concern_all" name="concern_cat" value="" checked=checked />All</label></li>';		
+								}else{
+									echo '<li><label><input type="checkbox" id="concern_all" name="concern_cat" value="" />All</label></li>';		
+								}
+							?>
+							<? 
+							foreach($concern_categories as $concern_category){
+								if($concern == $concern_category->slug || $concern == ''){
+									$checked = 'checked=checked';
+								}else{
+									$checked = '';
+								}?>		
+								<li><label class="clearfix"><input type="checkbox" name="concern_cat" value="<?=$concern_category->slug ?>" <?=$checked ?> /><?=$concern_category->name?></label></li>
+							<? } ?>
+						</ul>
+					</li>
+				</ul>
+				</form>
+			</div>
+			<div class="col-xs-6 noPadding right-link">
+				<ul>
+					<li><a href="#">SORT BY</a></li>
+				</ul>
+			</div>
     	</div>
         <div class="testimonial-container">
         	
             	<?
+				
+				//$testimonal_categories = get_categories('taxonomy=testimonial_category&type=testimonial'); 
+				
+				$terms_array = array('combination-oily-skin');
+				
+				$testimonal_args = array(
+					'post_type' => 'testimonial',
+					/*'tax_query' => array(
+						array(
+							'taxonomy' => 'testimonial_category',
+							'field' => 'slug',
+							'terms' => $terms_array
+						)
+					)*/
+				);
+				$loop = new WP_Query( $testimonal_args );
                 
 				while ( $loop->have_posts() ) : $loop->the_post();
 					$rating = get_field("rating", $post->ID);
@@ -99,7 +136,7 @@
                 	<div class="testimonial-item">
                     	<div class="rating-container">
 						<? for ($i = 1; $i <= $rating; $i++) {
-							echo '<i class="fa fa-star"></i>';
+							echo '<span class="star"></span>';
 						   } ?>
                         </div>
                         <div class="testimonial-header">

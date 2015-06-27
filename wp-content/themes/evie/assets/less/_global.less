@@ -154,7 +154,9 @@ body{
 	}
 	a{
 		color:#000;
-		
+		&.disabled{
+			color:#999A9E;
+		}
 	}
 }
 
@@ -216,12 +218,47 @@ body{
 							font-weight:500;
 						}
 					}
+					label{
+						white-space: nowrap;
+						padding-bottom:0;
+						font-size:11px;
+						font-family: "Novecento";
+						font-weight: 300;
+						text-transform:uppercase;
+						display:block;
+						line-height:22px;
+						margin-bottom:0;
+						input{
+							margin-right:5px;
+							position:relative;
+							top:2px;
+						}
+					}
 				}
 			}
 		}
 	}
 	.social-media-container{
 		text-align:right;
+	}
+	.right-link{
+		text-align:right;
+		ul{
+			li{
+				float:right;
+				a{
+					display:inline-block;
+					margin-right:0;
+					color:#000;
+					text-transform:uppercase;
+					padding-bottom:20px;
+					font-family: "Novecento";
+					font-size: 13px;
+					font-weight: 300;
+					letter-spacing: 1px;
+				}
+			}
+		}
 	}
 }
 

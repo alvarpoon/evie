@@ -10,29 +10,69 @@
 }
 
 .home-banner{
-	.owl-wrapper-outer{
+	position:relative;
+	.owl-stage-outer{
 		-webkit-box-shadow: 0px 7px 13px -3px rgba(125,124,125,1);
 		-moz-box-shadow: 0px 7px 13px -3px rgba(125,124,125,1);
 		box-shadow: 0px 7px 13px -3px rgba(125,124,125,1);
 	}
 	
-	.owl-theme{
-		.owl-controls{
-			margin-top:50px;
-			.owl-page{
+	.owl-controls{
+		margin-top:50px!important;
+		.owl-nav{
+			display:none;
+		}
+		.owl-dots{
+			.owl-dot{
 				span{
-					background-color:#EA8B9C;
+					background-color:#ECD1DA;
 					width:8px;
 					height:8px;
 				}
+				&.active span, &:hover span{
+					background-color:#EA8B9C;
+				}
 			}
-		}		
-	}
+		}
+	}		
 	.main-banner-item{
 		.img-responsive{
 			max-width:none;
 			width:100%;
 		}
+	}
+	#main-banner-container{
+		.custom-banner-prev{
+			position:absolute;
+			left:0;
+			top:35%;
+			width:90px;
+			height:90px;
+			background:url(../img/sprites/slider_arrow_left.png) no-repeat;
+			z-index:999;
+			cursor:pointer;
+			display:none;
+		}
+		.custom-banner-next{
+			position:absolute;
+			right:0;
+			top:35%;
+			width:90px;
+			height:90px;
+			background:url(../img/sprites/slider_arrow_right.png) no-repeat;
+			z-index:999;
+			cursor:pointer;
+			display:none;
+		}
+		/*&:hover{
+			.custom-banner-prev{
+				display:block;	
+			}
+			
+			.custom-banner-next{
+				display:block;
+			}
+		}*/
 	}
 }
 
@@ -98,7 +138,7 @@
 @media (min-width: @screen-sm-min) {
 	.home{
 		.main{
-			padding-top: 150px;
+			padding-top: 181px;
 		}
 	}
 	.home-banner{
@@ -117,9 +157,12 @@
 			&:hover{
 				border-width:1px;
 				border-color:#dfdfdf;
-				-webkit-box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
+				/*-webkit-box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
 				-moz-box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
-				box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);
+				box-shadow: inset 0px 0px 8px 2px rgba(191,191,191,1);*/
+				-webkit-box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.2);
+				-moz-box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.2);
+				box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.2);
 			}
 		}
 	}
@@ -138,6 +181,26 @@
 			height:211px;
 		}
 	}
+	
+	.home-banner{
+		#main-banner-container{
+			.custom-banner-prev{
+				top:35%;
+			}
+			.custom-banner-next{
+				top:35%;
+			}
+			&:hover{
+				.custom-banner-prev{
+					display:block;	
+				}
+				
+				.custom-banner-next{
+					display:block;
+				}
+			}
+		}
+	}
 }
 
 //===============================================================================
@@ -150,6 +213,25 @@
 	.promotion-banner{
 		.well-feature{
 			height:260px;
+		}
+	}
+	.home-banner{
+		#main-banner-container{
+			.custom-banner-prev{
+				top:40%;
+			}
+			.custom-banner-next{
+				top:40%;
+			}
+			&:hover{
+				.custom-banner-prev{
+					display:block;	
+				}
+				
+				.custom-banner-next{
+					display:block;
+				}
+			}
 		}
 	}
 }
