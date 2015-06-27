@@ -1,15 +1,15 @@
 <?
 	woocommerce_breadcrumb(); 
-	if( isset($_GET['product']) ){
-		$product = $_GET['product'];
+	if( isset($_GET['product_cat']) ){
+		$p_cat = $_GET['product_cat'];
 	}else{
-		$product = '';
+		$p_cat = '';
 	}
 	
-	if( isset($_GET['concern']) ){
-		$concern = $_GET['concern'];
+	if( isset($_GET['concern_cat']) ){
+		$c_cat = $_GET['concern_cat'];
 	}else{
-		$concern = '';
+		$c_cat = '';
 	}
 	
 	
@@ -61,9 +61,9 @@
 						<ul class="sub-menu">
 							<?
 								if($product == ''){
-									echo '<li><label><input type="checkbox" id="product_all" name="product_cat[]" value="" checked=checked />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="category_filter" id="category_all" value="" checked=checked />All</label></li>';		
 								}else{
-									echo '<li><label><input type="checkbox" id="product_all" name="product_cat[]" value="" />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="category_filter" id="category_all" value="" />All</label></li>';		
 								}
 							?>
 							
@@ -75,7 +75,7 @@
 								}else{
 									$checked = '';
 								}?>								
-								<li><label class="clearfix"><input type="checkbox" name="product_cat[]" value="<?=$product_category->slug ?>" <?=$checked ?> /><?=$product_category->name?></label></li>
+								<li><label class="clearfix"><input type="checkbox" class="category_filter" value="<?=$product_category->cat_ID ?>" <?=$checked ?> /><?=$product_category->name?></label></li>
 								
 							<? } ?>
 						</ul>
@@ -84,9 +84,9 @@
 						<ul class="sub-menu">
 							<?
 								if($concern == ''){
-									echo '<li><label><input type="checkbox" id="concern_all" name="concern_cat" value="" checked=checked />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="concern_filter" id="concern_all" name="concern_cat" value="" checked=checked />All</label></li>';		
 								}else{
-									echo '<li><label><input type="checkbox" id="concern_all" name="concern_cat" value="" />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="concern_filter" id="concern_all" name="concern_cat" value="" />All</label></li>';		
 								}
 							?>
 							<? 
@@ -96,7 +96,7 @@
 								}else{
 									$checked = '';
 								}?>		
-								<li><label class="clearfix"><input type="checkbox" name="concern_cat" value="<?=$concern_category->slug ?>" <?=$checked ?> /><?=$concern_category->name?></label></li>
+								<li><label class="clearfix"><input type="checkbox" class="concern_filter" name="concern_cat" value="<?=$concern_category->cat_ID ?>" <?=$checked ?> /><?=$concern_category->name?></label></li>
 							<? } ?>
 						</ul>
 					</li>
@@ -114,18 +114,33 @@
             	<?
 				
 				//$testimonal_categories = get_categories('taxonomy=testimonial_category&type=testimonial'); 
+				/*$p_cat
+				$c_cat*/
+				$product_query_arr = array();
+				if($p_cat != ''){
+					$product_query_arr = explode(',',$p_cat);
+				}else{
+					foreach($product_categories as $product_category){
+						$value = $product_category->cat_ID;
+						array_push($product_query_arr, $value);
+					}
+				}
+				$concern_query_arr = explode(',',$c_cat);
+				$terms_array = array_merge($product_query_arr, $concern_query_arr);
 				
-				$terms_array = array('combination-oily-skin');
+				//$myCategory = get_term_by('id', 33, 'category');
+				
+				//echo $myCategory;
 				
 				$testimonal_args = array(
 					'post_type' => 'testimonial',
-					/*'tax_query' => array(
+					'tax_query' => array(
 						array(
 							'taxonomy' => 'testimonial_category',
-							'field' => 'slug',
+							'field' => 'cat_ID',
 							'terms' => $terms_array
 						)
-					)*/
+					)
 				);
 				$loop = new WP_Query( $testimonal_args );
                 
