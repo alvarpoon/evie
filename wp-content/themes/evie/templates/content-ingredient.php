@@ -17,7 +17,7 @@
 				if($count%3 == 1){
 					echo '<div class="ingreditent-row row">';
 				}
-				echo '<div class="col-sm-4"><img class="img-responsive" src="'.$url[0].'" /><div class="ingredient-content"><h2><span>'.$result->post_title.'</span></h2>'.$result->post_content.'</div></div>';
+				echo '<div class="col-sm-4"><img class="img-responsive" src="'.$url[0].'" /><div class="ingredient-content"><h2><span>'.$result->post_title.'</span></h2>'.apply_filters('the_content', $result->post_content).'</div></div>';
 				if($count%3 == 0){
 					echo '</div>';
 				}
