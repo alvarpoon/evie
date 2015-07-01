@@ -88,6 +88,17 @@ body{
 	float:none;
 }
 
+#main-content{
+	a{
+		color: #333;
+		text-decoration: underline;
+	}
+}
+
+.toggle_connect_link{
+	cursor: pointer;
+}
+
 .noPadding{
 	padding:0;
 }
@@ -155,7 +166,8 @@ body{
 	a{
 		color:#000;
 		&.disabled{
-			color:#999A9E;
+			/*color:#999A9E;*/
+			display: none;
 		}
 	}
 }
@@ -177,7 +189,7 @@ body{
 			float:left;
 			a{
 				display:inline-block;
-				margin-right:15px;
+				margin-right:30px;
 				color:#000;
 				text-transform:uppercase;
 				padding-bottom:20px;
@@ -185,6 +197,9 @@ body{
 				font-size: 13px;
 				font-weight: 300;
 				letter-spacing: 1px;
+				&:hover{
+					text-decoration: none;
+				}
 			}
 			.sub-menu{
 				background: #f5e8e5 none repeat scroll 0 0;
@@ -215,6 +230,9 @@ body{
 						//font-weight:300;
 						//letter-spacing:1px;
 						&.active{
+							font-weight:500;
+						}
+						&:hover{
 							font-weight:500;
 						}
 					}

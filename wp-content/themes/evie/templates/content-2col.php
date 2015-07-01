@@ -7,12 +7,22 @@
             <div class="col-xs-8 headline-title-center"><? the_title(); ?></div>
             <div class="col-xs-2 headline-title-right"></div>
           </div>
+          <?
+          if(has_post_thumbnail($post->ID)){
+          ?>
           <div class="feature-image">
-          	<? the_post_thumbnail( 'full', array('class'=>'img-responsive')); ?>
+            <? the_post_thumbnail( 'full', array('class'=>'img-responsive')); ?>
           </div>
-          <div class="headline-content col-xs-10 col-xs-push-1">
-          	<? the_content(); ?>
-          </div>
+          <?
+          }
+          if($post->post_content!=""){
+          ?>
+            <div class="headline-content col-xs-10 col-xs-push-1">
+              <?=apply_filters('the_content', $post->post_content);?>
+            </div>
+          <?
+          }
+          ?>
   		</div>
         <div class="row">
             <div class="col-sm-12">
