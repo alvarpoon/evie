@@ -8092,6 +8092,10 @@ ul.products li.product .find-out-more {
     padding-right: 40px;
   }
 }
+.stocklist-section a {
+  color: #333;
+  text-decoration: underline;
+}
 .stocklist-section .headline-title-container {
   margin-bottom: 20px;
 }
