@@ -7079,7 +7079,7 @@ body {
   margin: 0 auto;
   float: none;
 }
-#main-content a {
+.content-container a {
   color: #333;
   text-decoration: underline;
 }
@@ -7693,6 +7693,7 @@ ul.products li.product .find-out-more {
   font-family: "PlayfairDisplay";
   font-weight: 400;
   letter-spacing: 2px;
+  text-decoration: none;
 }
 .product-item-brief-wrapper {
   position: relative;
@@ -8334,7 +8335,7 @@ ul.products li.product .find-out-more {
     display: block;
   }
   .nav-container .main-menu .navbar-nav > li.menu-products .sub-menu {
-    width: 610px;
+    width: 620px;
     left: -36px;
   }
   .nav-container .main-menu .navbar-nav > li.menu-products .sub-menu:after {
