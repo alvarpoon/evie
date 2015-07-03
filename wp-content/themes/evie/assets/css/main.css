@@ -7019,7 +7019,7 @@ body {
   box-shadow: 0px 3px 5px 0px rgba(245, 232, 229, 0.5);
 }
 #main-content .breadcrumb-container .woocommerce-breadcrumb {
-  font-weight: 600;
+  font-weight: 300;
   font-family: "Novecento";
   color: #000;
   text-transform: uppercase;
@@ -7029,7 +7029,7 @@ body {
 }
 #main-content .breadcrumb-container .woocommerce-breadcrumb a {
   color: #000;
-  font-weight: 500;
+  font-weight: 300;
   text-decoration: none;
 }
 #main-content .breadcrumb-container .woocommerce-breadcrumb .fa {
@@ -7128,6 +7128,12 @@ body {
   letter-spacing: 2px;
   line-height: 100%;
   padding: 0 20px;
+}
+#connect-popup #connect_close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #000;
 }
 .main-section-container {
   margin-top: 40px;
@@ -7242,6 +7248,7 @@ body {
 }
 #main-content .under-title-link-container .right-link ul li {
   float: right;
+  position: relative;
 }
 #main-content .under-title-link-container .right-link ul li a {
   display: inline-block;
@@ -7253,6 +7260,13 @@ body {
   font-size: 13px;
   font-weight: 300;
   letter-spacing: 1px;
+}
+#main-content .under-title-link-container .right-link ul li .sub-menu {
+  right: 0;
+  text-align: left!important;
+}
+#main-content .under-title-link-container .right-link ul li .sub-menu:after {
+  right: 20px;
 }
 @media (min-width: 768px) {
   .main {
@@ -7337,8 +7351,9 @@ footer .footer-link-container .footer_link:first-child > li > a {
 }
 footer .footer-link-container .footer_link li {
   list-style: none;
-  margin-right: 4%!important;
+  margin-right: 5.5%!important;
   text-align: center;
+  white-space: nowrap;
 }
 footer .footer-link-container .footer_link li a {
   color: #000;
@@ -7361,6 +7376,40 @@ footer .copyright span {
 footer .copyright a {
   color: #000;
 }
+.social-link-container a {
+  background: url(../img/sprites/sprites_social_media.png) no-repeat;
+  width: 21px;
+  height: 21px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.social-link-container a:last-child {
+  margin-right: 0;
+}
+.social-link-container a.icon_facebook {
+  background-position: 0 0;
+}
+.social-link-container a.icon_instagram {
+  background-position: -34px 0;
+}
+.social-link-container a.icon_weibo {
+  background-position: -68px 0;
+}
+.social-link-container a.icon_wechat {
+  background-position: -102px 0;
+}
+.social-link-container a.icon_pinterest {
+  background-position: -136px 0;
+}
+.social-link-container a.icon_twitter {
+  background-position: -170px 0;
+}
+.social-link-container a.icon_youtube {
+  background-position: -204px 0;
+}
+.social-link-container a.icon_linkin {
+  background-position: -239px 0;
+}
 @media (min-width: 768px) {
   footer .footer-link-container .footer_link li {
     text-align: left;
@@ -7381,7 +7430,7 @@ footer .copyright a {
     margin-right: 40px;
   }
   footer .footer-link-container .footer_link:first-child > li:last-child {
-    margin-right: 0;
+    margin-right: 0!important;
   }
   footer .footer-link-container .footer_link .sub-menu {
     margin-top: 10px;
@@ -7395,8 +7444,8 @@ footer .copyright a {
   position: relative;
 }
 .home-banner .owl-stage-outer {
-  -webkit-box-shadow: 0px 7px 13px -3px #7d7c7d;
-  box-shadow: 0px 7px 13px -3px #7d7c7d;
+  -webkit-box-shadow: 0px 7px 13px -3px rgba(125, 124, 125, 0.6);
+  box-shadow: 0px 7px 13px -3px rgba(125, 124, 125, 0.6);
 }
 .home-banner .owl-controls {
   margin-top: 50px!important;
@@ -7451,7 +7500,7 @@ footer .copyright a {
   display: none;
 }
 .promotion-banner {
-  margin-top: 35px;
+  margin-top: 27px;
 }
 .promotion-banner .img-responsive {
   max-width: none;
@@ -7574,7 +7623,7 @@ footer .copyright a {
 }
 .single-product .product .product-title {
   padding-bottom: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   background: url(../img/sprites/border_double.png) repeat-x bottom;
 }
 .single-product .product .product-title h1 {
@@ -7990,6 +8039,9 @@ ul.products li.product .find-out-more {
 .ingredient-section .ingredient-item-container .ingreditent-row {
   margin-bottom: 40px;
 }
+.ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content {
+  font-size: 12px;
+}
 .ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2 {
   text-align: center;
   font-family: "PlayfairDisplay";
@@ -8002,6 +8054,7 @@ ul.products li.product .find-out-more {
 }
 .ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2 span {
   display: inline-block;
+  max-width: 90%;
 }
 .ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2:before,
 .ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2:after {
@@ -8071,7 +8124,7 @@ ul.products li.product .find-out-more {
 .contact-us .right-content p,
 .contact-us .right-content h3 {
   font-size: 16px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .contact-us .right-content h3 {
   font-weight: 600;
@@ -8331,6 +8384,12 @@ ul.products li.product .find-out-more {
 					margin-bottom:10px;
 					display:inline-block;
 				}*/
+  }
+  .nav-container .main-menu .navbar-nav > li > a {
+    color: #000;
+  }
+  .nav-container .main-menu .navbar-nav > li.active > a {
+    font-weight: 500!important;
   }
   .nav-container .main-menu .navbar-nav > li:hover > a {
     font-weight: bold;

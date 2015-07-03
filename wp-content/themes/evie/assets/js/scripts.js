@@ -7515,9 +7515,24 @@ function initStayConnect(){
 		}
 	});
 	
+	$('.toggle_connect_link').click(function(){
+		if(!$('#connect-popup').is(':visible')){
+			$('#connect-popup').fadeIn();
+		}
+	});
+	
+	$('#connect_close').click(function(){
+		$('#connect-popup').fadeOut();
+	});
+	
 	$(document).click(function(event) { 
-		if(!$(event.target).closest('#connect-popup').length && event.target.id !== 'toggle_connect') {
-			$('#connect-popup').fadeOut();
+		if(!$(event.target).closest('#connect-popup').length && event.target.id === 'connect_close') {
+			if(event.target.id === 'toggle_connect' || event.target.className === 'toggle_connect_link' ){
+				console.log(0);
+				return;
+			}else{
+				$('#connect-popup').fadeOut();
+			}
 		}        
 	});
 }

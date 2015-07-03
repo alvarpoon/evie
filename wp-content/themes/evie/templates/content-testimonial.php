@@ -105,7 +105,14 @@
 			</div>
 			<div class="col-xs-6 noPadding right-link">
 				<ul>
-					<li><a href="#">SORT BY</a></li>
+					<li><a href="#">SORT BY</a>
+						<ul class="sub-menu">							
+							<li><label class="clearfix"><input type="radio" name="sort" class="sort_order" value="newest" />Newest</label></li>
+							<li><label class="clearfix"><input type="radio" name="sort" class="sort_order" value="oldest" />Oldest</label></li>
+							<li><label class="clearfix"><input type="radio" name="sort" class="sort_order" value="high" />High Rating</label></li>
+							<li><label class="clearfix"><input type="radio" name="sort" class="sort_order" value="low" />Low Rating</label></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
     	</div>
