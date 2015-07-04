@@ -62,7 +62,7 @@
 									<?
 									$years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts ORDER BY post_date DESC");
 									foreach($years as $year) : 
-										echo '<li><a href="'.$full_uri.'?category='.$blog_cat.'&y='.$year.'">'.$year.'</a></li>';
+										echo '<li class="year_link"><a href="'.$full_uri.'?category='.$blog_cat.'&y='.$year.'">'.$year.'</a></li>';
 									 endforeach; ?>
 							</ul>
 						</li>
@@ -71,7 +71,7 @@
 				<div class="social-media-container col-sm-7">area for social media</div>
 			</div>
 			<?php 
-				query_posts( 'post_type=post&post_status=publish&posts_per_page=1&paged='. get_query_var('paged').'&cat='.$blog_cat.'&year='.$blog_year );
+				query_posts( 'post_type=post&post_status=publish&posts_per_page=10&paged='. get_query_var('paged').'&cat='.$blog_cat.'&year='.$blog_year );
 			?>
 
 			<?php if (!have_posts()) : ?>

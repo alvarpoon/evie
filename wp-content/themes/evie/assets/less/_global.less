@@ -11,7 +11,8 @@ body{
 }
 
 .main{
-	padding-top:50px;
+	//padding-top:50px;
+	padding-top:90px;
 }
 
 #main-content .breadcrumb-container{
@@ -53,26 +54,35 @@ body{
 
 .headline-title-container{
 	margin-bottom:40px;
+	width:100%;
+	display:table;
 	.headline-title-left{
 		height:51px;
 		background:url(../img/sprites/bg_bestseller.png) no-repeat left;
+		float:none;
+		display:table-cell;
 	}
 	.headline-title-center{
 		height:51px;
 		font-size: 15px;
-  		padding: 6px 0 0;
-		/*font-size:22px;*/
-		line-height:240%;
+  		/*padding: 6px 0 0;
+		font-size:22px;
+		line-height:240%;*/
 		text-transform:uppercase;
 		text-align:center;
 		font-family: "Novecento";
 		font-weight: 600;
 		letter-spacing: 4px;
 		background:url(../img/sprites/bg_bestseller.png) no-repeat center;
+		float:none;
+		display:table-cell;
+		vertical-align:middle;
 	}
 	.headline-title-right{
 		height:51px;
 		background:url(../img/sprites/bg_bestseller.png) no-repeat right;
+		float:none;
+		display:table-cell;
 	}
 }
 
@@ -185,6 +195,9 @@ body{
 		padding-left:0;
 		& > li{
 			&:hover{
+				& > a{
+					font-weight:500;
+				}
 				.sub-menu{
 					display:block;
 				}
@@ -201,7 +214,8 @@ body{
 				text-transform:uppercase;
 				padding-bottom:20px;
 				font-family: "Novecento";
-				font-size: 13px;
+				//font-size: 13px;
+				font-size: 12px;
 				font-weight: 300;
 				letter-spacing: 1px;
 				text-decoration: none;
@@ -243,6 +257,11 @@ body{
 						}
 						&:hover{
 							font-weight:500;
+						}
+					}
+					&.year_link{
+						a{
+							font-size:13px;
 						}
 					}
 					label{

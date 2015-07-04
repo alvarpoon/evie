@@ -9,9 +9,14 @@
 	/*margin-top:40px;*/
 	.ingredient-item-container{
 		.ingreditent-row{
-			margin-bottom:40px;
+			//margin-bottom:40px;
+			img{
+				max-width:80%;
+				margin:0 auto;
+			}
 			.ingredient-content{
 				font-size:12px;
+				margin-bottom:40px;
 				h2{
 					text-align:center;
 					font-family: "PlayfairDisplay";
@@ -53,6 +58,19 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
+	.ingredient-section{
+		.ingredient-item-container{
+			.ingreditent-row{
+				margin-bottom:40px;
+				img{
+					max-width:100%;
+				}
+				.ingredient-content{
+					margin-bottom:0;
+				}
+			}
+		}
+	}
 }
 
 //===============================================================================
