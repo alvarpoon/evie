@@ -15,7 +15,22 @@
             <a class="navbar-brand" href="<?php echo home_url(); ?>/"><img class="img-responsive" src="<?=get_stylesheet_directory_uri()?>/assets/img/logo-top.png"></a>
          </div>
          <div class="nav-container clearfix">
-         	<nav class="collapse navbar-collapse main-menu" role="navigation">
+         	<?
+            	//new Roots_Nav_Walker()
+			?>
+            <nav class="collapse navbar-collapse main-menu hidden-md hidden-lg mobile-menu" role="navigation">
+				<?php //Main menu
+					if (has_nav_menu('primary_navigation')) :
+						wp_nav_menu(array(
+							'theme_location' => 'primary_navigation', 
+							'menu_class' => 'nav navbar-nav', 
+							'depth' => 3,
+							'walker' => new Roots_Nav_Walker()
+						));
+					endif;
+				?>
+            </nav>
+         	<nav class="collapse navbar-collapse main-menu " role="navigation">
 				<?php //Main menu
 					if (has_nav_menu('primary_navigation')) :
 					wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav', 'depth' => 3));

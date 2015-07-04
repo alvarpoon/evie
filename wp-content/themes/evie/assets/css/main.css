@@ -7784,6 +7784,7 @@ ul.products li.product .find-out-more {
   font-size: 14px;
   color: #000;
   text-transform: none;
+  line-height: 1.2;
 }
 .product-item-brief-wrapper .product-item-brief-content img {
   width: 100%;
@@ -8032,7 +8033,7 @@ ul.products li.product .find-out-more {
   background: #F1F1F1;
   text-align: center;
   padding: 5px 5%;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 }
 .blog-section .blog-post-item .blog-post-detail p {
   margin-bottom: 0;
@@ -8055,6 +8056,11 @@ ul.products li.product .find-out-more {
   text-decoration: underline;
   font-style: italic;
   color: #000;
+}
+@media (min-width: 992px) {
+  .blog-section .blog-post-item .blog-post-detail {
+    margin-bottom: 35px;
+  }
 }
 .ingredient-section {
   text-align: center;
@@ -8339,35 +8345,35 @@ ul.products li.product .find-out-more {
   background: #F5E8E5;
   color: #777576;
 }
-#menu-primary-navigation > li a {
+.navbar-nav > li a {
   font-family: "Novecento";
   font-weight: 300;
   letter-spacing: 1px;
   font-size: 13px;
 }
-#menu-primary-navigation > li a:hover {
+.navbar-nav > li a:hover {
   font-weight: 500;
   color: #000;
 }
-#menu-primary-navigation .sub-menu > li a {
+.navbar-nav .sub-menu > li a {
   font-family: "Novecento";
   font-weight: 300;
   letter-spacing: 1px;
   font-size: 11px;
 }
-#menu-primary-navigation .sub-menu > li a:hover {
+.navbar-nav .sub-menu > li a:hover {
   font-weight: 500;
   color: #000;
   text-decoration: none;
 }
-#menu-primary-navigation .sub-menu .sub-menu li a {
+.navbar-nav .sub-menu .sub-menu li a {
   font-family: "PlayfairDisplay";
   font-weight: 400;
   letter-spacing: 1px;
   font-size: 8.5px;
   text-transform: none;
 }
-#menu-primary-navigation .sub-menu .sub-menu li a:hover {
+.navbar-nav .sub-menu .sub-menu li a:hover {
   font-weight: 700;
   color: #000;
   text-decoration: none;
@@ -8427,9 +8433,6 @@ ul.products li.product .find-out-more {
   }
   .nav-container .main-menu .navbar-nav > li.active > a {
     font-weight: 500!important;
-  }
-  .nav-container .main-menu .navbar-nav > li:hover > a {
-    font-weight: bold;
   }
   .nav-container .main-menu .navbar-nav > li:hover .sub-menu {
     display: block;
@@ -8517,6 +8520,12 @@ ul.products li.product .find-out-more {
   }
 }
 @media (min-width: 992px) {
+  /*.mobile-menu{
+		&.navbar-collapse.collapse{
+			display:none!important;
+			
+		}
+	}*/
   .searchBox-container {
     top: 140px;
     right: 15px;
