@@ -115,6 +115,40 @@
 			}
 		}
 	}
+	.dropdown-submenu{
+		.dropdown-menu{
+			padding-left:25px;
+		}
+	}
+}
+
+.mobile-menu{
+	background:#F4E8E4;
+	.navbar-nav{
+		margin-top:0;
+		margin-bottom:0;
+		&>li{
+			border-bottom:1px solid #C4BFBE;
+			&:last-child{
+				border-bottom:none;
+			}
+			a{
+				text-transform:uppercase;
+				color:#000;
+			}
+		}
+		li{
+			&.active{
+				& > a{
+					background:#EED7D3;
+					color:#000;
+					&:focus, &:hover{
+						background:#EED7D3;
+					}
+				}
+			}
+		}
+	}
 }
 
 .language-menu{
@@ -147,8 +181,14 @@
 		font-weight:bold;
 	}	
 
-	.navbar-collapse.collapse{
+	/*.navbar-collapse.collapse{
 		display:inline-block!important;
+	}*/
+	
+	.desktop-menu.collapse{
+		display: block !important;
+		height: auto !important;
+		overflow: visible !important;
 	}
 
 	.navbar-brand{

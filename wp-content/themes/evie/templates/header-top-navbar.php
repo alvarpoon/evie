@@ -18,7 +18,7 @@
          	<?
             	//new Roots_Nav_Walker()
 			?>
-            <nav class="collapse navbar-collapse main-menu hidden-md hidden-lg mobile-menu" role="navigation">
+            <nav class="collapse navbar-collapse main-menu hidden-md hidden-lg mobile-menu row" role="navigation">
 				<?php //Main menu
 					if (has_nav_menu('primary_navigation')) :
 						wp_nav_menu(array(
@@ -30,7 +30,7 @@
 					endif;
 				?>
             </nav>
-         	<nav class="collapse navbar-collapse main-menu " role="navigation">
+         	<nav class="collapse navbar-collapse main-menu desktop-menu hidden-xs hidden-sm" role="navigation">
 				<?php //Main menu
 					if (has_nav_menu('primary_navigation')) :
 					wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav', 'depth' => 3));

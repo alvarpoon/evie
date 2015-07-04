@@ -27,6 +27,10 @@ class Roots_Nav_Walker extends Walker_Nav_Menu {
       $item_html = str_replace('<a', '<a class="dropdown-toggle" data-toggle="dropdown" data-target="#"', $item_html);
       $item_html = str_replace('</a>', ' <b class="caret"></b></a>', $item_html);
     }
+	elseif ($item->is_dropdown && ($depth === 1)) {
+      $item_html = str_replace('<a', '<a data-toggle="dropdown"', $item_html);
+      $item_html = str_replace('</a>', ' <b class="caret"></b></a>', $item_html);
+    }
     elseif (stristr($item_html, 'li class="divider')) {
       $item_html = preg_replace('/<a[^>]*>.*?<\/a>/iU', '', $item_html);
     }
@@ -41,8 +45,11 @@ class Roots_Nav_Walker extends Walker_Nav_Menu {
   function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
     $element->is_dropdown = ((!empty($children_elements[$element->ID]) && (($depth + 1) < $max_depth || ($max_depth === 0))));
 
-    if ($element->is_dropdown) {
+    if ($element->is_dropdown && ($depth === 0)) {
       $element->classes[] = 'dropdown';
+    }
+	elseif ($element->is_dropdown && ($depth === 1)) {
+      $element->classes[] = 'dropdown-submenu';
     }
 
     parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
