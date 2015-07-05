@@ -16,7 +16,11 @@
 			<a href="#" class="icon_pinterest" target="_blank"></a>
 			<a href="#" class="icon_twitter" target="_blank"></a>
 			<a href="#" class="icon_youtube" target="_blank"></a>
+			<a href="#" class="icon_googleplus" target="_blank"></a>
 			<a href="#" class="icon_linkin" target="_blank"></a>
+			<a href="#" class="icon_email" target="_blank"></a>
+			<a href="#" class="icon_line" target="_blank"></a>
+			<a href="#" class="icon_whatsapp" target="_blank"></a>
 			<!--<a href="#"><i class="fa fa-facebook-square"></i></a>
 			<a href="#"><i class="fa fa-instagram"></i></a>
 			<a href="#"><i class="fa fa-weibo"></i></a>

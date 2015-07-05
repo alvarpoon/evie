@@ -56,6 +56,19 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <div class="product-spec">
                         <?=get_field("spec",$post->ID);?>
                     </div>
+					<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5571773a13e7c073" async="async"></script>
+					<div class="addthis_toolbox addthis_default_style social-link-container">
+						<a class="addthis_button_facebook"></a>
+						<a class="addthis_button_sinaweibo"></a>
+						<a class="addthis_button_pinterest_share"></a>
+						<a class="addthis_button_twitter"></a>
+						<a class="addthis_button_google_plusone_badge" g:plusone:size="small" g:plusone:name="" g:plusone:href="https://plus.google.com/102383601500147943541/"></a> 					
+						<a class="addthis_button_linkedin"></a>
+						<a class="addthis_button_email"></a>
+						<div id="qqwb_share__" data-appkey="801387349" data-icon="2" data-counter="0" data-content="<? _e('tencent'); ?>"></div>	
+					</div>
+
             
                 </div><!-- .summary -->
             </div>

@@ -32,7 +32,7 @@
 	display:none;
 	//float:right;
 	font-size:12px;
-	margin-top:30px;
+	margin-top:22px;
 	padding-right:15px;
 	position:absolute;
 	top:0;
@@ -93,7 +93,7 @@
 	.sub-menu{
 		&>li a{
 			font-family: "Novecento";
-			font-weight: 300;
+			font-weight: 500;
 			letter-spacing: 1px;
 			font-size: 11px;
 			&:hover{
@@ -103,13 +103,13 @@
 			}
 		}
 		.sub-menu li a{
-			font-family: "PlayfairDisplay";
-			font-weight: 400;
+			//font-family: "PlayfairDisplay";
+			font-weight: 300;
 			letter-spacing: 1px;
-			font-size: 8.5px;
+			font-size: 11.5px;
 			text-transform: none;
 			&:hover{
-				font-weight: 700;
+				font-weight: 500;
 				color: #000;
 				text-decoration: none;
 			}
@@ -138,12 +138,46 @@
 			}
 		}
 		li{
+			.caret{
+				display:none;	
+			}
+			a{
+				color:#000;
+			}
 			&.active{
 				& > a{
 					background:#EED7D3;
 					color:#000;
 					&:focus, &:hover{
 						background:#EED7D3;
+						color:#000;
+					}
+				}
+			}
+			&.open{
+				& > a{
+					background:transparent;
+					color:#000;
+					&:focus, &:hover{
+						background:#EED7D3;
+						color:#000;
+					}
+				}
+				.dropdown-menu{
+					li{
+						a{
+							color:#000;
+						}
+					}
+					.open, .active{
+						& > a{
+							background:#EED7D3;
+							color:#000;
+							&:focus, &:hover{
+								background:#EED7D3;
+								color:#000;
+							}
+						}
 					}
 				}
 			}
@@ -174,7 +208,7 @@
 //===============================================================================
 @media (min-width: @screen-sm-min) {
 	.navbar-default{
-		height: 181px;
+		height: 151px;
 	}
 	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
 		background:none;
@@ -194,7 +228,7 @@
 	.navbar-brand{
 		width:auto;
 		height:auto;
-		padding-top: 35px;
+		padding-top: 22px;
 	}
 	.language-menu{
 		display:block;
@@ -208,7 +242,7 @@
 	}
 	
 	.nav-container{
-		  margin-top: 132px;
+		  margin-top: 99px;
 		.main-menu{
 			position:relative;
 			.navbar-nav{
@@ -313,7 +347,7 @@
 							float:none;
 							width:100%;
 							font-size:12px;
-							line-height: 120%;
+							line-height: 150%;
 						}
 					}
 				}
@@ -339,7 +373,7 @@
 		}
 	}*/
 	.searchBox-container{
-	    top: 140px;
+	    top: 113px;
 		right: 15px;
 		.search-field{
 			  width: 160px!important;
