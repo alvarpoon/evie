@@ -41,7 +41,7 @@
 				<div class="social-media-container col-sm-7">area for social media</div>
 			</div>	-->
 			<div class="under-title-link-container clearfix row">
-    	        <div class="col-sm-5">
+    	        <div class="col-xs-12 col-sm-5">
 					<ul>
 						<li>
 							<a href="javascript:;">CATEGORIES</a>
@@ -70,7 +70,7 @@
 				</div>
 				<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
 				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5571773a13e7c073" async="async"></script>
-				<div class="social-media-container col-sm-7 addthis_toolbox addthis_default_style social-link-container">
+				<div class="social-media-container col-xs-12 col-sm-7 addthis_toolbox addthis_default_style social-link-container">
 					<a class="addthis_button_facebook"></a>
 					<a class="addthis_button_sinaweibo"></a>
 					<a class="addthis_button_pinterest_share"></a>

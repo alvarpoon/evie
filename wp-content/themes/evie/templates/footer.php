@@ -53,6 +53,20 @@
   <h2><?=_e('Stay Connected');?></h2>
   <p><?=_e('Get the latest in skincare wardrobe right to your inbox, plus special offers!');?></p>
   <?=do_shortcode('[contact-form-7 id="105" title="Contact form 1"]'); ?>
+  <div class="social-link-container marginTop30">
+			<a href="#" class="icon_facebook" target="_blank"></a>
+			<a href="#" class="icon_instagram" target="_blank"></a>
+			<a href="#" class="icon_weibo" target="_blank"></a>
+			<a href="#" class="icon_wechat" target="_blank"></a>
+			<a href="#" class="icon_pinterest" target="_blank"></a>
+			<a href="#" class="icon_twitter" target="_blank"></a>
+			<a href="#" class="icon_youtube" target="_blank"></a>
+			<a href="#" class="icon_googleplus" target="_blank"></a>
+			<a href="#" class="icon_linkin" target="_blank"></a>
+			<a href="#" class="icon_email" target="_blank"></a>
+			<a href="#" class="icon_line" target="_blank"></a>
+			<a href="#" class="icon_whatsapp" target="_blank"></a>
+  </div>  
 </div>
 <?php wp_footer(); ?> 
 
