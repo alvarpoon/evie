@@ -7527,10 +7527,10 @@ footer .copyright a {
 }
 .home-banner #main-banner-container .custom-banner-prev {
   position: absolute;
-  left: 0;
-  top: 35%;
-  width: 90px;
-  height: 90px;
+  left: 4%;
+  top: 53%;
+  width: 53px;
+  height: 53px;
   background: url(../img/sprites/slider_arrow_left.png) no-repeat;
   z-index: 999;
   cursor: pointer;
@@ -7538,10 +7538,10 @@ footer .copyright a {
 }
 .home-banner #main-banner-container .custom-banner-next {
   position: absolute;
-  right: 0;
-  top: 35%;
-  width: 90px;
-  height: 90px;
+  right: 4%;
+  top: 53%;
+  width: 53px;
+  height: 53px;
   background: url(../img/sprites/slider_arrow_right.png) no-repeat;
   z-index: 999;
   cursor: pointer;
@@ -7633,10 +7633,10 @@ footer .copyright a {
     height: 211px;
   }
   .home-banner #main-banner-container .custom-banner-prev {
-    top: 35%;
+    top: 53%;
   }
   .home-banner #main-banner-container .custom-banner-next {
-    top: 35%;
+    top: 53%;
   }
   .home-banner #main-banner-container:hover .custom-banner-prev {
     display: block;
