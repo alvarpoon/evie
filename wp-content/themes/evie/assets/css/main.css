@@ -7058,6 +7058,7 @@ body {
   float: none;
   display: table-cell;
   vertical-align: middle;
+  padding: 10px 0;
 }
 .headline-title-container .headline-title-right {
   height: 51px;
@@ -7287,6 +7288,7 @@ body {
     font-size: 22px;
     padding-top: inherit;
     padding-bottom: inherit;
+    padding: 0;
   }
 }
 @media (min-width: 992px) {
@@ -7623,10 +7625,12 @@ footer .copyright a {
     height: 211px;
   }
   .home-banner #main-banner-container .custom-banner-prev {
-    top: 53%;
+    top: 50%;
+    margin-top: -26px;
   }
   .home-banner #main-banner-container .custom-banner-next {
-    top: 53%;
+    top: 50%;
+    margin-top: -26px;
   }
   .home-banner #main-banner-container:hover .custom-banner-prev {
     display: block;
@@ -7955,6 +7959,7 @@ ul.products li.product .find-out-more {
   margin-top: 0;
   font-family: "Aileron";
   font-weight: 600;
+  letter-spacing: 1px;
 }
 .promotion-section .promotion_2_container .promotion_content_container,
 .promotion-section .promotion_3_container .promotion_content_container {
@@ -8640,6 +8645,11 @@ ul.products li.product .find-out-more {
   }
   .searchBox-container .search-field {
     width: 230px!important;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-nav .open .dropdown-menu > li > a {
+    padding: 5px 15px 5px 45px;
   }
 }
 /* 
