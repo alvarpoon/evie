@@ -8546,6 +8546,7 @@ ul.products li.product .find-out-more {
   }
   .nav-container .main-menu {
     position: relative;
+    margin-top: 1px;
   }
   .nav-container .main-menu .navbar-nav > li {
     text-transform: uppercase;
@@ -8591,7 +8592,7 @@ ul.products li.product .find-out-more {
     background: #F5E8E5;
     -webkit-box-shadow: 0px 9px 18px -7px rgba(87, 84, 87, 0.7);
     box-shadow: 0px 9px 18px -7px rgba(87, 84, 87, 0.7);
-    margin-top: -1px;
+    margin-top: -4px;
   }
   .nav-container .main-menu .navbar-nav > li .sub-menu:after {
     font-size: 0px;
@@ -8644,6 +8645,10 @@ ul.products li.product .find-out-more {
     font-size: 12px;
     line-height: 150%;
   }
+  .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 20px;
+  }
 }
 @media (min-width: 992px) {
   /*.mobile-menu{
@@ -8653,7 +8658,7 @@ ul.products li.product .find-out-more {
 		}
 	}*/
   .searchBox-container {
-    top: 113px;
+    top: 109px;
     right: 15px;
   }
   .searchBox-container .search-field {
