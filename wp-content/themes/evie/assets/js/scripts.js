@@ -7578,9 +7578,12 @@ function addItem(arr, val){
 function updateCheckBoxValue(){
 	var current_category = [];
 	var current_concern = [];
+	var current_sort = '';
 	var category_str = '';
 	var concern_str = '';
+	var sort_str = '';
 	
+	current_sort = getUrlVars().sorting;
 	var current_category_str = getUrlVars().product_cat;
 	var current_concern_str = getUrlVars().concern_cat;
 	
@@ -7591,6 +7594,18 @@ function updateCheckBoxValue(){
 	}
 	if(current_concern_str !== '' && typeof current_concern_str !== 'undefined'){
 		current_concern = current_concern_str.split(',');
+	}
+	
+	function initRadio(){
+		$('.sort_order').each(function(){
+			$(this).prop('checked', false);
+		});
+		
+		$('.sort_order').each(function(){
+			if($(this).val() === current_sort){
+				$(this).prop('checked', true);	
+			}
+		});
 	}
 	
 	function initChecked(arr, classname){
@@ -7620,8 +7635,10 @@ function updateCheckBoxValue(){
 		}
 	}
 	
+	initRadio();
 	initChecked(current_category, 'category_filter');
 	initChecked(current_concern, 'concern_filter');
+	
 	
 	checkAllActive('category_filter', 'category_all');
 	checkAllActive('concern_filter', 'concern_all');
@@ -7637,18 +7654,11 @@ function updateCheckBoxValue(){
 				
 				if($(this).prop('checked')){
 					$('.category_filter').each(function(){
-						//$(this).prop('checked', true);	
 						addItem(current_category, $(this).val());
 					});
 					updateFilterStr();
 				}else{
 					$('.category_filter').each(function(){
-						//$(this).prop('checked', false);	
-						
-						/*var removeItem = $(this).val();
-						current_category = jQuery.grep(current_category, function(value) {
-						  return value !== removeItem;
-						});*/
 						current_category = [0];
 					});
 					updateFilterStr();
@@ -7687,13 +7697,7 @@ function updateCheckBoxValue(){
 					updateFilterStr();
 				}else{				
 					$('.concern_filter').each(function(){
-						$(this).prop('checked', false);	
-						
-						/*var removeItem = $(this).val();
-						current_concern = jQuery.grep(current_concern, function(value) {
-						  return value !== removeItem;
-						});*/
-						
+						$(this).prop('checked', false);
 						current_concern = [0];
 					});
 					updateFilterStr();
@@ -7715,9 +7719,14 @@ function updateCheckBoxValue(){
 		});
 	});
 	
+	$('input[name=sort_order]:radio').change(function(){
+		updateFilterStr();
+	});
+	
 	function updateFilterStr(){
 		category_str = '';
 		concern_str = '';
+		sort_str = '';
 		for(var i=0; i<current_category.length; i++){
 			if(current_category[i] !== ''){
 				category_str += current_category[i]+',';
@@ -7732,7 +7741,9 @@ function updateCheckBoxValue(){
 		}
 		concern_str = concern_str.slice(0,-1);
 		
-		var url = window.location.origin + window.location.pathname + '?product_cat='+category_str + '&concern_cat=' + concern_str;
+		sort_str = $('input[name=sort_order]:checked').val();
+		
+		var url = window.location.origin + window.location.pathname + '?product_cat='+category_str + '&concern_cat=' + concern_str + '&sorting=' + sort_str;
 		window.location.href = url;
 	}	
 }
