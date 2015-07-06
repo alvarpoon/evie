@@ -13,9 +13,10 @@
 		$blog_year = '';
 	}	
 	
-	$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
-	$full_uri = 'http://'.$_SERVER['HTTP_HOST'].$uri_parts[0];
-	
+	//$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
+	//$full_uri = 'http://'.$_SERVER['HTTP_HOST'].$uri_parts[0];
+	$full_uri = get_permalink();
+
 	$args = array(
 		'orderby' => 'name',
 		'parent' => 0

@@ -226,8 +226,14 @@ function updateCheckBoxValue(){
 		});
 		
 		$('.sort_order').each(function(){
-			if($(this).val() === current_sort){
-				$(this).prop('checked', true);	
+			if(current_sort !== '' && typeof current_sort !== 'undefined'){
+				if($(this).val() === current_sort){
+					$(this).prop('checked', true);	
+				}
+			}else{
+				if($(this).val() === 'newest'){	
+					$(this).prop('checked', true);	
+				}
 			}
 		});
 	}
@@ -366,8 +372,9 @@ function updateCheckBoxValue(){
 		concern_str = concern_str.slice(0,-1);
 		
 		sort_str = $('input[name=sort_order]:checked').val();
-		
-		var url = window.location.origin + window.location.pathname + '?product_cat='+category_str + '&concern_cat=' + concern_str + '&sorting=' + sort_str;
+		//console.log(full_url);
+		//var url = window.location.origin + window.location.pathname + '?product_cat='+category_str + '&concern_cat=' + concern_str + '&sorting=' + sort_str;
+		var url = full_url + '?product_cat='+category_str + '&concern_cat=' + concern_str + '&sorting=' + sort_str;
 		window.location.href = url;
 	}	
 }

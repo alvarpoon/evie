@@ -144,9 +144,14 @@
 				$order_val = '';
 				$orderby_val = '';
 				
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				
 				switch ($sort_order) {
 					case "newest":
 						$testimonal_args = array(
+							'posts_per_page' => 20,
+							'paged' => $paged,
+							'numberposts' => -1, 
 							'post_type' => 'testimonial',
 							'order' => 'DESC', 
 							'orderby' => 'date', 
@@ -161,6 +166,9 @@
 						break;
 					case "oldest":						
 						$testimonal_args = array(
+							'posts_per_page' => 20,
+							'paged' => $paged,
+							'numberposts' => -1, 
 							'post_type' => 'testimonial',
 							'order' => 'ASC', 
 							'orderby' => 'date', 
@@ -175,6 +183,9 @@
 						break;
 					case "high":						
 						$testimonal_args = array(
+							'posts_per_page' => 20,
+							'paged' => $paged,
+							'numberposts' => -1, 
 							'post_type' => 'testimonial',
 							'order' => 'DESC', 
 							'meta_key' => 'rating',
@@ -191,6 +202,9 @@
 						break;
 					case "low":
 						$testimonal_args = array(
+							'posts_per_page' => 20,
+							'paged' => $paged,
+							'numberposts' => -1, 
 							'post_type' => 'testimonial',
 							'order' => 'ASC', 
 							'meta_key' => 'rating',
@@ -206,6 +220,9 @@
 						break;
 					default:				
 						$testimonal_args = array(
+							'posts_per_page' => 20,
+							'paged' => $paged,
+							'numberposts' => -1, 
 							'post_type' => 'testimonial',
 							'order' => 'DESC', 
 							'orderby' => 'date', 
@@ -246,7 +263,21 @@
                         </div>
                     </div>
                     
-				<?php endwhile;?>
+				<?php 
+				endwhile;
+				echo '<div class="pagination clearfix">';
+				echo '<div class="previous">';
+				next_posts_link( 'Previous', $loop ->max_num_pages );
+				echo '</div>';
+				echo '<div class="next">';
+				previous_posts_link( 'Next' ); 
+				echo '</div></div>';			
+				wp_reset_postdata();
+				?>
         </div>
    	</div>
 </section>
+
+<script>
+	var full_url = '<?=get_permalink(); ?>';
+</script>

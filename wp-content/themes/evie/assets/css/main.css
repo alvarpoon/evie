@@ -7900,16 +7900,26 @@ ul.products li.product .find-out-more {
 .media-coverage-section .media-item-container {
   margin-bottom: 40px;
 }
-.media-coverage-section .media-item-container .img-responsive {
+.media-coverage-section .media-item-container .media-item {
+  float: left;
+  width: 100%;
+  padding: 0 15px;
+}
+.media-coverage-section .media-item-container .media-item .img-responsive {
   max-width: none;
   width: 100%;
 }
-.media-coverage-section .media-item-container .media-headline {
+.media-coverage-section .media-item-container .media-item .media-headline {
   margin: 10px 0;
   height: 65px;
   font-size: 13px;
   font-family: "PlayfairDisplay";
   font-weight: 400;
+}
+@media (min-width: 768px) {
+  .media-coverage-section .media-item-container .media-item {
+    width: 20%;
+  }
 }
 .promotion-section {
   text-align: center;

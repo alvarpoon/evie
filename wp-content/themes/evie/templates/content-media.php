@@ -26,58 +26,22 @@
 				
 				//echo $paged;
 				
-				if ( $postslist ->have_posts() ) :
+				if ( $postslist ->have_posts() ) :					
 					while ( $postslist ->have_posts() ) : $postslist ->the_post(); 	
 						$url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
 						$media_image = get_field("popup_image",$post->ID);
 						if($count%5 == 1){
-							echo '<div class="col-sm-7 five-three"><div class="row">';
+							echo '<div class="row">';
 						}
-						if($count%5 < 4 && $count%5 != 0){
-							echo '<div class="col-sm-4"><a class="fancybox-effects-c" href="'.$media_image['url'].'"><img class="img-responsive" src="'.$url[0].'" /></a><div class="media-headline">'.$post->post_title.'</div></div>';
-						}
-						if($count%5 == 3){
-							echo '</div></div>';
-							echo '<div class="col-sm-5 five-two"><div class="row">';	
-						}
-						if($count%5 == 4){
-							echo '<div class="col-sm-6"><a class="fancybox-effects-c" href="'.$media_image['url'].'"><img class="img-responsive" src="'.$url[0].'" /></a><div class="media-headline">'.$post->post_title.'</div></div>';
-						}
+						
+						echo '<div class="media-item"><a class="fancybox-effects-c" href="'.$media_image['url'].'"><img class="img-responsive" src="'.$url[0].'" /></a><div class="media-headline">'.$post->post_title.'</div></div>';
+						
 						if($count%5 == 0){
-							echo '<div class="col-sm-6"><a class="fancybox-effects-c" href="'.$media_image['url'].'"><img class="img-responsive" src="'.$url[0].'" /></a><div class="media-headline">'.$post->post_title.'</div></div>';
-							echo '</div></div>';
+							echo '</div>';
 						}
 						$count++;
-					endwhile;  
-					//echo $count;
-				
-				
-				
-				
-           		/*foreach( $results as $result ) :
-           			$url = wp_get_attachment_image_src( get_post_thumbnail_id($result->ID), 'full');
-            		//$page_url = get_field("page_link",$result->ID);
-					//print_r($result);
-					$media_image = get_field("popup_image",$result->ID);
-					if($count%5 == 1){
-						echo '<div class="col-sm-7 five-three"><div class="row">';
-					}
-					if($count%5 < 4 && $count%5 != 0){
-						echo '<div class="col-sm-4"><a class="fancybox-effects-c" href="'.$media_image['url'].'"><img class="img-responsive" src="'.$url[0].'" /></a><div class="media-headline">'.$result->post_title.'</div></div>';
-					}
-					if($count%5 == 3){
-						echo '</div></div>';
-						echo '<div class="col-sm-5 five-two"><div class="row">';	
-					}
-					if($count%5 == 4){
-						echo '<div class="col-sm-6"><a class="fancybox-effects-c" href="'.$media_image['url'].'"><img class="img-responsive" src="'.$url[0].'" /></a><div class="media-headline">'.$result->post_title.'</div></div>';
-					}
-					if($count%5 == 0){
-						echo '<div class="col-sm-6"><a class="fancybox-effects-c" href="'.$media_image['url'].'"><img class="img-responsive" src="'.$url[0].'" /></a><div class="media-headline">'.$result->post_title.'</div></div>';
-						echo '</div></div>';
-					}
-					$count++;
-            	endforeach; */?>
+					endwhile;
+			?>
       </div>
 	  <?
 			  	echo '<div class="pagination clearfix">';
