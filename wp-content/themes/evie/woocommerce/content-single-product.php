@@ -81,11 +81,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <div class="clearfix">
                     <div class="product-other-detail-item col-xs-12 col-sm-6 col-md-6">
                         <h2>ingredients</h2>
-                        <?=get_field("how_to_use",$post->ID)?>
+                        <?=get_field("ingredients",$post->ID)?>
                     </div>
                     <div class="product-other-detail-item col-xs-12 col-sm-6 col-md-6">
                         <h2>how to use</h2>
-                        <?=get_field("ingredients",$post->ID)?>
+                        <?=get_field("how_to_use",$post->ID)?>
                     </div>
                 </div>
                 <div class="clearfix">

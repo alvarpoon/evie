@@ -69,6 +69,10 @@ if ( ! defined( 'ABSPATH' ) ) {
         
                     <?php wc_get_template( 'loop/no-products-found.php' ); ?>
     
+            <?php else: ?>
+
+                <p style="  margin-top: 40px;">Coming soon…</p>
+
             <?php endif; ?>
    
         </div>

@@ -42,6 +42,10 @@ var Roots = {
             }
           }
         });
+
+        $('#menu-footer-navigation .no-hover>a').click(function( event ){
+        	event.preventDefault();
+        });
 		
 		/**
 		  * NAME: Bootstrap 3 Triple Nested Sub-Menus

@@ -16,8 +16,8 @@
 					'numberposts' => -1, 
 					'post_type' => 'media', 
 					'post_status' => 'publish', 
-					'order' => 'ASC', 
-					'orderby' => 'menu_order', 
+					'order' => 'DESC', 
+					'orderby' => 'date', 
 					'suppress_filters' => 0
 				);
             	//$results = get_posts( $args );

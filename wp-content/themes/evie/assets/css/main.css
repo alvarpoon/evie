@@ -7069,6 +7069,10 @@ body {
   float: none;
   display: table-cell;
 }
+.no-hover > a:hover {
+  text-decoration: none;
+  cursor: default;
+}
 .img-border {
   border: 1px solid #E1E1E1;
 }
@@ -7675,6 +7679,7 @@ footer .copyright a {
 .product-category-section {
   margin-top: 40px;
   text-align: center;
+  min-height: 300px;
 }
 .product-category-section .headline-title-container {
   margin-bottom: 10px;

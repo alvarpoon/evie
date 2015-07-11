@@ -36,7 +36,9 @@
 	  	<div class="col-xs-12 col-sm-8 col-sm-pull-4 col-md-10 col-md-pull-2 col-lg-8 col-lg-pull-4 footer-link-container">
 	    <?
 		    //$id = array('en'=>4,'zh-hant'=>16,'zh-hans'=>14);
-		    wp_nav_menu(array('menu' => 'footer_navigation','menu_class' => 'footer_link clearfix', 'depth' => 2));
+	    if (has_nav_menu('footer_navigation')){
+	    	wp_nav_menu(array('theme_location' => 'footer_navigation', 'menu_class' => 'footer_link clearfix', 'depth' => 2));
+	    }
 	    ?>
 		</div>
 	</div>
@@ -52,6 +54,7 @@
   <a href="javascript:;" id="connect_close"><i class="fa fa-times"></i></a>
   <h2><?=_e('Stay Connected');?></h2>
   <p><?=_e('Get the latest in skincare wardrobe right to your inbox, plus special offers!');?></p>
+  <small><?=_e('Please enter your email and / or mobile');?></small>
   <?=do_shortcode('[contact-form-7 id="105" title="Contact form 1"]'); ?>
   <div class="social-link-container marginTop30">
 			<a href="#" class="icon_facebook" target="_blank"></a>
