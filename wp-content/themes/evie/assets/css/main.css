@@ -7446,7 +7446,7 @@ footer .copyright a {
   background-position: -204px 0;
 }
 .social-link-container a.icon_googleplus,
-.social-link-container a.addthis_button_google_plusone_badge {
+.social-link-container a.addthis_button_google_plusone_share {
   background-position: -237px 0;
 }
 .social-link-container a.icon_linkin,
@@ -7525,18 +7525,7 @@ footer .copyright a {
   max-width: none;
   width: 100%;
 }
-.home-banner #main-banner-container {
-  /*&:hover{
-			.custom-banner-prev{
-				display:block;	
-			}
-			
-			.custom-banner-next{
-				display:block;
-			}
-		}*/
-}
-.home-banner #main-banner-container .custom-banner-prev {
+.home-banner .main-banner-container .custom-banner-prev {
   position: absolute;
   left: 4%;
   top: 53%;
@@ -7547,7 +7536,7 @@ footer .copyright a {
   cursor: pointer;
   display: none;
 }
-.home-banner #main-banner-container .custom-banner-next {
+.home-banner .main-banner-container .custom-banner-next {
   position: absolute;
   right: 4%;
   top: 53%;
@@ -7557,6 +7546,12 @@ footer .copyright a {
   z-index: 999;
   cursor: pointer;
   display: none;
+}
+.home-banner .main-banner-container:hover .custom-banner-prev {
+  display: block;
+}
+.home-banner .main-banner-container:hover .custom-banner-next {
+  display: block;
 }
 .promotion-banner {
   margin-top: 52px;

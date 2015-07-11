@@ -63,7 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<a class="addthis_button_sinaweibo"></a>
 						<a class="addthis_button_pinterest_share"></a>
 						<a class="addthis_button_twitter"></a>
-						<a class="addthis_button_google_plusone_badge" g:plusone:size="small" g:plusone:name="" g:plusone:href="https://plus.google.com/102383601500147943541/"></a> 					
+						<a class="addthis_button_google_plusone_share"></a> 					
 						<a class="addthis_button_linkedin"></a>
 						<a class="addthis_button_email"></a>
 						<div id="qqwb_share__" data-appkey="801387349" data-icon="2" data-counter="0" data-content="<? _e('tencent'); ?>"></div>	

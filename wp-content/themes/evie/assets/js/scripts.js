@@ -7460,11 +7460,31 @@ var Roots = {
 					}
 				}
 			});
-			$('.custom-banner-prev').on('click',function(){
+			$('.desktop-banner-prev').on('click',function(){
 				owl.trigger('prev.owl.carousel');
 			});
-			$('.custom-banner-next').on('click',function(){
+			$('.desktop-banner-next').on('click',function(){
 				owl.trigger('next.owl.carousel');
+			});
+			
+			var mobile_owl = $("#main-mobile-banner");
+			mobile_owl.owlCarousel({
+				loop:true,
+				nav:true,
+				autoplay:true,
+				autoplayTimeout:5000,
+				autoplayHoverPause:true,
+				responsive:{
+					0:{
+						items:1
+					}
+				}
+			});
+			$('.mobile-banner-prev').on('click',function(){
+				mobile_owl.trigger('prev.owl.carousel');
+			});
+			$('.mobile-banner-next').on('click',function(){
+				mobile_owl.trigger('next.owl.carousel');
 			});
 	  });
     }
