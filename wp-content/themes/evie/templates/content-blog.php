@@ -13,9 +13,10 @@
 		$blog_year = '';
 	}	
 	
-	$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
-	$full_uri = 'http://'.$_SERVER['HTTP_HOST'].$uri_parts[0];
-	
+	//$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
+	//$full_uri = 'http://'.$_SERVER['HTTP_HOST'].$uri_parts[0];
+	$full_uri = get_permalink();
+
 	$args = array(
 		'orderby' => 'name',
 		'parent' => 0
@@ -41,7 +42,7 @@
 				<div class="social-media-container col-sm-7">area for social media</div>
 			</div>	-->
 			<div class="under-title-link-container clearfix row">
-    	        <div class="col-sm-5">
+    	        <div class="col-xs-12 col-sm-5">
 					<ul>
 						<li>
 							<a href="javascript:;">CATEGORIES</a>
@@ -68,7 +69,18 @@
 						</li>
 					</ul>
 				</div>
-				<div class="social-media-container col-sm-7">area for social media</div>
+				<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5571773a13e7c073" async="async"></script>
+				<div class="social-media-container col-xs-12 col-sm-7 addthis_toolbox addthis_default_style social-link-container">
+					<a class="addthis_button_facebook"></a>
+					<a class="addthis_button_sinaweibo"></a>
+					<a class="addthis_button_pinterest_share"></a>
+				    <a class="addthis_button_twitter"></a>
+					<a class="addthis_button_google_plusone_badge" g:plusone:size="small" g:plusone:name="" g:plusone:href="https://plus.google.com/102383601500147943541/"></a> 					
+					<a class="addthis_button_linkedin"></a>
+					<a class="addthis_button_email"></a>
+					<div id="qqwb_share__" data-appkey="801387349" data-icon="2" data-counter="0" data-content="<? _e('tencent'); ?>"></div>	
+				</div>
 			</div>
 			<?php 
 				query_posts( 'post_type=post&post_status=publish&posts_per_page=10&paged='. get_query_var('paged').'&cat='.$blog_cat.'&year='.$blog_year );

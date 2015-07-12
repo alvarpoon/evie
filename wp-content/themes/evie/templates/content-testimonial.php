@@ -12,6 +12,12 @@
 		$c_cat = '';
 	}
 	
+	if( isset($_GET['sorting']) ){
+		$sort_order = $_GET['sorting'];
+	}else{
+		$sort_order = '';
+	}
+	
 	
 	$product_cat = 29;
 	$product_result = get_term_by('id', $product_cat,'testimonial_category');
@@ -106,11 +112,11 @@
 			<div class="col-xs-6 noPadding right-link">
 				<ul>
 					<li><a href="#">SORT BY</a>
-						<ul class="sub-menu">							
-							<li><label class="clearfix"><input type="radio" name="sort" class="sort_order" value="newest" />Newest</label></li>
-							<li><label class="clearfix"><input type="radio" name="sort" class="sort_order" value="oldest" />Oldest</label></li>
-							<li><label class="clearfix"><input type="radio" name="sort" class="sort_order" value="high" />High Rating</label></li>
-							<li><label class="clearfix"><input type="radio" name="sort" class="sort_order" value="low" />Low Rating</label></li>
+						<ul class="sub-menu sort-order-container">
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="newest" checked="checked" />Newest</label></li>
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="oldest" />Oldest</label></li>
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="high" />High Rating</label></li>
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="low" />Low Rating</label></li>
 						</ul>
 					</li>
 				</ul>
@@ -135,20 +141,107 @@
 				$concern_query_arr = explode(',',$c_cat);
 				$terms_array = array_merge($product_query_arr, $concern_query_arr);
 				
+				$order_val = '';
+				$orderby_val = '';
+				
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				
+				switch ($sort_order) {
+					case "newest":
+						$testimonal_args = array(
+							'posts_per_page' => 20,
+							'paged' => $paged,
+							'numberposts' => -1, 
+							'post_type' => 'testimonial',
+							'order' => 'DESC', 
+							'orderby' => 'date', 
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'testimonial_category',
+									'field' => 'cat_ID',
+									'terms' => $terms_array
+								)
+							)
+						);
+						break;
+					case "oldest":						
+						$testimonal_args = array(
+							'posts_per_page' => 20,
+							'paged' => $paged,
+							'numberposts' => -1, 
+							'post_type' => 'testimonial',
+							'order' => 'ASC', 
+							'orderby' => 'date', 
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'testimonial_category',
+									'field' => 'cat_ID',
+									'terms' => $terms_array
+								)
+							)
+						);
+						break;
+					case "high":						
+						$testimonal_args = array(
+							'posts_per_page' => 20,
+							'paged' => $paged,
+							'numberposts' => -1, 
+							'post_type' => 'testimonial',
+							'order' => 'DESC', 
+							'meta_key' => 'rating',
+							'orderby' => 'meta_value', 
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'testimonial_category',
+									'field' => 'cat_ID',
+									'terms' => $terms_array
+								)
+							)
+						);
+						
+						break;
+					case "low":
+						$testimonal_args = array(
+							'posts_per_page' => 20,
+							'paged' => $paged,
+							'numberposts' => -1, 
+							'post_type' => 'testimonial',
+							'order' => 'ASC', 
+							'meta_key' => 'rating',
+							'orderby' => 'meta_value', 
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'testimonial_category',
+									'field' => 'cat_ID',
+									'terms' => $terms_array
+								)
+							)
+						);
+						break;
+					default:				
+						$testimonal_args = array(
+							'posts_per_page' => 20,
+							'paged' => $paged,
+							'numberposts' => -1, 
+							'post_type' => 'testimonial',
+							'order' => 'DESC', 
+							'orderby' => 'date', 
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'testimonial_category',
+									'field' => 'cat_ID',
+									'terms' => $terms_array
+								)
+							)
+						);
+						
+				}
+				
 				//$myCategory = get_term_by('id', 33, 'category');
 				
 				//echo $myCategory;
 				
-				$testimonal_args = array(
-					'post_type' => 'testimonial',
-					'tax_query' => array(
-						array(
-							'taxonomy' => 'testimonial_category',
-							'field' => 'cat_ID',
-							'terms' => $terms_array
-						)
-					)
-				);
+				
 				$loop = new WP_Query( $testimonal_args );
                 
 				while ( $loop->have_posts() ) : $loop->the_post();
@@ -170,7 +263,21 @@
                         </div>
                     </div>
                     
-				<?php endwhile;?>
+				<?php 
+				endwhile;
+				echo '<div class="pagination clearfix">';
+				echo '<div class="previous">';
+				next_posts_link( 'Previous', $loop ->max_num_pages );
+				echo '</div>';
+				echo '<div class="next">';
+				previous_posts_link( 'Next' ); 
+				echo '</div></div>';			
+				wp_reset_postdata();
+				?>
         </div>
    	</div>
 </section>
+
+<script>
+	var full_url = '<?=get_permalink(); ?>';
+</script>

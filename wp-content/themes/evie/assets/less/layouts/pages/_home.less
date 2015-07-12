@@ -18,16 +18,20 @@
 	}
 	
 	.owl-controls{
-		margin-top:50px!important;
+		//margin-top:50px!important;
+		position:absolute;
+		width:100%;
+		bottom:10px;
 		.owl-nav{
 			display:none;
 		}
 		.owl-dots{
 			.owl-dot{
 				span{
-					background-color:#ECD1DA;
+					background-color:#85878A;
 					width:8px;
 					height:8px;
+					margin:5px 12px;
 				}
 				&.active span, &:hover span{
 					background-color:#EA8B9C;
@@ -41,13 +45,13 @@
 			width:100%;
 		}
 	}
-	#main-banner-container{
+	.main-banner-container{
 		.custom-banner-prev{
 			position:absolute;
-			left:0;
-			top:35%;
-			width:90px;
-			height:90px;
+			left:4%;
+			top:53%;
+			width:53px;
+			height:53px;
 			background:url(../img/sprites/slider_arrow_left.png) no-repeat;
 			z-index:999;
 			cursor:pointer;
@@ -55,16 +59,16 @@
 		}
 		.custom-banner-next{
 			position:absolute;
-			right:0;
-			top:35%;
-			width:90px;
-			height:90px;
+			right:4%;
+			top:53%;
+			width:53px;
+			height:53px;
 			background:url(../img/sprites/slider_arrow_right.png) no-repeat;
 			z-index:999;
 			cursor:pointer;
 			display:none;
 		}
-		/*&:hover{
+		&:hover{
 			.custom-banner-prev{
 				display:block;	
 			}
@@ -72,12 +76,12 @@
 			.custom-banner-next{
 				display:block;
 			}
-		}*/
+		}
 	}
 }
 
 .promotion-banner{
-	margin-top:27px;
+	margin-top:52px;
 	.img-responsive{
 			max-width:none;
 			width:100%;
@@ -138,13 +142,32 @@
 @media (min-width: @screen-sm-min) {
 	.home{
 		.main{
-			padding-top: 181px;
+			padding-top: 151px;
 		}
 	}
 	.home-banner{
 		&.container{
 			width:100%;
 			//max-width:1360px;
+		}
+		#main-banner-container{
+			.custom-banner-prev{
+				top:50%;
+				margin-top:-27px;
+			}
+			.custom-banner-next{
+				top:50%;
+				margin-top:-27px;
+			}
+			&:hover{
+				.custom-banner-prev{
+					display:block;	
+				}
+				
+				.custom-banner-next{
+					display:block;
+				}
+			}
 		}
 	}
 	.promotion-banner{
@@ -185,10 +208,12 @@
 	.home-banner{
 		#main-banner-container{
 			.custom-banner-prev{
-				top:35%;
+				top:50%;
+				margin-top: -26px;
 			}
 			.custom-banner-next{
-				top:35%;
+				top:50%;
+				margin-top: -26px;
 			}
 			&:hover{
 				.custom-banner-prev{
@@ -213,25 +238,6 @@
 	.promotion-banner{
 		.well-feature{
 			height:260px;
-		}
-	}
-	.home-banner{
-		#main-banner-container{
-			.custom-banner-prev{
-				top:40%;
-			}
-			.custom-banner-next{
-				top:40%;
-			}
-			&:hover{
-				.custom-banner-prev{
-					display:block;	
-				}
-				
-				.custom-banner-next{
-					display:block;
-				}
-			}
 		}
 	}
 }

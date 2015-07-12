@@ -9,16 +9,21 @@
 	/*margin-top:40px;*/
 	.media-item-container{
 		margin-bottom:40px;
-		.img-responsive{
-			max-width:none;
+		.media-item{
+			float:left;
 			width:100%;
-		}
-		.media-headline{
-			margin:10px 0;
-			height:65px;
-			font-size:13px;
-			font-family: "PlayfairDisplay";
-			font-weight: 400;
+			padding:0 15px;
+			.img-responsive{
+				max-width:none;
+				width:100%;
+			}
+			.media-headline{
+				margin:10px 0;
+				height:65px;
+				font-size:13px;
+				font-family: "PlayfairDisplay";
+				font-weight: 400;
+			}
 		}
 	}
 }
@@ -29,6 +34,13 @@
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-sm-min) {
+	.media-coverage-section{
+		.media-item-container{
+			.media-item{
+				width:20%;
+			}
+		}
+	}
 }
 
 //===============================================================================

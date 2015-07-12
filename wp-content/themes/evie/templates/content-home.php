@@ -1,6 +1,6 @@
 <section class="home-banner container">
 	<div class="row">
-        <div class="col-md-12 col-lg-12 noPadding" id="main-banner-container" >
+        <div class="col-md-12 col-lg-12 noPadding hidden-xs visible-sm visible-md visible-lg main-banner-container">
             <div id="main-banner">
             <?
                 $args = array( 'numberposts' => -1, 'post_type' => 'mainpage_banner', 'post_status' => 'publish', 'order' => 'ASC', 'orderby' => 'menu_order', 'suppress_filters' => 0);
@@ -20,8 +20,32 @@
                 </div>
             <? endforeach;?>
             </div>
-			<div class="custom-banner-next"></div>			
-			<div class="custom-banner-prev"></div>
+			<div class="custom-banner-next desktop-banner-next"></div>
+			<div class="custom-banner-prev desktop-banner-prev"></div>
+        </div>
+        
+        <div class="col-md-12 col-lg-12 noPadding visible-xs hidden-sm hidden-md hidden-lg main-banner-container">
+            <div id="main-mobile-banner">
+            <?
+                $args = array( 'numberposts' => -1, 'post_type' => 'mainpage_banner', 'post_status' => 'publish', 'order' => 'ASC', 'orderby' => 'menu_order', 'suppress_filters' => 0);
+              $results = get_posts( $args );
+              foreach( $results as $result ) :
+                //$url = wp_get_attachment_image_src( get_post_thumbnail_id($result->ID), 'full');
+				$url = get_field("mobile_banner",$result->ID);
+                $page_url = get_field("page_link",$result->ID);
+            ?>
+                <div class="main-banner-item">
+                    <img class="img-responsive" src="<?=$url?>" />
+                    <div class="main-banner-text-container">
+                        <span class="hero-txt">
+                            <?=apply_filters('the_content', $result->post_content);?>
+                        </span>
+                    </div>
+                </div>
+            <? endforeach;?>
+            </div>
+			<div class="custom-banner-next mobile-banner-next"></div>
+			<div class="custom-banner-prev mobile-banner-prev"></div>
         </div>
 	</div>
 </section>

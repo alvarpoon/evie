@@ -10,10 +10,19 @@ body{
 	font-size: 15px;
 }
 
+.marginTop30{
+	margin-top:30px;
+}
+
+.marginTop10{
+	margin-top:10px;
+}
+
 .main{
 	//padding-top:50px;
 	padding-top:90px;
 }
+
 
 #main-content .breadcrumb-container{
 	background:#F5E8E5;
@@ -23,7 +32,7 @@ body{
 	-moz-box-shadow: 0px 3px 5px 0px rgba(245,232,229,0.5);
 	box-shadow: 0px 3px 5px 0px rgba(245,232,229,0.5);
 	.woocommerce-breadcrumb{
-		font-weight:300;
+		font-weight:400;
 		font-family: "Novecento";
 		color:#000;
 		text-transform:uppercase;
@@ -77,6 +86,7 @@ body{
 		float:none;
 		display:table-cell;
 		vertical-align:middle;
+		  padding: 10px 0;
 	}
 	.headline-title-right{
 		height:51px;
@@ -84,6 +94,11 @@ body{
 		float:none;
 		display:table-cell;
 	}
+}
+
+.no-hover>a:hover {
+    text-decoration: none;
+    cursor: default;
 }
 
 .img-border{
@@ -127,7 +142,7 @@ body{
 	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.6);
 	width:520px;
 	//height:220px;
-	padding:40px;
+	padding: 40px 40px 25px;
 	top:30%;
 	left:50%;
 	margin-left:-260px;
@@ -136,14 +151,33 @@ body{
 	h2{
 		text-transform:uppercase;
 		font-family: "Novecento";
+		  letter-spacing: 2px;
+		    margin: 0;
+
 	}
-	input[type=email]{
+	p{
+		  margin: 0;
+		  font-size: 13px;
+		  color: #000;
+	}
+	small{
+		font-size: 11px;
+		color: #848689;
+		 margin-bottom: 10px;
+  		display: block;
+	}
+	input[type=email],input[type=tel]{
 		border: medium none;
 		height: 46px;
 		line-height: 100%;
 		margin-right: 10px;
 		padding: 0 20px;
-		width: 70%;
+		  width: 100%;
+		    margin-bottom: 10px;
+		      font-family: "Novecento";
+  font-weight: 500;
+  color: #aeafb1;
+  font-size: 16px;
 	}
 	input[type=submit]{
 		background: #f6d8d3 none repeat scroll 0 0;
@@ -155,6 +189,7 @@ body{
 		letter-spacing: 2px;
 		line-height: 100%;
 		padding: 0 20px;
+		  width: 100%;
 	}
 	#connect_close{
 		position:absolute;
@@ -192,6 +227,7 @@ body{
 #main-content .under-title-link-container{
 	padding:0 10px;
 	ul{
+		text-align:center;
 		padding-left:0;
 		& > li{
 			&:hover{
@@ -206,7 +242,11 @@ body{
 		li{
 			list-style:none;
 			position:relative;
-			float:left;
+			//float:left;
+			display:inline-block;
+			&:last-child > a{
+				margin-right:0;
+			}
 			a{
 				display:inline-block;
 				margin-right:30px;
@@ -241,6 +281,7 @@ body{
 					position: absolute;
 					top: -10px;
 					width: 0;
+					left:20%;
 				}
 				li{
 					float:none;
@@ -248,6 +289,7 @@ body{
 						display:inline-block;
 						white-space: nowrap;
 						padding-bottom:0;
+						margin-right:0;
 						font-size:11px;
 						text-decoration: none;
 						//font-weight:300;
@@ -285,7 +327,7 @@ body{
 		}
 	}
 	.social-media-container{
-		text-align:right;
+		text-align:center;
 	}
 	.right-link{
 		text-align:right;
@@ -308,12 +350,18 @@ body{
 					right:0;
 					text-align:left!important;
 					&:after{
-						right:20px;
+						right:20px!important;
+						left:auto;
 					}
 				}
 			}
 		}
 	}
+}
+
+.addthis_default_style .addthis_separator, .addthis_default_style .at300b, .addthis_default_style .at4-icon, .addthis_default_style .at300bo, .addthis_default_style .at300m, .addthis_default_style .at300bs{
+	float:none!important;
+	display:inline-block;
 }
 
 //===============================================================================
@@ -323,13 +371,24 @@ body{
 //===============================================================================
 @media (min-width: @screen-sm-min) {
 	.main{
-		padding-top:181px;
+		padding-top:150px;
 	}
 
 	.headline-title-container .headline-title-center{
-		font-size: 22px;
+		font-size: 18px;
 		  padding-top: inherit;
   		padding-bottom: inherit;
+  		padding: 0;
+	}
+	
+	#main-content .under-title-link-container{
+		padding:0 10px;
+		ul{
+			text-align:left;
+		}
+		.social-media-container{
+			text-align:right;
+		}
 	}
 }
 
@@ -345,6 +404,10 @@ body{
 
     div.col-sm-5.five-two {
     	width: 40% !important;
+    }
+
+    .headline-title-container .headline-title-center{
+    	font-size: 22px;
     }
 }
 

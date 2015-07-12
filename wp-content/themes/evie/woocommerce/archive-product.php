@@ -33,9 +33,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<section class="product-category-section container">
 		<div class="col-sm-10 main-content-wrapper">
             <div class="headline-title-container clearfix">
-                <div class="col-xs-2 headline-title-left"></div>
-                <div class="col-xs-8 headline-title-center"><?php woocommerce_page_title(); ?></div>
-                <div class="col-xs-2 headline-title-right"></div>
+                <div class="col-xs-1 headline-title-left"></div>
+                <div class="col-xs-10 headline-title-center"><?php woocommerce_page_title(); ?></div>
+                <div class="col-xs-1 headline-title-right"></div>
             </div>
     
             <?php if ( have_posts() ) : ?>
@@ -69,6 +69,10 @@ if ( ! defined( 'ABSPATH' ) ) {
         
                     <?php wc_get_template( 'loop/no-products-found.php' ); ?>
     
+            <?php else: ?>
+
+                <p style="  margin-top: 40px;">Coming soon…</p>
+
             <?php endif; ?>
    
         </div>

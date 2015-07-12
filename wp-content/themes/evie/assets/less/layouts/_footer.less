@@ -60,15 +60,18 @@ footer{
 
 .social-link-container a{
 	background:url(../img/sprites/sprites_social_media.png) no-repeat;
-	width:21px;
-	height:21px;
-	margin-left:10px;
+	width:21px!important;
+	height:21px!important;
+	margin-left:3px;
 	display:inline-block;
 	/*&:last-child{
 		margin-right:0;
 	}*/
+	&:first-child{
+		margin-left:0;
+	}
 	
-	&.icon_facebook{
+	&.icon_facebook, &.addthis_button_facebook{
 		background-position:0 0;
 	}
 	
@@ -76,7 +79,7 @@ footer{
 		background-position:-34px 0;
 	}
 	
-	&.icon_weibo{
+	&.icon_weibo, &.addthis_button_sinaweibo{
 		background-position:-68px 0;
 	}
 	
@@ -84,11 +87,11 @@ footer{
 		background-position:-102px 0;
 	}
 	
-	&.icon_pinterest{
+	&.icon_pinterest, &.addthis_button_pinterest_share{
 		background-position:-136px 0;
 	}
 	
-	&.icon_twitter{
+	&.icon_twitter, &.addthis_button_twitter{
 		background-position:-170px 0;
 	}
 	
@@ -96,8 +99,30 @@ footer{
 		background-position:-204px 0;
 	}
 	
-	&.icon_linkin{
-		background-position:-239px 0;
+	&.icon_googleplus, &.addthis_button_google_plusone_badge{
+		background-position:-237px 0;
+		cursor: pointer!important;
+	}
+	
+	&.icon_linkin, &.addthis_button_linkedin{
+		background-position:-271px 0;
+	}
+	
+	&.icon_email, &.addthis_button_email{
+		background-position:-305px 0;
+	}
+	
+	&.icon_line{
+		background-position:-338px 0;
+	}
+	
+	&.icon_whatsapp{
+		background-position:-371px 0;
+	}
+	
+	
+	span{
+		visibility:hidden;
 	}
 }
 
@@ -140,6 +165,9 @@ footer{
 					float:left;
 					width:auto;
 					margin-right:5.5%;
+					&.menu-stockists{
+						  float: right;
+					}
 					&:last-child{
 						margin-right:0!important;
 					}
@@ -148,6 +176,7 @@ footer{
 					margin-top:10px;
 					padding-left:0;
 				}
+				
 			}
 		}
 	}
