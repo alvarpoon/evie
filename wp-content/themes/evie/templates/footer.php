@@ -53,10 +53,10 @@
 <div id="connect-popup" style="display:none;">
   <a href="javascript:;" id="connect_close"><i class="fa fa-times"></i></a>
   <h2><?=_e('Stay Connected');?></h2>
-  <p><?=_e('Get the latest in skincare wardrobe right to your inbox, plus special offers!');?></p>
+  <p><?=_e('Get the latest in skincare wardrobe right to your inbox,<br />plus special offers!');?></p>
   <small><?=_e('Please enter your email and / or mobile');?></small>
   <?=do_shortcode('[contact-form-7 id="105" title="Contact form 1"]'); ?>
-  <div class="social-link-container marginTop30">
+  <div class="social-link-container marginTop10">
 			<a href="#" class="icon_facebook" target="_blank"></a>
 			<a href="#" class="icon_instagram" target="_blank"></a>
 			<a href="#" class="icon_weibo" target="_blank"></a>

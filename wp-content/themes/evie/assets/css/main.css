@@ -6998,6 +6998,9 @@ body {
 .marginTop30 {
   margin-top: 30px;
 }
+.marginTop10 {
+  margin-top: 10px;
+}
 .main {
   padding-top: 90px;
 }
@@ -7103,7 +7106,7 @@ body {
   -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.6);
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.6);
   width: 520px;
-  padding: 40px;
+  padding: 40px 40px 25px;
   top: 30%;
   left: 50%;
   margin-left: -260px;
@@ -7113,14 +7116,33 @@ body {
 #connect-popup h2 {
   text-transform: uppercase;
   font-family: "Novecento";
+  letter-spacing: 2px;
+  margin: 0;
 }
-#connect-popup input[type=email] {
+#connect-popup p {
+  margin: 0;
+  font-size: 13px;
+  color: #000;
+}
+#connect-popup small {
+  font-size: 11px;
+  color: #848689;
+  margin-bottom: 10px;
+  display: block;
+}
+#connect-popup input[type=email],
+#connect-popup input[type=tel] {
   border: medium none;
   height: 46px;
   line-height: 100%;
   margin-right: 10px;
   padding: 0 20px;
-  width: 70%;
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: "Novecento";
+  font-weight: 500;
+  color: #aeafb1;
+  font-size: 16px;
 }
 #connect-popup input[type=submit] {
   background: #f6d8d3 none repeat scroll 0 0;
@@ -7132,6 +7154,7 @@ body {
   letter-spacing: 2px;
   line-height: 100%;
   padding: 0 20px;
+  width: 100%;
 }
 #connect-popup #connect_close {
   position: absolute;
