@@ -8572,6 +8572,11 @@ ul.products li.product .find-out-more {
     width: 230px!important;
   }
 }
+@media (max-width: 767px) {
+  .navbar-nav .open .dropdown-menu > li > a {
+    padding: 5px 15px 5px 45px;
+  }
+}
 /* 
  *  Owl Carousel - Animate Plugin
  */
