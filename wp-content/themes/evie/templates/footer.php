@@ -67,7 +67,6 @@
 			<a href="#" class="icon_googleplus" target="_blank"></a>
 			<a href="#" class="icon_linkin" target="_blank"></a>
 			<a href="#" class="icon_email" target="_blank"></a>
-			<a href="#" class="icon_line" target="_blank"></a>
 			<a href="#" class="icon_whatsapp" target="_blank"></a>
   </div>  
 </div>
