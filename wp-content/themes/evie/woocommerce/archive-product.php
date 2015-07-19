@@ -33,9 +33,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<section class="product-category-section container">
 		<div class="col-sm-10 main-content-wrapper">
             <div class="headline-title-container clearfix">
-                <div class="col-xs-1 headline-title-left"></div>
-                <div class="col-xs-10 headline-title-center"><?php woocommerce_page_title(); ?></div>
-                <div class="col-xs-1 headline-title-right"></div>
+				<div class="headline-top clearfix">
+					<div class="border-top-left col-xs-1 noPadding"></div>
+					<div class="border-top-mid col-xs-10 noPadding"></div>
+					<div class="border-top-right col-xs-1 noPadding"></div>
+				</div>
+				<div class="headline-mid">
+					<!--<div class="col-xs-1 headline-title-left"></div>
+					<div class="col-xs-10 headline-title-center"><?php woocommerce_page_title(); ?></div>
+					<div class="col-xs-1 headline-title-right"></div>-->
+					<?php woocommerce_page_title(); ?>
+				</div>
+				<div class="headline-btm clearfix">
+					<div class="border-btm-left col-xs-1 noPadding"></div>
+					<div class="border-btm-mid col-xs-10 noPadding"></div>
+					<div class="border-btm-right col-xs-1 noPadding"></div>
+				</div>
             </div>
     
             <?php if ( have_posts() ) : ?>

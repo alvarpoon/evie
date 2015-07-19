@@ -1,7 +1,7 @@
 <header class="banner navbar navbar-default navbar-fixed-top" role="banner">
 	<div class="container mainnav-container">
     	<div class="language-menu clearfix">
-            <div class="subscribe-container" style=""><a id="toggle_connect" href="javascript:;">STAY CONNECTED</a><span>|</span><a href="mailto:info@eviebeaute.com">Enquiries/Order</a></div>
+            <div class="subscribe-container" style=""><a class="toggle_connect" href="javascript:;">STAY CONNECTED</a><span>|</span><a href="mailto:info@eviebeaute.com">Enquiries/Order</a></div>
             <div class="" style="float:left;">ENG<span>|</span>繁<span>|</span>簡</div>
         </div>
     	<div class="navbar-header">
@@ -29,6 +29,12 @@
 						));
 					endif;
 				?>
+				<div class="mobile_function_link">
+					<a class="toggle_connect" href="javascript:;">STAY CONNECTED</a>
+				</div>
+				<div class="mobile_function_link">
+					<a href="mailto:info@eviebeaute.com">Enquiries/Order</a>
+				</div>
             </nav>
          	<nav class="collapse navbar-collapse main-menu desktop-menu hidden-xs hidden-sm" role="navigation">
 				<?php //Main menu
