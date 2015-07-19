@@ -46,27 +46,26 @@
 		}
 	}
 	.main-banner-container{
-		.custom-banner-prev{
+		.custom-banner-prev,.custom-banner-next{
 			position:absolute;
-			left:4%;
-			top:53%;
+			top:50%;
 			width:53px;
 			height:53px;
-			background:url(../img/sprites/slider_arrow_left.png) no-repeat;
 			z-index:999;
 			cursor:pointer;
 			display:none;
+			margin-top: -27px;
+		}
+		.custom-banner-prev{
+			
+			left:4%;
+			
+			background:url(../img/sprites/slider_arrow_left.png) no-repeat;
+			
 		}
 		.custom-banner-next{
-			position:absolute;
 			right:4%;
-			top:53%;
-			width:53px;
-			height:53px;
 			background:url(../img/sprites/slider_arrow_right.png) no-repeat;
-			z-index:999;
-			cursor:pointer;
-			display:none;
 		}
 		&:hover{
 			.custom-banner-prev{
