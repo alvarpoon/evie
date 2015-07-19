@@ -60,7 +60,7 @@
                     ?>
                     <div class="well well-feature" href="<?=$banner_link_left?>" style="background-image:url(<?=$banner_img_left['url']?>);">
                         <div class="hidden-lg hidden-md hidden-sm">
-                            <img src="<?=$banner_img_left['url']?>" class="img-responsive" />
+                            <a href="<?=$banner_link_left?>"><img src="<?=$banner_img_left['url']?>" class="img-responsive" /></a>
                         </div>
                         <a href="<?=$banner_link_left?>"></a>
                     </div>
@@ -72,7 +72,7 @@
                     ?>
                     <div class="well well-feature" href="<?=$banner_link_right?>" style="background-image:url(<?=$banner_img_right['url']?>);">
                         <div class="hidden-lg hidden-md hidden-sm">
-                            <img src="<?=$banner_img_right['url']?>" class="img-responsive" />
+                            <a href="<?=$banner_link_right?>"><img src="<?=$banner_img_right['url']?>" class="img-responsive" /></a>
                         </div>
                         <a href="<?=$banner_link_right?>"></a>
                     </div>
@@ -80,11 +80,24 @@
             </div>
         </section>
         <section class="best-seller">
-            <div class="headline-title-container clearfix">
+            <!--<div class="headline-title-container clearfix">
                 <div class="col-xs-2 headline-title-left"></div>
                 <div class="col-xs-8 headline-title-center">bestsellers</div>
                 <div class="col-xs-2 headline-title-right"></div>
-            </div>
+            </div>-->
+			<div class="headline-title-container clearfix">
+			<div class="headline-top clearfix">
+				<div class="border-top-left col-xs-1 noPadding"></div>
+				<div class="border-top-mid col-xs-10 noPadding"></div>
+				<div class="border-top-right col-xs-1 noPadding"></div>
+			</div>
+			<div class="headline-mid">bestsellers</div>
+			<div class="headline-btm clearfix">
+				<div class="border-btm-left col-xs-1 noPadding"></div>
+				<div class="border-btm-mid col-xs-10 noPadding"></div>
+				<div class="border-btm-right col-xs-1 noPadding"></div>
+			</div>
+		</div>
             <div class="row">
                 <?
                     $best_sellers = get_field("best_seller", $post->ID);

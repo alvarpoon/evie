@@ -176,7 +176,7 @@ var UTIL = {
 $(document).ready(UTIL.loadEvents);
 
 function initStayConnect(){
-	$('#toggle_connect').click(function(){
+	$('.toggle_connect').click(function(){
 		if(!$('#connect-popup').is(':visible')){
 			$('#connect-popup').fadeIn();
 		}
