@@ -89,9 +89,9 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </div>
                 </div>
                 <div class="clearfix">
-                    <div class="double-border-btm-left col-xs-1"></div>
+                    <div class="double-border-btm-left col-xs-1 noPadding"></div>
                     <div class="double-border-btm-mid col-xs-10"></div>
-                    <div class="double-border-btm-right col-xs-1"></div>
+                    <div class="double-border-btm-right col-xs-1 noPadding"></div>
                 </div>
             </div>
             
