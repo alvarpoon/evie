@@ -7139,7 +7139,7 @@ body {
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.6);
   width: 80%;
   padding: 40px 40px 25px;
-  top: 130px;
+  top: 50px;
   left: 50%;
   margin-left: -40%;
   text-align: center;
@@ -7352,7 +7352,7 @@ body {
 @media (min-width: 768px) {
   #connect-popup {
     width: 520px;
-    top: 30%;
+    top: 15%;
     left: 50%;
     margin-left: -260px;
     text-align: center;
