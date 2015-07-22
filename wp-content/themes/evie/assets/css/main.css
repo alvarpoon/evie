@@ -7277,6 +7277,7 @@ body {
 }
 #main-content .under-title-link-container ul li .sub-menu li {
   float: none;
+  display: block;
 }
 #main-content .under-title-link-container ul li .sub-menu li a {
   display: inline-block;

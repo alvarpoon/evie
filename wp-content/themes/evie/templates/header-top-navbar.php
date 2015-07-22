@@ -1,7 +1,7 @@
 <header class="banner navbar navbar-default navbar-fixed-top" role="banner">
 	<div class="container mainnav-container">
     	<div class="language-menu clearfix">
-            <div class="subscribe-container" style="margin-right:0;"><a class="toggle_connect" href="javascript:;">STAY CONNECTED</a><span>|</span><a href="mailto:info@eviebeaute.com">Enquiries/Order</a></div>
+            <div class="subscribe-container" style="margin-right:0;"><a class="toggle_connect" href="javascript:;">STAY CONNECTED</a><span>|</span><a href="mailto:<?=get_field('enquiry_email_address',4);?>">Enquiries/Order</a></div>
             <div class="" style="float:left;display:none;">ENG<span>|</span>繁<span>|</span>簡</div>
         </div>
     	<div class="navbar-header">
