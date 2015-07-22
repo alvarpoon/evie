@@ -8546,6 +8546,17 @@ ul.products li.product .find-out-more {
   text-decoration: none;
   font-weight: 500;
 }
+.mobile-menu .searchBox-container {
+  border-top: 1px solid #c4bfbe;
+  display: block;
+  float: none;
+  margin: 0 -15px;
+  padding: 10px 15px;
+}
+.mobile-menu .searchBox-container .input-group input[type='search'] {
+  width: 100% !important;
+  background: #fff;
+}
 .mobile-menu .navbar-nav {
   margin-top: 0;
   margin-bottom: 0;

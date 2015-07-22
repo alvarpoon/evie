@@ -35,6 +35,9 @@
 				<div class="mobile_function_link">
 					<a href="mailto:info@eviebeaute.com">Enquiries/Order</a>
 				</div>
+				<div class="searchBox-container clearfix">
+					<?php get_search_form(); ?>
+				</div>
             </nav>
          	<nav class="collapse navbar-collapse main-menu desktop-menu hidden-xs hidden-sm" role="navigation">
 				<?php //Main menu
