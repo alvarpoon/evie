@@ -8419,6 +8419,15 @@ ul.products li.product .find-out-more {
     padding: 40px 110px;
   }
 }
+.search-results h2 {
+  font-family: "Aileron" !important;
+  font-weight: 600;
+  font-size: 15px;
+  color: #333333;
+}
+.search-results article {
+  margin-bottom: 40px;
+}
 .navbar-default {
   background: #fff;
   border: none;
