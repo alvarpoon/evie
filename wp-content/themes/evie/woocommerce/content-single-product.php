@@ -73,7 +73,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </div><!-- .summary -->
             </div>
             <div class="product-other-detail-container">
-                <div class="clearfix">
+                <div class="product-double-top clearfix">
                     <div class="double-border-top-left col-xs-1 noPadding"></div>
                     <div class="double-border-top-mid col-xs-10 noPadding"></div>
                     <div class="double-border-top-right col-xs-1 noPadding"></div>
@@ -88,7 +88,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <?=get_field("how_to_use",$post->ID)?>
                     </div>
                 </div>
-                <div class="clearfix">
+                <div class="product-double-btm clearfix">
                     <div class="double-border-btm-left col-xs-1 noPadding"></div>
                     <div class="double-border-btm-mid col-xs-10"></div>
                     <div class="double-border-btm-right col-xs-1 noPadding"></div>
