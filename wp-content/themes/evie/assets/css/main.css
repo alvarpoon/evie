@@ -7091,6 +7091,7 @@ body {
 .headline-title-container .headline-top .border-top-right {
   background: url(../img/sprites/bg_product_other.png) no-repeat right top;
   height: 15px;
+  float: right;
 }
 .headline-title-container .headline-btm .border-btm-left {
   background: url(../img/sprites/bg_product_other.png) no-repeat left bottom;
@@ -7103,6 +7104,7 @@ body {
 .headline-title-container .headline-btm .border-btm-right {
   background: url(../img/sprites/bg_product_other.png) no-repeat right bottom;
   height: 15px;
+  float: right;
 }
 .no-hover > a:hover {
   text-decoration: none;
@@ -7795,6 +7797,7 @@ footer .copyright a {
 .single-product .product .product-other-detail-container .double-border-top-right {
   background: url(../img/sprites/bg_product_other.png) no-repeat right top;
   height: 35px;
+  float: right;
 }
 .single-product .product .product-other-detail-container .double-border-btm-left {
   background: url(../img/sprites/bg_product_other.png) no-repeat left bottom;
@@ -7807,6 +7810,10 @@ footer .copyright a {
 .single-product .product .product-other-detail-container .double-border-btm-right {
   background: url(../img/sprites/bg_product_other.png) no-repeat right bottom;
   height: 35px;
+  float: right;
+}
+.single-product .product .product-other-detail-container .product-other-detail-content-wrapper {
+  background: url(../img/sprites/bg_product_other_mid.png) repeat-y left, url(../img/sprites/bg_product_other_mid.png) repeat-y right;
 }
 .single-product .product .product-other-detail-container .product-other-detail-item {
   text-align: center;
@@ -7928,10 +7935,10 @@ ul.products li.product .find-out-more {
   }
   .single-product .product .product-other-detail-container .product-other-detail-item:first-child {
     border-right: 1px solid #000;
-    background: url(../img/sprites/bg_product_other_mid.png) repeat-y left;
+    background: none;
   }
   .single-product .product .product-other-detail-container .product-other-detail-item:last-child {
-    background: url(../img/sprites/bg_product_other_mid.png) repeat-y right;
+    background: none;
   }
   .single-product ul.products li.product {
     width: 30%!important;

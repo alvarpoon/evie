@@ -75,10 +75,10 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div class="product-other-detail-container">
                 <div class="clearfix">
                     <div class="double-border-top-left col-xs-1 noPadding"></div>
-                    <div class="double-border-top-mid col-xs-10"></div>
+                    <div class="double-border-top-mid col-xs-10 noPadding"></div>
                     <div class="double-border-top-right col-xs-1 noPadding"></div>
                 </div>
-                <div class="clearfix">
+                <div class="clearfix product-other-detail-content-wrapper">
                     <div class="product-other-detail-item col-xs-12 col-sm-6 col-md-6">
                         <h2>ingredients</h2>
                         <?=get_field("ingredients",$post->ID)?>

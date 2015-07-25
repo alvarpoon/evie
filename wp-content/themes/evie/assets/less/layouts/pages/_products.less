@@ -60,6 +60,8 @@
 			.double-border-top-right{
 				background:url(../img/sprites/bg_product_other.png) no-repeat right top;
 				height:35px;
+				float: right;
+				//width: 8.5%!important;
 			}
 			
 			.double-border-btm-left{
@@ -73,6 +75,12 @@
 			.double-border-btm-right{
 				background:url(../img/sprites/bg_product_other.png) no-repeat right bottom;
 				height:35px;
+				float: right;
+				//width: 8.5%!important;
+			}
+			
+			.product-other-detail-content-wrapper{
+				background:url(../img/sprites/bg_product_other_mid.png) repeat-y left, url(../img/sprites/bg_product_other_mid.png) repeat-y right;
 			}
 			
 			.product-other-detail-item{
@@ -207,10 +215,12 @@ ul.products li.product{
 					float:none;
 					&:first-child{
 						border-right: 1px solid #000;
-						background:url(../img/sprites/bg_product_other_mid.png) repeat-y left;
+						//background:url(../img/sprites/bg_product_other_mid.png) repeat-y left;
+						background:none;
 					}
 					&:last-child{
-						background:url(../img/sprites/bg_product_other_mid.png) repeat-y right;
+						//background:url(../img/sprites/bg_product_other_mid.png) repeat-y right;
+						background:none;
 					}
 				}
 			}
