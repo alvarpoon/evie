@@ -43,7 +43,7 @@
 				
 				if ( $postslist ->have_posts() ) :					
 					while ( $postslist ->have_posts() ) : $postslist ->the_post(); 	
-						$url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+						$url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 						$media_image = get_field("popup_image",$post->ID);
 						if($count%5 == 1){
 							echo '<div class="row">';
