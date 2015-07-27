@@ -8507,6 +8507,7 @@ ul.products li.product .find-out-more {
   text-transform: uppercase;
   font-size: 12px;
   width: 210px !important;
+  min-height: 21px;
 }
 .searchBox-container .btn-default {
   border-radius: 0;
