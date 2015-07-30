@@ -1630,10 +1630,6 @@ class WC_AJAX {
 
 		check_ajax_referer( 'search-products', 'security' );
 
-		if ( ! current_user_can( 'edit_products' ) ) {
-			die(-1);
-		}
-
 		$term = (string) wc_clean( stripslashes( $_GET['term'] ) );
 
 		if ( empty( $term ) ) {
@@ -1707,6 +1703,10 @@ class WC_AJAX {
 		if ( $posts ) {
 			foreach ( $posts as $post ) {
 				$product = wc_get_product( $post );
+
+				if ( ! current_user_can( 'read_product', $post ) ) {
+					continue;
+				}
 
 				$found_products[ $post ] = rawurldecode( $product->get_formatted_name() );
 			}
@@ -1784,10 +1784,6 @@ class WC_AJAX {
 
 		check_ajax_referer( 'search-products', 'security' );
 
-		if ( ! current_user_can( 'edit_products' ) ) {
-			die(-1);
-		}
-
 		$term = (string) wc_clean( stripslashes( $_GET['term'] ) );
 
 		$args = array(
@@ -1811,6 +1807,11 @@ class WC_AJAX {
 		if ( $posts ) {
 			foreach ( $posts as $post ) {
 				$product = wc_get_product( $post->ID );
+
+				if ( ! current_user_can( 'read_product', $post->ID ) ) {
+					continue;
+				}
+
 				$found_products[ $post->ID ] = $product->get_formatted_name();
 			}
 		}
@@ -2088,10 +2089,11 @@ class WC_AJAX {
 		$refund_id = absint( $_POST['refund_id'] );
 
 		if ( $refund_id && 'shop_order_refund' === get_post_type( $refund_id ) ) {
-			wc_delete_shop_order_transients( wp_get_post_parent_id( $refund_id ) );
+			$order_id = wp_get_post_parent_id( $refund_id );
+			wc_delete_shop_order_transients( $order_id );
 			wp_delete_post( $refund_id );
 
-			do_action( 'woocommerce_refund_deleted', $refund_id );
+			do_action( 'woocommerce_refund_deleted', $refund_id, $order_id );
 		}
 
 		die();

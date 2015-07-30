@@ -3,7 +3,7 @@
  * Plugin Name: YITH WooCommerce Zoom Magnifier
  * Plugin URI: http://yithemes.com/themes/plugins/yith-woocommerce-zoom-magnifier/
  * Description: YITH WooCommerce Zoom Magnifier enables you to add a zoom effect to product images and a thumbnail slider for the product image gallery.
- * Version: 1.2.3
+ * Version: 1.2.5
  * Author: Yithemes
  * Author URI: http://yithemes.com/
  * Text Domain: ywzm
@@ -11,7 +11,7 @@
  *
  * @author Your Inspiration Themes
  * @package YITH WooCommerce Magnifier
- * @version 1.2.3
+ * @version 1.2.5
  */
 /*  Copyright 2013-2015  Your Inspiration Themes  (email : plugins@yithemes.com)
 
@@ -40,7 +40,7 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
 function yith_ywzm_install_woocommerce_admin_notice() {
 	?>
 	<div class="error">
-		<p><?php _e( 'YITH WooCommerce Zoom Magnifier is enabled but not effective. It requires Woocommerce in order to work.', 'ywzm' ); ?></p>
+		<p><?php _e( 'YITH WooCommerce Zoom Magnifier is enabled but not effective. It requires WooCommerce in order to work.', 'ywzm' ); ?></p>
 	</div>
 <?php
 }
@@ -65,7 +65,7 @@ if ( ! defined( 'YITH_YWZM_FREE_INIT' ) ) {
 }
 
 if ( ! defined( 'YITH_YWZM_VERSION' ) ) {
-	define( 'YITH_YWZM_VERSION', '1.2.3' );
+	define( 'YITH_YWZM_VERSION', '1.2.5' );
 }
 
 if ( ! defined( 'YITH_YWZM_FILE' ) ) {

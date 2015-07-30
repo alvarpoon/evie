@@ -3577,7 +3577,6 @@
 		});
 	}
 	function sz_setSizes($c, o) {
-        debugger;
 		var $w = $c.parent(),
 			$i = $c.children(),
 			$v = gi_getCurrentItems($i, o),

@@ -13,8 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( $breadcrumb ) {
+
 	echo $wrap_before;
-	
+
 	foreach ( $breadcrumb as $key => $crumb ) {
 
 		echo $before;
@@ -23,7 +24,6 @@ if ( $breadcrumb ) {
 			echo '<a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>';
 		} else {
 			echo esc_html( $crumb[0] );
-
 		}
 
 		echo $after;
@@ -33,7 +33,7 @@ if ( $breadcrumb ) {
 		}
 
 	}
-	
+
 	echo $wrap_after;
 
 }

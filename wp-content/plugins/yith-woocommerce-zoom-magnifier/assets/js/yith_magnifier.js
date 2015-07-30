@@ -7,11 +7,12 @@
  * MIT License.
  */
 
-;(function( window, $, undefined ) {
+;
+(function (window, $, undefined) {
     'use strict';
 
     //include imagesLoaded plugin
-    if( $.fn.imagesLoaded === undefined ) {
+    if ($.fn.imagesLoaded === undefined) {
         /*!
          * jQuery imagesLoaded plugin v2.1.1
          * http://github.com/desandro/imagesloaded
@@ -22,17 +23,18 @@
         /*jshint curly: true, eqeqeq: true, noempty: true, strict: true, undef: true, browser: true */
         /*global jQuery: false */
 
-        ;(function($, undefined) {
+        ;
+        (function ($, undefined) {
             'use strict';
 
             // blank image data-uri bypasses webkit log warning (thx doug jones)
             var BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
 
-            $.fn.imagesLoaded = function( callback ) {
+            $.fn.imagesLoaded = function (callback) {
                 var $this = this,
                     deferred = $.isFunction($.Deferred) ? $.Deferred() : 0,
                     hasNotify = $.isFunction(deferred.notify),
-                    $images = $this.find('img').add( $this.filter('img') ),
+                    $images = $this.find('img').add($this.filter('img')),
                     loaded = [],
                     proper = [],
                     broken = [];
@@ -52,97 +54,97 @@
                     var $proper = $(proper),
                         $broken = $(broken);
 
-                    if ( deferred ) {
-                        if ( broken.length ) {
-                            deferred.reject( $images, $proper, $broken );
+                    if (deferred) {
+                        if (broken.length) {
+                            deferred.reject($images, $proper, $broken);
                         } else {
-                            deferred.resolve( $images );
+                            deferred.resolve($images);
                         }
                     }
 
-                    if ( $.isFunction( callback ) ) {
-                        callback.call( $this, $images, $proper, $broken );
+                    if ($.isFunction(callback)) {
+                        callback.call($this, $images, $proper, $broken);
                     }
                 }
 
-                function imgLoadedHandler( event ) {
-                    imgLoaded( event.target, event.type === 'error' );
+                function imgLoadedHandler(event) {
+                    imgLoaded(event.target, event.type === 'error');
                 }
 
-                function imgLoaded( img, isBroken ) {
+                function imgLoaded(img, isBroken) {
                     // don't proceed if BLANK image, or image is already loaded
-                    if ( img.src === BLANK || $.inArray( img, loaded ) !== -1 ) {
+                    if (img.src === BLANK || $.inArray(img, loaded) !== -1) {
                         return;
                     }
 
                     // store element in loaded images array
-                    loaded.push( img );
+                    loaded.push(img);
 
                     // keep track of broken and properly loaded images
-                    if ( isBroken ) {
-                        broken.push( img );
+                    if (isBroken) {
+                        broken.push(img);
                     } else {
-                        proper.push( img );
+                        proper.push(img);
                     }
 
                     // cache image and its state for future calls
-                    $.data( img, 'imagesLoaded', { isBroken: isBroken, src: img.src } );
+                    $.data(img, 'imagesLoaded', {isBroken: isBroken, src: img.src});
 
                     // trigger deferred progress method if present
-                    if ( hasNotify ) {
-                        deferred.notifyWith( $(img), [ isBroken, $images, $(proper), $(broken) ] );
+                    if (hasNotify) {
+                        deferred.notifyWith($(img), [isBroken, $images, $(proper), $(broken)]);
                     }
 
                     // call doneLoading and clean listeners if all images are loaded
-                    if ( $images.length === loaded.length ) {
-                        setTimeout( doneLoading );
-                        $images.unbind( '.imagesLoaded', imgLoadedHandler );
+                    if ($images.length === loaded.length) {
+                        setTimeout(doneLoading);
+                        $images.unbind('.imagesLoaded', imgLoadedHandler);
                     }
                 }
 
                 // if no images, trigger immediately
-                if ( !$images.length ) {
+                if (!$images.length) {
                     doneLoading();
                 } else {
-                    $images.bind( 'load.imagesLoaded error.imagesLoaded', imgLoadedHandler )
-                        .each( function( i, el ) {
+                    $images.bind('load.imagesLoaded error.imagesLoaded', imgLoadedHandler)
+                        .each(function (i, el) {
                             var src = el.src;
 
                             // find out if this image has been already checked for status
                             // if it was, and src has not changed, call imgLoaded on it
-                            var cached = $.data( el, 'imagesLoaded' );
-                            if ( cached && cached.src === src ) {
-                                imgLoaded( el, cached.isBroken );
+                            var cached = $.data(el, 'imagesLoaded');
+                            if (cached && cached.src === src) {
+                                imgLoaded(el, cached.isBroken);
                                 return;
                             }
 
                             // if complete is true and browser supports natural sizes, try
                             // to check for image status manually
-                            if ( el.complete && el.naturalWidth !== undefined ) {
-                                imgLoaded( el, el.naturalWidth === 0 || el.naturalHeight === 0 );
+                            if (el.complete && el.naturalWidth !== undefined) {
+                                imgLoaded(el, el.naturalWidth === 0 || el.naturalHeight === 0);
                                 return;
                             }
 
                             // cached images don't fire load sometimes, so we reset src, but only when
                             // dealing with IE, or image is complete (loaded) and failed manual check
                             // webkit hack from http://groups.google.com/group/jquery-dev/browse_thread/thread/eee6ab7b2da50e1f
-                            if ( el.readyState || el.complete ) {
+                            if (el.readyState || el.complete) {
                                 el.src = BLANK;
                                 el.src = src;
                             }
                         });
                 }
 
-                return deferred ? deferred.promise( $this ) : $this;
+                return deferred ? deferred.promise($this) : $this;
             };
 
         })(jQuery);
     }
 
-    $.yith_magnifier = function( options, element ) {
+    $.yith_magnifier = function (options, element) {
         this.t = element;
-        this.element = $( element );
-        this._init( options );
+        this.element = $(element);
+        this._init(options);
     };
 
     $.yith_magnifier.defaults = {
@@ -166,16 +168,26 @@
         slider: 'carouFredSel',
         sliderOptions: {},
 
-        onLoad : function() { return false; },
-        onEnter: function() { return false },
-        onLeave: function() { return false },
-        onMove: function() { return false },
-        onClick: function() { return false; },
+        onLoad: function () {
+            return false;
+        },
+        onEnter: function () {
+            return false
+        },
+        onLeave: function () {
+            return false
+        },
+        onMove: function () {
+            return false
+        },
+        onClick: function () {
+            return false;
+        },
 
-        elements : {
-            zoom     : $('.yith_magnifier_zoom'),
+        elements: {
+            zoom: $('.yith_magnifier_zoom'),
             zoomImage: $('.yith_magnifier_zoom img'),
-            gallery  : $('.yith_magnifier_gallery li a')
+            gallery: $('.yith_magnifier_gallery li a')
         }
     };
 
@@ -188,19 +200,19 @@
          *
          * @private
          */
-        _init : function( options ) {
+        _init: function (options) {
             var self = this;
 
-            $.each($.yith_magnifier.defaults.elements, function(i,v){
+            $.each($.yith_magnifier.defaults.elements, function (i, v) {
                 var el = $.yith_magnifier.defaults.elements;
                 el[i] = $(v, self);
             });
-            self.options = $.extend( true, {}, $.yith_magnifier.defaults, options );
+            self.options = $.extend(true, {}, $.yith_magnifier.defaults, options);
             self.isPhone = self._isPhone();
 
             self._loading();
 
-            self.element.imagesLoaded(function(){
+            self.element.imagesLoaded(function () {
                 self.options.onLoad();
                 self._initZoom();
                 self._initGallery();
@@ -214,37 +226,39 @@
          * @private
          *
          */
-        _initGallery: function() {
+        _initGallery: function () {
             var self = this;
-            var elements  = self.options.elements;
+            var elements = self.options.elements;
 
-            var gallery   = elements.gallery;
-            var zoom      = elements.zoom;
+            var gallery = elements.gallery;
+            var zoom = elements.zoom;
             var zoomImage = elements.zoomImage;
 
-            if( gallery.length > 0 ) {
-                gallery.on('click', function(e){
+            if (gallery.length > 0) {
+                gallery.on('click', function (e) {
                     e.preventDefault();
 
                     var t = $(this);
                     self.destroy();
 
                     zoom.attr('href', this.href);
-
                     zoomImage.attr('src', t.data('small'))
+                        .attr('srcset', t.data('small'))
+                        .attr('src-orig', t.data('small'))
                         .attr('title', '')
                         .attr('title', t.attr('title'));
-                    $.data( self.t, 'yith_magnifier', new $.yith_magnifier( self.options, self.element ) );
+
+                    $.data(self.t, 'yith_magnifier', new $.yith_magnifier(self.options, self.element));
                 });
 
                 //gallery.filter(':first').trigger('click');
 
-                if( self.options.enableSlider ) {
-                    gallery.parents('ul')[self.options.slider]( self.options.sliderOptions );
+                if (self.options.enableSlider) {
+                    gallery.parents('ul')[self.options.slider](self.options.sliderOptions);
                 }
 
             } else {
-                gallery.on('click', function(e){
+                gallery.on('click', function (e) {
                     e.preventDefault();
                     return false;
                 })
@@ -256,9 +270,9 @@
          *
          * @private
          */
-        _loading : function() {
-            if( this.options.disableRightClick ) {
-                $(document).on('contextmenu', function(e){
+        _loading: function () {
+            if (this.options.disableRightClick) {
+                $(document).on('contextmenu', function (e) {
                     return false;
                 });
             }
@@ -267,7 +281,7 @@
                 var w = this.options.elements.zoom.width();
 
                 $('<div class="yith_magnifier_loading">' + this.options.loadingLabel + '</div>').css({
-                    'width' : w,
+                    'width': w,
                     'text-align': 'center',
                     opacity: .5
                 }).appendTo(this.options.elements.zoom.parent());
@@ -279,7 +293,7 @@
          *
          * @private
          */
-        _initZoom : function() {
+        _initZoom: function () {
             var self = this;
 
             self.zoom = self.options.elements.zoom;
@@ -296,14 +310,14 @@
             self.IMG_smallImage = new Image();
             self.IMG_smallImage.src = self.zoomImage.attr('src');
 
-            if( $.browser.msie && $.browser.version == 8 ) {
-                $(self.IMG_zoomImage).load(function(){
+            if ($.browser.msie && $.browser.version == 8) {
+                $(self.IMG_zoomImage).load(function () {
 
                     self._initTrap();
                 });
             } else {
 
-                $([self.IMG_zoomImage, self.IMG_smallImage]).imagesLoaded(function(){
+                $([self.IMG_zoomImage, self.IMG_smallImage]).imagesLoaded(function () {
 
                     self._initTrap();
                 });
@@ -315,7 +329,7 @@
          *
          * @private
          */
-        _initTrap : function() {
+        _initTrap: function () {
             var self = this;
             var zoomImg = self.IMG_zoomImage,
                 thumbImg = self.IMG_smallImage;
@@ -343,7 +357,7 @@
             //this.zoom.parent().siblings('.yith_magnifier_loading').remove();
             $('.yith_magnifier_loading').remove();
 
-            if( this.element.find('.yith_magnifier_mousetrap') ) {
+            if (this.element.find('.yith_magnifier_mousetrap')) {
                 this.element.find('.yith_magnifier_mousetrap').remove();
             }
 
@@ -355,25 +369,31 @@
             }).appendTo(zoom.parent());
 
             // Detect device type, normal mouse or touchy(ipad android) by albanx
-            var touchy  = ("ontouchstart" in document.documentElement) ? true : false;
-            var event_move  = 'touchmove mousemove';
-            var event_end   = 'touchend mouseleave';
-            var event_ent   = 'touchstart mouseenter';
+            var touchy = ("ontouchstart" in document.documentElement) ? true : false;
+            var event_move = 'touchmove mousemove';
+            var event_end = 'touchend mouseleave';
+            var event_ent = 'touchstart mouseenter';
             var event_click = 'touchstart click';
 
             this.mouseTrap.on(event_move, this, function (e) {
                 self.options.onMove();
 
-                self.mx = ( typeof(e.originalEvent.touches) !='undefined' ) ? e.originalEvent.touches[0].pageX : e.pageX;
-                self.my = ( typeof(e.originalEvent.touches) !='undefined' ) ? e.originalEvent.touches[0].pageY : e.pageY;
+                self.mx = ( typeof(e.originalEvent.touches) != 'undefined' ) ? e.originalEvent.touches[0].pageX : e.pageX;
+                self.my = ( typeof(e.originalEvent.touches) != 'undefined' ) ? e.originalEvent.touches[0].pageY : e.pageY;
 
             }).on(event_end, this, function (e) {
 
                 clearTimeout(self.controlTimer);
                 //event.data.removeBits();
-                if(self.lens) { self.lens.fadeOut(299); }
-                if(self.tint) { self.tint.fadeOut(299); }
-                if(self.softFocus) { self.softFocus.fadeOut(299); }
+                if (self.lens) {
+                    self.lens.fadeOut(299);
+                }
+                if (self.tint) {
+                    self.tint.fadeOut(299);
+                }
+                if (self.softFocus) {
+                    self.softFocus.fadeOut(299);
+                }
                 self.zoomDiv.fadeOut(300, function () {
                     self._onLeave();
                 });
@@ -385,12 +405,12 @@
             }).on(event_ent, this, function (e) {
                 self.options.onEnter();
 
-                if(touchy) {
+                if (touchy) {
                     e.preventDefault();
                 }
 
-                self.mx = ( typeof(e.originalEvent.touches) !='undefined' ) ? e.originalEvent.touches[0].pageX : e.pageX;
-                self.my = ( typeof(e.originalEvent.touches) !='undefined' ) ? e.originalEvent.touches[0].pageY : e.pageY;
+                self.mx = ( typeof(e.originalEvent.touches) != 'undefined' ) ? e.originalEvent.touches[0].pageX : e.pageX;
+                self.my = ( typeof(e.originalEvent.touches) != 'undefined' ) ? e.originalEvent.touches[0].pageY : e.pageY;
 
                 self.zw = e.data;
                 if (self.zoomDiv) {
@@ -448,7 +468,7 @@
                         }
                 }
 
-                if( self.isPhone && self.options.phoneBehavior == 'inside' ) {
+                if (self.isPhone && self.options.phoneBehavior == 'inside') {
                     w = siw;
                     h = sih;
                     xPos = 0;
@@ -461,7 +481,7 @@
                     width: w,
                     height: h,
                     'background-repeat': 'no-repeat',
-                    backgroundImage: 'url('+ zoomImg.src + ')'
+                    backgroundImage: 'url(' + zoomImg.src + ')'
                 }).appendTo(appendTo);
 
                 // Add the title from title tag.
@@ -469,8 +489,8 @@
                     $('<div class="yith_magnifier_title">' + zoomImage.attr('title') + '</div>').appendTo(self.zoomDiv);
                 }
 
-                if( self.isPhone ) {
-                    if( self.options.phoneBehavior != 'disable' ) {
+                if (self.isPhone) {
+                    if (self.options.phoneBehavior != 'disable') {
                         self.zoomDiv.fadeIn(500);
                     } else {
                         self.lens.fadeOut(299);
@@ -484,13 +504,13 @@
                     self.lens = null;
                 }
 
-                if( zoomImg.width <= 1) {
+                if (zoomImg.width <= 1) {
                     self.cw = (zoomImage.outerWidth() / zoomImg.naturalWidth) * self.zoomDiv.width();
                 } else {
                     self.cw = (zoomImage.outerWidth() / zoomImg.width) * self.zoomDiv.width();
                 }
 
-                if( zoomImg.height <= 1 ) {
+                if (zoomImg.height <= 1) {
                     self.ch = (zoomImage.outerHeight() / zoomImg.naturalHeight) * self.zoomDiv.height();
                 } else {
                     self.ch = (zoomImage.outerHeight() / zoomImg.height) * self.zoomDiv.height();
@@ -548,7 +568,7 @@
                         src: zoomImage.attr('src')
                     }));
 
-                    if( self.lens.find('img').length == 0 ) {
+                    if (self.lens.find('img').length == 0) {
                         self.lens.append($('<img />', {
                             src: zoomImage.attr('src')
                         }));
@@ -562,7 +582,9 @@
                 if (!noTrans) {
                     self.lens.css('opacity', self.options.lensOpacity);
                 }
-                if ( self.options.position !== 'inside' ) { self.lens.fadeIn(500); }
+                if (self.options.position !== 'inside') {
+                    self.lens.fadeIn(500);
+                }
 
                 // Start processing.
                 self.zw._controlLoop();
@@ -576,7 +598,7 @@
          *
          * @private
          */
-        _controlLoop: function() {
+        _controlLoop: function () {
             var self = this;
 
             if (this.lens) {
@@ -611,13 +633,13 @@
                 });
 
 
-                if( this.IMG_zoomImage.width <= 1 ) {
+                if (this.IMG_zoomImage.width <= 1) {
                     this.destU = (((x) / this.zoomImage.outerWidth()) * this.IMG_zoomImage.naturalWidth) >> 0;
                 } else {
                     this.destU = (((x) / this.zoomImage.outerWidth()) * this.IMG_zoomImage.width) >> 0;
                 }
 
-                if( this.IMG_zoomImage.height <= 1 ) {
+                if (this.IMG_zoomImage.height <= 1) {
                     this.destV = (((y) / this.zoomImage.outerHeight()) * this.IMG_zoomImage.naturalHeight) >> 0;
                 } else {
                     this.destV = (((y) / this.zoomImage.outerHeight()) * this.IMG_zoomImage.height) >> 0;
@@ -640,7 +662,7 @@
          *
          * @private
          */
-        _onLeave: function() {
+        _onLeave: function () {
             this.options.onLeave();
 
             if (this.zoomDiv) {
@@ -656,7 +678,7 @@
          *
          * @private
          */
-        _removeElements: function() {
+        _removeElements: function () {
             if (this.lens) {
                 this.lens.remove();
                 this.lens = null;
@@ -672,7 +694,7 @@
                 this.softFocus = null;
             }
 
-            if( this.element.find('.yith_magnifier_loading').length > 0 ) {
+            if (this.element.find('.yith_magnifier_loading').length > 0) {
                 this.element.find('.yith_magnifier_loading').remove();
             }
         },
@@ -682,7 +704,7 @@
          *
          * @private
          */
-        _isPhone: function() {
+        _isPhone: function () {
             var userAgent = navigator.userAgent.toLowerCase();
 
             return ( userAgent.match(/iphone/i) || userAgent.match(/ipod/i) || userAgent.match(/android/i) );
@@ -692,12 +714,12 @@
          * Destroy the instance
          *
          */
-        destroy: function() {
-            if(this.zoom) {
+        destroy: function () {
+            if (this.zoom) {
                 this.zoom.unwrap();
             }
 
-            if(this.mouseTrap) {
+            if (this.mouseTrap) {
                 this.mouseTrap.unbind();
                 this.mouseTrap.remove();
                 this.mouseTrap = null;
@@ -708,7 +730,7 @@
                 this.zoomDiv = null;
             }
 
-            if( this.options.disableRightClick ) {
+            if (this.options.disableRightClick) {
                 $(document).unbind();
             }
 
@@ -718,29 +740,29 @@
         }
     };
 
-    $.fn.yith_magnifier = function( options ) {
+    $.fn.yith_magnifier = function (options) {
 
-        if ( typeof options === 'string' ) {
-            var args = Array.prototype.slice.call( arguments, 1 );
+        if (typeof options === 'string') {
+            var args = Array.prototype.slice.call(arguments, 1);
 
-            this.each(function() {
-                var instance = $.data( this, 'yith_magnifier' );
-                if ( !instance ) {
-                    $.error( "cannot call methods on yith_magnifier prior to initialization; " +
-                    "attempted to call method '" + options + "'" );
+            this.each(function () {
+                var instance = $.data(this, 'yith_magnifier');
+                if (!instance) {
+                    $.error("cannot call methods on yith_magnifier prior to initialization; " +
+                    "attempted to call method '" + options + "'");
                     return;
                 }
-                if ( !$.isFunction( instance[options] ) || options.charAt(0) === "_" ) {
-                    $.error( "no such method '" + options + "' for yith_magnifier instance" );
+                if (!$.isFunction(instance[options]) || options.charAt(0) === "_") {
+                    $.error("no such method '" + options + "' for yith_magnifier instance");
                     return;
                 }
-                instance[ options ].apply( instance, args );
+                instance[options].apply(instance, args);
             });
         } else {
-            this.each(function() {
-                var instance = $.data( this, 'yith_magnifier' );
-                if ( !instance ) {
-                    $.data( this, 'yith_magnifier', new $.yith_magnifier( options, this ) );
+            this.each(function () {
+                var instance = $.data(this, 'yith_magnifier');
+                if (!instance) {
+                    $.data(this, 'yith_magnifier', new $.yith_magnifier(options, this));
                 } else {
                     $.error('yith_magnifier already istantiated.');
                 }
@@ -750,4 +772,4 @@
     };
 
 
-})( window, jQuery );
+})(window, jQuery);
