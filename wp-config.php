@@ -33,6 +33,14 @@ switch ($_SERVER['SERVER_NAME']) {
 		define('DB_USER', 'nowwhat');
 		define('DB_PASSWORD', '20273214');
 		define('DB_HOST', 'localhost');
+
+	case "www.eviebeaute.com":
+		define('DB_NAME', 'evi10000_evie');
+		define('WP_SITEURL',  'http://www.eviebeaute.com' );
+    	define('WP_HOME', 'http://www.eviebeaute.com' );
+		define('DB_USER', 'evi10000_evie');
+		define('DB_PASSWORD', 'a7itwkpgwk');
+		define('DB_HOST', 'localhost');
 }
 
 /** Database Charset to use in creating database tables. */
@@ -78,7 +86,7 @@ $table_prefix  = 'evie_';
  */
 define('WP_DEBUG', false);
 
-define('WP_ENV', 'development');
+define('WP_ENV', 'production');
 
 /* That's all, stop editing! Happy blogging. */
 

@@ -1,19 +1,13 @@
 <? woocommerce_breadcrumb(); ?>
-<!--<?php //while (have_posts()) : the_post(); ?>
-  <article <?php post_class(); ?>>
-    <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
-      <?php //get_template_part('templates/entry-meta'); ?>
-    </header>
-    <div class="entry-content">
-      <?php the_content(); ?>
-    </div>
-    <footer>
-      <?php //wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
-    </footer>
-    <?php //comments_template('/templates/comments.php'); ?>
-  </article>
-<?php //endwhile; ?>-->
+<?
+	$args = array(
+		'orderby' => 'name',
+		'parent' => 0
+	);
+	$categories = get_categories( $args );
+
+	$full_uri = site_url().'/buzz/our-blog/';
+?>
 
 <section class="blog-section main-section-container container">
 	<div class="col-xs-12 col-sm-10 col-md-10 main-content-wrapper">
@@ -23,21 +17,45 @@
 				<div class="col-xs-8 headline-title-center">EVIE BLOG</div>
 				<div class="col-xs-2 headline-title-right"></div>
 			</div>
-			<div class="blog-link-container clearfix">
-				<div class="blog-nav col-sm-5">
-					<a href="#">CATEGORIES</a>
-					<a href="#">ARCHIVES</a>
+			<div class="under-title-link-container clearfix row">
+    	        <div class="col-xs-12 col-sm-5">
+					<ul>
+						<li>
+							<a href="javascript:;">CATEGORIES</a>
+							<ul class="sub-menu">
+								<li><a href="<?=$full_uri?>?category=&y=<?=$year?>">All</a></li>
+								<?
+									foreach ( $categories as $category ) {
+										echo '<li><a href="'.$full_uri.'?category='.$category->cat_ID.'&y='.$blog_year.'">'.$category->name.'</a></li>';
+									}	
+								?>
+							</ul>
+						</li>
+						<li><a href="javascript:;">ARCHIVES</a>
+							<ul class="sub-menu">
+								<li><a href="<?=$full_uri?>?category=<?=$blog_cat?>&y=">All</a></li>
+									<?
+									$years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts ORDER BY post_date DESC");
+									foreach($years as $year) : 
+										echo '<li class="year_link"><a href="'.$full_uri.'?category='.$blog_cat.'&y='.$year.'">'.$year.'</a></li>';
+									 endforeach; ?>
+							</ul>
+						</li>
+					</ul>
 				</div>
-				<div class="social-media-container col-sm-7">area for social media</div>
-			</div>		
-			<?php //query_posts('post_type=post&post_status=publish&posts_per_page=10&paged='. get_query_var('paged')); ?>
-
-			<!--<?php if (!have_posts()) : ?>
-			  <div class="alert alert-warning">
-				<?php _e('Sorry, no results were found.', 'roots'); ?>
-			  </div>
-			  <?php get_search_form(); ?>
-			<?php endif; ?>-->
+				<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5571773a13e7c073" async="async"></script>
+				<div class="social-media-container col-xs-12 col-sm-7 addthis_toolbox addthis_default_style social-link-container">
+					<a class="addthis_button_facebook"></a>
+					<a class="addthis_button_sinaweibo"></a>
+					<a class="addthis_button_pinterest_share"></a>
+				    <a class="addthis_button_twitter"></a>
+					<a class="addthis_button_google_plusone_share"></a> 					
+					<a class="addthis_button_linkedin"></a>
+					<a class="addthis_button_email"></a>
+					<div id="qqwb_share__" data-appkey="801387349" data-icon="2" data-counter="0" data-content="<? _e('tencent'); ?>"></div>	
+				</div>
+			</div>
 
 			<?php while (have_posts()) : the_post(); ?>
 				<div class="blog-post-item">

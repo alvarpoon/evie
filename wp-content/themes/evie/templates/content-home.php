@@ -7,15 +7,14 @@
               $results = get_posts( $args );
               foreach( $results as $result ) :
                 $url = wp_get_attachment_image_src( get_post_thumbnail_id($result->ID), 'full');
-                $page_url = get_field("page_link",$result->ID);
+                $page_url = get_field("link",$result->ID);
             ?>
                 <div class="main-banner-item">
-                    <img class="img-responsive" src="<?=$url[0]?>" />
+                    <?=($page_url==""?"":'<a href="'.$page_url.'">');?><img class="img-responsive" src="<?=$url[0]?>" /><?=($page_url==""?"":'</a>');?>
                     <div class="main-banner-text-container">
                         <span class="hero-txt">
                             <?=apply_filters('the_content', $result->post_content);?>
                         </span>
-                        <!--<a class="btn-find-out-more" href="<?=$page_url?>"><?_e('Find out more');?></a>-->
                     </div>
                 </div>
             <? endforeach;?>

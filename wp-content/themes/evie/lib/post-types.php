@@ -64,18 +64,18 @@ function media_register() {
   register_post_type( 'media' , $args );
 }
 
-// stocklist
+// stockist
 add_action('init', 'stocklist_register');
 function stocklist_register() {
   $labels = array(
-      'name' => _x('Stocklist', 'post type general name'),
-      'singular_name' => _x('Stocklist', 'post type singular name'),
-      'add_new' => _x('Add stocklist', 'rep'),
-      'add_new_item' => __('Add stocklist'),
-      'edit_item' => __('Edit stocklist'),
-      'new_item' => __('New stocklist'),
-      'view_item' => __('View stocklist'),
-      'search_items' => __('Search stocklist'),
+      'name' => _x('Stockist', 'post type general name'),
+      'singular_name' => _x('Stockist', 'post type singular name'),
+      'add_new' => _x('Add Stockist', 'rep'),
+      'add_new_item' => __('Add Stockist'),
+      'edit_item' => __('Edit Stockist'),
+      'new_item' => __('New Stockist'),
+      'view_item' => __('View Stockist'),
+      'search_items' => __('Search Stockist'),
       'not_found' =>  __('Nothing found'),
       'not_found_in_trash' => __('Nothing found in Trash'),
       'parent_item_colon' => ''
