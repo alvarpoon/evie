@@ -42,8 +42,8 @@
     <!--<p class="copyright"><?=get_field("footer_copyright_text",$id[ICL_LANGUAGE_CODE])?></p>-->
     <div class="copyright">
     	@2015 EVIE INTERNATIONAL LIMITED. ALL RIGHTS RESERVED 
-    	<span>|</span> <a href="#">Terms of Use</a>
-        <span>|</span> <a href="#">Privacy Policy</a>
+    	<span>|</span> <a href="<?=site_url()?>/terms-of-use/">Terms of Use</a>
+        <span>|</span> <a href="<?=site_url()?>/privacy-policy/">Privacy Policy</a>
     </div>
   </div>
 </footer>
@@ -66,14 +66,3 @@
   </div>  
 </div>
 <?php wp_footer(); ?> 
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-64529777-1', 'auto');
-  ga('send', 'pageview');
-
-</script>

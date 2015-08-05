@@ -8,10 +8,12 @@
 
 	$full_uri = site_url().'/buzz/our-blog/';
 ?>
-
 <section class="blog-section main-section-container container">
 	<div class="col-xs-12 col-sm-10 col-md-10 main-content-wrapper">
 		<div class="row">
+			<?
+			if(get_post_type($post)=="post"){
+			?>
 			<div class="headline-title-container clearfix">
 				<div class="col-xs-2 headline-title-left"></div>
 				<div class="col-xs-8 headline-title-center">EVIE BLOG</div>
@@ -56,7 +58,9 @@
 					<div id="qqwb_share__" data-appkey="801387349" data-icon="2" data-counter="0" data-content="<? _e('tencent'); ?>"></div>	
 				</div>
 			</div>
-
+			<?
+			}
+			?>
 			<?php while (have_posts()) : the_post(); ?>
 				<div class="blog-post-item">
 					<div class="blog-post-title">
@@ -68,18 +72,23 @@
 						<?=get_field("image_caption",$post->ID) ?>
 					</div>
 					<div class="blog-post-excerpt col-xs-10 col-sm-10 col-md-10">
-						<!--<?php the_excerpt(__('Continue reading »','example')); ?>
-						<div class="read-more">
-							<a href="<?php the_permalink(); ?>">READ MORE ></a>
-						</div>-->
 						<?php the_content(); ?>
+						<?
+						if(get_post_type($post)=="post"){
+						?>
                         <div class="read-more">
 	                        <a href="/buzz/our-blog/"><i class="fa fa-angle-left"></i> BACK</a>
                         </div>
+                        <?
+						}
+						?>
 					</div>
 
 				</div>
 			<?php endwhile; ?>
+			<?
+			if(get_post_type($post)=="post"){
+			?>
             <div class="pagination clearfix">
             	<div class="previous">
             	<?
@@ -104,18 +113,12 @@
 					} ?>
                 </div>
             </div>
-            
-            
-			<!--<?php if ($wp_query->max_num_pages > 1) : ?>
-			  <nav class="post-nav">
-				<ul class="pager">
-				  <li class="previous"><?php next_posts_link(__('&larr; Older posts', 'roots')); ?></li>
-				  <li class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'roots')); ?></li>
-				</ul>
-			  </nav>
-			<?php endif; ?>-->
 			
 			<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
+
+			<?
+			}
+			?>
 		</div>
 	</div>
 </section>
