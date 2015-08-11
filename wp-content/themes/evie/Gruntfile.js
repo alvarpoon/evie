@@ -154,6 +154,14 @@ module.exports = function(grunt) {
           '*.php'
         ]
       }
+    },
+    purifycss: {
+      options: {minify: true},
+      target: {
+        src: ['*.php', 'templates/*.php', 'woocommerce/*.php', 'assets/js/scripts.js'],
+        css: ['assets/css/main.min.css'],
+        dest: 'assets/css/pure_main.min.css'
+      },
     }
   });
 
@@ -171,6 +179,7 @@ module.exports = function(grunt) {
     'jshint',
     'less:build',
     'autoprefixer:build',
+    'purifycss',
     'uglify',
     'modernizr',
     'version'
