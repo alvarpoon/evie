@@ -32,6 +32,8 @@ class WCML_Products{
             add_action( 'save_post', array( $this, 'sync_post_action' ), 11, 2 ); // After WPML
             //when save new attachment duplicate product gallery
             add_action( 'wpml_media_create_duplicate_attachment', array( $this, 'sync_product_gallery_duplicate_attachment' ), 11, 2 );
+            add_action( 'woocommerce_ajax_save_product_variations', array( $this, 'sync_product_variations_action' ), 11 );
+            add_action( 'wp_ajax_woocommerce_remove_variations', array( $this, 'remove_translations_for_variations' ), 9 );
 
             add_filter( 'icl_make_duplicate', array( $this, 'icl_make_duplicate'), 11, 4 );
 
@@ -110,7 +112,7 @@ class WCML_Products{
         add_filter( 'woocommerce_cached_widget_id', array( $this, 'override_cached_widget_id' ) );
 
         //update menu_order fro translations after ordering original products
-        add_action( 'woocommerce_after_product_ordering', array( $this, 'update_translations_product_ordering' ) );
+        add_action( 'woocommerce_after_product_ordering', array( $this, 'update_all_products_translations_ordering' ) );
 
         //filter to copy excerpt value
         add_filter( 'wpml_copy_from_original_custom_fields', array( $this, 'filter_excerpt_field_content_copy' ) );
@@ -118,6 +120,7 @@ class WCML_Products{
         add_filter( 'icl_wpml_config_array', array( $this, 'set_taxonomies_config' ) );
 
         add_filter( 'manage_product_posts_columns', array( $this, 'add_languages_column' ), 100 );
+        add_action( 'woocommerce_product_after_variable_attributes', array( $this, 'lock_variable_fields' ), 10, 3 );
 
     }
 
@@ -154,7 +157,7 @@ class WCML_Products{
 
         $sql = "SELECT p.ID,p.post_parent FROM $wpdb->posts AS p
                   LEFT JOIN {$wpdb->prefix}icl_translations AS icl ON icl.element_id = p.id
-                WHERE p.post_type = 'product' AND p.post_status IN ('publish','future','draft','pending','private') AND icl.element_type= 'post_product' AND icl.source_language_code IS NULL";
+                WHERE p.post_type = 'product' AND p.post_status IN ('publish','future','draft','pending','private') AND icl.element_type= 'post_product' AND icl.source_language_code IS NULL ORDER BY p.id DESC";
 
         if($slang){
             $sql .= " AND icl.language_code = %s ";
@@ -1176,7 +1179,8 @@ class WCML_Products{
                                         $values_arrs_tr = array_map('trim',explode('|',$tr_product_attr[$tax]['value']));
                                         foreach($values_arrs as $key=>$value){
                                             $value_sanitized = sanitize_title($value);
-                                            if( ( $value_sanitized == urldecode($meta_value) || $value_sanitized == $meta_value ) && isset($values_arrs_tr[$key])){
+
+                                            if( ( $value_sanitized == strtolower(urldecode($meta_value)) || strtolower($value_sanitized) == $meta_value || $value == $meta_value ) && isset($values_arrs_tr[$key])){
                                                 $meta_value = $values_arrs_tr[$key];
                                             }
                                         }
@@ -1573,34 +1577,7 @@ class WCML_Products{
         }
 
         //save custom prices
-        $nonce = filter_input( INPUT_POST, '_wcml_custom_prices_nonce', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
-
-        if( isset( $_POST[ '_wcml_custom_prices' ] ) && isset( $nonce ) && wp_verify_nonce( $nonce, 'wcml_save_custom_prices' )){
-
-            if( isset( $_POST[ '_wcml_custom_prices' ][ $post_id ] ) ) {
-                $wcml_custom_prices_option = $_POST[ '_wcml_custom_prices' ][ $post_id ];
-            }else{
-                $wcml_custom_prices_option = $_POST[ '_wcml_custom_prices' ][ 0 ];
-            }
-
-            update_post_meta( $post_id, '_wcml_custom_prices_status', $wcml_custom_prices_option );
-
-            if( $wcml_custom_prices_option == 1){
-
-            $currencies = $woocommerce_wpml->multi_currency_support->get_currencies();
-
-                foreach( $currencies as $code => $currency ){
-                    $sale_price = $_POST[ '_custom_sale_price' ][ $code ];
-                    $regular_price = $_POST[ '_custom_regular_price' ][ $code ];
-
-                    $date_from = strtotime( $_POST[ '_custom_sale_price_dates_from' ][ $code ] );
-                    $date_to = strtotime( $_POST[ '_custom_sale_price_dates_to' ][ $code ] );
-                    $schedule = $_POST[ '_wcml_schedule' ][ $code ];
-
-                    $pr_price = $this->update_custom_prices( $post_id, $regular_price, $sale_price, $schedule, $date_from, $date_to, $code );
-                }
-            }
-        }
+        $this->save_custom_prices($post_id);
 
         // pick posts to sync
         $posts = array();
@@ -1633,6 +1610,8 @@ class WCML_Products{
             $this->sync_default_product_attr( $duplicated_post_id, $post_id, $lang );
 
             $this->sync_product_attr( $duplicated_post_id, $post_id );
+            
+            $this->update_order_for_product_translations( $duplicated_post_id );
 
             // synchronize post variations
             $this->sync_product_variations( $duplicated_post_id, $post_id, $lang );
@@ -1640,6 +1619,88 @@ class WCML_Products{
         }
 
         $this->sync_product_variations_custom_prices( $duplicated_post_id );
+    }
+
+
+    function sync_product_variations_action( $product_id ){
+        global $sitepress, $wpdb;
+
+        if( $this->is_original_product( $product_id ) ){
+
+            $this->sync_product_variations_custom_prices( $product_id );
+
+            $trid = $sitepress->get_element_trid( $product_id, 'post_product' );
+            if ( empty( $trid ) ) {
+                $trid = $wpdb->get_var( $wpdb->prepare( "SELECT trid FROM {$wpdb->prefix}icl_translations WHERE element_id = %d AND element_type = 'post_product'", $product_id ) );
+            }
+
+            $translations = $sitepress->get_element_translations( $trid, 'post_product' );
+            foreach ( $translations as $translation ) {
+                if ( !$translation->original ) {
+                    $this->sync_product_variations($product_id, $translation->element_id, $translation->language_code);
+                }
+            }
+
+        }
+    }
+
+    function remove_translations_for_variations(){
+        check_ajax_referer( 'delete-variations', 'security' );
+
+        if ( ! current_user_can( 'edit_products' ) ) {
+            die(-1);
+        }
+
+        global $sitepress;
+
+        $variation_ids = (array) $_POST['variation_ids'];
+
+        foreach ( $variation_ids as $variation_id ) {
+
+            $trid = $sitepress->get_element_trid( $variation_id, 'post_product_variation' );
+            $translations = $sitepress->get_element_translations( $trid, 'post_product_variation' );
+
+            foreach ( $translations as $translation ) {
+                if ( !$translation->original ) {
+                    wp_delete_post( $translation->element_id );
+                }
+            }
+
+        }
+
+    }
+
+    function save_custom_prices($post_id){
+        global $woocommerce_wpml;
+
+        $nonce = filter_input( INPUT_POST, '_wcml_custom_prices_nonce', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+
+        if( isset( $_POST[ '_wcml_custom_prices' ] ) && isset( $nonce ) && wp_verify_nonce( $nonce, 'wcml_save_custom_prices' )){
+
+            if( isset( $_POST[ '_wcml_custom_prices' ][ $post_id ] ) ) {
+                $wcml_custom_prices_option = $_POST[ '_wcml_custom_prices' ][ $post_id ];
+            }else{
+                $wcml_custom_prices_option = $_POST[ '_wcml_custom_prices' ][ 0 ];
+            }
+
+            update_post_meta( $post_id, '_wcml_custom_prices_status', $wcml_custom_prices_option );
+
+            if( $wcml_custom_prices_option == 1){
+
+                $currencies = $woocommerce_wpml->multi_currency_support->get_currencies();
+
+                foreach( $currencies as $code => $currency ){
+                    $sale_price = $_POST[ '_custom_sale_price' ][ $code ];
+                    $regular_price = $_POST[ '_custom_regular_price' ][ $code ];
+
+                    $date_from = strtotime( $_POST[ '_custom_sale_price_dates_from' ][ $code ] );
+                    $date_to = strtotime( $_POST[ '_custom_sale_price_dates_to' ][ $code ] );
+                    $schedule = $_POST[ '_wcml_schedule' ][ $code ];
+
+                    $this->update_custom_prices( $post_id, $regular_price, $sale_price, $schedule, $date_from, $date_to, $code );
+                }
+            }
+        }
     }
 
     //sync product parent & post_status
@@ -1712,7 +1773,7 @@ class WCML_Products{
         return $price;
     }
 
-    function sync_product_variations_custom_prices($product_id){
+    function sync_product_variations_custom_prices( $product_id ){
         global $wpdb,$woocommerce_wpml;
         $is_variable_product = $this->is_variable_product($product_id);
 
@@ -1725,10 +1786,14 @@ class WCML_Products{
             foreach($get_all_post_variations as $k => $post_data){
                 $duplicated_post_variation_ids[] = $post_data->ID;
 
-                //save custom prices for variation
-                $nonce = filter_input( INPUT_POST, '_wcml_custom_prices_nonce', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 
-                if(isset( $_POST['_wcml_custom_prices'][$post_data->ID]) && isset( $nonce ) && wp_verify_nonce( $nonce, 'wcml_save_custom_prices' )){
+                if( !isset( $_POST['_wcml_custom_prices'][$post_data->ID] ) ){
+                    continue; // save changes for individual variation
+                }
+
+                //save custom prices for variation
+                $nonce = filter_input( INPUT_POST, '_wcml_custom_prices_variation_' . $post_data->ID . '_nonce', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+                if(isset( $_POST['_wcml_custom_prices'][$post_data->ID]) && isset( $nonce ) && wp_verify_nonce( $nonce, 'wcml_save_custom_prices_variation_' . $post_data->ID )){
 
                     update_post_meta($post_data->ID,'_wcml_custom_prices_status',$_POST['_wcml_custom_prices'][$post_data->ID]);
 
@@ -1801,15 +1866,19 @@ class WCML_Products{
                     if(isset($unserialized_orig_product_attributes[$attribute])){
                         $orig_attr_values = explode('|',$unserialized_orig_product_attributes[$attribute]['value']);
                         foreach($orig_attr_values as $key=>$orig_attr_value){
-                            $orig_attr_value = str_replace(' ','-',trim($orig_attr_value));
-                            $orig_attr_value = lcfirst($orig_attr_value);
-                            if($orig_attr_value == $default_term_slug){
+                            $orig_attr_value_sanitized = strtolower( sanitize_title ( $orig_attr_value ) );
+                            if( $orig_attr_value_sanitized == $default_term_slug || trim($orig_attr_value) == trim($default_term_slug) ){
                                 $tnsl_product_attributes = get_post_meta($transl_post_id, '_product_attributes', true);
                                 $unserialized_tnsl_product_attributes = maybe_unserialize($tnsl_product_attributes);
                                 if(isset($unserialized_tnsl_product_attributes[$attribute])){
                                     $trnsl_attr_values = explode('|',$unserialized_tnsl_product_attributes[$attribute]['value']);
-                                    $trnsl_attr_value = str_replace(' ','-',trim($trnsl_attr_values[$key]));
-                                    $trnsl_attr_value = lcfirst($trnsl_attr_value);
+
+                                    if( $orig_attr_value_sanitized == $default_term_slug ){
+                                        $trnsl_attr_value = strtolower( sanitize_title( trim( $trnsl_attr_values[$key] ) ) );
+                                    }else{
+                                        $trnsl_attr_value = trim($trnsl_attr_values[$key]);
+                                    }
+
                                     $unserialized_default_attributes[$attribute] = $trnsl_attr_value;
                                 }
                             }
@@ -2899,7 +2968,7 @@ class WCML_Products{
 
 
     //update menu_order fro translations after ordering original products
-    function update_translations_product_ordering(){
+    function update_all_products_translations_ordering(){
         global $wpdb, $sitepress, $woocommerce_wpml;
 
         if( $woocommerce_wpml->settings['products_sync_order'] ) {
@@ -2907,21 +2976,37 @@ class WCML_Products{
             $current_language = $sitepress->get_current_language();
 
             if ($current_language == $sitepress->get_default_language()) {
-                $products = $wpdb->get_results($wpdb->prepare("SELECT p.ID, p.menu_order FROM $wpdb->posts AS p LEFT JOIN {$wpdb->prefix}icl_translations AS icl ON icl.element_id = p.id WHERE p.post_type = 'product' AND p.post_status IN ( 'publish', 'future', 'draft', 'pending', 'private' ) AND icl.element_type= 'post_product' AND icl.language_code = %s", $current_language));
+                $products = $wpdb->get_results($wpdb->prepare("SELECT p.ID FROM $wpdb->posts AS p LEFT JOIN {$wpdb->prefix}icl_translations AS icl ON icl.element_id = p.id WHERE p.post_type = 'product' AND p.post_status IN ( 'publish', 'future', 'draft', 'pending', 'private' ) AND icl.element_type= 'post_product' AND icl.language_code = %s", $current_language));
 
                 foreach ($products as $product) {
+                    $this->update_order_for_product_translations( $product->ID );
+                }
+            }
+        }
+    }
 
-                    $trid = $sitepress->get_element_trid($product->ID, 'post_product');
+    //update menu_order fro translations after ordering original products
+    function update_order_for_product_translations( $product_id ){
+        global $wpdb, $sitepress, $woocommerce_wpml;
+
+        if( $woocommerce_wpml->settings['products_sync_order'] ) {
+
+            $current_language = $sitepress->get_current_language();
+
+            if ( $current_language == $sitepress->get_default_language() ) {
+                $menu_order = $wpdb->get_var($wpdb->prepare("SELECT menu_order FROM $wpdb->posts WHERE ID = %d", $product_id ) );
+
+                $trid = $sitepress->get_element_trid($product_id, 'post_product');
                     $translations = $sitepress->get_element_translations($trid, 'post_product');
 
                     foreach ($translations as $translation) {
 
-                        if ($translation->element_id != $product->ID) {
-                            $wpdb->update($wpdb->posts, array('menu_order' => $product->menu_order), array('ID' => $translation->element_id));
-                        }
+                    if ($translation->element_id != $product_id) {
+                        $wpdb->update( $wpdb->posts, array('menu_order' => $menu_order), array('ID' => $translation->element_id));
                     }
                 }
             }
+
         }
     }
 
@@ -2932,12 +3017,18 @@ class WCML_Products{
             $elements[ 'excerpt' ] ['editor_type'] = 'editor';
         }
 
-		if($_POST[ 'excerpt_type'] == 'rich'){
-            $elements[ 'excerpt' ] ['value'] = htmlspecialchars_decode(wp_richedit_pre($elements[ 'excerpt' ] ['value']));
-        }else{
-            $elements[ 'excerpt' ] ['value'] = htmlspecialchars_decode(wp_htmledit_pre($elements[ 'excerpt' ] ['value']));
+		if ( function_exists( 'format_for_editor' ) ) {
+			// WordPress 4.3 uses format_for_editor
+            $elements[ 'excerpt' ] ['value'] = htmlspecialchars_decode(format_for_editor($elements[ 'excerpt' ] ['value'], $_POST[ 'excerpt_type']));
+        } else {
+			// Backwards compatible for WordPress < 4.3
+            if($_POST[ 'excerpt_type'] == 'rich'){
+                $elements[ 'excerpt' ] ['value'] = htmlspecialchars_decode(wp_richedit_pre($elements[ 'excerpt' ] ['value']));
+            }else{
+                $elements[ 'excerpt' ] ['value'] = htmlspecialchars_decode(wp_htmledit_pre($elements[ 'excerpt' ] ['value']));
+            }
         }
-
+        
 		return $elements;
 	}
 
@@ -3125,9 +3216,9 @@ class WCML_Products{
                 foreach ( $matched_products_query as $product ) {
                     if( !get_post_meta( $product->ID,'_price_'.$client_currency, true ) ) continue;
                     if ( $product->post_type == 'product' )
-                        $matched_products[] = apply_filters( 'translate_object_id', $product->ID, 'post_'.get_post_type($product->ID), true );
+                        $matched_products[] = apply_filters( 'translate_object_id', $product->ID, 'product', true );
                     if ( $product->post_parent > 0 && ! in_array( $product->post_parent, $matched_products ) )
-                        $matched_products[] = apply_filters( 'translate_object_id', $product->post_parent, 'post_'.get_post_type($product->post_parent), true );
+                        $matched_products[] = apply_filters( 'translate_object_id', $product->post_parent, get_post_type($product->post_parent), true );
                 }
 
                 add_filter('get_post_metadata', array($woocommerce_wpml->multi_currency_support, 'product_price_filter'), 10, 4);
@@ -3181,6 +3272,29 @@ class WCML_Products{
         global $wpdb;
         return $wpdb->get_row($wpdb->prepare("
                             SELECT * FROM {$wpdb->terms} t JOIN {$wpdb->term_taxonomy} x ON x.term_id = t.term_id WHERE t.term_id = %d AND x.taxonomy = %s", $term_id, $taxonomy ) );
+    }
+
+    function lock_variable_fields( $loop, $variation_data, $variation ){
+        global $woocommerce_wpml;
+
+        $product_id = false;
+        if( ( isset( $_GET['post'] ) && get_post_type( $_GET['post'] ) == 'product' ) ){
+            $product_id = $_GET['post'];
+        }elseif( isset( $_POST['action'] ) && $_POST['action'] == 'woocommerce_load_variations' && isset( $_POST['product_id'] ) ){
+            $product_id = $_POST['product_id'];
+        }
+
+        if( !$product_id ){
+            return;
+        }elseif( !$woocommerce_wpml->products->is_original_product( $product_id ) ){ ?>
+            <script type="text/javascript">
+                jQuery(document).ready(function() {
+                    wcml_lock_variation_fields();
+                });
+            </script>
+            <?php
+        }
+
     }
 
 }

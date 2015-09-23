@@ -78,6 +78,8 @@ class WCML_Endpoints{
 
     function maybe_flush_rules(){
         if( get_option( 'flush_rules_for_endpoints_translations' ) ){
+            WC()->query->init_query_vars();
+            WC()->query->add_endpoints();
             flush_rewrite_rules();
             delete_option( 'flush_rules_for_endpoints_translations' );
         }
@@ -183,7 +185,7 @@ class WCML_Endpoints{
             $current_id = $q->queried_object_id;
         }
 
-        if( !$q->is_404 && $current_id == $my_account_id ){
+        if( !$q->is_404 && $current_id == $my_account_id && $q->is_page ){
 
             $uri_vars = array_filter( explode( '/', $_SERVER['REQUEST_URI']) );
             $endpoints =  WC()->query->get_query_vars();
