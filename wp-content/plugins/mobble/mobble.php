@@ -7,8 +7,10 @@
 	Plugin URI: http://scott.ee/journal/mobble/
 	Description: Conditional functions for detecting a variety of mobile devices and tablets. For example is_android(), is_ios(), is_iphone().
 	Author: Scott Evans
-	Version: 1.4
+	Version: 1.5
 	Author URI: http://scott.ee
+	Text Domain: mobble
+	Domain Path: /languages
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,9 +38,14 @@
 define( 'MOBBLE_PATH', dirname( __FILE__ ) );
 define( 'MOBBLE_URL', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
 
-if ( !class_exists( 'Mobile_Detect' ) ) {
+if ( ! class_exists( 'Mobile_Detect' ) ) {
 	include MOBBLE_PATH . '/Mobile_Detect.php';
 }
+
+function mobble_load_textdomain() {
+	load_plugin_textdomain( 'mobble', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+}
+add_action( 'init', 'mobble_load_textdomain' );
 
 $useragent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? $_SERVER['HTTP_USER_AGENT'] : "";
 $mobble_detect = new Mobile_Detect();
@@ -303,7 +310,7 @@ register_activation_hook( __FILE__, 'mobble_defaults' );
 function mobble_defaults() {
 
 	$tmp = get_option( 'mobble_body_class' );
-	if ( !$tmp ) { update_option( 'mobble_body_class', 1 ); }
+	if ( ! $tmp ) { update_option( 'mobble_body_class', 1 ); }
 }
 
 /***************************************************************
@@ -339,13 +346,13 @@ function mobble_settings() {
 <!-- flattr js -->
 <script type="text/javascript">
 /* <![CDATA[ */
-    (function() {
-        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
-        t.parentNode.insertBefore(s, t);
-    })();
+	(function() {
+		var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+		s.type = 'text/javascript';
+		s.async = true;
+		s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+		t.parentNode.insertBefore(s, t);
+	})();
 /* ]]> */
 </script>
 
@@ -361,29 +368,25 @@ function mobble_settings() {
 	<div class="icon32" id="icon-options-general"></div>
 
 	<h2>mobble</h2>
-	<ul class="subsubsub">
-		<li><a href="?page=mobble/mobble.php" <?php if ( !isset( $_GET['action'] ) ) { echo 'class="current"'; } ?>>Options</a> </li>
-		<!--<li><a href="?page=mobble/mobble.php&amp;action=help" <?php if ( $_GET['action'] == "help" ) { echo 'class="current"'; } ?>>Help</a></li>-->
-	</ul>
 
 	<form method="post" action="options.php">
-	    <?php settings_fields( 'mobble-settings-group' ); ?>
+		<?php settings_fields( 'mobble-settings-group' ); ?>
 
-	    <table class="form-table">
-	        <tr valign="top">
-	        <th scope="row">Mobify body class?</th>
-	        <td><label for="users_can_register"><input name="mobble_body_class" type="checkbox" id="mobble_body_class" value="1" <?php echo checked( 1, get_option( 'mobble_body_class' ), false ); ?> /> &nbsp;Add mobile information to your theme body class? e.g. &lt;body class="handheld android tablet"&gt;</label> </td>
-	        </tr>
-	    </table>
+		<table class="form-table">
+			<tr valign="top">
+			<th scope="row"><?php _e( 'Mobify body class?', 'mobble' ); ?></th>
+			<td><label for="users_can_register"><input name="mobble_body_class" type="checkbox" id="mobble_body_class" value="1" <?php echo checked( 1, get_option( 'mobble_body_class' ), false ); ?> /><?php _e( '&nbsp;Add mobile information to your theme body class? e.g. &lt;body class="handheld android tablet"&gt;', 'mobble' ); ?></label> </td>
+			</tr>
+		</table>
 
 		<p class="submit">
-			<input type="submit" class="button-primary" value="<?php _e( 'Save Changes' ) ?>" />
+			<input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'mobble' ) ?>" />
 		</p>
 	</form>
 
 	<div class="scottsweb-credit">
 		<a href="http://scott.ee" title="Scott Evans - Web Designer &amp; WordPress developer"><img src="<?php echo MOBBLE_URL; ?>/scott.ee.png" alt="scott logo"/></a>
-		<p>Developed by <a href="http://scott.ee" title="Scott Evans - Web Designer and WordPress developer">Scott Evans</a>. If you find this plugin useful I'd be flattered to be Flattr'd:<br/><a class="FlattrButton" style="display:none; " rev="flattr;button:compact;" href="http://scott.ee/journal/mobble/"></a></p>
+		<p>Developed by <a href="http://scott.ee" title="Scott Evans - Web Designer and WordPress developer">Scott Evans</a>.<?php _e( "If you find this plugin useful I'd be flattered to be Flattr'd:", 'mobble' ); ?><br/><a class="FlattrButton" style="display:none; " rev="flattr;button:compact;" href="http://scott.ee/journal/mobble/"></a></p>
 	</div>
 
 </div>
@@ -399,7 +402,7 @@ function mobble_register_settings() {
 * Add mobble info to the body class if activated in settings
 ***************************************************************/
 
-if ( !is_admin() && get_option( 'mobble_body_class' ) ) {
+if ( ! is_admin() && get_option( 'mobble_body_class' ) ) {
 	add_filter( 'body_class', 'mobble_body_class' );
 }
 
@@ -433,7 +436,7 @@ function mobble_body_class( $classes ) {
 	if ( is_nintendo() ) { $classes[] = "nintendo"; }
 
 	// bonus
-	if ( !is_handheld() ) { $classes[] = "desktop"; }
+	if ( ! is_handheld() ) { $classes[] = "desktop"; }
 
 	if ( $is_lynx ) { $classes[] = "lynx"; }
 	if ( $is_gecko ) { $classes[] = "gecko"; }

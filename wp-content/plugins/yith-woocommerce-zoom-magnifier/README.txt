@@ -3,8 +3,8 @@
 Contributors: yithemes
 Tags: zoom, magnifier, woocommerce, product image, themes, yit, e-commerce, shop, thumbnail, thumbnail slider, zoom image, carousel, image carousel
 Requires at least: 3.5.1
-Tested up to: 4.2.2
-Stable tag: 1.2.5
+Tested up to: 4.3
+Stable tag: 1.2.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,29 @@ The size of the Zoom Image is automatically setted. If you want to change these 
 6. Choose how many items the slider should show, the image thumbnails will fit the available width.
 
 == Changelog ==
+
+= Version 1.2.10 - RELEASED: SEP 24, 2015 =
+
+* Updated: changed text domain as translate.wordpress.org requisite.
+
+= Version 1.2.9 - RELEASED: SEP 04, 2015 =
+
+* Updated: Languages file
+* Fix: Changed plugin text domain from yit to ywmz
+* Fix: featured image shown one time on slider.
+* Fix: div not shown if loading text is empty.
+
+= Version 1.2.8 - RELEASED: SEP 01, 2015 =
+
+* Fix: removed deprecated woocommerce_update_option_X hook.
+
+= Version 1.2.7 - RELEASED: AUG 27, 2015 =
+
+* Fix: resolved XSS vulnerability.
+
+= Version 1.2.6 - RELEASED: AUG 12, 2015 =
+
+* Tweak: update YITH Plugin framework.
 
 = Version 1.2.5 - RELEASED: JUL 23, 2015 =
 

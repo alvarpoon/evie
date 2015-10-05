@@ -1,9 +1,9 @@
 === iThemes Security (formerly Better WP Security) ===
 Contributors: ithemes, chrisjean, aaroncampbell, gerroald, mattdanner
-Tags: security, secure, multi-site, network, mu, login, lockdown, htaccess, hack, header, cleanup, ban, restrict, access, protect, protection, disable, images, image, hotlink, admin, username, database, prefix, wp-content, rename, directory, directories, secure, SSL, iThemes, BackupBuddy, Exchange, iThemes Exchange
-Requires at least: 4.0
-Tested up to: 4.2.2
-Stable tag: 4.8.0
+Tags: security, malware, secure, multi-site, network, mu, login, lockdown, htaccess, hack, header, cleanup, ban, restrict, access, protect, protection, disable, images, image, hotlink, admin, username, database, prefix, wp-content, rename, directory, directories, secure, SSL, iThemes, BackupBuddy, Exchange, iThemes Exchange
+Requires at least: 4.1
+Tested up to: 4.3.1
+Stable tag: 5.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,42 +28,25 @@ Get added peace of mind with professional support from our expert team and pro f
 
 Pro Features:
 
-* User action logging - track when user's edit content, login or logout
-* 2-factor authentication - Use Google Authenticator or Authy to send a custom code to your phone when you log in
-* Import/export settings - saves time setting up multiple WordPress sites
-* Password Expiration - Set a maximum password age and force users to choose a new password. You can also force all users to choose a new password immediately (if needed)
-* Generate Strong Passwords - Generate strong passwords right from your profile screen
-* Dashboard Widget - manage important tasks such as user banning and system scans right from the WordPress dashboard.
-* GeoIP banning - coming soon
-* Online file comparison - When a file change is detected it will scan the origin of the files to determine if the change was malicious or not. Currently works only in WordPress core but plugins and themes are coming.
-* Temporary privilege escalation - give a contractor or someone else temporary admin or editor access to your site that will automatically reset itself.
-* wp-cli integration - Manage your site's security from the command line.
-* Google reCAPTCHA - Protect your site against spammers
+* User Action Logging - Track when user's edit content, login or logout.
+* Two-Factor Authentication - Use a mobile app such as Google Authenticator or Authy to generate a code or have a generated code emailed to you.
+* Import/Export Settings - Saves time setting up multiple WordPress sites.
+* Malware Scan Scheduling - Have your site scanned for malware automatically each day. If an issue is found, an email is sent with the details.
+* Password Expiration - Set a maximum password age and force users to choose a new password. You can also force all users to choose a new password immediately (if needed).
+* Generate Strong Passwords - Generate strong passwords right from your profile screen.
+* Dashboard Widget - Manage important tasks such as user banning and system scans right from the WordPress dashboard.
+* Online File Comparison - When a file change is detected it will scan the origin of the files to determine if the change was malicious or not. Currently works only in WordPress core but plugins and themes are coming.
+* Temporary Privilege Escalation - give a contractor or someone else temporary admin or editor access to your site that will automatically reset itself.
+* wp-cli Integration - Manage your site's security from the command line.
+* Google reCAPTCHA - Protect your site against spammers.
 
 = iThemes Sync Integration =
 
 Manage more than one site? Manage away mode, release lockouts and make sure your WordPress site is up to date with <a href="http://ithemes.com/sync/">iThemes Sync</a>.
 
-= New! iThemes Brute Force Protection Network =
+= iThemes Brute Force Protection Network =
 
 Network Brute Force Protection takes brute force protection to the next level by further banning users who have tried to break into other sites from breaking into yours. The iThemes Brute Force Protection Network will automatically report IP addresses of failed login attempts to iThemes and will block them for a length of time necessary to protect your site based on the number of sites that have seen a similar attack.
-
-= Obscure =
-
-iThemes Security hides common WordPress security vulnerabilities, preventing attackers from learning too much about your site and away from sensitive areas like your site's login, admin, etc.
-
-* Changes the URLs for WordPress dashboard areas including login, admin and more
-* Completely turns off the ability to login for a given time period (away mode)
-* Removes the meta "Generator" tag
-* Removes theme, plugin, and core update notifications from users who do not have permission to update them
-* Removes Windows Live Write header information
-* Removes RSD header information
-* Renames "admin" account
-* Changes the ID on the user with ID 1
-* Changes the Wordpress database table prefix
-* Changes wp-content path
-* Removes login error messages
-* Displays a random version number to non administrative users
 
 = Protect =
 
@@ -76,17 +59,32 @@ Hiding parts of your site is helpful, but won't prevent all attacks. In addition
 * Enforces strong passwords for all accounts of a configurable minimum role
 * Forces SSL for admin pages (on supporting servers)
 * Forces SSL for any page or post (on supporting servers)
-* Turns off file editing from within Wordpress admin area
+* Turns off file editing from within WordPress admin area
 * Detects and blocks numerous attacks to your filesystem and database
 
 = Detect =
 
 iThemes Security monitors your site and reports changes to the filesystem and database that might indicate a compromise. iThemes Security also works to detect bots and other attempts to search vulnerabilities.
 
-* Detects bots and other attempts to search for vulnerabilities
-* Monitors filesystem for unauthorized changes
-* Run a scan for blacklists on the homepage of your site
+* Detects bots and other attempts to search for vulnerabilities.
+* Monitors filesystem for unauthorized changes.
+* Run a scan for malware and blacklists on the homepage of your site.
 * Receive email notifications when someone gets locked out after too many failed login attempts or when a file on your site has been changed.
+
+= Obscure =
+
+iThemes Security hides common WordPress security vulnerabilities, preventing attackers from learning too much about your site and away from sensitive areas like your site's login, admin, etc.
+
+* Changes the URLs for WordPress dashboard areas including login, admin and more
+* Completely turns off the ability to login for a given time period (away mode)
+* Removes theme, plugin, and core update notifications from users who do not have permission to update them
+* Removes Windows Live Write header information
+* Removes RSD header information
+* Renames "admin" account
+* Changes the ID on the user with ID 1
+* Changes the WordPress database table prefix
+* Changes wp-content path
+* Removes login error messages
 
 = Recover =
 
@@ -98,7 +96,6 @@ For complete site backups and the ability to restore or move WordPress easily, c
 
 * Makes it easier for users not accustomed to WordPress to remember login and admin URLs by customizing default admin URLs
 * Detects hidden 404 errors on your site that can affect your SEO such as bad links and missing images
-* Removes the existing jQuery version used and replaces it with a safe version (the version that comes default with WordPress).
 
 = Tutorials =
 
@@ -132,7 +129,7 @@ Please read the installation instructions and FAQ before installing this plugin.
 
 NOTE: iThemes Security makes significant changers to your database and other site files which can be problematic, so a backup is strongly recommended before making any changes to your site with this plugin. While problems are rare, most support requests involve the failure to make a proper backup before installation.
 
-1. BEFORE YOU BEGIN: Back up your Wordpress database, config file, and .htaccess file. We recommend using <a href="http://ithemes.com/purchase/backupbuddy">BackupBuddy</a>, our WordPress backup plugin for a complete site backup.
+1. BEFORE YOU BEGIN: Back up your WordPress database, config file, and .htaccess file. We recommend using <a href="http://ithemes.com/purchase/backupbuddy">BackupBuddy</a>, our WordPress backup plugin for a complete site backup.
 2. Upload the zip file to the `/wp-content/plugins/` directory
 3. Unzip
 4. Activate the plugin through the 'Plugins' menu in WordPress
@@ -191,6 +188,22 @@ Free support may be available with the help of the community in the <a href="htt
 5. Easy-to-navigate Security dashboard
 
 == Changelog ==
+
+= 5.0.1 =
+* Compatibility Fix: Added support for ITSEC_TEST_MALWARE_SCAN_DISABLE_SSLVERIFY. Setting it to true can bypass "SSL peer certificate or SSH remote key was not OK" errors on servers with bad SSL configurations.
+
+= 5.0.0 =
+* New Feature: Added malware scanning provided by Sucuri SiteCheck.
+
+= 4.9.0 =
+* Feature Removal: Removed the "Remove WordPress Generator Meta Tag" and "Display Random Version" features as they are not recommended due to limited security benefit and creating compatibility issues.
+* Enhancement: Added the ability to undo the Content Directory change.
+* Bug Fix: No longer tries to load a non-existent JavaScript file for the salts module.
+* Bug Fix: Fixed an issue with one-time database backups on multi-site installs.
+* Bug Fix: Fixed issues related to locating .htaccess or nginx.conf files on sites with WordPress installed in a separate directory.
+* Bug Fix: Fixed issues with PHP blocking in uploads directory not working with certain non-standard setups.
+* Bug Fix: Minor change to fix a warning that can appear after changing the Content Directory.
+* Bug Fix: Fixed a PHP fatal error that could occur on some servers when adding a ban to the site's .htaccess or nginx.conf file.
 
 = 4.8.0 =
 * Feature Removal: Removed the malware scanning features as VirusTotal no longer supports scanning from WordPress sites. A replacement is in the works.

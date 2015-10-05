@@ -63,7 +63,7 @@ class ITSEC_Lib_Config_File {
 		}
 		
 		$comment_delimiter = self::get_comment_delimiter( $server );
-		$modification = "$comment_delimiter " . __( 'iThemes Security preserved the following settings as removing them could prevent the site from functioning correctly.', 'it-l10n-better-wp-security' ) . "\n$modification";
+		$modification = "$comment_delimiter " . __( 'iThemes Security preserved the following settings as removing them could prevent the site from functioning correctly.', 'better-wp-security' ) . "\n$modification";
 		$modification = self::get_prepared_modification( $modification, $comment_delimiter );
 		
 		return $modification;
@@ -139,7 +139,7 @@ class ITSEC_Lib_Config_File {
 		
 		if ( empty( $file_path ) ) {
 			return true;
-//			return new WP_Error( 'itsec-lib-config-file-server-config-file-updates-disabled', __( 'Updates to the server config file are disabled via a filter.', 'it-l10n-better-wp-security' ) );
+//			return new WP_Error( 'itsec-lib-config-file-server-config-file-updates-disabled', __( 'Updates to the server config file are disabled via a filter.', 'better-wp-security' ) );
 		}
 		
 		return self::update( $file_path, $server, $modification, $clear_existing_modifications );
@@ -179,7 +179,7 @@ class ITSEC_Lib_Config_File {
 		}
 		
 		$comment_delimiter = self::get_comment_delimiter( 'wp-config' );
-		$modification = "$comment_delimiter " . __( 'iThemes Security preserved the following settings as removing them could prevent the site from functioning correctly.', 'it-l10n-better-wp-security' ) . "\n$modification";
+		$modification = "$comment_delimiter " . __( 'iThemes Security preserved the following settings as removing them could prevent the site from functioning correctly.', 'better-wp-security' ) . "\n$modification";
 		$modification = self::get_prepared_modification( $modification, $comment_delimiter );
 		
 		return $modification;
@@ -243,6 +243,25 @@ class ITSEC_Lib_Config_File {
 	}
 	
 	/**
+	 * Remove matched content from the wp-config.php file.
+	 *
+	 * @since 1.17.0
+	 *
+	 * @param array|string $patterns An array of regular expression strings or a string for a regular expression to
+	 *                               match in the file.
+	 * @return int|WP_Error Number of matches removed or a WP_Error object on error.
+	 */
+	public static function remove_from_wp_config( $patterns ) {
+		$file_path = self::get_wp_config_file_path();
+		
+		if ( empty( $file_path ) ) {
+			return new WP_Error( 'itsec-lib-config-file-wp-config-file-updates-disabled', __( 'Updates to <code>wp-config.php</code> are disabled via a filter.', 'better-wp-security' ) );
+		}
+		
+		return self::remove( $file_path, $patterns );
+	}
+	
+	/**
 	 * Write the supplied modification to the wp-config.php file.
 	 *
 	 * @since 1.15.0
@@ -257,7 +276,7 @@ class ITSEC_Lib_Config_File {
 		$file_path = self::get_wp_config_file_path();
 		
 		if ( empty( $file_path ) ) {
-			return new WP_Error( 'itsec-lib-config-file-wp-config-file-updates-disabled', __( 'Updates to <code>wp-config.php</code> are disabled via a filter.', 'it-l10n-better-wp-security' ) );
+			return new WP_Error( 'itsec-lib-config-file-wp-config-file-updates-disabled', __( 'Updates to <code>wp-config.php</code> are disabled via a filter.', 'better-wp-security' ) );
 		}
 		
 		return self::update( $file_path, 'wp-config', $modification, $clear_existing_modifications );
@@ -280,7 +299,7 @@ class ITSEC_Lib_Config_File {
 		$contents = ITSEC_Lib_File::read( $file );
 		
 		if ( is_wp_error( $contents ) ) {
-			return new WP_Error( 'itsec-lib-config-file-cannot-read-file', sprintf( __( 'Unable to read %1$s due to the following error: %2$s', 'it-l10n-better-wp-security' ), $file, $contents->get_error_message() ) );
+			return new WP_Error( 'itsec-lib-config-file-cannot-read-file', sprintf( __( 'Unable to read %1$s due to the following error: %2$s', 'better-wp-security' ), $file, $contents->get_error_message() ) );
 		}
 		
 		return $contents;
@@ -412,7 +431,7 @@ class ITSEC_Lib_Config_File {
 			$display_file = preg_replace( '/^' . preg_quote( $abspath, '/' ) . '/', '', $display_file );
 			$display_file = ltrim( $display_file, '/' );
 			
-			return new WP_Error( 'itsec-file-writes-are-disabled', sprintf( __( 'The "Write to Files" setting is disabled. Manual configuration for the <code>%s</code> file can be found on the Security > Dashboard page.', 'it-l10n-better-wp-security' ), $display_file ) );
+			return new WP_Error( 'itsec-file-writes-are-disabled', sprintf( __( 'The "Write to Files" setting is disabled. Manual configuration for the <code>%s</code> file can be found on the Security > Dashboard page.', 'better-wp-security' ), $display_file ) );
 		}
 		
 		
@@ -518,12 +537,61 @@ class ITSEC_Lib_Config_File {
 		// Update the modification to have the beginning and ending comments in order to identify the section as being
 		// added by iThemes Security.
 		$supplied_modification = $modification;
-		$modification  = "$comment_delimiter BEGIN iThemes Security - " . __( 'Do not modify or remove this line', 'it-l10n-better-wp-security' ) . "\n";
+		$modification  = "$comment_delimiter BEGIN iThemes Security - " . __( 'Do not modify or remove this line', 'better-wp-security' ) . "\n";
 		$modification .= "$comment_delimiter iThemes Security Config Details: " . self::FORMAT_VERSION . "\n";
 		$modification .= "$supplied_modification\n";
-		$modification .= "$comment_delimiter END iThemes Security - " . __( 'Do not modify or remove this line', 'it-l10n-better-wp-security' );
+		$modification .= "$comment_delimiter END iThemes Security - " . __( 'Do not modify or remove this line', 'better-wp-security' );
 		
 		return $modification;
+	}
+	
+	/**
+	 * Remove matched content from the supplied file.
+	 *
+	 * @since 1.17.0
+	 *
+	 * @param string       $file     Config file to update.
+	 * @param array|string $patterns An array of regular expression strings or a string for a regular expression to
+	 *                               match in the file.
+	 * @return int|WP_Error Number of matches removed or a WP_Error object on error.
+	 */
+	protected static function remove( $file, $patterns ) {
+		$replacements = array();
+		
+		foreach ( (array) $patterns as $pattern ) {
+			$replacements[$pattern] = '';
+		}
+		
+		
+		return self::replace( $file, $replacements );
+	}
+	
+	/**
+	 * Replace matched content in a file.
+	 *
+	 * @since 1.17.0
+	 *
+	 * @param string       $file         Config file to update.
+	 * @param array|string $replacements An array of regular expression string indexes with replacement string values.
+	 * @return int|WP_Error Number of replacements made or a WP_Error object on error.
+	 */
+	protected static function replace( $file, $replacements ) {
+		$contents = self::get_file_contents( $file );
+		
+		if ( is_wp_error( $contents ) ) {
+			return $contents;
+		}
+		
+		
+		$total = 0;
+		
+		foreach ( (array) $replacements as $pattern => $replacement ) {
+			$contents = preg_replace( $pattern, $replacement, $contents, -1, $count );
+			$total += $count;
+		}
+		
+		// Write the new contents to the file and return the results.
+		return ITSEC_Lib_File::write( $file, $contents );
 	}
 	
 	/**
@@ -600,58 +668,6 @@ class ITSEC_Lib_Config_File {
 	}
 	
 	/**
-	 * Internal class function to remove comments from a string containing PHP code.
-	 *
-	 * @since 1.15.0
-	 * @access protected
-	 *
-	 * @param string $contents String containing the code to strip of comments.
-	 * @return string|WP_Error Returns a string containing the stripped source or a WP_Error object on an error.
-	 */
-	protected static function strip_php_comments( $contents ) {
-		if ( ! ITSEC_Lib_Utility::is_callable_function( 'token_get_all' ) ) {
-			return new WP_Error( 'itsec-lib-config-file-strip-php-comments-token-get-all-is-disabled', __( 'Unable to strip comments from the source code as the token_get_all() function is disabled. This is a system configuration issue.', 'it-l10n-better-wp-security' ) );
-		}
-		
-		
-		$tokens = token_get_all( $contents );
-		
-		if ( ! is_array( $tokens ) ) {
-			return new WP_Error( 'itsec-lib-config-file-strip-php-comments-token-get-all-invalid-response', sprintf( __( 'Unable to strip comments from the source code as the token_get_all() function returned an unrecognized value (type: %s)', 'it-l10n-better-wp-security' ), gettype( $tokens ) ) );
-		}
-		
-		
-		if ( ! defined( 'T_ML_COMMENT' ) ) {
-			define( 'T_ML_COMMENT', T_COMMENT );
-		}
-		if ( ! defined( 'T_DOC_COMMENT' ) ) {
-			define( 'T_DOC_COMMENT', T_ML_COMMENT );
-		}
-		
-		$contents = '';
-		
-		foreach ( $tokens as $token ) {
-			if ( is_string( $token ) ) {
-				$contents .= $token;
-			} else {
-				list( $id, $text ) = $token;
-				
-				switch ($id) {
-					case T_COMMENT:
-					case T_ML_COMMENT:
-					case T_DOC_COMMENT:
-						break;
-					default:
-						$contents .= $text;
-						break;
-				}
-			}
-		}
-		
-		return $contents;
-	}
-	
-	/**
 	 * Get full file path to the server's config file for the site.
 	 *
 	 * Customize the returned value with the itsec_filter_server_config_file_path filter. Filter the value to a blank
@@ -668,7 +684,10 @@ class ITSEC_Lib_Config_File {
 			return '';
 		}
 		
-		$file_path = ABSPATH . $file;
+		require_once( ABSPATH . 'wp-admin/includes/file.php' );
+		
+		$home_path = get_home_path();
+		$file_path = $home_path . $file;
 		$file_path = apply_filters( 'itsec_filter_server_config_file_path', $file_path, $file );
 		
 		return $file_path;
