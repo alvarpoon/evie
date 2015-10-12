@@ -257,6 +257,45 @@
 		height: auto !important;
 		overflow: visible !important;
 	}
+	
+	#menu-primary-navigation-tc-1, #menu-primary-navigation-sc-1{
+		.no-hover-products{
+			&>a:hover {
+				text-decoration: none;
+				cursor: default;
+			}
+			&>.sub-menu{
+				&:after{
+					left:5%;
+				}
+				left: -13px;
+			    width: 520px;
+				li{
+					&.no-hover-by-category{
+						&>a:hover {
+							text-decoration: none;
+							cursor: default;
+						}
+						float: left;
+					    width: 150px;
+					}
+					&.no-hover-by-concern{
+						&>a:hover {
+							text-decoration: none;
+							cursor: default;
+						}
+						float: left;
+						margin-right: 20px;
+						width: 150px;
+					}
+					
+					&.nav-whats-new, &.nav-gift-value-sets, &.nav-bestsellers, &.nav-top-rated{
+						padding-bottom: 8px;
+					}
+				}
+			}
+		}
+	}
 
 	.navbar-brand{
 		width:auto;
