@@ -7527,6 +7527,20 @@ var Roots = {
 			updateCheckBoxValue();
 		});
 	}  
+  },
+  testimonials_tc: {
+	init: function(){
+		$(document).ready(function(){
+			updateCheckBoxValue();
+		});
+	}  
+  },
+  testimonials_sc: {
+	init: function(){
+		$(document).ready(function(){
+			updateCheckBoxValue();
+		});
+	}  
   }
 };
 

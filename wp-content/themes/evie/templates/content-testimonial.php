@@ -18,11 +18,22 @@
 		$sort_order = '';
 	}
 	
-	
-	$product_cat = 29;
+	if(ICL_LANGUAGE_CODE == 'zh-hant'){
+		$product_cat = 99;
+	}else if(ICL_LANGUAGE_CODE == 'zh-hans'){
+		$product_cat = 98;
+	}else{
+		$product_cat = 29;
+	}
 	$product_result = get_term_by('id', $product_cat,'testimonial_category');
 	
-	$concern_cat = 30;
+	if(ICL_LANGUAGE_CODE == 'zh-hant'){
+		$concern_cat = 105;
+	}else if(ICL_LANGUAGE_CODE == 'zh-hans'){
+		$concern_cat = 103;
+	}else{
+		$concern_cat = 30;
+	}	
 	$concern_result = get_term_by('id', $concern_cat,'testimonial_category');
 	
 	$product_args = array(
@@ -32,7 +43,8 @@
 		'hide_empty'               => 0,
 		'hierarchical'             => 0,
 		'taxonomy'                 => 'testimonial_category',
-		'parent'      		   	   => $product_cat
+		'parent'      		   	   => $product_cat,
+		'suppress_filters' 		   => 0
 	);
 	$product_categories = get_categories( $product_args );
 	
@@ -43,7 +55,8 @@
 		'hide_empty'               => 0,
 		'hierarchical'             => 0,
 		'taxonomy'                 => 'testimonial_category',
-		'parent'      		   	   => $concern_cat
+		'parent'      		   	   => $concern_cat,
+		'suppress_filters' 		   => 0
 	);
 	$concern_categories = get_categories( $concern_args );
 		
@@ -177,7 +190,8 @@
 									'field' => 'cat_ID',
 									'terms' => $terms_array
 								)
-							)
+							),
+							'suppress_filters' => 0
 						);
 						break;
 					case "oldest":						
@@ -194,7 +208,8 @@
 									'field' => 'cat_ID',
 									'terms' => $terms_array
 								)
-							)
+							),
+							'suppress_filters' => 0
 						);
 						break;
 					case "high":						
@@ -212,7 +227,8 @@
 									'field' => 'cat_ID',
 									'terms' => $terms_array
 								)
-							)
+							),
+							'suppress_filters' => 0
 						);
 						
 						break;
@@ -231,7 +247,8 @@
 									'field' => 'cat_ID',
 									'terms' => $terms_array
 								)
-							)
+							),
+							'suppress_filters' => 0
 						);
 						break;
 					default:				
@@ -248,7 +265,8 @@
 									'field' => 'cat_ID',
 									'terms' => $terms_array
 								)
-							)
+							),
+							'suppress_filters' => 0
 						);
 						
 				}
@@ -257,9 +275,8 @@
 				
 				//echo $myCategory;
 				
-				
 				$loop = new WP_Query( $testimonal_args );
-                
+				
 				while ( $loop->have_posts() ) : $loop->the_post();
 					$rating = get_field("rating", $post->ID);
 					$commenter = get_field("commenter_name", $post->ID);
