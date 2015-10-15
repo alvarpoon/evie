@@ -25,7 +25,8 @@
 	}else{
 		$product_cat = 29;
 	}
-	$product_result = get_term_by('id', $product_cat,'testimonial_category');
+	//$product_result = get_term_by('id', $product_cat,'testimonial_category');
+	//print_r($product_result);
 	
 	if(ICL_LANGUAGE_CODE == 'zh-hant'){
 		$concern_cat = 105;
@@ -34,7 +35,7 @@
 	}else{
 		$concern_cat = 30;
 	}	
-	$concern_result = get_term_by('id', $concern_cat,'testimonial_category');
+	//$concern_result = get_term_by('id', $concern_cat,'testimonial_category');
 	
 	$product_args = array(
 		'type'                     => 'post',
@@ -167,8 +168,11 @@
 						array_push($product_query_arr, $value);
 					}
 				}
+				//print_r($product_query_arr);
 				$concern_query_arr = explode(',',$c_cat);
+				//print_r($concern_query_arr);
 				$terms_array = array_merge($product_query_arr, $concern_query_arr);
+				//print_r($terms_array);
 				
 				$order_val = '';
 				$orderby_val = '';
@@ -191,7 +195,7 @@
 									'terms' => $terms_array
 								)
 							),
-							'suppress_filters' => 0
+							'suppress_filters' => false
 						);
 						break;
 					case "oldest":						
@@ -209,7 +213,7 @@
 									'terms' => $terms_array
 								)
 							),
-							'suppress_filters' => 0
+							'suppress_filters' => false
 						);
 						break;
 					case "high":						
@@ -228,7 +232,7 @@
 									'terms' => $terms_array
 								)
 							),
-							'suppress_filters' => 0
+							'suppress_filters' => false
 						);
 						
 						break;
@@ -248,7 +252,7 @@
 									'terms' => $terms_array
 								)
 							),
-							'suppress_filters' => 0
+							'suppress_filters' => false
 						);
 						break;
 					default:				
@@ -266,7 +270,7 @@
 									'terms' => $terms_array
 								)
 							),
-							'suppress_filters' => 0
+							'suppress_filters' => false
 						);
 						
 				}
