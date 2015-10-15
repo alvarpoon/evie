@@ -8711,6 +8711,16 @@ ul.products li.product .find-out-more {
   #menu-primary-navigation-sc-1 .no-hover-products > .sub-menu li.nav-top-rated {
     padding-bottom: 8px;
   }
+  #menu-primary-navigation-tc-1 .no-hover-about-evie .sub-menu,
+  #menu-primary-navigation-sc-1 .no-hover-about-evie .sub-menu {
+    left: 0px;
+    width: 170px;
+  }
+  #menu-primary-navigation-tc-1 .no-hover-buzz .sub-menu,
+  #menu-primary-navigation-sc-1 .no-hover-buzz .sub-menu {
+    left: 0px;
+    width: 170px;
+  }
   .navbar-brand {
     width: auto;
     height: auto;
