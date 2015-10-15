@@ -191,7 +191,7 @@
 							'tax_query' => array(
 								array(
 									'taxonomy' => 'testimonial_category',
-									'field' => 'cat_ID',
+									'field' => 'id',
 									'terms' => $terms_array
 								)
 							),
@@ -228,7 +228,7 @@
 							'tax_query' => array(
 								array(
 									'taxonomy' => 'testimonial_category',
-									'field' => 'cat_ID',
+									'field' => 'id',
 									'terms' => $terms_array
 								)
 							),
@@ -248,7 +248,7 @@
 							'tax_query' => array(
 								array(
 									'taxonomy' => 'testimonial_category',
-									'field' => 'cat_ID',
+									'field' => 'id',
 									'terms' => $terms_array
 								)
 							),
@@ -266,7 +266,7 @@
 							'tax_query' => array(
 								array(
 									'taxonomy' => 'testimonial_category',
-									'field' => 'cat_ID',
+									'field' => 'id',
 									'terms' => $terms_array
 								)
 							),
