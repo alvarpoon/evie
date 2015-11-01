@@ -78,5 +78,5 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 	</a>
     
-    <a href="<? the_permalink(); ?>" class="find-out-more">VIEW</a>
+    <a href="<? the_permalink(); ?>" class="find-out-more"><?= _e('VIEW') ?></a>
 </li>

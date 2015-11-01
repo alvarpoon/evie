@@ -41,9 +41,9 @@
 	</div>
     <!--<p class="copyright"><?=get_field("footer_copyright_text",$id[ICL_LANGUAGE_CODE])?></p>-->
     <div class="copyright">
-    	@2015 EVIE INTERNATIONAL LIMITED. ALL RIGHTS RESERVED 
-    	<span>|</span> <a href="<?=site_url()?>/terms-of-use/">Terms of Use</a>
-        <span>|</span> <a href="<?=site_url()?>/privacy-policy/">Privacy Policy</a>
+    	<?= _e('@2015 EVIE INTERNATIONAL LIMITED. ALL RIGHTS RESERVED '); ?>
+    	<span>|</span> <a href="<?=site_url()?>/terms-of-use/"><?= _e('Terms of Use'); ?></a>
+        <span>|</span> <a href="<?=site_url()?>/privacy-policy/"><?= _e('Privacy Policy'); ?></a>
     </div>
   </div>
 </footer>
