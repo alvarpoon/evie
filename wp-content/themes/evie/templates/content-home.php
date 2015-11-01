@@ -89,7 +89,7 @@
 				<div class="border-top-mid col-xs-10 noPadding"></div>
 				<div class="border-top-right col-xs-1 noPadding"></div>
 			</div>
-			<div class="headline-mid">bestsellers</div>
+			<div class="headline-mid"><?= _e('bestsellers'); ?></div>
 			<div class="headline-btm clearfix">
 				<div class="border-btm-left col-xs-1 noPadding"></div>
 				<div class="border-btm-mid col-xs-10 noPadding"></div>
