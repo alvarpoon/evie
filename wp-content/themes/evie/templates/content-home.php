@@ -98,7 +98,7 @@
 		</div>
             <div class="row">
                 <?
-                    $best_sellers = get_field("best_seller", $post->ID);
+                    $best_sellers = get_field("best_seller", icl_object_id($post->ID, 'page', false,ICL_LANGUAGE_CODE));
                     foreach( $best_sellers as $best_seller ){
                         $best_seller_content = get_post($best_seller);
                 ?>

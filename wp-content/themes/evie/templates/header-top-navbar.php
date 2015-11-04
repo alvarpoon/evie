@@ -14,9 +14,9 @@
 					  //echo ICL_LANGUAGE_CODE;
 					//if ($currLang['language_code'] != ICL_LANGUAGE_CODE){
 				  	if(++$langs_counter === $numLangs){
-						echo '<a class="lang-sel-link" href="'.$currLang['url'].'">'.$currLang['native_name'].'</a>';
+						echo '<a class="lang-sel-link" href="'.$currLang['url'].'">'.$currLang['tag'].'</a>';
 					}else{
-						echo '<a class="lang-sel-link" href="'.$currLang['url'].'">'.$currLang['native_name'].'</a> | ';	
+						echo '<a class="lang-sel-link" href="'.$currLang['url'].'">'.$currLang['tag'].'</a> | ';	
 					}
 					//}
 				  }
