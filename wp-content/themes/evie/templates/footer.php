@@ -32,7 +32,6 @@
 		</div>
 	  	<div class="col-xs-12 col-sm-8 col-sm-pull-4 col-md-10 col-md-pull-2 col-lg-8 col-lg-pull-4 footer-link-container">
 	    <?
-		    //$id = array('en'=>4,'zh-hant'=>16,'zh-hans'=>14);
 	    if (has_nav_menu('footer_navigation')){
 	    	wp_nav_menu(array('theme_location' => 'footer_navigation', 'menu_class' => 'footer_link clearfix', 'depth' => 2));
 	    }
@@ -42,8 +41,8 @@
     <!--<p class="copyright"><?=get_field("footer_copyright_text",$id[ICL_LANGUAGE_CODE])?></p>-->
     <div class="copyright">
     	<?= _e('@2015 EVIE INTERNATIONAL LIMITED. ALL RIGHTS RESERVED '); ?>
-    	<span>|</span> <a href="<?=site_url()?>/terms-of-use/"><?= _e('Terms of Use'); ?></a>
-        <span>|</span> <a href="<?=site_url()?>/privacy-policy/"><?= _e('Privacy Policy'); ?></a>
+    	<span>|</span> <a href="<?=get_permalink_current_language(314)?>"><?= _e('Terms of Use'); ?></a>
+        <span>|</span> <a href="<?=get_permalink_current_language(316)?>"><?= _e('Privacy Policy'); ?></a>
     </div>
   </div>
 </footer>
