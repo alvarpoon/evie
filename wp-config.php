@@ -41,6 +41,14 @@ switch ($_SERVER['SERVER_NAME']) {
 		define('DB_USER', 'evi10000_evie');
 		define('DB_PASSWORD', 'a7itwkpgwk');
 		define('DB_HOST', 'localhost');
+
+	case "local.evie-test.com":
+		define('DB_NAME', 'evie_test');
+		define('WP_SITEURL',  'http://local.evie-test.com' );
+    	define('WP_HOME', 'http://local.evie-test.com' );
+		define('DB_USER', 'root');
+		define('DB_PASSWORD', 'root');
+		define('DB_HOST', 'localhost');
 }
 
 /** Database Charset to use in creating database tables. */
