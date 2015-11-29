@@ -301,7 +301,17 @@
                         </div>
                         <div class="testimonial-header">
 	                        <h2 class="entry-title"><? the_title(); ?></h2>
-    	                    &mdash; <span class="commenter"><?=$commenter?></span> <span class="date"><?=get_the_date('F j, Y'); ?></span>
+    	                    &mdash; <span class="commenter"><?=$commenter?></span> <span class="date">
+    	                    	<?
+    	                    	if(ICL_LANGUAGE_CODE == 'zh-hant'){
+									echo mysql2date('Y年n月j日',$post->post_date);
+								}else if(ICL_LANGUAGE_CODE == 'zh-hans'){
+									echo mysql2date('Y年n月j日',$post->post_date);
+								}else{
+    	                    	 	echo get_the_date('F j, Y');
+    	                    	 }
+    	                    	?>
+    	                    </span>
                         </div>
                         <div class="entry-content">
                             <? the_content(); ?>

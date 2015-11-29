@@ -18,3 +18,28 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 declaring that theme supports Woocommerce
 */
 add_theme_support('woocommerce');
+
+//http://www.ordinarycoder.com/wpml-get-permalink-on-current-language/
+function get_permalink_current_language( $post_id )
+{
+	$language = ICL_LANGUAGE_CODE;
+
+    $lang_post_id = icl_object_id( $post_id , 'page', true, $language );
+
+    $url = "";
+    if($lang_post_id != 0) {
+        $url = get_permalink( $lang_post_id );
+    }else {
+        // No page found, it's most likely the homepage
+        global $sitepress;
+        $url = $sitepress->language_url( $language );
+    }
+
+    return $url;
+}
+
+add_filter('body_class', 'append_language_class');
+function append_language_class($classes){
+  $classes[] = ICL_LANGUAGE_CODE;  //or however you want to name your class based on the language code
+  return $classes;
+}
