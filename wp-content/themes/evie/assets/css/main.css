@@ -8642,6 +8642,7 @@ ul.products li.product .find-out-more {
   font-family: "Novecento";
   font-weight: 300;
   font-size: 10.5px;
+  color: #603913;
 }
 .search-form .search-field {
   font-family: "Novecento";
@@ -8705,7 +8706,17 @@ ul.products li.product .find-out-more {
 .zh-hant .woocommerce ul.products li.product h3,
 .zh-hans .woocommerce ul.products li.product h3,
 .zh-hant .single-product .product .product-title h1,
-.zh-hans .single-product .product .product-title h1 {
+.zh-hans .single-product .product .product-title h1,
+.zh-hant #connect-popup input[type=email],
+.zh-hans #connect-popup input[type=email],
+.zh-hant #connect-popup input[type=tel],
+.zh-hans #connect-popup input[type=tel],
+.zh-hant #connect-popup input[type=submit],
+.zh-hans #connect-popup input[type=submit],
+.zh-hant .blog-section .headline-title-container .headline-title-center,
+.zh-hans .blog-section .headline-title-container .headline-title-center,
+.zh-hant ul.products li.product .find-out-more,
+.zh-hans ul.products li.product .find-out-more {
   font-family: 'Heiti TC Medium', 'MHeiHK', "微軟正黑體", "Microsoft JhengHei", 'SimHei', sans-serif !important;
 }
 .zh-hant h1,
@@ -8736,6 +8747,12 @@ ul.products li.product .find-out-more {
 .zh-hans .promotion-section .more-special-title {
   font-family: 'Heiti TC Medium', 'MHeiHK', "微軟正黑體", "Microsoft JhengHei", 'SimHei', sans-serif !important;
   font-weight: bold;
+}
+.zh-hant.contact-us-tc h2,
+.zh-hans.contact-us-tc h2,
+.zh-hant.contact-us-sc h2,
+.zh-hans.contact-us-sc h2 {
+  font-family: "PlayfairDisplay" !important;
 }
 @media (min-width: 768px) {
   .navbar-default {
