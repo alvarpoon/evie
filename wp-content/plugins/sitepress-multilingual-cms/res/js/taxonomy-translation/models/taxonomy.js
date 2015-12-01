@@ -8,7 +8,8 @@
                 name: false,
                 taxonomy: false,
                 terms: {},
-                parents: {}
+                parents: {},
+                termNames: {}
             };
         },
 
@@ -30,21 +31,22 @@
 
         getTaxonomyTerms: function (taxonomy) {
             var self = this;
+
             jQuery.ajax({
                 url: ajaxurl,
                 type: "POST",
-                data: {action: 'wpml_get_terms_and_labels_for_taxonomy_table', taxonomy: self.get("taxonomy")},
+                data: {action: 'wpml_get_terms_and_labels_for_taxonomy_table', taxonomy: taxonomy},
                 success: function (response) {
                     var termsData = response.terms;
                     var labelsData = response.taxLabelTranslations;
 
-                    if (response.defaultLanguage){
+                    if (response.defaultLanguage) {
                         self.set('defaultLang', response.defaultLanguage);
                     }
 
                     if (labelsData) {
                         TaxonomyTranslation.data.translatedTaxonomyLabels = labelsData;
-                        if(labelsData.st_default_lang){
+                        if (labelsData.st_default_lang) {
                             self.set('stDefaultLang', labelsData.st_default_lang);
                         }
                     } else {
@@ -64,6 +66,7 @@
 
             var parentTermIDs = [];
             var parents = {};
+            var termNames = {};
 
             _.each(termsData, function (tridGroup) {
                 var termsObject = {};
@@ -76,6 +79,7 @@
                             parentTermIDs.push(parent);
                         }
                         termsObject[code] = term;
+                        termNames[tridGroup[code].term_taxonomy_id] = tridGroup[code].name;
                     }
                 });
                 TaxonomyTranslation.data.termRowsCollection.add(new TaxonomyTranslation.models.TermRow({
@@ -94,6 +98,7 @@
             });
 
             this.set("parents", parents, {silent: true});
+            this.set("termNames", termNames, {silent: true});
 
             this.trigger('newTaxonomySet');
         },
@@ -124,9 +129,19 @@
 
             return res;
         },
+        getTermName: function (termID) {
+            "use strict";
 
+            var res = "";
+            if (termID > 0) {
+                var termNames = this.get("termNames");
+                res = termID in termNames ? termNames[termID] : "";
+            }
+
+            return res;
+        },
         saveLabel: function (singular, plural, lang) {
-
+            "use strict";
             var self = this;
 
             jQuery.ajax({
@@ -162,7 +177,50 @@
                     return self;
                 }
             });
-        }
+        },
+        isHierarchical: function(){
+            "use strict";
+            var self = this;
 
+            return TaxonomyTranslation.data.taxonomies[self.get("taxonomy")].hierarchical;
+        },
+        loadSyncData: function (lang) {
+            "use strict";
+            var self = this;
+
+            jQuery.ajax({
+                url: ajaxurl,
+                type: "POST",
+                data: {
+                    action: 'wpml_tt_sync_hierarchy_preview',
+                    _icl_nonce: labels.wpml_tt_sync_hierarchy_nonce,
+                    taxonomy: self.get('taxonomy'),
+                    ref_lang: lang
+                },
+                success: function (response) {
+                    TaxonomyTranslation.data.syncData = response.data;
+                    self.trigger('syncDataLoaded');
+                }
+            });
+        },
+        doSync: function (lang) {
+            "use strict";
+            var self = this;
+            var tax = self.get('taxonomy');
+            jQuery.ajax({
+                url: ajaxurl,
+                type: "POST",
+                data: {
+                    action: 'wpml_tt_sync_hierarchy_save',
+                    _icl_nonce: labels.wpml_tt_sync_hierarchy_nonce,
+                    taxonomy: tax,
+                    ref_lang: lang
+                },
+                success: function (response) {
+                    TaxonomyTranslation.data.syncData = response.data;
+                    self.setTaxonomy(tax);
+                }
+            });
+        }
     });
 })(TaxonomyTranslation);

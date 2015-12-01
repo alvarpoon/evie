@@ -43,3 +43,7 @@ function append_language_class($classes){
   $classes[] = ICL_LANGUAGE_CODE;  //or however you want to name your class based on the language code
   return $classes;
 }
+
+
+// Display 8 products per page. Goes in functions.php
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 8;' ), 20 );
