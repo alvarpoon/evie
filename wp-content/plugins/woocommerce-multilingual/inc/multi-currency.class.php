@@ -37,14 +37,6 @@ class WCML_WC_MultiCurrency{
         add_filter('wcml_get_client_currency', array($this, 'get_client_currency'));
         add_filter('woocommerce_paypal_args', array($this, 'filter_price_woocommerce_paypal_args'));
 
-        
-        // exchange rate GUI and logic
-        if(defined('W3TC')){
-            
-            $WCML_WC_MultiCurrency_W3TC = new WCML_WC_MultiCurrency_W3TC;    
-            
-        }
-        
         add_action('woocommerce_email_before_order_table', array($this, 'fix_currency_before_order_email'));
         add_action('woocommerce_email_after_order_table', array($this, 'fix_currency_after_order_email'));
         
@@ -113,7 +105,7 @@ class WCML_WC_MultiCurrency{
         }
         $price = $this->convert_price_amount($price, $currency);
 
-        $price = $this->apply_rounding_rules($price);
+        $price = $this->apply_rounding_rules($price, $currency);
 
         return $price;
         
@@ -133,12 +125,28 @@ class WCML_WC_MultiCurrency{
 
         $currency_details = $woocommerce_wpml->multi_currency_support->get_currency_details_by_code( $currency );
 
+        switch ( $currency_details[ 'position' ] ) {
+            case 'left' :
+                $format = '%1$s%2$s';
+                break;
+            case 'right' :
+                $format = '%2$s%1$s';
+                break;
+            case 'left_space' :
+                $format = '%1$s&nbsp;%2$s';
+                break;
+            case 'right_space' :
+                $format = '%2$s&nbsp;%1$s';
+                break;
+        }
+
         $wc_price_args = array(
 
             'currency'              => $currency,
             'decimal_separator'     => $currency_details['decimal_sep'],
             'thousand_separator'    => $currency_details['thousand_sep'],
-            'decimals'              => $currency_details['num_decimals']
+            'decimals'              => $currency_details['num_decimals'],
+            'price_format'          => $format,
 
 
         );
@@ -147,7 +155,7 @@ class WCML_WC_MultiCurrency{
 
         return $price;
     }
-    
+
     function apply_rounding_rules($price, $currency = false ){
         global $woocommerce_wpml;
 
@@ -244,7 +252,7 @@ class WCML_WC_MultiCurrency{
         }
         
         $exchange_rates = $this->get_exchange_rates();
-        
+
         if(isset($exchange_rates[$currency]) && is_numeric($amount)){
             $amount = $amount * $exchange_rates[$currency];
             
@@ -420,7 +428,7 @@ class WCML_WC_MultiCurrency{
         $currencies = get_woocommerce_currencies(); 
         ?>        
         <select id="dropdown_shop_order_currency" name="_order_currency">
-            <option value=""><?php _e( 'Show all currencies', 'wpml-wcml' ) ?></option>
+            <option value=""><?php _e( 'Show all currencies', 'woocommerce-multilingual' ) ?></option>
             <?php foreach($order_currencies as $currency => $count): ?>            
             <option value="<?php echo $currency ?>" <?php 
                 if ( isset( $wp_query->query['_order_currency'] ) ) selected( $currency, $wp_query->query['_order_currency'] ); 
@@ -624,7 +632,7 @@ class WCML_WC_MultiCurrency{
 
         $nonce = filter_input( INPUT_POST, 'wcml_nonce', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
         if(!$nonce || !wp_verify_nonce($nonce, 'reports_set_currency')){
-            echo json_encode( array('error' => __('Invalid nonce', 'wpml-wcml') ) );
+            echo json_encode( array('error' => __('Invalid nonce', 'woocommerce-multilingual') ) );
             die();
         }
         
@@ -646,7 +654,7 @@ class WCML_WC_MultiCurrency{
         
         <select id="dropdown_shop_report_currency">
             <?php if(empty($orders_currencies)): ?>
-                <option value=""><?php _e('Currency - no orders found', 'wpml-wcml') ?></option>
+                <option value=""><?php _e('Currency - no orders found', 'woocommerce-multilingual') ?></option>
             <?php else: ?>                
                 <?php foreach($orders_currencies as $currency => $count): ?>
                     <option value="<?php echo $currency ?>" <?php selected( $currency, $this->reports_currency ); ?>>
@@ -694,7 +702,7 @@ class WCML_WC_MultiCurrency{
 
                 jQuery('#dropdown_shop_order_currency').on('change', function(){
 
-                    if(confirm('" . esc_js(__("All the products will be removed from the current order in order to change the currency", 'wpml-wcml')). "')){
+                    if(confirm('" . esc_js(__("All the products will be removed from the current order in order to change the currency", 'woocommerce-multilingual')). "')){
                         jQuery.ajax({
                             url: ajaxurl,
                             type: 'post',
@@ -728,7 +736,7 @@ class WCML_WC_MultiCurrency{
     function set_order_currency(){
         $nonce = filter_input( INPUT_POST, 'wcml_nonce', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
         if(!$nonce || !wp_verify_nonce($nonce, 'set_order_currency')){
-            echo json_encode(array('error' => __('Invalid nonce', 'wpml-wcml')));
+            echo json_encode(array('error' => __('Invalid nonce', 'woocommerce-multilingual')));
             die();
         }
         $currency = filter_input( INPUT_POST, 'currency', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
@@ -872,10 +880,15 @@ class WCML_WC_MultiCurrency{
 
 
     function woocommerce_product_after_variable_attributes_custom_pricing($loop, $variation_data, $variation){
+        global $woocommerce_wpml;
 
-        echo '<tr><td>';
-            $this->custom_pricing_output($variation->ID);
-        echo '</td></tr>';
+        if( $woocommerce_wpml->products->is_original_product( $variation->post_parent ) ) {
+
+            echo '<tr><td>';
+            $this->custom_pricing_output( $variation->ID );
+            echo '</td></tr>';
+
+        }
 
     }
 
@@ -955,7 +968,7 @@ class WCML_WC_MultiCurrency{
 
         $nonce = filter_input( INPUT_POST, 'wcml_nonce', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
         if(!$nonce || !wp_verify_nonce($nonce, 'dashboard_set_currency')){
-            echo json_encode(array('error' => __('Invalid nonce', 'wpml-wcml')));
+            echo json_encode(array('error' => __('Invalid nonce', 'woocommerce-multilingual')));
             die();
         }
 
@@ -1074,7 +1087,7 @@ class WCML_WC_MultiCurrency{
 
                 $currency_details = $woocommerce_wpml->multi_currency_support->get_currency_details_by_code( $args['currency_code'] );
 
-                $args[ $key ] =  number_format( $value, $currency_details['num_decimals'], $currency_details['decimal_sep'], $currency_details['thousand_sep'] );
+                $args[ $key ] =  number_format( $value, $currency_details['num_decimals'], '.', '' );
             }
         }
 
@@ -1083,25 +1096,3 @@ class WCML_WC_MultiCurrency{
 
 }
 
-//@todo Move to separate file
-class WCML_WC_MultiCurrency_W3TC{
-    
-    function __construct(){
-        
-        add_filter('init', array($this, 'init'), 15);
-        
-    }
-    
-    function init(){
-        
-        add_action('wcml_switch_currency', array($this, 'flush_page_cache'));
-        
-    }
-    
-    function flush_page_cache(){
-        w3_require_once(W3TC_LIB_W3_DIR . '/AdminActions/FlushActionsAdmin.php');
-        $flush = new W3_AdminActions_FlushActionsAdmin();
-        $flush->flush_pgcache(); 
-    }
-    
-}
