@@ -18,12 +18,24 @@
 		$sort_order = '';
 	}
 	
+	if(ICL_LANGUAGE_CODE == 'zh-hant'){
+		$product_cat = 99;
+	}else if(ICL_LANGUAGE_CODE == 'zh-hans'){
+		$product_cat = 98;
+	}else{
+		$product_cat = 29;
+	}
+	//$product_result = get_term_by('id', $product_cat,'testimonial_category');
+	//print_r($product_result);
 	
-	$product_cat = 29;
-	$product_result = get_term_by('id', $product_cat,'testimonial_category');
-	
-	$concern_cat = 30;
-	$concern_result = get_term_by('id', $concern_cat,'testimonial_category');
+	if(ICL_LANGUAGE_CODE == 'zh-hant'){
+		$concern_cat = 105;
+	}else if(ICL_LANGUAGE_CODE == 'zh-hans'){
+		$concern_cat = 103;
+	}else{
+		$concern_cat = 30;
+	}	
+	//$concern_result = get_term_by('id', $concern_cat,'testimonial_category');
 	
 	$product_args = array(
 		'type'                     => 'post',
@@ -32,7 +44,8 @@
 		'hide_empty'               => 0,
 		'hierarchical'             => 0,
 		'taxonomy'                 => 'testimonial_category',
-		'parent'      		   	   => $product_cat
+		'parent'      		   	   => $product_cat,
+		'suppress_filters' 		   => 0
 	);
 	$product_categories = get_categories( $product_args );
 	
@@ -43,7 +56,8 @@
 		'hide_empty'               => 0,
 		'hierarchical'             => 0,
 		'taxonomy'                 => 'testimonial_category',
-		'parent'      		   	   => $concern_cat
+		'parent'      		   	   => $concern_cat,
+		'suppress_filters' 		   => 0
 	);
 	$concern_categories = get_categories( $concern_args );
 		
@@ -79,13 +93,17 @@
 			<div class="col-xs-6 noPadding checkbox-container">
 				<form id="testimonial_form" name="testimonial_form" method="post">
 				<ul>
-					<li><a href="javascript:;">BY PRODUCTS</a>
+					<li><a href="javascript:;"><?= _e('BY PRODUCTS'); ?></a>
 						<ul class="sub-menu">
 							<?
 								if($product == ''){
-									echo '<li><label><input type="checkbox" class="category_filter" id="category_all" value="" checked=checked />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="category_filter" id="category_all" value="" checked=checked />';
+									echo _e('All');
+									echo '</label></li>';
 								}else{
-									echo '<li><label><input type="checkbox" class="category_filter" id="category_all" value="" />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="category_filter" id="category_all" value="" />';
+									echo _e('All');
+									echo '</label></li>';	
 								}
 							?>
 							
@@ -102,13 +120,17 @@
 							<? } ?>
 						</ul>
 					</li>
-					<li><a href="javascript:;">BY CONCERN</a>
+					<li><a href="javascript:;"><?= _e('BY CONCERN'); ?></a>
 						<ul class="sub-menu">
 							<?
 								if($concern == ''){
-									echo '<li><label><input type="checkbox" class="concern_filter" id="concern_all" name="concern_cat" value="" checked=checked />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="concern_filter" id="concern_all" name="concern_cat" value="" checked=checked />';
+									echo _e('All');
+									echo '</label></li>';		
 								}else{
-									echo '<li><label><input type="checkbox" class="concern_filter" id="concern_all" name="concern_cat" value="" />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="concern_filter" id="concern_all" name="concern_cat" value="" />All</label></li>';
+									echo _e('All');
+									echo '</label></li>';		
 								}
 							?>
 							<? 
@@ -127,12 +149,12 @@
 			</div>
 			<div class="col-xs-6 noPadding right-link">
 				<ul>
-					<li><a href="#">SORT BY</a>
+					<li><a href="#"><?= _e('SORT BY'); ?></a>
 						<ul class="sub-menu sort-order-container">
-							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="newest" checked="checked" />Newest</label></li>
-							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="oldest" />Oldest</label></li>
-							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="high" />High Rating</label></li>
-							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="low" />Low Rating</label></li>
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="newest" checked="checked" /><?= _e('Newest'); ?></label></li>
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="oldest" /><?= _e('Oldest'); ?></label></li>
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="high" /><?= _e('High Rating'); ?></label></li>
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="low" /><?= _e('Low Rating'); ?></label></li>
 						</ul>
 					</li>
 				</ul>
@@ -154,8 +176,11 @@
 						array_push($product_query_arr, $value);
 					}
 				}
+				//print_r($product_query_arr);
 				$concern_query_arr = explode(',',$c_cat);
+				//print_r($concern_query_arr);
 				$terms_array = array_merge($product_query_arr, $concern_query_arr);
+				//print_r($terms_array);
 				
 				$order_val = '';
 				$orderby_val = '';
@@ -174,10 +199,11 @@
 							'tax_query' => array(
 								array(
 									'taxonomy' => 'testimonial_category',
-									'field' => 'cat_ID',
+									'field' => 'id',
 									'terms' => $terms_array
 								)
-							)
+							),
+							'suppress_filters' => false
 						);
 						break;
 					case "oldest":						
@@ -194,7 +220,8 @@
 									'field' => 'cat_ID',
 									'terms' => $terms_array
 								)
-							)
+							),
+							'suppress_filters' => false
 						);
 						break;
 					case "high":						
@@ -209,10 +236,11 @@
 							'tax_query' => array(
 								array(
 									'taxonomy' => 'testimonial_category',
-									'field' => 'cat_ID',
+									'field' => 'id',
 									'terms' => $terms_array
 								)
-							)
+							),
+							'suppress_filters' => false
 						);
 						
 						break;
@@ -228,10 +256,11 @@
 							'tax_query' => array(
 								array(
 									'taxonomy' => 'testimonial_category',
-									'field' => 'cat_ID',
+									'field' => 'id',
 									'terms' => $terms_array
 								)
-							)
+							),
+							'suppress_filters' => false
 						);
 						break;
 					default:				
@@ -245,10 +274,11 @@
 							'tax_query' => array(
 								array(
 									'taxonomy' => 'testimonial_category',
-									'field' => 'cat_ID',
+									'field' => 'id',
 									'terms' => $terms_array
 								)
-							)
+							),
+							'suppress_filters' => false
 						);
 						
 				}
@@ -257,9 +287,8 @@
 				
 				//echo $myCategory;
 				
-				
 				$loop = new WP_Query( $testimonal_args );
-                
+				
 				while ( $loop->have_posts() ) : $loop->the_post();
 					$rating = get_field("rating", $post->ID);
 					$commenter = get_field("commenter_name", $post->ID);
@@ -272,7 +301,17 @@
                         </div>
                         <div class="testimonial-header">
 	                        <h2 class="entry-title"><? the_title(); ?></h2>
-    	                    &mdash; <span class="commenter"><?=$commenter?></span> <span class="date"><?=get_the_date('F j, Y'); ?></span>
+    	                    &mdash; <span class="commenter"><?=$commenter?></span> <span class="date">
+    	                    	<?
+    	                    	if(ICL_LANGUAGE_CODE == 'zh-hant'){
+									echo mysql2date('Y年n月j日',$post->post_date);
+								}else if(ICL_LANGUAGE_CODE == 'zh-hans'){
+									echo mysql2date('Y年n月j日',$post->post_date);
+								}else{
+    	                    	 	echo get_the_date('F j, Y');
+    	                    	 }
+    	                    	?>
+    	                    </span>
                         </div>
                         <div class="entry-content">
                             <? the_content(); ?>

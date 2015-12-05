@@ -1,8 +1,28 @@
 <header class="banner navbar navbar-default navbar-fixed-top" role="banner">
 	<div class="container mainnav-container">
     	<div class="language-menu clearfix">
-            <div class="subscribe-container" style="margin-right:0;"><a class="toggle_connect" href="javascript:;">STAY CONNECTED</a><span>|</span><a href="mailto:<?=get_field('enquiry_email_address',4);?>">Enquiries/Order</a></div>
-            <div class="" style="float:left;display:none;">ENG<span>|</span>繁<span>|</span>簡</div>
+            <div class="subscribe-container"><a class="toggle_connect" href="javascript:;"><?=_e('STAY CONNECTED')?></a><span>|</span><a href="mailto:<?=get_field('enquiry_email_address',4);?>"><?=_e('Enquiries/Order')?></a></div>
+            <div class="" style="float:left;">
+            
+            	<!--ENG<span>|</span>繁<span>|</span>簡-->
+                
+                <?
+				  $langs = icl_get_languages('skip_missing=N&orderby=KEY&order=DIR') ; 
+				  $numLangs = count($langs);
+				  $langs_counter = 0;
+				  foreach ($langs as $key=>$currLang){
+					  //echo ICL_LANGUAGE_CODE;
+					//if ($currLang['language_code'] != ICL_LANGUAGE_CODE){
+				  	if(++$langs_counter === $numLangs){
+						echo '<a class="lang-sel-link" href="'.$currLang['url'].'">'.$currLang['tag'].'</a>';
+					}else{
+						echo '<a class="lang-sel-link" href="'.$currLang['url'].'">'.$currLang['tag'].'</a> | ';	
+					}
+					//}
+				  }
+				?>
+                
+            </div>
         </div>
     	<div class="navbar-header">
         	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
