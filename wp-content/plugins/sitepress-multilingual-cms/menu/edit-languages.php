@@ -1,30 +1,30 @@
 <?php
 
 class SitePress_EditLanguages {
-	var $active_languages;
-	var $upload_dir;
-	var $is_writable = false;
-	var $required_fields = array('code' => '', 'english_name' => '', 'translations' => 'array', 'flag' => '', 'default_locale' => '', 'tag' => '');
-	var $add_validation_failed = false;
+	public $active_languages;
+    public $upload_dir;
+    public $is_writable = false;
+    public $required_fields = array('code' => '', 'english_name' => '', 'translations' => 'array', 'flag' => '', 'default_locale' => '', 'tag' => '');
+    public $add_validation_failed = false;
     private $built_in_languages = array();
     private $error = '';
     private $message = '';
 
 	function __construct() {
-        
+
+        wp_enqueue_script(
+            'edit-languages',
+            ICL_PLUGIN_URL . '/res/js/languages/edit-languages.js',
+            array( 'jquery', 'sitepress-scripts' ),
+            ICL_SITEPRESS_VERSION,
+            true
+        );
+
 		$lang_codes = icl_get_languages_codes();
         $this->built_in_languages = array_values($lang_codes);
         
-				$request_get_action = filter_input(INPUT_GET, 'action' );
-				$request_get_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-				$request_get_icl_nonce = filter_input(INPUT_GET, 'icl_nonce' );
-
-		if ( $request_get_action === 'delete-language' && wp_verify_nonce(
-				(string)$request_get_icl_nonce,
-				'delete-language' . $request_get_id
-			)
-		) {
-			$lang_id = $request_get_id;
+        if(isset($_GET['action']) && $_GET['action'] == 'delete-language' && wp_create_nonce('delete-language' . @intval($_GET['id'])) == $_GET['icl_nonce']){
+            $lang_id = @intval($_GET['id']);
             $this->delete_language($lang_id);
         }
         
@@ -46,17 +46,11 @@ class SitePress_EditLanguages {
 		$this->get_active_languages();
 		
 			// Trigger save.
-		$request_post_icl_edit_languages_action = filter_input(INPUT_POST, 'icl_edit_languages_action' );
-		$request_post__wpnonce = filter_input(INPUT_POST, '_wpnonce' );
-		if ($request_post_icl_edit_languages_action === 'update') {
-            if(wp_verify_nonce($request_post__wpnonce, 'icl_edit_languages')){
+		if (isset($_POST['icl_edit_languages_action']) && $_POST['icl_edit_languages_action'] == 'update') {
+            if(wp_verify_nonce($_POST['_wpnonce'], 'icl_edit_languages')){
                 $this->update();    
             }
 		}
-		
-		add_action('admin_footer', array(&$this,'scripts'));
-		
-		
 ?>
 <div class="wrap">
     <div id="icon-wpml" class="icon32"><br /></div>
@@ -134,9 +128,8 @@ For each language, you need to enter the following information:
 			$this->table_row($lang);
 		}
 		if ($this->add_validation_failed) {
-			$request_post_icl_edit_languages = filter_input(INPUT_POST, 'icl_edit_languages', FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
-			$request_post_icl_edit_languages['add']['id'] = 'add';
-			$new_lang = $request_post_icl_edit_languages['add'];
+			$_POST['icl_edit_languages']['add']['id'] = 'add';
+			$new_lang = $_POST['icl_edit_languages']['add'];
 		} else {
 			$new_lang = array('id'=>'add');
 		}
@@ -161,24 +154,24 @@ For each language, you need to enter the following information:
 	}
 
 	function table_row( $lang, $echo = true, $add = false ){
-		$request_post_icl_edit_languages = filter_input(INPUT_POST, 'icl_edit_languages', FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
         if ($lang['id'] == 'add') {
-            $lang['english_name'] = isset($request_post_icl_edit_languages['add']['english_name']) ? stripslashes_deep($request_post_icl_edit_languages['add']['english_name']) : '';
-            $lang['code'] = isset($request_post_icl_edit_languages['add']['code']) ? $request_post_icl_edit_languages['add']['code'] : '';
-            $lang['default_locale'] = isset($request_post_icl_edit_languages['add']['default_locale']) ? $request_post_icl_edit_languages['add']['default_locale'] : '';
+            $lang['english_name'] = isset($_POST['icl_edit_languages']['add']['english_name']) ? stripslashes_deep($_POST['icl_edit_languages']['add']['english_name']) : '';
+            $lang['code'] = isset($_POST['icl_edit_languages']['add']['code']) ? $_POST['icl_edit_languages']['add']['code'] : '';
+            $lang['default_locale'] = isset($_POST['icl_edit_languages']['add']['default_locale']) ? $_POST['icl_edit_languages']['add']['default_locale'] : '';
             $lang['flag'] = '';
             $lang['from_template'] = true;
-            $lang['tag'] = isset($request_post_icl_edit_languages['add']['tag']) ? $request_post_icl_edit_languages['add']['tag'] : '';
-        }		
+            $lang['tag'] = isset($_POST['icl_edit_languages']['add']['tag']) ? $_POST['icl_edit_languages']['add']['tag'] : '';
+        }
+        global $sitepress;
         ?>
 		
 		<tr style="<?php if ($add && !$this->add_validation_failed) echo 'display:none; '; if ($add) echo 'background-color:yellow; '; ?>"<?php if ($add) echo ' class="icl_edit_languages_show"'; ?>>
 					<td><input type="text" name="icl_edit_languages[<?php echo $lang['id']; ?>][english_name]" value="<?php echo $lang['english_name']; ?>"<?php if (!$add) { ?> readonly="readonly"<?php } ?> /></td>
 					<td><input type="text" name="icl_edit_languages[<?php echo $lang['id']; ?>][code]" value="<?php echo $lang['code']; ?>" style="width:30px;"<?php if (!$add) { ?> readonly="readonly"<?php } ?> /></td>
-					<td <?php if (!$this->add_validation_failed) echo 'style="display:none;" ';?>class="icl_edit_languages_show"><input type="text" name="icl_edit_languages[<?php echo $lang['id']; ?>][translations][add]" value="<?php echo isset($request_post_icl_edit_languages[$lang['id']]['translations']['add']) ? stripslashes_deep($request_post_icl_edit_languages[$lang['id']]['translations']['add']) : ''; ?>" /></td>
+					<td <?php if (!$this->add_validation_failed) echo 'style="display:none;" ';?>class="icl_edit_languages_show"><input type="text" name="icl_edit_languages[<?php echo $lang['id']; ?>][translations][add]" value="<?php echo isset($_POST['icl_edit_languages'][$lang['id']]['translations']['add']) ? stripslashes_deep($_POST['icl_edit_languages'][$lang['id']]['translations']['add']) : ''; ?>" /></td>
 					<?php foreach($this->active_languages as $translation){ 
 						if ($lang['id'] == 'add') {
-							$value = isset($request_post_icl_edit_languages['add']['translations'][$translation['code']]) ? $request_post_icl_edit_languages['add']['translations'][$translation['code']] : '';
+							$value = isset($_POST['icl_edit_languages']['add']['translations'][$translation['code']]) ? $_POST['icl_edit_languages']['add']['translations'][$translation['code']] : '';
 						} else {
 							$value = isset($lang['translation'][$translation['id']]) ? $lang['translation'][$translation['id']] : '';
 						}
@@ -198,8 +191,15 @@ For each language, you need to enter the following information:
                     <td><input type="text" name="icl_edit_languages[<?php echo $lang['id']; ?>][tag]" value="<?php echo $lang['tag']; ?>" /></td>
                     
                     <td>
-                        <?php if(!$add && !in_array($lang['code'], $this->built_in_languages)): ?>
-                        <a href="<?php echo admin_url('admin.php?page=' . ICL_PLUGIN_FOLDER . '/menu/languages.php&amp;trop=1&amp;action=delete-language&amp;id=' . 
+                        <?php
+                        if (
+                            !$add
+                            && !in_array( $lang[ 'code' ], $this->built_in_languages )
+                            && $lang[ 'code' ] != $sitepress->get_default_language()
+                            && count( $this->active_languages ) > 1
+                            ):
+                        ?>
+                            <a href="<?php echo admin_url('admin.php?page=' . ICL_PLUGIN_FOLDER . '/menu/languages.php&amp;trop=1&amp;action=delete-language&amp;id=' .
                             $lang['id'] . '&amp;icl_nonce=' . wp_create_nonce('delete-language' . $lang['id'])) ?>" title="<?php esc_attr_e('Delete', 'sitepress') 
                             ?>" onclick="if(!confirm('<?php echo esc_js(sprintf(__('Are you sure you want to delete this language?%sALL the data associated with this language will be ERASED!', 'sitepress'), "\n")) 
                             ?>')) return false;"><img src="<?php echo ICL_PLUGIN_URL ?>/res/img/close.png" alt="<?php esc_attr_e('Delete', 'sitepress') 
@@ -208,42 +208,6 @@ For each language, you need to enter the following information:
                     </td>
                     
 				</tr>
-<?php
-	}
-    
-	function scripts(){
-?>
-		<script type="text/javascript">
-			jQuery(document).ready(function(){
-				jQuery("#icl_edit_languages_add_language_button").click(function(){
-					jQuery(this).fadeOut('fast',function(){jQuery("#icl_edit_languages_table tr:last, .icl_edit_languages_show").show();});
-					jQuery('#icl_edit_languages_ignore_add').val('false');
-				});
-				jQuery("#icl_edit_languages_cancel_button").click(function(){
-					jQuery(this).fadeOut('fast',function(){
-						jQuery("#icl_edit_languages_add_language_button").show();
-						jQuery(".icl_edit_languages_show").hide();
-						jQuery("#icl_edit_languages_table tr:last input").each(function(){
-							jQuery(this).val('');
-						});
-						jQuery('#icl_edit_languages_ignore_add').val('true');
-						jQuery('#icl_edit_languages_form :submit').attr('disabled','disabled');
-					});
-				});
-				jQuery('.icl_edit_languages_use_upload').click(function(){
-						jQuery(this).parent().parent().parent().children('.icl_edit_languages_flag_enter_field').hide();
-  						jQuery(this).parent().parent().parent().children('.icl_edit_languages_flag_upload_field').show();
-				});
-				jQuery('.icl_edit_languages_use_field').click(function(){
-						jQuery(this).parent().parent().parent().children('.icl_edit_languages_flag_upload_field').hide();
-						jQuery(this).parent().parent().parent().children('.icl_edit_languages_flag_enter_field').show();
-				});
-				jQuery('#icl_edit_languages_form :submit').attr('disabled','disabled');
-				jQuery('#icl_edit_languages_form input, #icl_edit_languages_form select').click(function(){
-					jQuery('#icl_edit_languages_form :submit').removeAttr('disabled');
-				});
-			});
-		</script>
 <?php
 	}
 
@@ -258,11 +222,7 @@ For each language, you need to enter the following information:
 			$flag = $sitepress->get_flag($lang['code']);
 			$this->active_languages[$lang['code']]['flag'] = $flag->flag;
 			$this->active_languages[$lang['code']]['from_template'] = $flag->from_template;
-			$this->active_languages[$lang['code']]['default_locale'] = $wpdb->get_var(
-                                                                        $wpdb->prepare("SELECT default_locale
-                                                                                        FROM {$wpdb->prefix}icl_languages
-                                                                                        WHERE code = %s",
-                                                                                        $lang['code']));
+			$this->active_languages[$lang['code']]['default_locale'] = $wpdb->get_var("SELECT default_locale FROM {$wpdb->prefix}icl_languages WHERE code='".$lang['code']."'");
             $this->active_languages[$lang['code']]['encode_url'] = $lang['encode_url'];
             $this->active_languages[$lang['code']]['tag'] = $lang['tag'];
 		}
@@ -318,10 +278,8 @@ For each language, you need to enter the following information:
 	
 	function update() {
         
-		$request_post_icl_edit_languages = filter_input(INPUT_POST, 'icl_edit_languages', FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
-		$request_post_icl_edit_languages_ignore_add = filter_input(INPUT_POST, 'icl_edit_languages_ignore_add', FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE);
 		// Basic check.
-		if (!isset($request_post_icl_edit_languages) || !is_array($request_post_icl_edit_languages)){
+		if (!isset($_POST['icl_edit_languages']) || !is_array($_POST['icl_edit_languages'])){
 			$this->error(__('Please, enter valid data.','sitepress'));
 			return;
 		}
@@ -329,15 +287,15 @@ For each language, you need to enter the following information:
 		global $sitepress,$wpdb;
 		
 			// First check if add and validate it.
-		if (isset($request_post_icl_edit_languages['add']) && $request_post_icl_edit_languages_ignore_add == 'false') {
-			if ($this->validate_one('add', $request_post_icl_edit_languages['add'])) {
-				$this->insert_one($this->sanitize($request_post_icl_edit_languages['add']));
+		if (isset($_POST['icl_edit_languages']['add']) && $_POST['icl_edit_languages_ignore_add'] == 'false') {
+			if ($this->validate_one('add', $_POST['icl_edit_languages']['add'])) {
+				$this->insert_one($this->sanitize($_POST['icl_edit_languages']['add']));
 			}
 				// Reset flag upload field.
-			$request_post_icl_edit_languages['add']['flag_upload'] = 'false';
+			$_POST['icl_edit_languages']['add']['flag_upload'] = 'false';
 		}
 		
-		foreach ($request_post_icl_edit_languages as $id => $data){
+		foreach ($_POST['icl_edit_languages'] as $id => $data){
 				// Ignore insert.
 			if ($id == 'add') { continue; }
 			
@@ -347,7 +305,7 @@ For each language, you need to enter the following information:
 			
 				// Update main table.
 			$this->update_main_table($id, $data['code'], $data['default_locale'], $data['encode_url'], $data['tag']);
-
+            
             if (
                 $wpdb->get_var(
                     $wpdb->prepare( "SELECT code FROM {$wpdb->prefix}icl_locale_map WHERE code = %s", $data[ 'code' ] )
@@ -363,13 +321,13 @@ For each language, you need to enter the following information:
 				
 					// If new (add language) translations are submitted.
 				if ($translation_code == 'add') {
-					if ($this->add_validation_failed || $request_post_icl_edit_languages_ignore_add == 'true') {
+					if ($this->add_validation_failed || $_POST['icl_edit_languages_ignore_add'] == 'true') {
 						continue;
 					}
 					if (empty($translation_value)) {
 						$translation_value = $data['english_name'];
 					}
-					$translation_code = $request_post_icl_edit_languages['add']['code'];
+					$translation_code = $_POST['icl_edit_languages']['add']['code'];
 				}
 				
 					// Check if update.
@@ -380,7 +338,7 @@ For each language, you need to enter the following information:
                         $translation_code
                     ) )
                 ) {
-                    $this->update_translation($translation_value, $data['code'], $translation_code);
+					$this->update_translation($translation_value, $data['code'], $translation_code);
 				} else {
 					if (!$this->insert_translation($translation_value, $data['code'], $translation_code)) {
 						$this->error(sprintf(__('Error adding translation %s for %s.', 'sitepress'), $data['code'], $translation_code));
@@ -409,16 +367,16 @@ For each language, you need to enter the following information:
 				// Update flag table.
 			$this->update_flag($data['code'], $data['flag'], $from_template);
 				// Reset flag upload field.
-			$request_post_icl_edit_languages[$id]['flag_upload'] = 'false';
+			$_POST['icl_edit_languages'][$id]['flag_upload'] = 'false';
 		}
 			// Refresh cache.
 		$sitepress->icl_language_name_cache->clear();
-		$sitepress->icl_flag_cache->clear();
+		$sitepress->clear_flags_cache();
 		delete_option('_icl_cache');
 		
 			// Unset ADD fields.
 		if (!$this->add_validation_failed) {
-			unset($request_post_icl_edit_languages['add']);
+			unset($_POST['icl_edit_languages']['add']);
 		}
 			// Reset active languages.
 		$this->get_active_languages();
@@ -434,37 +392,51 @@ For each language, you need to enter the following information:
 			return false;
 		}
 
-		$default_language = $sitepress->get_default_language();
-
 		// add locale map
-        if ( $wpdb->get_var(
-            $wpdb->prepare( "SELECT code FROM {$wpdb->prefix}icl_locale_map WHERE code=%s", $data[ 'code' ] ) )
-        ) {
+        $locale_exists = $wpdb->get_var($wpdb->prepare("SELECT code
+                                                        FROM {$wpdb->prefix}icl_locale_map
+                                                        WHERE code=%s", $data['code']));
+        if($locale_exists){
             $wpdb->update($wpdb->prefix.'icl_locale_map', array('locale'=>$data['default_locale']), array('code'=>$data['code']));
         }else{
             $wpdb->insert($wpdb->prefix.'icl_locale_map', array('code'=>$data['code'], 'locale'=>$data['default_locale']));
         }
 		
 			// Insert translations.
-		$all_languages = $sitepress->get_languages();
-		foreach ($all_languages as $key => $lang) {
-			
-				// If submitted.
-			if (array_key_exists($lang['code'], $data['translations'])) {
-				if (empty($data['translations'][$lang['code']])) {
-					$data['translations'][$lang['code']] = $data['english_name'];
-				}
-				if (!$this->insert_translation($data['translations'][$lang['code']], $data['code'], $lang['code'])) {
-					$this->error(sprintf(__('Error adding translation %s for %s.', 'sitepress'), $data['code'], $lang['code']));
-				}
-				continue;
-			}
-			
-				// Insert dummy translation.
-			if (!$this->insert_translation($data['english_name'], $data['code'], $lang['code'])) {
-					$this->error(sprintf(__('Error adding translation %s for %s.', 'sitepress'), $data['code'], $lang['code']));
-			}
-		}
+        $all_languages = $sitepress->get_languages();
+        foreach ( $all_languages as $key => $lang ) {
+
+            // If submitted.
+            if ( array_key_exists( $lang[ 'code' ], $data[ 'translations' ] ) ) {
+                if ( empty( $data[ 'translations' ][ $lang[ 'code' ] ] ) ) {
+                    $data[ 'translations' ][ $lang[ 'code' ] ] = $data[ 'english_name' ];
+                }
+                if ( !$this->insert_translation(
+                    $data[ 'translations' ][ $lang[ 'code' ] ],
+                    $data[ 'code' ],
+                    $lang[ 'code' ]
+                )
+                ) {
+                    $this->error(
+                        sprintf(
+                            __( 'Error adding translation %s for %s.', 'sitepress' ),
+                            $data[ 'code' ],
+                            $lang[ 'code' ]
+                        )
+                    );
+                }
+            } else {
+                if ( !$this->insert_translation( $data[ 'english_name' ], $data[ 'code' ], $lang[ 'code' ] ) ) {
+                    $this->error(
+                        sprintf(
+                            __( 'Error adding translation %s for %s.', 'sitepress' ),
+                            $data[ 'code' ],
+                            $lang[ 'code' ]
+                        )
+                    );
+                }
+            }
+        }
 		
 			// Insert native name.
 		if (!isset($data['translations']['add']) || empty($data['translations']['add'])) {
@@ -494,65 +466,22 @@ For each language, you need to enter the following information:
 		if (!$this->insert_flag($data['code'], $data['flag'], $from_template)) {
 			$this->error(__('Error adding flag.', 'sitepress'));
 		}
-		
-		// Insert default category
-        $sitepress->switch_locale($data['code']);
-        $tr_cat = __('Uncategorized', 'sitepress');
-        $sitepress->switch_locale();
-        
-        if($tr_cat == __('Uncategorized', 'sitepress')){ // not translated
-            $tr_cat     = 'Uncategorized @' . $data['code'];    
-        }
-		
-		$tr_term 	= term_exists($tr_cat, 'category');
-		
-		// check if the term already exists
-		if ($tr_term !== 0 && $tr_term !== null) {
-			$tmp = get_term( $tr_term['term_taxonomy_id'], 'category', ARRAY_A );
-		} else {
-			$tmp = wp_insert_term($tr_cat, 'category');
-		}
-			
-		// add it to settings['default_categories']
-		$default_categories = $sitepress->get_default_categories();
-		$default_categories[$data['code']] = $tmp['term_taxonomy_id'];
-
-		$sitepress->set_default_categories($default_categories);
-		
-		//update translations table
-		$default_category_trid = $sitepress->get_element_trid($default_categories[ $default_language ], 'tax_category');
-        $sitepress->set_element_language_details($tmp['term_taxonomy_id'], 'tax_category', $default_category_trid, $data['code'], $default_language );
-		
+        SitePress_Setup::insert_default_category ( $data[ 'code' ] );
 	}
 
 	function validate_one($id, $data) {
 	
 		global $wpdb;
-		$request_post_icl_edit_languages = filter_input(INPUT_POST, 'icl_edit_languages', FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
-		$request_post_icl_edit_languages_ignore_add = filter_input(INPUT_POST, 'icl_edit_languages_ignore_add', FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE);
 		
-			// If insert, check if languge code (unique) exists.
-        if ( $exists = $wpdb->get_var(
-                $wpdb->prepare( "SELECT code FROM {$wpdb->prefix}icl_languages WHERE code = %s", $data[ 'code' ] )
-            ) && $id == 'add'
-        ) {
-            $this->error = __('Language code exists','sitepress');
-			$this->add_validation_failed = true;
-			return false;
-			
-			// Illegal change of code
-        } else if ( !empty( $exists ) && $wpdb->get_var(
-                $wpdb->prepare(
-                    "SELECT code FROM {$wpdb->prefix}icl_languages WHERE code = %s AND id = %d",
-                    $data[ 'code' ],
-                    $data[ 'id' ]
-                )
-            ) != $data[ 'code' ]
-        ) {
-            $this->error = __('Language code exists','sitepress');
-			if ($id == 'add') $this->add_validation_failed = true;
-			return false;
-		}
+		// If insert, check if language code (unique) exists.
+        $exists = $wpdb->get_var($wpdb->prepare("SELECT code
+                                                 FROM {$wpdb->prefix}icl_languages WHERE
+                                                 code=%s LIMIT 1", $data['code']));
+		if ($exists && $id == 'add') {
+            $this->error = __( 'Language code exists', 'sitepress' );
+            $this->add_validation_failed = true;
+            return false;
+        }
 		
 		foreach ($this->required_fields as $name => $type) {
 			if ($name == 'flag') {
@@ -568,8 +497,8 @@ For each language, you need to enter the following information:
 				}
 				continue;
 			}
-			if (!isset($request_post_icl_edit_languages[$id][$name]) || empty($request_post_icl_edit_languages[$id][$name])) {
-				if ($request_post_icl_edit_languages_ignore_add == 'true') {
+			if (!isset($_POST['icl_edit_languages'][$id][$name]) || empty($_POST['icl_edit_languages'][$id][$name])) {
+				if ($_POST['icl_edit_languages_ignore_add'] == 'true') {
 					return false;
 				}
 				$this->error(__('Please, enter required data.','sitepress'));
@@ -578,7 +507,7 @@ For each language, you need to enter the following information:
 				}
 				return false;
 			}
-			if ($type == 'array' && !is_array($request_post_icl_edit_languages[$id][$name])) {
+			if ($type == 'array' && !is_array($_POST['icl_edit_languages'][$id][$name])) {
 				if ($id == 'add') {
 					$this->add_validation_failed = true;
 				}
@@ -636,7 +565,6 @@ For each language, you need to enter the following information:
                 
                 // delete comments
                 global $IclCommentsTranslation;
-                $comment_ids = $wpdb->get_col($wpdb->prepare("SELECT element_id FROM {$wpdb->prefix}icl_translations WHERE element_type = 'comment' AND language_code=%s", $lang->code));                    
                 remove_action('delete_comment', array($IclCommentsTranslation, 'delete_comment_actions'));
                 foreach($post_ids as $post_id){
                     wp_delete_post($post_id, true);
@@ -645,8 +573,7 @@ For each language, you need to enter the following information:
                 
                 
                 $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->prefix}icl_translations WHERE language_code=%s", $lang->code));
-                #$wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->prefix}icl_translations WHERE source_language_code=%s", $lang->code));
-                
+
                 $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->prefix}icl_strings WHERE language=%s", $lang->code));
                 $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->prefix}icl_string_translations WHERE language=%s", $lang->code));
                 
@@ -656,8 +583,7 @@ For each language, you need to enter the following information:
                 icl_cache_clear(false);
                 
                 $sitepress->icl_translations_cache->clear();
-                $sitepress->icl_locale_cache->clear();
-                $sitepress->icl_flag_cache->clear();
+                $sitepress->clear_flags_cache();
                 $sitepress->icl_language_name_cache->clear();
                 
                 $this->message(sprintf(__("The language %s was deleted.", 'sitepress'), '<strong>' . $lang->code . '</strong>'));
@@ -672,6 +598,7 @@ For each language, you need to enter the following information:
     }
 		
 	function sanitize($data) {
+		global $wpdb;
 		foreach ($data as $key => $value) {
 			if (is_array($value)) {
 				foreach ($value as $k => $v) {
@@ -680,13 +607,12 @@ For each language, you need to enter the following information:
 			}
 			$data[$key] = esc_sql($value);
 		}
-
 		return $data;
 	}
 
 	function check_extension($file) {        
 		$extension = substr($file, strrpos($file, '.') + 1);
-		if (!in_array(mb_strtolower($extension),array('png','gif','jpg'))) {
+		if (!in_array(strtolower($extension),array('png','gif','jpg'))) {
 			$this->error(__('File extension not allowed.','sitepress'));
 			return false;
 		}

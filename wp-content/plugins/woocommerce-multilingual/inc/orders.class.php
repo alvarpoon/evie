@@ -33,24 +33,23 @@ class WCML_Orders{
         add_action( 'woocommerce_process_shop_order_meta', array( $this, 'set_order_language_backend'), 10, 2 );
         add_action( 'woocommerce_order_actions_start', array( $this, 'order_language_dropdown' ), 11 ); //after order currency drop-down
 
+        //special case for wcml-741
+        add_action('updated_post_meta', array($this,'update_order_currency'), 100,4);
+
     }
 
     function filtered_woocommerce_new_order_note_data($translations, $text, $domain ){
         if(in_array($text,$this->standart_order_notes)){
-            global $sitepress_settings,$wpdb;
+            global $sitepress_settings, $wpdb, $woocommerce_wpml;
 
-            if ( WPML_SUPPORT_STRINGS_IN_DIFF_LANG ) {
-                $string_id = $wpdb->get_var($wpdb->prepare("SELECT st.id FROM {$wpdb->prefix}icl_strings as st LEFT JOIN {$wpdb->prefix}icl_string_contexts as cn ON st.context_id = cn.id WHERE cn.context = %s AND st.value = %s ", $domain, $text ));
-                $language = icl_st_get_string_language( $string_id );
-            }else{
-                $string_id = $wpdb->get_var($wpdb->prepare("SELECT id FROM {$wpdb->prefix}icl_strings WHERE language = %s AND value = %s ", $sitepress_settings['st']['strings_language'], $text));
-                $language = $sitepress_settings['st']['strings_language'];
-            }
+            $language = $woocommerce_wpml->strings->get_string_language( $text, 'woocommerce' );
 
-            if( $string_id && $sitepress_settings['admin_default_language'] != $language ){
-                $string = $wpdb->get_var($wpdb->prepare("SELECT value FROM {$wpdb->prefix}icl_string_translations WHERE string_id = %s and language = %s", $string_id, $sitepress_settings['admin_default_language']));
-                if($string){
-                    $translations = $string;
+            if( $sitepress_settings['admin_default_language'] != $language ){
+
+                $string_id = icl_get_string_id( $text, 'woocommerce');
+                $strings = icl_get_string_translations_by_id( $string_id );
+                if($strings){
+                    $translations = $strings[ $sitepress_settings['admin_default_language'] ];
                 }
             }else{
                 return $text;
@@ -66,22 +65,18 @@ class WCML_Orders{
 
         if( $user_id ){
 
-            global $sitepress_settings, $wpdb;
+            global $wpdb, $woocommerce_wpml;
             
             $user_language    = get_user_meta( $user_id, 'icl_admin_language', true );
 
             foreach($comments as $key=>$comment){
 
-                if ( WPML_SUPPORT_STRINGS_IN_DIFF_LANG ) {
-                    $comment_string_id = $wpdb->get_var($wpdb->prepare("SELECT st.id FROM {$wpdb->prefix}icl_strings as st LEFT JOIN {$wpdb->prefix}icl_string_contexts as cn ON st.context_id = cn.id WHERE st.value = %s ", $comment->comment_content));
-                }else{
-                    $comment_string_id = $wpdb->get_var($wpdb->prepare("SELECT id FROM {$wpdb->prefix}icl_strings WHERE language = %s AND value = %s ", $sitepress_settings['st']['strings_language'], $comment->comment_content));
-                }
+                $comment_string_id = icl_get_string_id( $comment->comment_content, 'woocommerce');
 
                 if($comment_string_id){
-                    $comment_string = $wpdb->get_var($wpdb->prepare("SELECT value FROM {$wpdb->prefix}icl_string_translations WHERE string_id = %s and language = %s", $comment_string_id, $user_language));
-                if($comment_string){
-                        $comments[$key]->comment_content = $comment_string;
+                    $comment_strings = icl_get_string_translations_by_id( $comment_string_id );
+                    if($comment_strings){
+                        $comments[$key]->comment_content = $comment_strings[$user_language]['value'];
                     }
                 }
             }        
@@ -203,7 +198,7 @@ class WCML_Orders{
                  var order_lang_current_value = jQuery('#dropdown_shop_order_language option:selected').val();
 
                  jQuery('#dropdown_shop_order_language').on('change', function(){
-                    if(confirm('" . esc_js(__("All the products will be removed from the current order in order to change the language", 'wpml-wcml')). "')){
+                    if(confirm('" . esc_js(__("All the products will be removed from the current order in order to change the language", 'woocommerce-multilingual')). "')){
                         var lang = jQuery(this).val();
 
                         jQuery.ajax({
@@ -232,7 +227,7 @@ class WCML_Orders{
     function order_delete_items(){
         $nonce = filter_input( INPUT_POST, 'wcml_nonce', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
         if(!$nonce || !wp_verify_nonce($nonce, 'set_dashboard_order_language')){
-            echo json_encode(array('error' => __('Invalid nonce', 'wpml-wcml')));
+            echo json_encode(array('error' => __('Invalid nonce', 'woocommerce-multilingual')));
             die();
         }
 
@@ -244,6 +239,15 @@ class WCML_Orders{
 
         if( isset( $_POST['wcml_shop_order_language'] ) ){
             update_post_meta( $post_id, 'wpml_language', filter_input( INPUT_POST, 'wcml_shop_order_language', FILTER_SANITIZE_FULL_SPECIAL_CHARS ) );
+        }
+
+    }
+
+    function update_order_currency( $meta_id, $object_id, $meta_key, $meta_value ){
+        global $woocommerce_wpml;
+
+        if( $woocommerce_wpml->settings['enable_multi_currency'] == WCML_MULTI_CURRENCIES_INDEPENDENT && get_post_type($object_id) == 'shop_order' && isset( $_GET['wc-ajax'] ) && $_GET['wc-ajax'] == 'checkout' ){
+            update_post_meta( $object_id, '_order_currency', get_woocommerce_currency() );
         }
 
     }

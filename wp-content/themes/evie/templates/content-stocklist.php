@@ -31,9 +31,9 @@
 		</div>
           <div class="under-title-link-container clearfix">
             <ul>
-				<li><a href="javascript:;">LOCATIONS</a>
+				<li><a href="javascript:;"><?= _e('LOCATIONS'); ?></a>
 					<ul class="sub-menu">
-						<li><a href="<?=$full_uri?>">All</a></li>
+						<li><a href="<?=$full_uri?>"><?= _e('All'); ?></a></li>
 						<? 
 						foreach($stocklist_categories as $stocklist_category){
 							if($location == $stocklist_category->slug){

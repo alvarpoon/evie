@@ -123,7 +123,7 @@ var Roots = {
       // JavaScript to be fired on the about us page
     }
   },
-  media_coverage: {
+  page_template_template_media: {
     init: function(){
 		$(".fancybox-effects-c").fancybox({
 			wrapCSS    : 'fancybox-custom',

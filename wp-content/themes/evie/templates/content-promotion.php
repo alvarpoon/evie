@@ -47,7 +47,7 @@
                 <img class="img-responsive img-border" src="<?=$promotion_1_image['url']?>" />
               </div>
           </div>
-          <div class="more-special-title">MORE SPECIAL OFFERS</div>
+          <div class="more-special-title"><?= _e('MORE SPECIAL OFFERS'); ?></div>
           <div class="clearfix">
           	<div class="col-sm-6 promotion_2_container col-same-height">
             	<div class="promotion_content_container">

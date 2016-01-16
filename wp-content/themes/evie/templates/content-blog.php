@@ -31,7 +31,7 @@
 		<div class="row">
 			<div class="headline-title-container clearfix">
 				<div class="col-xs-2 headline-title-left"></div>
-				<div class="col-xs-8 headline-title-center">EVIE BLOG</div>
+				<div class="col-xs-8 headline-title-center"><?= _e('EVIE BLOG'); ?></div>
 				<div class="col-xs-2 headline-title-right"></div>
 			</div>
 			<!--<div class="blog-link-container clearfix">
@@ -45,9 +45,9 @@
     	        <div class="col-xs-12 col-sm-5">
 					<ul>
 						<li>
-							<a href="javascript:;">CATEGORIES</a>
+							<a href="javascript:;"><?= _e('CATEGORIES'); ?></a>
 							<ul class="sub-menu">
-								<li><a href="<?=$full_uri?>?category=&y=<?=$year?>">All</a></li>
+								<li><a href="<?=$full_uri?>?category=&y=<?=$year?>"><?= _e('All'); ?></a></li>
 								<?
 									foreach ( $categories as $category ) {
 										//print_r($category);
@@ -57,9 +57,9 @@
 								?>
 							</ul>
 						</li>
-						<li><a href="javascript:;">ARCHIVES</a>
+						<li><a href="javascript:;"><?= _e('ARCHIVES'); ?></a>
 							<ul class="sub-menu">
-								<li><a href="<?=$full_uri?>?category=<?=$blog_cat?>&y=">All</a></li>
+								<li><a href="<?=$full_uri?>?category=<?=$blog_cat?>&y="><?= _e('All'); ?></a></li>
 									<?
 									$years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts ORDER BY post_date DESC");
 									foreach($years as $year) : 
@@ -106,7 +106,7 @@
 					<div class="blog-post-excerpt col-xs-10 col-sm-10 col-md-10">
 						<?php the_excerpt(__('Continue reading »','example')); ?>
 						<div class="read-more">
-							<a href="<?php the_permalink(); ?>">READ MORE ></a>
+							<a href="<?php the_permalink(); ?>"><?= _e('READ MORE >'); ?></a>
 						</div>
 					</div>
 				</div>

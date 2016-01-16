@@ -80,11 +80,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </div>
                 <div class="clearfix product-other-detail-content-wrapper">
                     <div class="product-other-detail-item col-xs-12 col-sm-6 col-md-6">
-                        <h2>ingredients</h2>
+                        <h2><?= _e('ingredients') ?></h2>
                         <?=get_field("ingredients",$post->ID)?>
                     </div>
                     <div class="product-other-detail-item col-xs-12 col-sm-6 col-md-6">
-                        <h2>how to use</h2>
+                        <h2><?= _e('how to use') ?></h2>
                         <?=get_field("how_to_use",$post->ID)?>
                     </div>
                 </div>
@@ -113,7 +113,9 @@ if ( ! defined( 'ABSPATH' ) ) {
                 
                 if(count($upsells) > 0){
                     echo '<section class="upsells-container">';
-                    echo '<h2>you may also like</h2>';
+                    echo '<h2>';
+					echo  _e('you may also like');
+					echo '</h2>';
                     echo '<div class="row">';
                     foreach($upsells as $upsell){
                         $upsell_content = get_post($upsell);
