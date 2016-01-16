@@ -93,13 +93,17 @@
 			<div class="col-xs-6 noPadding checkbox-container">
 				<form id="testimonial_form" name="testimonial_form" method="post">
 				<ul>
-					<li><a href="javascript:;">BY PRODUCTS</a>
+					<li><a href="javascript:;"><?= _e('BY PRODUCTS'); ?></a>
 						<ul class="sub-menu">
 							<?
 								if($product == ''){
-									echo '<li><label><input type="checkbox" class="category_filter" id="category_all" value="" checked=checked />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="category_filter" id="category_all" value="" checked=checked />';
+									echo _e('All');
+									echo '</label></li>';
 								}else{
-									echo '<li><label><input type="checkbox" class="category_filter" id="category_all" value="" />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="category_filter" id="category_all" value="" />';
+									echo _e('All');
+									echo '</label></li>';	
 								}
 							?>
 							
@@ -116,13 +120,17 @@
 							<? } ?>
 						</ul>
 					</li>
-					<li><a href="javascript:;">BY CONCERN</a>
+					<li><a href="javascript:;"><?= _e('BY CONCERN'); ?></a>
 						<ul class="sub-menu">
 							<?
 								if($concern == ''){
-									echo '<li><label><input type="checkbox" class="concern_filter" id="concern_all" name="concern_cat" value="" checked=checked />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="concern_filter" id="concern_all" name="concern_cat" value="" checked=checked />';
+									echo _e('All');
+									echo '</label></li>';		
 								}else{
-									echo '<li><label><input type="checkbox" class="concern_filter" id="concern_all" name="concern_cat" value="" />All</label></li>';		
+									echo '<li><label><input type="checkbox" class="concern_filter" id="concern_all" name="concern_cat" value="" />All</label></li>';
+									echo _e('All');
+									echo '</label></li>';		
 								}
 							?>
 							<? 
@@ -141,12 +149,12 @@
 			</div>
 			<div class="col-xs-6 noPadding right-link">
 				<ul>
-					<li><a href="#">SORT BY</a>
+					<li><a href="#"><?= _e('SORT BY'); ?></a>
 						<ul class="sub-menu sort-order-container">
-							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="newest" checked="checked" />Newest</label></li>
-							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="oldest" />Oldest</label></li>
-							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="high" />High Rating</label></li>
-							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="low" />Low Rating</label></li>
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="newest" checked="checked" /><?= _e('Newest'); ?></label></li>
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="oldest" /><?= _e('Oldest'); ?></label></li>
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="high" /><?= _e('High Rating'); ?></label></li>
+							<li><label class="clearfix"><input type="radio" name="sort_order" class="sort_order" value="low" /><?= _e('Low Rating'); ?></label></li>
 						</ul>
 					</li>
 				</ul>
@@ -293,7 +301,17 @@
                         </div>
                         <div class="testimonial-header">
 	                        <h2 class="entry-title"><? the_title(); ?></h2>
-    	                    &mdash; <span class="commenter"><?=$commenter?></span> <span class="date"><?=get_the_date('F j, Y'); ?></span>
+    	                    &mdash; <span class="commenter"><?=$commenter?></span> <span class="date">
+    	                    	<?
+    	                    	if(ICL_LANGUAGE_CODE == 'zh-hant'){
+									echo mysql2date('Y年n月j日',$post->post_date);
+								}else if(ICL_LANGUAGE_CODE == 'zh-hans'){
+									echo mysql2date('Y年n月j日',$post->post_date);
+								}else{
+    	                    	 	echo get_the_date('F j, Y');
+    	                    	 }
+    	                    	?>
+    	                    </span>
                         </div>
                         <div class="entry-content">
                             <? the_content(); ?>

@@ -223,6 +223,7 @@
 		font-family: "Novecento";
 		font-weight: 300;
 		font-size: 10.5px;
+		color: #603913;
 	}
 }
 
@@ -231,6 +232,55 @@
 		font-family: "Novecento";
 		font-weight: 300;
 		font-size: 12px;
+	}
+}
+
+body.zh-hant,body.zh-hans{
+	font-family: 'Heiti TC Medium','MHeiHK',"微軟正黑體","Microsoft JhengHei",'SimHei',sans-serif!important;
+	
+	p,
+	.navbar-nav > li a,
+	.navbar-nav .sub-menu .sub-menu li a,
+	#main-content .breadcrumb-container .woocommerce-breadcrumb,
+	.headline-title-container .headline-mid,
+	.media-coverage-section .media-item-container .media-item .media-headline,
+	.two-col-section .right-content h3, .two-col-section .right-content h4,
+	.ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2,
+	.promotion-section .promotion_1_container .promotion_1_headline h2,
+	.promotion-section .promotion_1_container .promotion_1_headline h3,
+	.promotion-section .promotion_2_container h2, .promotion-section .promotion_3_container h2,
+	.promotion-section .promotion_2_container h3, .promotion-section .promotion_3_container h3,
+	.stocklist-section .stocklist-container h2,
+	.stocklist-section .stocklist-container .stocklist-row .stocklist-item h4,
+	#main-content .under-title-link-container ul li a,
+	footer .copyright,
+	footer .footer-link-container .footer_link,
+	.promotion-section .more-special-title,
+	.testimonial-section .testimonial-container .testimonial-item .testimonial-header h2,
+	.product-item-brief-wrapper .product-item-brief-content a,
+	.single-product .product .product-title h1,
+	.single-product .product .product-title p,
+	.woocommerce ul.products li.product h3,
+	.single-product .product .product-title h1,
+	#connect-popup input[type=email], #connect-popup input[type=tel],#connect-popup input[type=submit],
+	.blog-section .headline-title-container .headline-title-center,
+	ul.products li.product .find-out-more
+	{
+		font-family: 'Heiti TC Medium','MHeiHK',"微軟正黑體","Microsoft JhengHei",'SimHei',sans-serif!important;
+	}
+	h1, h2, h3, h4, h5, h6,
+	.ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2,
+	.headline-title-container .headline-mid,
+	.promotion-section .promotion_1_container .promotion_1_headline h2,
+	.promotion-section .promotion_1_container .promotion_1_headline h3,
+	.stocklist-section .stocklist-container h2,
+	#main-content .under-title-link-container ul li .sub-menu li a.active,
+	.promotion-section .more-special-title{
+		font-family: 'Heiti TC Medium','MHeiHK',"微軟正黑體","Microsoft JhengHei",'SimHei',sans-serif!important;
+		font-weight: bold;
+	}
+	&.contact-us-tc h2,&.contact-us-sc h2{
+		    font-family: "PlayfairDisplay"!important;
 	}
 }
 
@@ -421,7 +471,8 @@
 								font-weight: 500;
 							}
 						}
-						&.menu-gift-value-sets, &.menu-whats-new, &.menu-top-rated, &.menu-bestsellers{
+						&.menu-gift-value-sets, &.menu-whats-new, &.menu-top-rated, &.menu-bestsellers,
+						&.item-gift-value-sets, &.item-whats-new, &.item-top-rated, &.item-bestsellers{
 							padding-bottom:8px;
 						}
 						a{
@@ -459,6 +510,20 @@
 	.navbar-nav > li > a {
 	  padding-top: 15px;
 	  padding-bottom: 20px;
+	}
+
+	.zh-hant, .zh-hans{
+		.navbar-nav .sub-menu > li a{
+			font-weight: bold;
+		}
+
+		.navbar-nav .sub-menu .sub-menu li a {
+			font-weight: normal;
+		}
+		.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+			background:none;
+			font-weight:bold;
+		}
 	}
 }
 

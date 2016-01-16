@@ -89,7 +89,7 @@
 				<div class="border-top-mid col-xs-10 noPadding"></div>
 				<div class="border-top-right col-xs-1 noPadding"></div>
 			</div>
-			<div class="headline-mid">bestsellers</div>
+			<div class="headline-mid"><?= _e('bestsellers'); ?></div>
 			<div class="headline-btm clearfix">
 				<div class="border-btm-left col-xs-1 noPadding"></div>
 				<div class="border-btm-mid col-xs-10 noPadding"></div>
@@ -98,7 +98,7 @@
 		</div>
             <div class="row">
                 <?
-                    $best_sellers = get_field("best_seller", $post->ID);
+                    $best_sellers = get_field("best_seller", icl_object_id($post->ID, 'page', false,ICL_LANGUAGE_CODE));
                     foreach( $best_sellers as $best_seller ){
                         $best_seller_content = get_post($best_seller);
                 ?>

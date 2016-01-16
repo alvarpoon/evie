@@ -8642,11 +8642,117 @@ ul.products li.product .find-out-more {
   font-family: "Novecento";
   font-weight: 300;
   font-size: 10.5px;
+  color: #603913;
 }
 .search-form .search-field {
   font-family: "Novecento";
   font-weight: 300;
   font-size: 12px;
+}
+body.zh-hant,
+body.zh-hans {
+  font-family: 'Heiti TC Medium', 'MHeiHK', "微軟正黑體", "Microsoft JhengHei", 'SimHei', sans-serif !important;
+}
+body.zh-hant p,
+body.zh-hans p,
+body.zh-hant .navbar-nav > li a,
+body.zh-hans .navbar-nav > li a,
+body.zh-hant .navbar-nav .sub-menu .sub-menu li a,
+body.zh-hans .navbar-nav .sub-menu .sub-menu li a,
+body.zh-hant #main-content .breadcrumb-container .woocommerce-breadcrumb,
+body.zh-hans #main-content .breadcrumb-container .woocommerce-breadcrumb,
+body.zh-hant .headline-title-container .headline-mid,
+body.zh-hans .headline-title-container .headline-mid,
+body.zh-hant .media-coverage-section .media-item-container .media-item .media-headline,
+body.zh-hans .media-coverage-section .media-item-container .media-item .media-headline,
+body.zh-hant .two-col-section .right-content h3,
+body.zh-hans .two-col-section .right-content h3,
+body.zh-hant .two-col-section .right-content h4,
+body.zh-hans .two-col-section .right-content h4,
+body.zh-hant .ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2,
+body.zh-hans .ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2,
+body.zh-hant .promotion-section .promotion_1_container .promotion_1_headline h2,
+body.zh-hans .promotion-section .promotion_1_container .promotion_1_headline h2,
+body.zh-hant .promotion-section .promotion_1_container .promotion_1_headline h3,
+body.zh-hans .promotion-section .promotion_1_container .promotion_1_headline h3,
+body.zh-hant .promotion-section .promotion_2_container h2,
+body.zh-hans .promotion-section .promotion_2_container h2,
+body.zh-hant .promotion-section .promotion_3_container h2,
+body.zh-hans .promotion-section .promotion_3_container h2,
+body.zh-hant .promotion-section .promotion_2_container h3,
+body.zh-hans .promotion-section .promotion_2_container h3,
+body.zh-hant .promotion-section .promotion_3_container h3,
+body.zh-hans .promotion-section .promotion_3_container h3,
+body.zh-hant .stocklist-section .stocklist-container h2,
+body.zh-hans .stocklist-section .stocklist-container h2,
+body.zh-hant .stocklist-section .stocklist-container .stocklist-row .stocklist-item h4,
+body.zh-hans .stocklist-section .stocklist-container .stocklist-row .stocklist-item h4,
+body.zh-hant #main-content .under-title-link-container ul li a,
+body.zh-hans #main-content .under-title-link-container ul li a,
+body.zh-hant footer .copyright,
+body.zh-hans footer .copyright,
+body.zh-hant footer .footer-link-container .footer_link,
+body.zh-hans footer .footer-link-container .footer_link,
+body.zh-hant .promotion-section .more-special-title,
+body.zh-hans .promotion-section .more-special-title,
+body.zh-hant .testimonial-section .testimonial-container .testimonial-item .testimonial-header h2,
+body.zh-hans .testimonial-section .testimonial-container .testimonial-item .testimonial-header h2,
+body.zh-hant .product-item-brief-wrapper .product-item-brief-content a,
+body.zh-hans .product-item-brief-wrapper .product-item-brief-content a,
+body.zh-hant .single-product .product .product-title h1,
+body.zh-hans .single-product .product .product-title h1,
+body.zh-hant .single-product .product .product-title p,
+body.zh-hans .single-product .product .product-title p,
+body.zh-hant .woocommerce ul.products li.product h3,
+body.zh-hans .woocommerce ul.products li.product h3,
+body.zh-hant .single-product .product .product-title h1,
+body.zh-hans .single-product .product .product-title h1,
+body.zh-hant #connect-popup input[type=email],
+body.zh-hans #connect-popup input[type=email],
+body.zh-hant #connect-popup input[type=tel],
+body.zh-hans #connect-popup input[type=tel],
+body.zh-hant #connect-popup input[type=submit],
+body.zh-hans #connect-popup input[type=submit],
+body.zh-hant .blog-section .headline-title-container .headline-title-center,
+body.zh-hans .blog-section .headline-title-container .headline-title-center,
+body.zh-hant ul.products li.product .find-out-more,
+body.zh-hans ul.products li.product .find-out-more {
+  font-family: 'Heiti TC Medium', 'MHeiHK', "微軟正黑體", "Microsoft JhengHei", 'SimHei', sans-serif !important;
+}
+body.zh-hant h1,
+body.zh-hans h1,
+body.zh-hant h2,
+body.zh-hans h2,
+body.zh-hant h3,
+body.zh-hans h3,
+body.zh-hant h4,
+body.zh-hans h4,
+body.zh-hant h5,
+body.zh-hans h5,
+body.zh-hant h6,
+body.zh-hans h6,
+body.zh-hant .ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2,
+body.zh-hans .ingredient-section .ingredient-item-container .ingreditent-row .ingredient-content h2,
+body.zh-hant .headline-title-container .headline-mid,
+body.zh-hans .headline-title-container .headline-mid,
+body.zh-hant .promotion-section .promotion_1_container .promotion_1_headline h2,
+body.zh-hans .promotion-section .promotion_1_container .promotion_1_headline h2,
+body.zh-hant .promotion-section .promotion_1_container .promotion_1_headline h3,
+body.zh-hans .promotion-section .promotion_1_container .promotion_1_headline h3,
+body.zh-hant .stocklist-section .stocklist-container h2,
+body.zh-hans .stocklist-section .stocklist-container h2,
+body.zh-hant #main-content .under-title-link-container ul li .sub-menu li a.active,
+body.zh-hans #main-content .under-title-link-container ul li .sub-menu li a.active,
+body.zh-hant .promotion-section .more-special-title,
+body.zh-hans .promotion-section .more-special-title {
+  font-family: 'Heiti TC Medium', 'MHeiHK', "微軟正黑體", "Microsoft JhengHei", 'SimHei', sans-serif !important;
+  font-weight: bold;
+}
+body.zh-hant.contact-us-tc h2,
+body.zh-hans.contact-us-tc h2,
+body.zh-hant.contact-us-sc h2,
+body.zh-hans.contact-us-sc h2 {
+  font-family: "PlayfairDisplay" !important;
 }
 @media (min-width: 768px) {
   .navbar-default {
@@ -8823,7 +8929,11 @@ ul.products li.product .find-out-more {
   .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-gift-value-sets,
   .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-whats-new,
   .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-top-rated,
-  .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-bestsellers {
+  .nav-container .main-menu .navbar-nav > li .sub-menu li.menu-bestsellers,
+  .nav-container .main-menu .navbar-nav > li .sub-menu li.item-gift-value-sets,
+  .nav-container .main-menu .navbar-nav > li .sub-menu li.item-whats-new,
+  .nav-container .main-menu .navbar-nav > li .sub-menu li.item-top-rated,
+  .nav-container .main-menu .navbar-nav > li .sub-menu li.item-bestsellers {
     padding-bottom: 8px;
   }
   .nav-container .main-menu .navbar-nav > li .sub-menu li a {
@@ -8851,6 +8961,23 @@ ul.products li.product .find-out-more {
   .navbar-nav > li > a {
     padding-top: 15px;
     padding-bottom: 20px;
+  }
+  .zh-hant .navbar-nav .sub-menu > li a,
+  .zh-hans .navbar-nav .sub-menu > li a {
+    font-weight: bold;
+  }
+  .zh-hant .navbar-nav .sub-menu .sub-menu li a,
+  .zh-hans .navbar-nav .sub-menu .sub-menu li a {
+    font-weight: normal;
+  }
+  .zh-hant .navbar-default .navbar-nav > .active > a,
+  .zh-hans .navbar-default .navbar-nav > .active > a,
+  .zh-hant .navbar-default .navbar-nav > .active > a:hover,
+  .zh-hans .navbar-default .navbar-nav > .active > a:hover,
+  .zh-hant .navbar-default .navbar-nav > .active > a:focus,
+  .zh-hans .navbar-default .navbar-nav > .active > a:focus {
+    background: none;
+    font-weight: bold;
   }
 }
 @media (min-width: 992px) {
