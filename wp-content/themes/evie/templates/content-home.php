@@ -107,7 +107,7 @@
                         
                     </div>-->
                     <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 best-seller-item">
-                        <a href="<?=get_permalink($best_seller)?>"><?=get_the_post_thumbnail( $best_seller->ID, 'full' );?></a>
+                        <a href="<?=get_permalink($best_seller)?>"><?=get_the_post_thumbnail( $best_seller->ID, 'medium' );?></a>
                         <div class="product-item-brief-wrapper">
                             <div class="product-item-brief-content">
                                 <div class="product-series"><?=get_field("series",$best_seller);?></div>
