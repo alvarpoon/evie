@@ -1,3 +1,34 @@
+#2.3.5
+
+##Fixes
+* [wpmlst-685] Fixed incorrect filtering of rewrite rules when permalink bases contains strings which are used in other permalink patterns
+* [wpmlst-694] Fixed an issue preventing widget strings and site titles from being registered as translatable strings on new installations
+* [wpmlst-349] Fixed encoding of special characters in the Search field
+
+#2.3.4
+
+##Fixes
+* Added backward compatibility for `__DIR__` magic constant not being supported before PHP 5.3.
+
+#2.3.3
+
+##Fixes
+* [wpmlga-96] WordPress 4.4 compatibility: pulled all html headings by one (e.g. h2 -> h1, he -> h2, etc.)
+
+##Performances
+* [wpmlst-584] Improved cache flushing in Packages Translations, solving the `PHP Fatal error: Call to undefined method WP_Object_Cache::__get()` message WPEngine users were getting
+
+#2.3.2
+
+##Fixes
+* [wpmlst-668] Removed the wrongly shown "Products slugs are set to be translated, but they are missing their translation" message
+* [wpmlst-676] Resolved the "Fatal error: Class 'WPML_WPDB_User' not found" message when deactivating WPML-Core with WPML-ST still active
+* [wpmltm-959] Escape html in Post titles displayed in admin messages
+* [wpmlst-478] Fixed nested wildcards for setting admin options translatable were not working
+* [wpmlst-681] Fix warning in Layouts if there are no languages to translate to
+* [wpmltm-972] Improved the repairing of broken database states implemented for Translation Polling, to cover more cases
+* [wpmltm-992] Disabled admin notice about missing PHP required setting, when not in a WPML page, and if the `ICL_HIDE_TRANSLATION_SERVICES` constant is not set to true. Also added the ability to hide that notice.
+
 #2.3.1
 
 ##Performances
