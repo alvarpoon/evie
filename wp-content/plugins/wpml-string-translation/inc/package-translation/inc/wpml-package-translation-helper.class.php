@@ -367,24 +367,8 @@ class WPML_Package_Helper {
 	}
 
 	final private function flush_cache() {
-		/** @var WP_Object_Cache $wp_object_cache */
-		global $wp_object_cache;
-		$has_cache_property = method_exists( $wp_object_cache, '__get' );
-		if ( ! $has_cache_property && property_exists( $wp_object_cache, 'cache' ) ) {
-			$reflector          = new ReflectionClass( get_class( $wp_object_cache ) );
-			$cache_property     = $reflector->getProperty( 'cache' );
-			$has_cache_property = $cache_property->isPublic();
-		}
-		if ( $has_cache_property ) {
-			$cache = $wp_object_cache->cache;
-			if ( isset( $cache[ $this->cache_group ] ) ) {
-				foreach ( $cache[ $this->cache_group ] as $cache_key => $data ) {
-					wp_cache_delete( $cache_key, $this->cache_group );
-				}
-			}
-		} else {
-			wp_cache_flush();
-		}
+		// delete the cache key we use
+		wp_cache_delete( 'get_all_packages', $this->cache_group );
 	}
 
 	/**

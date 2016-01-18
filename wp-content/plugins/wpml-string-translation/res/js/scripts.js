@@ -144,7 +144,7 @@ function icl_st_filter_context(){
 function icl_st_filter_search(){
     var val = jQuery('#icl_st_filter_search').val();
     var exact_match = jQuery('#icl_st_filter_search_em').attr('checked');
-    var qs = val != '' ? '&search=' + val : '';
+    var qs = val != '' ? '&search=' + encodeURIComponent(val) : '';
      qs = qs.replace(/&em=1/g,'');
     if(exact_match){
         qs += '&em=1';

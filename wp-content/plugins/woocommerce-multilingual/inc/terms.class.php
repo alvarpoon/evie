@@ -79,7 +79,9 @@ class WCML_Terms{
         if( $original_tax->taxonomy == 'product_shipping_class' ){
 
             $settings = get_option( 'woocommerce_flat_rate_settings' );
-            update_option( 'woocommerce_flat_rate_settings', $this->update_woocommerce_flat_rate_settings( $settings ) );
+            if( is_array( $settings ) ){
+                update_option( 'woocommerce_flat_rate_settings', $this->update_woocommerce_flat_rate_settings( $settings ) );
+            }
 
         }
     }
@@ -878,7 +880,15 @@ class WCML_Terms{
 
             $trnsl_term_id = apply_filters( 'translate_object_id', $term_obj->term_id, $taxonomy, true, $language );
 
-            $filtered_terms[] = !$is_objects_array ? ( isset( $is_slug ) ? get_term( $trnsl_term_id, $taxonomy )->slug : get_term( $trnsl_term_id, $taxonomy )->name ) : get_term( $trnsl_term_id, $taxonomy );
+            if( $is_objects_array ){
+                $filtered_terms[] = get_term( $trnsl_term_id, $taxonomy );
+            }else{
+                if( isset( $is_slug ) ){
+                    $filtered_terms[] = get_term( $trnsl_term_id, $taxonomy )->slug;
+                }else{
+                    $filtered_terms[] = ( is_ajax() && isset( $_POST['action'] ) && in_array( $_POST['action'], array( 'woocommerce_add_variation', 'woocommerce_link_all_variations') ) ) ? strtolower ( get_term( $trnsl_term_id, $taxonomy )->name ) : get_term( $trnsl_term_id, $taxonomy )->name;
+                }
+            }
         }
 
         return $filtered_terms;

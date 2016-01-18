@@ -3,8 +3,8 @@
 Contributors: yithemes
 Tags: zoom, magnifier, woocommerce, product image, themes, yit, e-commerce, shop, thumbnail, thumbnail slider, zoom image, carousel, image carousel
 Requires at least: 3.5.1
-Tested up to: 4.3
-Stable tag: 1.2.10
+Tested up to: 4.4.1
+Stable tag: 1.2.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,33 @@ The size of the Zoom Image is automatically setted. If you want to change these 
 
 == Changelog ==
 
+= Version 1.2.16 - RELEASED: JAN 18, 2016 =
+
+* Updated: YITH Plugin FW loading remove unused YIT constant
+* Added: filter yith_ywzm_zoom_wrap_additional_css for customizing CSS class for the wrapping div
+* Updated: plugin ready for WooCommerce 2.5
+
+= Version 1.2.15 - RELEASED: JAN 04, 2016 =
+
+* Fixed: Cannot redeclare yith_ywzm_install_woocommerce_admin_notice() when the plugin is loaded from YITH Essential Kit
+
+= Version 1.2.14 - RELEASED: DEC 29, 2015 =
+
+* Added: Compatibility with YIT WooCommerce Featured Audio & Video Content
+
+= Version 1.2.13 - RELEASED: DEC 21, 2015 =
+
+* Fixed: multiple wrap of zoom element with the div with class yith_magnifier_zoom_wrap
+* Updated: jquery-ui.css is no more linked as external resource but shipped within the plugin, as wordpress.org asked
+
+= Version 1.2.12 - RELEASED: OCT 29, 2015 =
+
+* Updated: YITH plugin framework
+
+= Version 1.2.11 - RELEASED: OCT 23, 2015 =
+
+* Updated: compatibility with YITH WooCommerce Quick View.
+
 = Version 1.2.10 - RELEASED: SEP 24, 2015 =
 
 * Updated: changed text domain as translate.wordpress.org requisite.
@@ -66,17 +93,17 @@ The size of the Zoom Image is automatically setted. If you want to change these 
 = Version 1.2.9 - RELEASED: SEP 04, 2015 =
 
 * Updated: Languages file
-* Fix: Changed plugin text domain from yit to ywmz
-* Fix: featured image shown one time on slider.
-* Fix: div not shown if loading text is empty.
+* Fixed: Changed plugin text domain from yit to ywmz
+* Fixed: featured image shown one time on slider.
+* Fixed: div not shown if loading text is empty.
 
 = Version 1.2.8 - RELEASED: SEP 01, 2015 =
 
-* Fix: removed deprecated woocommerce_update_option_X hook.
+* Fixed: removed deprecated woocommerce_update_option_X hook.
 
 = Version 1.2.7 - RELEASED: AUG 27, 2015 =
 
-* Fix: resolved XSS vulnerability.
+* Fixed: resolved XSS vulnerability.
 
 = Version 1.2.6 - RELEASED: AUG 12, 2015 =
 

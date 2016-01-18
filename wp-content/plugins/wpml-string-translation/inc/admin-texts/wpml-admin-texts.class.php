@@ -139,10 +139,6 @@ class WPML_Admin_Texts extends WPML_Admin_Text_Functionality{
 	}
 
 	function icl_st_translate_admin_string( $option_value, $key = "", $name = "", $rec_level = 0 ) {
-		if ( ! defined( 'ICL_SITEPRESS_VERSION' ) || ICL_PLUGIN_INACTIVE ) {
-			return $option_value;
-		}
-
 		$lang        = $this->st_instance->get_current_string_language( $name );
 		$option_name = substr( current_filter(), 7 );
 		$name        = $name === '' ? $option_name : $name;

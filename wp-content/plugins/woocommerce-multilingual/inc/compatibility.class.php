@@ -86,13 +86,12 @@ class WCML_Compatibility {
         }
 				
         if (class_exists('WC_Bulk_Stock_Management')) {
-                $this->wc_bulk_stock_management = new WCML_Bulk_Stock_Management();
+            $this->wc_bulk_stock_management = new WCML_Bulk_Stock_Management();
         }
 
         // WooCommerce Advanced Ajax Layered Navigation
         include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
         if ( is_plugin_active( 'woocommerce-ajax-layered-nav/ajax_layered_nav-widget.php' ) ) {
-            require_once WCML_PLUGIN_PATH . '/compatibility/wc_ajax_layered_nav_widget.class.php';
             $this->wc_ajax_layered_nav_widget = new WCML_Ajax_Layered_Nav_Widget();
         }
 		
@@ -105,6 +104,12 @@ class WCML_Compatibility {
         if (function_exists('init_woocommerce_checkout_add_ons')) {
             $this->wc_checkout_addons = new WCML_Checkout_Addons();
         }
+
+        // woocommerce checkout addons
+        if ( wp_get_theme() == 'Flatsome' ) {
+            $this->flatsome = new WCML_Flatsome();
+        }
+
 
     }
 
