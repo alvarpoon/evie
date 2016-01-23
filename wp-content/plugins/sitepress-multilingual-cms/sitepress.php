@@ -5,7 +5,7 @@ Plugin URI: https://wpml.org/
 Description: WPML Multilingual CMS | <a href="https://wpml.org">Documentation</a> | <a href="https://wpml.org/version/wpml-3-3/">WPML 3.3 release notes</a>
 Author: OnTheGoSystems
 Author URI: http://www.onthegosystems.com/
-Version: 3.3
+Version: 3.3.5
 Plugin Slug: sitepress-multilingual-cms
 */
 
@@ -14,7 +14,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You 
 if ( defined( 'ICL_SITEPRESS_VERSION' ) || (bool) get_option( '_wpml_inactive' ) === true ) {
 	return;
 }
-define( 'ICL_SITEPRESS_VERSION', '3.3' );
+define( 'ICL_SITEPRESS_VERSION', '3.3.5' );
 
 // Do not uncomment the following line!
 // If you need to use this constant, use it in the wp-config.php file
@@ -31,13 +31,15 @@ if ( ! defined( 'FILTER_SANITIZE_FULL_SPECIAL_CHARS' ) ) {
 }
 require ICL_PLUGIN_PATH . '/inc/functions-helpers.php';
 
+require_once 'lib/Twig/Autoloader.php';
+Twig_Autoloader::register();
 
-require_once "lib/wpml-autoloader.class.php";
-$wpml_twig = new WPML_Twig();
+require_once 'embedded/wpml/commons/autoloader.php';
+$wpml_auto_loader_instance = WPML_Auto_Loader::get_instance();
+$wpml_auto_loader_instance->register( ICL_PLUGIN_PATH . '/' );
 
 require ICL_PLUGIN_PATH . '/inc/wpml-dependencies-check/wpml-bundle-check.class.php';
 require ICL_PLUGIN_PATH . '/inc/wpml-private-actions.php';
-require ICL_PLUGIN_PATH . '/inc/locale/wpml-locale.class.php';
 require ICL_PLUGIN_PATH . '/inc/functions.php';
 require ICL_PLUGIN_PATH . '/inc/functions-security.php';
 require ICL_PLUGIN_PATH . '/inc/wpml-post-comments.class.php';
@@ -91,7 +93,6 @@ require ICL_PLUGIN_PATH . '/inc/post-translation/wpml-admin-post-actions.class.p
 require ICL_PLUGIN_PATH . '/inc/post-translation/wpml-frontend-post-actions.class.php';
 
 require ICL_PLUGIN_PATH . '/inc/url-handling/wpml-url-filters.class.php';
-require ICL_PLUGIN_PATH . '/inc/request-handling/wpml-language-resolution.class.php';
 require ICL_PLUGIN_PATH . '/inc/url-handling/wpml-url-converter.class.php';
 require ICL_PLUGIN_PATH . '/inc/utilities/wpml-languages.class.php';
 require ICL_PLUGIN_PATH . '/inc/utilities/wpml-wp-api.class.php';
@@ -142,7 +143,9 @@ if ( ! wp_next_scheduled( 'update_wpml_config_index' ) ) {
 	wp_schedule_event( time(), 'daily', 'update_wpml_config_index' );
 }
 /** @var WPML_Post_Translation $wpml_post_translations */
-global $sitepress, $wpdb, $wpml_url_filters, $wpml_post_translations, $wpml_url_converter, $wpml_language_resolution, $wpml_slug_filter;
+global $sitepress, $wpdb, $wpml_url_filters, $wpml_post_translations,
+       $wpml_term_translations, $wpml_url_converter, $wpml_language_resolution,
+       $wpml_slug_filter;
 
 $sitepress        = new SitePress();
 
@@ -155,6 +158,7 @@ wpml_load_request_handler( is_admin(),
                            $sitepress->get_default_language() );
 require ICL_PLUGIN_PATH . '/inc/url-handling/wpml-slug-filter.class.php';
 $wpml_slug_filter = new WPML_Slug_Filter( $wpdb, $sitepress, $wpml_post_translations );
+/** @var array $sitepress_settings */
 $sitepress_settings = $sitepress->get_settings();
 wpml_load_term_filters();
 wpml_maybe_setup_post_edit();

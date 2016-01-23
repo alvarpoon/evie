@@ -391,6 +391,7 @@ class WPML_Package_Translation_Metabox {
 	}
 
 	private function init_translation_statuses() {
+		$this->metabox_data[ 'statuses' ] = array();
 		$this->translation_statuses = $this->get_translation_statuses();
 		foreach ( $this->active_languages as $language_data ) {
 			if ( $language_data[ 'code' ] != $this->package_language ) {
