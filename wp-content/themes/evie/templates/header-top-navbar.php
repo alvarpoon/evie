@@ -52,6 +52,18 @@
 				<div class="mobile_function_link">
 					<a href="mailto:info@eviebeaute.com">Enquiries/Order</a>
 				</div>
+                <div class="mobile_lang_link">
+                	<?
+                   	  $langs_counter = 0;
+					  foreach ($langs as $key=>$currLang){
+						if(++$langs_counter === $numLangs){
+							echo '<a class="" href="'.$currLang['url'].'">'.$currLang['tag'].'</a>';
+						}else{
+							echo '<a class="" href="'.$currLang['url'].'">'.$currLang['tag'].'</a> | ';	
+						}
+					  }
+					?>
+                </div>
 				<div class="searchBox-container clearfix">
 					<?php get_search_form(); ?>
 				</div>
