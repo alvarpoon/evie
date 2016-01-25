@@ -101,7 +101,7 @@ class WPML_Rewrite_Rule_Filter extends WPML_WPDB_And_SP_User {
 		if ( (bool) $slug_translation === true && preg_match( '#^[^/]*/?' . preg_quote( $slug ) . '/#',
 				$k ) && $slug != $slug_translation
 		) {
-			$k = str_replace( $slug . '/', $slug_translation . '/', $k );
+			$k = preg_replace( '#^' . addslashes($slug) . '/#', $slug_translation . '/', $k );
 		}
 
 		return $k;

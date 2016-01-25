@@ -84,7 +84,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     
             <?php else: ?>
 
-                <p style="  margin-top: 40px;">Coming soon…</p>
+                <p style="  margin-top: 40px;"><? _e('Coming soon…')?></p>
 
             <?php endif; ?>
    

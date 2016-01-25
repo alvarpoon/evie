@@ -61,7 +61,8 @@ class WPML_Admin_String_Filter extends WPML_Displayed_String_Filter {
 			$source_lang    = $domain_lang ? $domain_lang
 				: ( strpos( $domain, 'admin_texts_' ) === 0
 				    || $name === 'Tagline' || $name === 'Blog Title'
-					? $this->sitepress->get_user_admin_language(get_current_user_id()) : 'en' );
+					? $this->sitepress->get_user_admin_language( get_current_user_id() ) : 'en' );
+			$source_lang    = $source_lang ? $source_lang : 'en';
 		}
 
 		$res = $this->get_registered_string( $domain, $context, $name );

@@ -13,4 +13,14 @@ class WPML_Cookie {
 			return '';
 		}
 	}
+
+	/**
+	 * simple wrapper for \headers_sent
+	 *
+	 * @return bool
+	 */
+	public function headers_sent() {
+
+		return headers_sent();
+	}
 }

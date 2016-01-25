@@ -3,9 +3,9 @@
 add_action('plugins_loaded', 'icl_st_init');
 
 function icl_st_init(){                       
-    global $sitepress_settings, $sitepress, $wpdb, $icl_st_err_str;
+    global $sitepress_settings, $sitepress, $wpdb, $icl_st_err_str, $pagenow;
 
-    if ( $GLOBALS['pagenow'] === 'site-new.php' && isset($_REQUEST['action']) && 'add-site' === $_REQUEST['action'] ) return;
+    if ( $pagenow === 'site-new.php' && isset($_REQUEST['action']) && 'add-site' === $_REQUEST['action'] ) return;
     
     add_action('icl_update_active_languages', 'icl_update_string_status_all');
     add_action('update_option_blogname', 'icl_st_update_blogname_actions',5,2);
@@ -27,12 +27,6 @@ function icl_st_init(){
               
     if(!isset($sitepress_settings['existing_content_language_verified']) || !$sitepress_settings['existing_content_language_verified']){
         return;
-    }          
-    
-    if(!isset($sitepress_settings['st']['sw'])){
-        $sitepress_settings['st']['sw'] = array();  //no settings for now
-        $sitepress->save_settings($sitepress_settings); 
-        $init_all = true;
     }
     
     if(!isset($sitepress_settings['st']['strings_per_page'])){
@@ -52,39 +46,6 @@ function icl_st_init(){
     }
     
     if(!isset($sitepress_settings['st']['translated-users'])) $sitepress_settings['st']['translated-users'] = array();
-
-	if ( ( isset( $_POST['iclt_st_sw_save'] ) && wp_verify_nonce( $_POST['_wpnonce'], 'icl_sw_form' ) ) || isset( $init_all ) ) {
-		if ( isset( $init_all ) ) {
-			global $WPML_String_Translation;
-
-			add_action( 'wp_loaded', array(
-				$WPML_String_Translation,
-				'initialize_wp_and_widget_strings'
-			) );
-		}
-		if ( isset( $_POST['iclt_st_sw_save'] ) ) {
-			$updat_string_statuses          = false;
-			$sitepress_settings['st']['sw'] = $_POST['icl_st_sw'];
-			if ( $sitepress_settings['st']['strings_language'] != $_POST['icl_st_sw']['strings_language'] ) {
-				$updat_string_statuses = true;
-			}
-			$sitepress_settings['st']['strings_language'] = $_POST['icl_st_sw']['strings_language'];
-			$sitepress->save_settings( $sitepress_settings );
-
-			$wpdb->query( $wpdb->prepare( "UPDATE {$wpdb->prefix}icl_strings SET language=%s WHERE language <> %s",
-				$sitepress_settings['st']['strings_language'], $sitepress_settings['st']['strings_language'] ) );
-
-			if ( $updat_string_statuses ) {
-				icl_update_string_status_all();
-			}
-			//register author strings
-			if ( ! empty( $sitepress_settings['st']['translated-users'] ) ) {
-				icl_st_register_user_strings_all();
-			}
-
-			wp_redirect( admin_url( 'admin.php?page=' . WPML_ST_FOLDER . '/menu/string-translation.php&updated=true' ) );
-		}
-	}
 
 	// handle po file upload
 	if ( isset( $_POST[ 'icl_po_upload' ] ) && wp_verify_nonce( $_POST[ '_wpnonce' ], 'icl_po_form' ) ) {
@@ -172,13 +133,6 @@ function icl_st_init(){
         exit(0);
     }
     
-    // handle string translation request
-    elseif ( isset( $_POST[ 'icl_st_action' ] ) && $_POST[ 'icl_st_action' ] == 'send_strings' ) {
-
-        add_action( 'init', 'icl_send_strings_action' );
-    }
-    
-    
     // hook into blog title and tag line    
     add_filter('option_blogname', 'icl_sw_filters_blogname');
     add_filter('option_blogdescription', 'icl_sw_filters_blogdescription');        
@@ -216,24 +170,6 @@ function icl_st_init(){
     add_filter('get_the_author_nickname', 'icl_st_author_nickname_filter', 10, 2);
     add_filter('get_the_author_description', 'icl_st_author_description_filter', 10, 2);
     add_filter('the_author', 'icl_st_author_displayname_filter', 10);
-    
-}
-
-function icl_send_strings_action( ) {
-    if ( wp_verify_nonce(
-        filter_input( INPUT_POST, 'iclnonce', FILTER_SANITIZE_STRING ),
-        'icl-string-translation'
-    ) ) {
-        $_POST        = stripslashes_deep( $_POST );
-        $string_ids   = explode( ',', $_POST[ 'strings' ] );
-        $translate_to = array();
-        foreach ( $_POST[ 'translate_to' ] as $lang_to => $one ) {
-            $translate_to[ $lang_to ] = $lang_to;
-        }
-        if ( ! empty( $translate_to ) ) {
-            TranslationProxy_Basket::add_strings_to_basket($string_ids, $_POST[ 'icl-tr-from' ], $translate_to);
-        }
-    }
     
 }
 
@@ -326,7 +262,10 @@ function icl_register_string( $context, $name, $value, $allow_empty_value = fals
         $name = md5( $value );
     }
 
-	/** @var WPML_Admin_String_Filter $admin_string_filter */
+	/**
+	 * @var WPML_Admin_String_Filter $admin_string_filter
+	 * @var WPML_String_Translation $WPML_String_Translation
+	 */
 	$strings_language    = $WPML_String_Translation->get_current_string_language( $name );
 	$admin_string_filter = $WPML_String_Translation->get_admin_string_filter( $strings_language );
 
