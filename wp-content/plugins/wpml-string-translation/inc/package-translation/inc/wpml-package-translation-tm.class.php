@@ -286,7 +286,7 @@ class WPML_Package_TM extends WPML_Package_TM_Jobs {
 		$package_helper = new WPML_Package_Helper();
 		$post           = $package_helper->get_translatable_item( null, $package_id );
 
-		$post_title   = $post->title;
+		$post_title   = esc_html( $post->title );
 		$element_type = $package->get_element_type_prefix() . '_' . $post->kind_slug;
 		$trid         = $sitepress->get_element_trid( $package_id, $element_type );
 		$job_id       = $iclTranslationManagement->get_translation_job_id( $trid, $target_language );

@@ -40,15 +40,21 @@ class WPML_Plugin_String_Scanner extends WPML_String_Scanner {
 
 			$this->scan_starting( $plugin );
 
-			if ( false !== strpos( $plugin, '/' ) && ! $p[ 'mu' ] ) {
+			if ( false !== strpos( $plugin, '/' ) && ! $p['mu'] ) {
 				$plugin = dirname( $plugin );
 			}
-			if ( $p[ 'mu' ] ) {
-				$plugin_path = WPMU_PLUGIN_DIR . '/' . $plugin;
-				$this->current_plugin_file = WPMU_PLUGIN_DIR . '/' . $p[ 'file' ];
+
+			if ( ! path_is_absolute( $plugin ) ) {
+				if ( $p['mu'] ) {
+					$plugin_path               = WPMU_PLUGIN_DIR . '/' . $plugin;
+					$this->current_plugin_file = WPMU_PLUGIN_DIR . '/' . $p['file'];
+				} else {
+					$plugin_path               = WP_PLUGIN_DIR . '/' . $plugin;
+					$this->current_plugin_file = WP_PLUGIN_DIR . '/' . $p['file'];
+				}
 			} else {
-				$plugin_path = WP_PLUGIN_DIR . '/' . $plugin;
-				$this->current_plugin_file = WP_PLUGIN_DIR . '/' . $p[ 'file' ];
+				$this->current_plugin_file = $p[ 'file' ];
+				$plugin_path               = $plugin;
 			}
 			$this->current_path = $plugin_path;
 			

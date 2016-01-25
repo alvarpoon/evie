@@ -19,38 +19,13 @@ class WPML_String_Translation
 		} else {
 			add_action( 'wpml_loaded', array( $this, 'load' ), $this->load_priority );
 		}
-		add_action( 'init', array($this, 'verify_wpml') );
 		add_action( 'plugins_loaded', array( $this, 'check_db_for_gettext_context' ) , 1000 );
 		add_action( 'wpml_language_has_switched', array( $this, 'wpml_language_has_switched' ) );
-	}
-
-	function verify_wpml() {
-		if ( ! defined('ICL_SITEPRESS_VERSION') ) {
-			add_action( 'admin_notices', array('WPML_String_Translation', 'notice_no_wpml') );
-		} elseif ( version_compare( ICL_SITEPRESS_VERSION, '3.2', '<' ) ) {
-			add_action( 'admin_notices', array( $this, 'wpml_is_outdated' ) );
-
-			return;
-		}
-	}
-	
-	static function notice_no_wpml() {
-		?>
-	    <div class="error wpml-admin-notice wpml-st-inactive wpml-inactive">
-	        <p><?php _e( 'Please activate WPML Multilingual CMS to have WPML String Translation working.', 'wpml-string-translation' ); ?></p>
-	    </div>
-	    <?php
 	}
 	
 	function _wpml_not_installed_warning(){
 		?>
 			<div class="message error wpml-admin-notice wpml-st-inactive wpml-not-configured"><p><?php printf(__('WPML String Translation is enabled but not effective. Please finish the installation of WPML first.', 'wpml-string-translation') ); ?></p></div>
-		<?php
-	}
-
-	function wpml_is_outdated(){
-		?>
-			<div class="message error wpml-admin-notice wpml-st-inactive wpml-outdated"><p><?php printf(__('WPML String Translation is enabled but not effective, because WPML is outdated. Please update WPML first.', 'wpml-string-translation') ); ?></p></div>
 		<?php
 	}
 
@@ -148,7 +123,6 @@ class WPML_String_Translation
 		add_action( 'wp_ajax_st_theme_localization_rescan', array( $this, 'scan_theme_for_strings' ) );
 		add_action( 'wp_ajax_st_plugin_localization_rescan', array( $this, 'scan_plugins_for_strings' ) );
 		add_action( 'wp_ajax_icl_st_pop_download', array( $this, 'plugin_po_file_download' ) );
-		add_action( 'wp_ajax_icl_st_string_status', array( $this, 'icl_st_string_status' ) );
 		add_action( 'wp_ajax_wpml_change_string_lang', array( $this, 'change_string_lang_ajax_callback' ) );
 		add_action( 'wp_ajax_wpml_change_string_lang_of_domain', array( $this, 'change_string_lang_of_domain_ajax_callback' ) );
 
@@ -316,13 +290,11 @@ class WPML_String_Translation
 
 	}
 
-	function scan_theme_for_strings( $no_echo = false )
-	{
+	function scan_theme_for_strings( $no_echo = false ) {
 		require_once WPML_ST_PATH . '/inc/gettext/wpml-theme-string-scanner.class.php';
 		
 		$scan_for_strings = new WPML_Theme_String_Scanner( );
 		$scan_for_strings->scan( $no_echo );
-
 	}
 
 	function scan_plugins_for_strings( $no_echo = false )
@@ -440,20 +412,30 @@ class WPML_String_Translation
 			echo $po;
 			exit( 0 );
 		}
-
 	}
 
-	function estimate_word_count( $string, $lang_code )
-	{
-		$__asian_languages = array( 'ja', 'ko', 'zh-hans', 'zh-hant', 'mn', 'ne', 'hi', 'pa', 'ta', 'th' );
-		$words             = 0;
-		if ( in_array( $lang_code, $__asian_languages ) ) {
-			$words += strlen( strip_tags( $string ) ) / 6;
-		} else {
-			$words += count( explode( ' ', strip_tags( $string ) ) );
-		}
+	/**
+	 * @param string $string value of a string
+	 * @param string $lang_code language code of the string
+	 *
+	 * @return int number of words in the string
+	 */
+	public function estimate_word_count( $string, $lang_code ) {
+		$string = strip_tags( $string );
 
-		return (int)$words;
+		return in_array( $lang_code, array(
+			'ja',
+			'ko',
+			'zh-hans',
+			'zh-hant',
+			'mn',
+			'ne',
+			'hi',
+			'pa',
+			'ta',
+			'th'
+		) ) ? strlen( $string ) / 6
+			: count( explode( ' ', $string ) );
 	}
 
 	function cancel_remote_translation( $rid ) {
@@ -497,14 +479,6 @@ class WPML_String_Translation
 		}
 
 		return $res;
-	}
-
-	function icl_st_string_status()
-	{
-		global $wpdb;
-		$string_id = $_POST[ 'string_id' ];
-		echo WPML_ST_String_Statuses::get_status( $wpdb->get_var( $wpdb->prepare( "SELECT status FROM {$wpdb->prefix}icl_strings WHERE id=%d", $string_id ) ) );
-		exit;
 	}
 	
 	function pre_update_option_blogname($value, $old_value) {
@@ -648,93 +622,6 @@ class WPML_String_Translation
 		$string_settings[ 'strings_per_page' ] = ICL_STRING_TRANSLATION_AUTO_REGISTER_THRESHOLD;
 
 		return $string_settings;
-	}
-	
-	function send_strings_to_translation_service( $string_ids, $target_language, $basket_name, $translator_id ) {
-		global $wpdb;
-		// get all the untranslated strings
-		$untranslated = array();
-		foreach ( $string_ids as $st_id ) {
-			$untranslated[ ] = $st_id;
-		}
-
-		if ( sizeof( $untranslated ) > 0 ) {
-			$project = TranslationProxy::get_current_project();
-
-			$strings    = array();
-			$word_count = 0;
-
-			$source_language = TranslationProxy_Basket::get_source_language();
-			foreach ( $untranslated as $string_id ) {
-				$string_data_query   = "SELECT id, context, name, value FROM {$wpdb->prefix}icl_strings WHERE id=%d";
-				$string_data_prepare = $wpdb->prepare( $string_data_query, $string_id );
-				$string_data         = $wpdb->get_row( $string_data_prepare );
-				$word_count += $this->estimate_word_count( $string_data->value, $source_language );
-				$strings[ ] = $string_data;
-			}
-
-			$xliff = new WPML_TM_xliff();
-			$file = $xliff->get_strings_xliff_file( $strings, $source_language, $target_language );
-
-			$title     = "String Translations";
-			$cms_id    = '';
-			$url       = '';
-			$timestamp = date( 'Y-m-d H:i:s' );
-
-			$res = $project->send_to_translation_batch_mode( $file,
-				$title,
-				$cms_id,
-				$url,
-				$source_language,
-				$target_language,
-				$word_count );
-
-			if ( $res ) {
-				foreach ( $strings as $string_data ) {
-
-					$batch_id            = TranslationProxy_Batch::update_translation_batch( $basket_name );
-					$translation_service = TranslationProxy_Service::get_translator_data_from_wpml( $translator_id );
-					$added               = icl_add_string_translation( $string_data->id,
-					                                                   $target_language,
-					                                                   null,
-					                                                   ICL_TM_WAITING_FOR_TRANSLATOR,
-					                                                   $translation_service[ 'translator_id' ],
-					                                                   $translation_service[ 'translation_service' ],
-					                                                   $batch_id );
-					if ( $added ) {
-						$data = array(
-							'rid'                   => $res,
-							'string_translation_id' => $added,
-							'timestamp'             => $timestamp,
-							'md5'                   => md5( $string_data->value ),
-						);
-						$wpdb->insert( $wpdb->prefix . 'icl_string_status', $data ); //insert rid
-					} else {
-						$this->add_message( sprintf( __( 'Unable to add "%s" string in tables', 'sitepress' ),
-						                             $string_data->name ),
-						                    'error' );
-
-						return 0;
-					}
-				}
-				$wpdb->insert( $wpdb->prefix . 'icl_core_status',
-				               array(
-					               'rid'    => $res,
-					               'module' => '',
-					               'origin' => $source_language,
-					               'target' => $target_language,
-					               'status' => CMS_REQUEST_WAITING_FOR_PROJECT_CREATION
-				               ) );
-
-				if ( $project->errors && count( $project->errors ) ) {
-					$res[ 'errors' ] = $project->errors;
-				}
-
-				return $res;
-			}
-		}
-
-		return 0;
 	}
 
 	/**

@@ -2,7 +2,14 @@
 require_once 'wpml-admin-text-configuration.php';
 require_once 'wpml-admin-text-functionality.class.php';
 
-class WPML_Admin_Text_Import extends WPML_Admin_Text_Functionality{
+class WPML_Admin_Text_Import extends WPML_Admin_Text_Functionality {
+
+	/** @var WPML_ST_Records $st_records */
+	private $st_records;
+
+	function __construct( &$st_records ) {
+		$this->st_records = &$st_records;
+	}
 
 	function parse_config( $admin_texts ) {
 		
@@ -102,18 +109,17 @@ class WPML_Admin_Text_Import extends WPML_Admin_Text_Functionality{
 		$old_string_id = icl_st_is_registered_string( 'admin_texts_' . $type . '_' . $old_admin_text_context, $key );
 		if ( $old_string_id ) {
 			$new_string_id = icl_st_is_registered_string( 'admin_texts_' . $new_admin_text_context, $key );
-
 			if ( $new_string_id ) {
-
-				// make the old translations point to the new translations
-
 				$wpdb->update( $wpdb->prefix . 'icl_string_translations', array( 'string_id' => $new_string_id ), array( 'string_id' => $old_string_id ) );
-
-				// Copy the status.
-				$status = $wpdb->get_var( $wpdb->prepare( "SELECT status FROM {$wpdb->prefix}icl_strings WHERE id = %d", $old_string_id ) );
-				$wpdb->update( $wpdb->prefix . 'icl_strings', array( 'status' => $status ), array( 'id' => $new_string_id ) );
+				$this->st_records->icl_strings_by_string_id( $new_string_id )
+				                 ->update(
+					                 array(
+						                 'status' => $this->st_records
+							                 ->icl_strings_by_string_id( $old_string_id )
+							                 ->status()
+					                 )
+				                 );
 			}
 		}
 	}
-
 }

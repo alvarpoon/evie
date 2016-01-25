@@ -108,25 +108,16 @@ class WPML_Admin_Text_Configuration extends WPML_Admin_Text_Functionality {
 		return $ret;
 	}
 
+	/**
+	 * Creates a regex matcher from a wildcard string name definition
+	 *
+	 * @param string $wildcard
+	 *
+	 * @return string
+	 */
 	private function wildcard_to_matcher( $wildcard ) {
-		$wildcard_parts = array_filter( explode( '*', $wildcard ) );
-		if ( (bool) $wildcard_parts === true ) {
-			$first_part = array_shift( $wildcard_parts );
-			$first_part = '^' . $first_part;
-			$single     = (bool) $wildcard_parts === false;
-			$last_part  = ( $single ? $first_part : array_pop( $wildcard_parts ) ) . '$';
-			array_unshift( $wildcard_parts, $first_part );
-			if ( $single === true ) {
-				$wildcard_parts = array( $last_part );
-			} else {
-				$wildcard_parts[] = $last_part;
-			}
-			$name_matcher = '#(' . join( ').?(', $wildcard_parts ) . ')#';
-		} else {
-			$name_matcher = '#.+#';
-		}
 
-		return $name_matcher;
+		return '#^' . str_replace( '*', '.+', $wildcard ) . '$#';
 	}
 
 	private function all_strings_array( array $top_level_filters ) {
