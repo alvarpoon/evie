@@ -97,7 +97,11 @@
 				<div class="blog-post-item">
 					<div class="blog-post-title">
 						<h2><?php the_title(); ?></h2>
-						<p><? the_date(); ?></p>
+						<? if( ICL_LANGUAGE_CODE == 'en'){ ?>
+							<p><? the_date(); ?></p>
+						<? } else if ( ICL_LANGUAGE_CODE == 'zh-hans' || ICL_LANGUAGE_CODE == 'zh-hant'){ ?>
+							<p><? the_date('y年m月j日'); ?></p>
+						<? }?>
 					</div>
 					<a class="img-link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full',  array('class' => 'img-responsive')); ?></a>
 					<? if(get_field("image_caption",$post->ID)){ ?>

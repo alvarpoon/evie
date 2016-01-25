@@ -7004,6 +7004,9 @@ body {
 .main {
   padding-top: 90px;
 }
+a {
+  color: #000!important;
+}
 #main-content .breadcrumb-container {
   background: #F5E8E5;
   padding: 10px 0;
@@ -8554,6 +8557,28 @@ ul.products li.product .find-out-more {
 .mobile-menu {
   background: #F4E8E4;
 }
+.mobile-menu .mobile_lang_link {
+  margin: 0 -15px;
+  font-family: "Novecento";
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  border-top: 1px solid #C4BFBE;
+}
+.mobile-menu .mobile_lang_link a {
+  color: #000;
+  line-height: 20px;
+  padding: 10px 15px;
+  display: inline-block;
+  width: 31%;
+  text-align: center;
+  text-transform: uppercase;
+}
+.mobile-menu .mobile_lang_link a:hover,
+.mobile-menu .mobile_lang_link a:focus {
+  text-decoration: none;
+  font-weight: 500;
+}
 .mobile-menu .mobile_function_link {
   margin: 0 -15px;
   font-family: "Novecento";
@@ -8637,6 +8662,10 @@ ul.products li.product .find-out-more {
 .mobile-menu .navbar-nav li.open .dropdown-menu .active > a:hover {
   background: #EED7D3;
   color: #000;
+}
+.navbar-fixed-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse {
+  max-height: 375px;
 }
 .language-menu a {
   font-family: "Novecento";

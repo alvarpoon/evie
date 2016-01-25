@@ -1,0 +1,230 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EGG website\n"
+"POT-Creation-Date: 2015-11-30 00:37+0800\n"
+"PO-Revision-Date: 2015-11-30 00:37+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ../themes/evie\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: templates\n"
+"X-Poedit-SearchPath-1: woocommerce\n"
+"X-Poedit-SearchPath-2: woocommerce/global\n"
+"X-Poedit-SearchPath-3: index.php\n"
+
+#: index.php:25 templates/content-blog.php:91
+msgid "Sorry, no results were found."
+msgstr "对不起，没有找到结果。"
+
+#: index.php:37
+msgid "&larr; Older posts"
+msgstr ""
+
+#: index.php:38
+msgid "Newer posts &rarr;"
+msgstr ""
+
+#: templates/comments.php:19
+msgid "&larr; Older comments"
+msgstr ""
+
+#: templates/comments.php:22
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: templates/comments.php:31
+msgid "Comments are closed."
+msgstr ""
+
+#: templates/content-blog.php:34
+msgid "EVIE BLOG"
+msgstr "品牌博客"
+
+#: templates/content-blog.php:48
+msgid "CATEGORIES"
+msgstr "类别"
+
+#: templates/content-blog.php:50 templates/content-blog.php:62
+#: templates/content-stocklist.php:36 templates/content-testimonial.php:101
+#: templates/content-testimonial.php:105 templates/content-testimonial.php:128
+#: templates/content-testimonial.php:132
+msgid "All"
+msgstr "所有"
+
+#: templates/content-blog.php:60
+msgid "ARCHIVES"
+msgstr "存档"
+
+#: templates/content-blog.php:82 templates/content-single.php:58
+#: woocommerce/content-single-product.php:69
+msgid "tencent"
+msgstr "腾讯"
+
+#: templates/content-blog.php:107
+msgid "Continue reading »"
+msgstr "继续阅读 »"
+
+#: templates/content-blog.php:109
+msgid "READ MORE >"
+msgstr "阅读更多 >"
+
+#: templates/content-blog.php:120 templates/content-blog.php:122
+msgid "Previous Page"
+msgstr "上一页"
+
+#: templates/content-blog.php:131 templates/content-blog.php:134
+msgid "Next Page"
+msgstr "下一页"
+
+#: templates/content-home.php:92
+msgid "bestsellers"
+msgstr "畅销排行"
+
+#: templates/content-promotion.php:50
+msgid "MORE SPECIAL OFFERS"
+msgstr "更多优惠"
+
+#: templates/content-single.php:117
+msgid "Pages:"
+msgstr ""
+
+#: templates/content-stocklist.php:34
+msgid "LOCATIONS"
+msgstr "地区"
+
+#: templates/content-testimonial.php:96
+msgid "BY PRODUCTS"
+msgstr "按产品"
+
+#: templates/content-testimonial.php:123
+msgid "BY CONCERN"
+msgstr "按肌肤需求"
+
+#: templates/content-testimonial.php:152
+msgid "SORT BY"
+msgstr "排序方式"
+
+#: templates/content-testimonial.php:154
+msgid "Newest"
+msgstr "最新"
+
+#: templates/content-testimonial.php:155
+msgid "Oldest"
+msgstr "最旧"
+
+#: templates/content-testimonial.php:156
+msgid "High Rating"
+msgstr "最高评级"
+
+#: templates/content-testimonial.php:157
+msgid "Low Rating"
+msgstr "最低评级"
+
+#: templates/entry-meta.php:2
+msgid "By"
+msgstr ""
+
+#: templates/footer.php:32
+msgid "@2015 EVIE INTERNATIONAL LIMITED. ALL RIGHTS RESERVED "
+msgstr "@2015 EVIE INTERNATIONAL LIMITED. 版权所有 "
+
+#: templates/footer.php:33
+msgid "Terms of Use"
+msgstr "使用条款"
+
+#: templates/footer.php:34
+msgid "Privacy Policy"
+msgstr "隐私政策"
+
+#: templates/footer.php:40
+msgid "Stay Connected"
+msgstr "订阅电子报"
+
+#: templates/footer.php:41
+msgid ""
+"Get the latest in skincare wardrobe right to your inbox,<br />plus special "
+"offers!"
+msgstr "立即订阅以获取最新产品情报及优惠资讯！"
+
+#: templates/footer.php:42
+msgid "Please enter your email to subscribe. Mobile is optional."
+msgstr "请键入电邮订阅。手机号码并非必须。"
+
+#: templates/header-top-navbar.php:4
+msgid "STAY CONNECTED"
+msgstr "订阅电子报"
+
+#: templates/header-top-navbar.php:4
+msgid "Enquiries/Order"
+msgstr "查询／订购"
+
+#: templates/searchform.php:2
+msgid "Search for:"
+msgstr "搜寻："
+
+#: templates/searchform.php:4
+msgid "Search"
+msgstr "搜寻"
+
+#: woocommerce/content-product.php:81
+msgid "VIEW"
+msgstr ""
+
+#: woocommerce/content-single-product.php:83
+msgid "ingredients"
+msgstr "成分"
+
+#: woocommerce/content-single-product.php:87
+msgid "how to use"
+msgstr "如何使用"
+
+#: woocommerce/content-single-product.php:117
+msgid "you may also like"
+msgstr "你也许也喜欢"
+
+#: woocommerce/global/breadcrumb.php:25
+msgid "HOME"
+msgstr "主页"
+
+#~ msgid "SEE THE COLLECTION"
+#~ msgstr "浏览系列"
+
+#~ msgid "News"
+#~ msgstr "最新消息"
+
+#~ msgid "All News"
+#~ msgstr "全部消息"
+
+#~ msgid "New Collection"
+#~ msgstr "最新系列"
+
+#~ msgid "All in New Collection"
+#~ msgstr "新系列其他款式"
+
+#~ msgid "Collections"
+#~ msgstr "眼镜系列"
+
+#~ msgid "All Collections"
+#~ msgstr "全部眼镜系列"
+
+#~ msgid "Find a EGG Store"
+#~ msgstr "分店网络"
+
+#~ msgid "Back to all collections"
+#~ msgstr "返回所有眼镜系列"
+
+#~ msgid "Others in this collection"
+#~ msgstr "同系列其他款式"
+
+#~ msgid "map"
+#~ msgstr "地图"
+
+#~ msgid "All in"
+#~ msgstr "全部"
