@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EVIE website\n"
 "POT-Creation-Date: 2016-01-27 01:30+0800\n"
-"PO-Revision-Date: 2016-01-27 01:59+0800\n"
+"PO-Revision-Date: 2016-01-29 00:43+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -50,7 +50,7 @@ msgstr "品牌部落格"
 
 #: templates/content-blog.php:48 templates/content-single.php:27
 msgid "CATEGORIES"
-msgstr "類別"
+msgstr "文章分類"
 
 #: templates/content-blog.php:50 templates/content-blog.php:62
 #: templates/content-single.php:29 templates/content-single.php:39
@@ -62,7 +62,7 @@ msgstr "所有文章"
 
 #: templates/content-blog.php:60 templates/content-single.php:37
 msgid "ARCHIVES"
-msgstr "文檔"
+msgstr "文章庫"
 
 #: templates/content-blog.php:82 templates/content-single.php:59
 #: woocommerce/content-single-product.php:69
@@ -75,15 +75,15 @@ msgstr "閱讀全文 »"
 
 #: templates/content-blog.php:115
 msgid "READ MORE >"
-msgstr "閱讀更多 >"
+msgstr "閱讀全文 >"
 
 #: templates/content-blog.php:126 templates/content-blog.php:128
 msgid "Previous Page"
-msgstr "上一篇文章"
+msgstr "上一篇"
 
 #: templates/content-blog.php:137 templates/content-blog.php:140
 msgid "Next Page"
-msgstr "下一篇文章"
+msgstr "下一篇"
 
 #: templates/content-home.php:92
 msgid "bestsellers"
@@ -99,11 +99,11 @@ msgstr "返回"
 
 #: templates/content-single.php:98 templates/content-single.php:100
 msgid "Previous Post"
-msgstr "上一篇文章"
+msgstr "上一篇"
 
 #: templates/content-single.php:111 templates/content-single.php:113
 msgid "Next Post"
-msgstr "下一篇文章"
+msgstr "下一篇"
 
 #: templates/content-single.php:118
 msgid "Pages:"
