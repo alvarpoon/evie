@@ -47,3 +47,17 @@ function append_language_class($classes){
 
 // Display 8 products per page. Goes in functions.php
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 8;' ), 20 );
+
+
+//https://community.theme.co/forums/topic/search-results-wpml/#post-118287
+add_filter( 'template_include', 'force_template_override', 99 );
+
+function force_template_override( $template ) {
+
+  if( is_search() ) {
+    $p = pathinfo($template);
+    return $p['dirname'].'/index.php';
+  }
+
+  return $template;
+}
