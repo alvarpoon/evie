@@ -1,0 +1,498 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EVIE website\n"
+"POT-Creation-Date: 2016-02-19 00:46+0800\n"
+"PO-Revision-Date: 2016-02-19 00:49+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-Basepath: ../themes/evie\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: templates\n"
+"X-Poedit-SearchPath-1: woocommerce\n"
+"X-Poedit-SearchPath-2: woocommerce/global\n"
+"X-Poedit-SearchPath-3: woocommerce/loop\n"
+"X-Poedit-SearchPath-4: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: assets\n"
+"X-Poedit-SearchPathExcluded-2: lang\n"
+
+#: 404.php:4
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr ""
+
+#: 404.php:7
+msgid "It looks like this was the result of either:"
+msgstr ""
+
+#: 404.php:9
+msgid "a mistyped address"
+msgstr ""
+
+#: 404.php:10
+msgid "an out-of-date link"
+msgstr ""
+
+#: base.php:6
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
+"browsehappy.com/\">upgrade your browser</a> to improve your experience."
+msgstr ""
+
+#: footer.php:30 templates/footer.php:40
+msgid "Stay Connected"
+msgstr "订阅电子报"
+
+#: footer.php:31
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n"
+"sed do eiusmod tempor suscipit"
+msgstr ""
+
+#: functions.php:30
+#, php-format
+msgid "Error locating %s for inclusion"
+msgstr ""
+
+#: index.php:25 templates/content-blog.php:91
+msgid "Sorry, no results were found."
+msgstr "对不起，没有找到结果。"
+
+#: index.php:37
+msgid "&larr; Older posts"
+msgstr "&larr; 上一页"
+
+#: index.php:38
+msgid "Newer posts &rarr;"
+msgstr "下一页 &rarr;"
+
+#: lib/activation.php:28 lib/activation.php:29
+msgid "Theme Activation"
+msgstr ""
+
+#: lib/activation.php:50
+#, php-format
+msgid "%s Theme Activation"
+msgstr ""
+
+#: lib/activation.php:52
+msgid ""
+"These settings are optional and should usually be used only on a fresh "
+"installation"
+msgstr ""
+
+#: lib/activation.php:59 lib/activation.php:62
+msgid "Create static front page?"
+msgstr ""
+
+#: lib/activation.php:64 lib/activation.php:76 lib/activation.php:88
+#: lib/activation.php:100
+msgid "Yes"
+msgstr ""
+
+#: lib/activation.php:65 lib/activation.php:77 lib/activation.php:89
+#: lib/activation.php:101
+msgid "No"
+msgstr ""
+
+#: lib/activation.php:67
+msgid "Create a page called Home and set it to be the static front page"
+msgstr ""
+
+#: lib/activation.php:71
+msgid "Change permalink structure?"
+msgstr ""
+
+#: lib/activation.php:74
+msgid "Update permalink structure?"
+msgstr ""
+
+#: lib/activation.php:79
+msgid "Change permalink structure to /&#37;postname&#37;/"
+msgstr ""
+
+#: lib/activation.php:83 lib/activation.php:86
+msgid "Create navigation menu?"
+msgstr ""
+
+#: lib/activation.php:91
+msgid "Create the Primary Navigation menu and set the location"
+msgstr ""
+
+#: lib/activation.php:95 lib/activation.php:98
+msgid "Add pages to menu?"
+msgstr ""
+
+#: lib/activation.php:103
+msgid "Add all current published pages to the Primary Navigation"
+msgstr ""
+
+#: lib/activation.php:126 lib/activation.php:147
+msgid "Home"
+msgstr ""
+
+#: lib/activation.php:173 lib/activation.php:176 lib/activation.php:190
+#: lib/init.php:17
+msgid "Primary Navigation"
+msgstr ""
+
+#: lib/extras.php:6
+msgid "Continued"
+msgstr ""
+
+#: lib/init.php:18
+msgid "Footer Navigation"
+msgstr ""
+
+#: lib/init.php:47
+msgid "Primary"
+msgstr ""
+
+#: lib/init.php:56
+msgid "Footer"
+msgstr ""
+
+#: lib/post-types.php:12
+msgid "Add mainpage banner"
+msgstr ""
+
+#: lib/post-types.php:13
+msgid "Edit mainpage banner"
+msgstr ""
+
+#: lib/post-types.php:14
+msgid "New mainpage banner"
+msgstr ""
+
+#: lib/post-types.php:15
+msgid "View mainpage banner"
+msgstr ""
+
+#: lib/post-types.php:16
+msgid "Search mainpage banner"
+msgstr ""
+
+#: lib/post-types.php:17 lib/post-types.php:48 lib/post-types.php:79
+#: lib/post-types.php:110 lib/post-types.php:141
+msgid "Nothing found"
+msgstr ""
+
+#: lib/post-types.php:18 lib/post-types.php:49 lib/post-types.php:80
+#: lib/post-types.php:111 lib/post-types.php:142
+msgid "Nothing found in Trash"
+msgstr ""
+
+#: lib/post-types.php:43
+msgid "Add media coverage"
+msgstr ""
+
+#: lib/post-types.php:44
+msgid "Edit media coverage"
+msgstr ""
+
+#: lib/post-types.php:45
+msgid "New media coverage"
+msgstr ""
+
+#: lib/post-types.php:46
+msgid "View media coverage"
+msgstr ""
+
+#: lib/post-types.php:47
+msgid "Search media coverage"
+msgstr ""
+
+#: lib/post-types.php:74
+msgid "Add Stockist"
+msgstr ""
+
+#: lib/post-types.php:75
+msgid "Edit Stockist"
+msgstr ""
+
+#: lib/post-types.php:76
+msgid "New Stockist"
+msgstr ""
+
+#: lib/post-types.php:77
+msgid "View Stockist"
+msgstr ""
+
+#: lib/post-types.php:78
+msgid "Search Stockist"
+msgstr ""
+
+#: lib/post-types.php:105
+msgid "Add ingredient"
+msgstr ""
+
+#: lib/post-types.php:106
+msgid "Edit ingredient"
+msgstr ""
+
+#: lib/post-types.php:107
+msgid "New ingredient"
+msgstr ""
+
+#: lib/post-types.php:108
+msgid "View ingredient"
+msgstr ""
+
+#: lib/post-types.php:109
+msgid "Search ingredient"
+msgstr ""
+
+#: lib/post-types.php:136
+msgid "Add testimonial"
+msgstr ""
+
+#: lib/post-types.php:137
+msgid "Edit testimonial"
+msgstr ""
+
+#: lib/post-types.php:138
+msgid "New testimonial"
+msgstr ""
+
+#: lib/post-types.php:139
+msgid "View testimonial"
+msgstr ""
+
+#: lib/post-types.php:140
+msgid "Search testimonial"
+msgstr ""
+
+#: lib/titles.php:10
+msgid "Latest Posts"
+msgstr ""
+
+#: lib/titles.php:15
+#, php-format
+msgid "Search Results for %s"
+msgstr "%s 的搜寻结果"
+
+#: lib/titles.php:17
+msgid "Not Found"
+msgstr ""
+
+#: templates/comments.php:19
+msgid "&larr; Older comments"
+msgstr ""
+
+#: templates/comments.php:22
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: templates/comments.php:31
+msgid "Comments are closed."
+msgstr ""
+
+#: templates/content-blog.php:34
+msgid "EVIE BLOG"
+msgstr "品牌博客"
+
+#: templates/content-blog.php:48 templates/content-single.php:27
+msgid "CATEGORIES"
+msgstr "类别"
+
+#: templates/content-blog.php:50 templates/content-blog.php:62
+#: templates/content-single.php:29 templates/content-single.php:39
+#: templates/content-stocklist.php:36 templates/content-testimonial.php:101
+#: templates/content-testimonial.php:105
+#: templates/content-testimonial.php:128
+#: templates/content-testimonial.php:132
+msgid "All"
+msgstr "所有文章"
+
+#: templates/content-blog.php:60 templates/content-single.php:37
+msgid "ARCHIVES"
+msgstr "文档"
+
+#: templates/content-blog.php:82 templates/content-single.php:59
+#: woocommerce/content-single-product.php:69
+msgid "tencent"
+msgstr "腾讯微博"
+
+#: templates/content-blog.php:113
+msgid "Continue reading »"
+msgstr "继续阅读 »"
+
+#: templates/content-blog.php:115
+msgid "READ MORE >"
+msgstr "阅读全文 >"
+
+#: templates/content-blog.php:126 templates/content-blog.php:128
+msgid "Previous Page"
+msgstr "上一篇文章"
+
+#: templates/content-blog.php:137 templates/content-blog.php:140
+msgid "Next Page"
+msgstr "下一篇文章"
+
+#: templates/content-home.php:92
+msgid "bestsellers"
+msgstr "畅销排行"
+
+#: templates/content-promotion.php:50
+msgid "MORE SPECIAL OFFERS"
+msgstr "更多优惠"
+
+#: templates/content-single.php:81
+msgid "BACK"
+msgstr "返回"
+
+#: templates/content-single.php:98 templates/content-single.php:100
+msgid "Previous Post"
+msgstr "上一篇文章"
+
+#: templates/content-single.php:111 templates/content-single.php:113
+msgid "Next Post"
+msgstr "上一篇文章"
+
+#: templates/content-single.php:118
+msgid "Pages:"
+msgstr ""
+
+#: templates/content-stocklist.php:34
+msgid "LOCATIONS"
+msgstr "地区"
+
+#: templates/content-testimonial.php:96
+msgid "BY PRODUCTS"
+msgstr "按产品"
+
+#: templates/content-testimonial.php:123
+msgid "BY CONCERN"
+msgstr "按肌肤需求"
+
+#: templates/content-testimonial.php:152
+msgid "SORT BY"
+msgstr "排序方式"
+
+#: templates/content-testimonial.php:154
+msgid "Newest"
+msgstr "最新"
+
+#: templates/content-testimonial.php:155
+msgid "Oldest"
+msgstr "最旧"
+
+#: templates/content-testimonial.php:156
+msgid "High Rating"
+msgstr "最高评级"
+
+#: templates/content-testimonial.php:157
+msgid "Low Rating"
+msgstr "最低评级"
+
+#: templates/entry-meta.php:2
+msgid "By"
+msgstr ""
+
+#: templates/footer.php:32
+msgid "@2015 EVIE INTERNATIONAL LIMITED. ALL RIGHTS RESERVED "
+msgstr "@2015 EVIE INTERNATIONAL LIMITED. 版权所有 "
+
+#: templates/footer.php:33
+msgid "Terms of Use"
+msgstr "使用条款"
+
+#: templates/footer.php:34
+msgid "Privacy Policy"
+msgstr "隐私政策"
+
+#: templates/footer.php:41
+msgid ""
+"Get the latest in skincare wardrobe right to your inbox,<br />plus special "
+"offers!"
+msgstr "立即订阅以获取最新产品情报及优惠资讯！"
+
+#: templates/footer.php:42
+msgid "Please enter your email to subscribe. Mobile is optional."
+msgstr "请键入电邮订阅。手机号码并非必须。"
+
+#: templates/header-top-navbar.php:4
+msgid "STAY CONNECTED"
+msgstr "订阅电子报"
+
+#: templates/header-top-navbar.php:4
+msgid "Enquiries/Order"
+msgstr "查询／订购"
+
+#: templates/searchform.php:2
+msgid "Search for:"
+msgstr "搜寻："
+
+#: templates/searchform.php:4
+msgid "Search"
+msgstr "搜寻"
+
+#: woocommerce/archive-product.php:87
+msgid "Coming soon…"
+msgstr ""
+
+#: woocommerce/content-product.php:81
+msgid "VIEW"
+msgstr ""
+
+#: woocommerce/content-single-product.php:83
+msgid "ingredients"
+msgstr "成分"
+
+#: woocommerce/content-single-product.php:87
+msgid "how to use"
+msgstr "如何使用"
+
+#: woocommerce/content-single-product.php:117
+msgid "you may also like"
+msgstr "相关产品"
+
+#: woocommerce/global/breadcrumb.php:25
+msgid "HOME"
+msgstr "主页"
+
+#: woocommerce/loop/no-products-found.php:17
+msgid "No products were found matching your selection."
+msgstr "即将推出"
+
+#~ msgid "SEE THE COLLECTION"
+#~ msgstr "浏览系列"
+
+#~ msgid "News"
+#~ msgstr "最新消息"
+
+#~ msgid "All News"
+#~ msgstr "全部消息"
+
+#~ msgid "New Collection"
+#~ msgstr "最新系列"
+
+#~ msgid "All in New Collection"
+#~ msgstr "新系列其他款式"
+
+#~ msgid "Collections"
+#~ msgstr "眼镜系列"
+
+#~ msgid "All Collections"
+#~ msgstr "全部眼镜系列"
+
+#~ msgid "Find a EGG Store"
+#~ msgstr "分店网络"
+
+#~ msgid "Back to all collections"
+#~ msgstr "返回所有眼镜系列"
+
+#~ msgid "Others in this collection"
+#~ msgstr "同系列其他款式"
+
+#~ msgid "map"
+#~ msgstr "地图"
+
+#~ msgid "All in"
+#~ msgstr "全部"

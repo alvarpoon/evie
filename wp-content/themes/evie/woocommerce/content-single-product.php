@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <div class="summary entry-summary">
                             
                     <div class="product-title">
-                        <h1><? the_title(); ?></h1>
+                        <h1><? if(get_field("series",$post->ID) != '') { echo get_field("series",$post->ID).'<br/>';} ?><? the_title(); ?></h1>
                         <? the_excerpt(); ?>
                     </div>
                     <div class="product-content">
