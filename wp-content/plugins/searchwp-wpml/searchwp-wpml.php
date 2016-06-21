@@ -3,11 +3,11 @@
 Plugin Name: SearchWP WPML Integration
 Plugin URI: https://searchwp.com/
 Description: Integrate SearchWP with WPML
-Version: 1.0
+Version: 1.3
 Author: Jonathan Christopher
 Author URI: https://searchwp.com/
 
-Copyright 2013-2014 Jonathan Christopher
+Copyright 2013-2015 Jonathan Christopher
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -24,7 +24,61 @@ along with this program; if not, see <http://www.gnu.org/licenses/>.
 */
 
 // exit if accessed directly
-if( !defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ( ! defined( 'SEARCHWP_WPML_VERSION' ) ) {
+	define( 'SEARCHWP_WPML_VERSION', '1.3' );
+}
+
+/**
+ * instantiate the updater
+ */
+if ( ! class_exists( 'SWP_WPML_Updater' ) ) {
+	// load our custom updater
+	include_once( dirname( __FILE__ ) . '/vendor/updater.php' );
+}
+
+// set up the updater
+function searchwp_wpml_update_check() {
+
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+		return false;
+	}
+
+	// environment check
+	if ( ! defined( 'SEARCHWP_PREFIX' ) ) {
+		return false;
+	}
+
+	if ( ! defined( 'SEARCHWP_EDD_STORE_URL' ) ) {
+		return false;
+	}
+
+	if ( ! defined( 'SEARCHWP_WPML_VERSION' ) ) {
+		return false;
+	}
+
+	// retrieve stored license key
+	$license_key = trim( get_option( SEARCHWP_PREFIX . 'license_key' ) );
+	$license_key = sanitize_text_field( $license_key );
+
+	// instantiate the updater to prep the environment
+	$searchwp_wpml_updater = new SWP_WPML_Updater( SEARCHWP_EDD_STORE_URL, __FILE__, array(
+			'item_id' 	=> 33645,
+			'version'   => SEARCHWP_WPML_VERSION,
+			'license'   => $license_key,
+			'item_name' => 'WPML Integration',
+			'author'    => 'Jonathan Christopher',
+			'url'       => site_url(),
+		)
+	);
+
+	return $searchwp_wpml_updater;
+}
+
+add_action( 'admin_init', 'searchwp_wpml_update_check' );
 
 class SearchWP_WPML {
 
@@ -33,40 +87,53 @@ class SearchWP_WPML {
 
 		add_filter( 'searchwp_query_join', array( $this, 'join_wpml' ), 10, 2 );
 		add_filter( 'searchwp_query_conditions', array( $this, 'force_current_language' ) );
+
+		// prevent interference with the indexer
+		add_action( 'searchwp_indexer_pre', array( $this, 'remove_all_unwanted_filters' ) );
+	}
+
+	function remove_all_unwanted_filters() {
+		remove_all_filters( 'posts_join' );
+		remove_all_filters( 'posts_where' );
+		remove_all_filters( 'pre_get_posts' );
 	}
 
 	function join_wpml( $sql, $postType ) {
 		global $wpdb, $sitepress;
 
-		if( !empty( $sitepress ) && method_exists( $sitepress, 'get_current_language' ) && method_exists( $sitepress, 'get_default_language' ) ) {
+		if ( ! empty( $sitepress ) && method_exists( $sitepress, 'get_current_language' ) && method_exists( $sitepress, 'get_default_language' ) && post_type_exists( $postType ) ) {
 			$prefix = $wpdb->prefix;
 
 			$sql .= " LEFT JOIN {$prefix}icl_translations t ON {$prefix}posts.ID = t.element_id ";
-			$sql .= " AND t.element_type LIKE 'post_{$postType}' LEFT JOIN {$prefix}icl_languages l ON t.language_code=l.code AND l.active=1 ";
+			$sql .= " AND t.element_type LIKE %s LEFT JOIN {$prefix}icl_languages l ON t.language_code=l.code AND l.active=1 ";
+
+			$sql = $wpdb->prepare( $sql, 'post_' . $postType );
 		}
 
 		return $sql;
 	}
 
 	function force_current_language( $sql ) {
-		global $sitepress;
+		global $wpdb, $sitepress;
 
-		if( !empty( $sitepress ) && method_exists( $sitepress, 'get_current_language' ) && method_exists( $sitepress, 'get_default_language' ) ) {
+		if ( ! empty( $sitepress ) && method_exists( $sitepress, 'get_current_language' ) && method_exists( $sitepress, 'get_default_language' ) ) {
 			$currentLanguage = $sitepress->get_current_language();
 			$defaultLanguage = $sitepress->get_default_language();
 
-			if( $currentLanguage == $defaultLanguage ) {
-				$sql .= " AND (t.language_code='" . $currentLanguage . "' OR t.language_code IS NULL) ";
+			if ( $currentLanguage == $defaultLanguage ) {
+				$sql .= " AND (t.language_code='%s' OR t.language_code IS NULL) ";
 			} else {
-				$sql .= " AND (t.language_code='" . $currentLanguage . "') ";
+				$sql .= " AND (t.language_code='%s') ";
 			}
+
+			$sql = $wpdb->prepare( $sql, $currentLanguage );
 		}
 
 		return $sql;
 	}
 
 	function plugin_row() {
-		if( ! class_exists( 'SearchWP' ) ) { ?>
+		if ( ! class_exists( 'SearchWP' ) ) { ?>
 			<tr class="plugin-update-tr searchwp">
 				<td colspan="3" class="plugin-update">
 					<div class="update-message">
@@ -77,7 +144,7 @@ class SearchWP_WPML {
 		<?php }
 		else {
 			$searchwp = SearchWP::instance();
-			if( version_compare( $searchwp->version, '1.1', '<' ) ) { ?>
+			if ( version_compare( $searchwp->version, '1.1', '<' ) ) { ?>
 				<tr class="plugin-update-tr searchwp">
 					<td colspan="3" class="plugin-update">
 						<div class="update-message">

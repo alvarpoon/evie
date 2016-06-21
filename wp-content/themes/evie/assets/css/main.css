@@ -7897,6 +7897,11 @@ ul.products li.product .find-out-more {
   letter-spacing: 2px;
   text-decoration: none;
 }
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  margin: 0 0 2.992em;
+  width: 48%;
+}
 .product-item-brief-wrapper {
   position: relative;
   height: 60px;
@@ -7966,6 +7971,17 @@ ul.products li.product .find-out-more {
   .woocommerce-page #content div.product div.images,
   .woocommerce-page div.product div.images {
     margin-top: 75px;
+  }
+}
+@media (min-width: 992px) {
+  .woocommerce ul.products li.product,
+  .woocommerce-page ul.products li.product {
+    margin: 0 3.8% 2.992em 0;
+    width: 22.05%;
+  }
+  .woocommerce ul.products li.product.last,
+  .woocommerce-page ul.products li.product.last {
+    margin-right: 0;
   }
 }
 @media (min-width: 1200px) {
@@ -8310,29 +8326,43 @@ ul.products li.product .find-out-more {
   font-size: 13px;
   line-height: 150%;
 }
-.contact-us .left-content {
+.contact-us .left-content,
+.contact-us-tc .left-content,
+.contact-us-sc .left-content {
   font-family: "PlayfairDisplay";
   text-align: right;
 }
-.contact-us .left-content h2 {
+.contact-us .left-content h2,
+.contact-us-tc .left-content h2,
+.contact-us-sc .left-content h2 {
   font-size: 40px;
   margin-top: 0;
 }
-.contact-us .right-content {
+.contact-us .right-content,
+.contact-us-tc .right-content,
+.contact-us-sc .right-content {
   vertical-align: top;
 }
 .contact-us .right-content p,
-.contact-us .right-content h3 {
+.contact-us-tc .right-content p,
+.contact-us-sc .right-content p,
+.contact-us .right-content h3,
+.contact-us-tc .right-content h3,
+.contact-us-sc .right-content h3 {
   font-size: 16px;
   margin-bottom: 20px;
 }
-.contact-us .right-content h3 {
+.contact-us .right-content h3,
+.contact-us-tc .right-content h3,
+.contact-us-sc .right-content h3 {
   font-weight: 600;
   font-family: "Aileron";
   margin-bottom: 0;
   margin-top: 0;
 }
-.contact-us .right-content a {
+.contact-us .right-content a,
+.contact-us-tc .right-content a,
+.contact-us-sc .right-content a {
   color: #000;
   text-decoration: underline;
 }

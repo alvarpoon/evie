@@ -1,7 +1,7 @@
 <header class="banner navbar navbar-default navbar-fixed-top" role="banner">
 	<div class="container mainnav-container">
     	<div class="language-menu clearfix">
-            <div class="subscribe-container"><a class="toggle_connect" href="javascript:;"><?=_e('STAY CONNECTED')?></a><span>|</span><a href="mailto:<?=get_field('enquiry_email_address',4);?>"><?=_e('Enquiries/Order')?></a></div>
+            <div class="subscribe-container"><a class="toggle_connect" href="javascript:;"><?=__('STAY CONNECTED')?></a><span>|</span><a href="mailto:<?=get_field('enquiry_email_address',4);?>"><?=_e('Enquiries/Order')?></a></div>
             <div class="" style="float:left;">
             
             	<!--ENG<span>|</span>繁<span>|</span>簡-->

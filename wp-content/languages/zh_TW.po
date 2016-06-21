@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: EVIE website\n"
-"POT-Creation-Date: 2016-01-27 01:30+0800\n"
-"PO-Revision-Date: 2016-01-29 00:43+0800\n"
+"POT-Creation-Date: 2016-02-19 00:53+0800\n"
+"PO-Revision-Date: 2016-02-19 00:55+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.2\n"
 "X-Poedit-Basepath: ../themes/evie\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: _e;__\n"
@@ -17,8 +17,47 @@ msgstr ""
 "X-Poedit-SearchPath-0: templates\n"
 "X-Poedit-SearchPath-1: woocommerce/global\n"
 "X-Poedit-SearchPath-2: woocommerce\n"
-"X-Poedit-SearchPath-3: index.php\n"
-"X-Poedit-SearchPath-4: woocommerce/global/breadcrumb.php\n"
+"X-Poedit-SearchPath-3: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: lang\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: 404.php:4
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr ""
+
+#: 404.php:7
+msgid "It looks like this was the result of either:"
+msgstr ""
+
+#: 404.php:9
+msgid "a mistyped address"
+msgstr ""
+
+#: 404.php:10
+msgid "an out-of-date link"
+msgstr ""
+
+#: base.php:6
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
+"browsehappy.com/\">upgrade your browser</a> to improve your experience."
+msgstr ""
+
+#: footer.php:30 templates/footer.php:40
+msgid "Stay Connected"
+msgstr "訂閱電子通訊"
+
+#: footer.php:31
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n"
+"sed do eiusmod tempor suscipit"
+msgstr ""
+
+#: functions.php:30
+#, php-format
+msgid "Error locating %s for inclusion"
+msgstr ""
 
 #: index.php:25 templates/content-blog.php:91
 msgid "Sorry, no results were found."
@@ -26,10 +65,219 @@ msgstr "對不起，沒有找到結果。"
 
 #: index.php:37
 msgid "&larr; Older posts"
-msgstr ""
+msgstr "&larr; 上一頁"
 
 #: index.php:38
 msgid "Newer posts &rarr;"
+msgstr "下一頁 &rarr;"
+
+#: lib/activation.php:28 lib/activation.php:29
+msgid "Theme Activation"
+msgstr ""
+
+#: lib/activation.php:50
+#, php-format
+msgid "%s Theme Activation"
+msgstr ""
+
+#: lib/activation.php:52
+msgid ""
+"These settings are optional and should usually be used only on a fresh "
+"installation"
+msgstr ""
+
+#: lib/activation.php:59 lib/activation.php:62
+msgid "Create static front page?"
+msgstr ""
+
+#: lib/activation.php:64 lib/activation.php:76 lib/activation.php:88
+#: lib/activation.php:100
+msgid "Yes"
+msgstr ""
+
+#: lib/activation.php:65 lib/activation.php:77 lib/activation.php:89
+#: lib/activation.php:101
+msgid "No"
+msgstr ""
+
+#: lib/activation.php:67
+msgid "Create a page called Home and set it to be the static front page"
+msgstr ""
+
+#: lib/activation.php:71
+msgid "Change permalink structure?"
+msgstr ""
+
+#: lib/activation.php:74
+msgid "Update permalink structure?"
+msgstr ""
+
+#: lib/activation.php:79
+msgid "Change permalink structure to /&#37;postname&#37;/"
+msgstr ""
+
+#: lib/activation.php:83 lib/activation.php:86
+msgid "Create navigation menu?"
+msgstr ""
+
+#: lib/activation.php:91
+msgid "Create the Primary Navigation menu and set the location"
+msgstr ""
+
+#: lib/activation.php:95 lib/activation.php:98
+msgid "Add pages to menu?"
+msgstr ""
+
+#: lib/activation.php:103
+msgid "Add all current published pages to the Primary Navigation"
+msgstr ""
+
+#: lib/activation.php:126 lib/activation.php:147
+msgid "Home"
+msgstr ""
+
+#: lib/activation.php:173 lib/activation.php:176 lib/activation.php:190
+#: lib/init.php:17
+msgid "Primary Navigation"
+msgstr ""
+
+#: lib/extras.php:6
+msgid "Continued"
+msgstr ""
+
+#: lib/init.php:18
+msgid "Footer Navigation"
+msgstr ""
+
+#: lib/init.php:47
+msgid "Primary"
+msgstr ""
+
+#: lib/init.php:56
+msgid "Footer"
+msgstr ""
+
+#: lib/post-types.php:12
+msgid "Add mainpage banner"
+msgstr ""
+
+#: lib/post-types.php:13
+msgid "Edit mainpage banner"
+msgstr ""
+
+#: lib/post-types.php:14
+msgid "New mainpage banner"
+msgstr ""
+
+#: lib/post-types.php:15
+msgid "View mainpage banner"
+msgstr ""
+
+#: lib/post-types.php:16
+msgid "Search mainpage banner"
+msgstr ""
+
+#: lib/post-types.php:17 lib/post-types.php:48 lib/post-types.php:79
+#: lib/post-types.php:110 lib/post-types.php:141
+msgid "Nothing found"
+msgstr ""
+
+#: lib/post-types.php:18 lib/post-types.php:49 lib/post-types.php:80
+#: lib/post-types.php:111 lib/post-types.php:142
+msgid "Nothing found in Trash"
+msgstr ""
+
+#: lib/post-types.php:43
+msgid "Add media coverage"
+msgstr ""
+
+#: lib/post-types.php:44
+msgid "Edit media coverage"
+msgstr ""
+
+#: lib/post-types.php:45
+msgid "New media coverage"
+msgstr ""
+
+#: lib/post-types.php:46
+msgid "View media coverage"
+msgstr ""
+
+#: lib/post-types.php:47
+msgid "Search media coverage"
+msgstr ""
+
+#: lib/post-types.php:74
+msgid "Add Stockist"
+msgstr ""
+
+#: lib/post-types.php:75
+msgid "Edit Stockist"
+msgstr ""
+
+#: lib/post-types.php:76
+msgid "New Stockist"
+msgstr ""
+
+#: lib/post-types.php:77
+msgid "View Stockist"
+msgstr ""
+
+#: lib/post-types.php:78
+msgid "Search Stockist"
+msgstr ""
+
+#: lib/post-types.php:105
+msgid "Add ingredient"
+msgstr ""
+
+#: lib/post-types.php:106
+msgid "Edit ingredient"
+msgstr ""
+
+#: lib/post-types.php:107
+msgid "New ingredient"
+msgstr ""
+
+#: lib/post-types.php:108
+msgid "View ingredient"
+msgstr ""
+
+#: lib/post-types.php:109
+msgid "Search ingredient"
+msgstr ""
+
+#: lib/post-types.php:136
+msgid "Add testimonial"
+msgstr ""
+
+#: lib/post-types.php:137
+msgid "Edit testimonial"
+msgstr ""
+
+#: lib/post-types.php:138
+msgid "New testimonial"
+msgstr ""
+
+#: lib/post-types.php:139
+msgid "View testimonial"
+msgstr ""
+
+#: lib/post-types.php:140
+msgid "Search testimonial"
+msgstr ""
+
+#: lib/titles.php:10
+msgid "Latest Posts"
+msgstr ""
+
+#: lib/titles.php:15
+#, php-format
+msgid "Search Results for %s"
+msgstr "%s 的搜尋結果"
+
+#: lib/titles.php:17
+msgid "Not Found"
 msgstr ""
 
 #: templates/comments.php:19
@@ -55,7 +303,8 @@ msgstr "文章分類"
 #: templates/content-blog.php:50 templates/content-blog.php:62
 #: templates/content-single.php:29 templates/content-single.php:39
 #: templates/content-stocklist.php:36 templates/content-testimonial.php:101
-#: templates/content-testimonial.php:105 templates/content-testimonial.php:128
+#: templates/content-testimonial.php:105
+#: templates/content-testimonial.php:128
 #: templates/content-testimonial.php:132
 msgid "All"
 msgstr "所有文章"
@@ -156,10 +405,6 @@ msgstr "使用條款"
 #: templates/footer.php:34
 msgid "Privacy Policy"
 msgstr "私隱政策"
-
-#: templates/footer.php:40
-msgid "Stay Connected"
-msgstr "訂閱電子通訊"
 
 #: templates/footer.php:41
 msgid ""
