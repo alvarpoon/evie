@@ -48,7 +48,8 @@ function append_language_class($classes){
 // Display 8 products per page. Goes in functions.php
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 8;' ), 20 );
 
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+
+/*remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
 add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
@@ -59,5 +60,19 @@ function my_theme_wrapper_start() {
 }
 
 function my_theme_wrapper_end() {
-  echo '</section>';
+  echo '</section>';*/
+
+
+//https://community.theme.co/forums/topic/search-results-wpml/#post-118287
+add_filter( 'template_include', 'force_template_override', 99 );
+
+function force_template_override( $template ) {
+
+  if( is_search() ) {
+    $p = pathinfo($template);
+    return $p['dirname'].'/index.php';
+  }
+
+  return $template;
+
 }

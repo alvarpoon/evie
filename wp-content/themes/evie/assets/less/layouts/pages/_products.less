@@ -162,6 +162,12 @@ ul.products li.product{
 		text-decoration: none;
 	}
 }
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+	margin: 0 0 2.992em;
+	width: 48%;
+}
+
 .product-item-brief-wrapper{
 	position:relative;
 	height:60px;
@@ -253,7 +259,13 @@ ul.products li.product{
 //===============================================================================
 //===============================================================================
 @media (min-width: @screen-md-min) {
-	
+	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+		margin: 0 3.8% 2.992em 0;
+		width: 22.05%;
+		&.last{
+			margin-right:0;
+		}
+	}
 }
 
 //===============================================================================

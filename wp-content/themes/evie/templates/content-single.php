@@ -6,7 +6,8 @@
 	);
 	$categories = get_categories( $args );
 
-	$full_uri = site_url().'/buzz/our-blog/';
+	$lang = array('en'=>'','zh-hant'=>'-tc','zh-hans'=>'-sc');
+	$full_uri = icl_get_home_url().'buzz'.$lang[ICL_LANGUAGE_CODE].'/our-blog'.$lang[ICL_LANGUAGE_CODE].'/';
 ?>
 <section class="blog-section main-section-container container">
 	<div class="col-xs-12 col-sm-10 col-md-10 main-content-wrapper">
@@ -23,9 +24,9 @@
     	        <div class="col-xs-12 col-sm-5">
 					<ul>
 						<li>
-							<a href="javascript:;">CATEGORIES</a>
+							<a href="javascript:;"><?_e('CATEGORIES')?></a>
 							<ul class="sub-menu">
-								<li><a href="<?=$full_uri?>?category=&y=<?=$year?>">All</a></li>
+								<li><a href="<?=$full_uri?>?category=&y=<?=$year?>"><?_e('All')?></a></li>
 								<?
 									foreach ( $categories as $category ) {
 										echo '<li><a href="'.$full_uri.'?category='.$category->cat_ID.'&y='.$blog_year.'">'.$category->name.'</a></li>';
@@ -33,9 +34,9 @@
 								?>
 							</ul>
 						</li>
-						<li><a href="javascript:;">ARCHIVES</a>
+						<li><a href="javascript:;"><?_e('ARCHIVES')?></a>
 							<ul class="sub-menu">
-								<li><a href="<?=$full_uri?>?category=<?=$blog_cat?>&y=">All</a></li>
+								<li><a href="<?=$full_uri?>?category=<?=$blog_cat?>&y="><?_e('All')?></a></li>
 									<?
 									$years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts ORDER BY post_date DESC");
 									foreach($years as $year) : 
@@ -77,7 +78,7 @@
 						if(get_post_type($post)=="post"){
 						?>
                         <div class="read-more">
-	                        <a href="/buzz/our-blog/"><i class="fa fa-angle-left"></i> BACK</a>
+	                        <a href="<?=$full_uri?>"><i class="fa fa-angle-left"></i> <?_e('BACK')?></a>
                         </div>
                         <?
 						}
@@ -94,9 +95,9 @@
             	<?
 	               	$prev_post = get_previous_post();
 					if (!empty( $prev_post )){
-						previous_post_link('%link', '<i class="fa fa-angle-left"></i> Previous Post');
+						previous_post_link('%link', '<i class="fa fa-angle-left"></i> '.__('Previous Post'));
 				 	} else { 
-						echo '<i class="fa fa-angle-left"></i> Previous Post';	
+						echo '<i class="fa fa-angle-left"></i> '.__('Previous Post');	
 					} ?>
                 </div>
                <!-- <div class="next">
@@ -107,9 +108,9 @@
             	<?
 	               	$next_post = get_next_post();
 					if (!empty( $next_post )){
-						next_post_link('%link', 'Next Post <i class="fa fa-angle-right"></i>');
+						next_post_link('%link', __('Next Post').' <i class="fa fa-angle-right"></i>');
 				 	} else { 
-						echo 'Next Post <i class="fa fa-angle-right"></i>';	
+						echo __('Next Post').' <i class="fa fa-angle-right"></i>';	
 					} ?>
                 </div>
             </div>
