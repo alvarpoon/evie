@@ -33,7 +33,7 @@
             <ul>
 				<li><a href="javascript:;"><?= _e('LOCATIONS'); ?></a>
 					<ul class="sub-menu">
-						<li><a href="<?=$full_uri?>"><?= _e('All'); ?></a></li>
+						<li><a href="<?=$full_uri?>"><?= _e('All regions'); ?></a></li>
 						<? 
 						foreach($stocklist_categories as $stocklist_category){
 							if($location == $stocklist_category->slug){

@@ -100,7 +100,7 @@
 						<? if( ICL_LANGUAGE_CODE == 'en'){ ?>
 							<p><? the_date(); ?></p>
 						<? } else if ( ICL_LANGUAGE_CODE == 'zh-hans' || ICL_LANGUAGE_CODE == 'zh-hant'){ ?>
-							<p><? the_date('y年m月j日'); ?></p>
+							<p><? the_date('Y年m月j日'); ?></p>
 						<? }?>
 					</div>
 					<a class="img-link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full',  array('class' => 'img-responsive')); ?></a>

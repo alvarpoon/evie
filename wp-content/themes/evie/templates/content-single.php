@@ -17,7 +17,7 @@
 			?>
 			<div class="headline-title-container clearfix">
 				<div class="col-xs-2 headline-title-left"></div>
-				<div class="col-xs-8 headline-title-center">EVIE BLOG</div>
+				<div class="col-xs-8 headline-title-center"><?=__('EVIE BLOG')?></div>
 				<div class="col-xs-2 headline-title-right"></div>
 			</div>
 			<div class="under-title-link-container clearfix row">
@@ -66,7 +66,11 @@
 				<div class="blog-post-item">
 					<div class="blog-post-title">
 						<h2><?php the_title(); ?></h2>
-						<p><? the_date(); ?></p>
+						<? if( ICL_LANGUAGE_CODE == 'en'){ ?>
+							<p><? the_date(); ?></p>
+						<? } else if ( ICL_LANGUAGE_CODE == 'zh-hans' || ICL_LANGUAGE_CODE == 'zh-hant'){ ?>
+							<p><? the_date('Y年m月j日'); ?></p>
+						<? }?>
 					</div>
 					<a class="img-link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full',  array('class' => 'img-responsive')); ?></a>
 					<div class="blog-post-detail">
