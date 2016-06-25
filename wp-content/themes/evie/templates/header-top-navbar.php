@@ -47,10 +47,10 @@
 					endif;
 				?>
 				<div class="mobile_function_link">
-					<a class="toggle_connect" href="javascript:;">STAY CONNECTED</a>
+					<a class="toggle_connect" href="javascript:;"><?=_e('STAY CONNECTED')?></a>
 				</div>
 				<div class="mobile_function_link">
-					<a href="mailto:info@eviebeaute.com">Enquiries/Order</a>
+					<a href="mailto:info@eviebeaute.com"><?=_e('Enquiries/Order')?></a>
 				</div>
                 <div class="mobile_lang_link">
                 	<?
