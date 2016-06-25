@@ -7948,6 +7948,19 @@ ul.products li.product .find-out-more {
   line-height: 1.3;
   display: block;
 }
+.woocommerce .woocommerce-error::before,
+.woocommerce .woocommerce-info::before,
+.woocommerce .woocommerce-message::before {
+  display: none;
+}
+.woocommerce .woocommerce-error,
+.woocommerce .woocommerce-info,
+.woocommerce .woocommerce-message {
+  background: #fff;
+  border: none;
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
 @media (min-width: 768px) {
   .single-product .product .product-other-detail-container .product-other-detail-item {
     display: table-cell;
@@ -8182,6 +8195,10 @@ ul.products li.product .find-out-more {
 }
 .blog-section .blog-post-item:first-child {
   margin-top: 0;
+}
+.blog-section .blog-post-item img {
+  height: auto;
+  max-width: 100%;
 }
 .blog-section .blog-post-item .blog-post-title {
   text-align: center;

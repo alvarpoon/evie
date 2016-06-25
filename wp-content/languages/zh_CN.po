@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EVIE website\n"
 "POT-Creation-Date: 2016-02-19 00:46+0800\n"
-"PO-Revision-Date: 2016-02-19 00:49+0800\n"
+"PO-Revision-Date: 2016-06-25 10:43+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.2\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ../themes/evie\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: _e;__\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: footer.php:30 templates/footer.php:40
 msgid "Stay Connected"
-msgstr "订阅电子报"
+msgstr "订阅电子通讯"
 
 #: footer.php:31
 msgid ""
@@ -304,8 +304,7 @@ msgstr "类别"
 #: templates/content-blog.php:50 templates/content-blog.php:62
 #: templates/content-single.php:29 templates/content-single.php:39
 #: templates/content-stocklist.php:36 templates/content-testimonial.php:101
-#: templates/content-testimonial.php:105
-#: templates/content-testimonial.php:128
+#: templates/content-testimonial.php:105 templates/content-testimonial.php:128
 #: templates/content-testimonial.php:132
 msgid "All"
 msgstr "所有文章"
