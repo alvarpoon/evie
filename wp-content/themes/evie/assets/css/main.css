@@ -8151,22 +8151,33 @@ ul.products li.product .find-out-more {
 .blog-section .headline-title-container {
   background: url(../img/sprites/bg_blog_title.png) no-repeat center;
   margin-bottom: 20px;
+  display: table;
+  width: 100%;
 }
 .blog-section .headline-title-container .headline-title-left {
   height: 110px;
   background: url(../img/sprites/bg_blog_title_left.png) no-repeat left;
+  display: table-cell;
+  float: none;
 }
 .blog-section .headline-title-container .headline-title-center {
   height: 110px;
-  letter-spacing: 3px;
-  line-height: 480%;
   text-align: center;
   text-transform: uppercase;
   background: none;
+  display: table-cell;
+  float: none;
+  vertical-align: middle;
+  font-family: "Novecento";
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 4px;
 }
 .blog-section .headline-title-container .headline-title-right {
   height: 110px;
   background: url(../img/sprites/bg_blog_title_right.png) no-repeat right;
+  display: table-cell;
+  float: none;
 }
 .blog-section .blog-link-container {
   margin-bottom: 50px;
@@ -8829,6 +8840,10 @@ body.zh-hans.contact-us-tc h2,
 body.zh-hant.contact-us-sc h2,
 body.zh-hans.contact-us-sc h2 {
   font-family: "PlayfairDisplay" !important;
+}
+body.zh-hant .mobile-menu .mobile_function_link,
+body.zh-hans .mobile-menu .mobile_function_link {
+  font-family: 'Heiti TC Medium', 'MHeiHK', "微軟正黑體", "Microsoft JhengHei", 'SimHei', sans-serif !important;
 }
 @media (min-width: 768px) {
   .navbar-default {

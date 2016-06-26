@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: EVIE website\n"
-"POT-Creation-Date: 2016-02-19 00:53+0800\n"
-"PO-Revision-Date: 2016-02-19 00:55+0800\n"
+"POT-Creation-Date: 2016-06-26 20:52+0800\n"
+"PO-Revision-Date: 2016-06-26 20:56+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.2\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ../themes/evie\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: _e;__\n"
@@ -292,7 +292,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: templates/content-blog.php:34
+#: templates/content-blog.php:34 templates/content-single.php:20
 msgid "EVIE BLOG"
 msgstr "品牌部落格"
 
@@ -302,10 +302,8 @@ msgstr "文章分類"
 
 #: templates/content-blog.php:50 templates/content-blog.php:62
 #: templates/content-single.php:29 templates/content-single.php:39
-#: templates/content-stocklist.php:36 templates/content-testimonial.php:101
-#: templates/content-testimonial.php:105
-#: templates/content-testimonial.php:128
-#: templates/content-testimonial.php:132
+#: templates/content-testimonial.php:101 templates/content-testimonial.php:105
+#: templates/content-testimonial.php:128 templates/content-testimonial.php:132
 msgid "All"
 msgstr "所有文章"
 
@@ -342,25 +340,29 @@ msgstr "熱賣產品 "
 msgid "MORE SPECIAL OFFERS"
 msgstr "更多優惠"
 
-#: templates/content-single.php:81
+#: templates/content-single.php:85
 msgid "BACK"
 msgstr "返回"
 
-#: templates/content-single.php:98 templates/content-single.php:100
+#: templates/content-single.php:102 templates/content-single.php:104
 msgid "Previous Post"
 msgstr "上一篇"
 
-#: templates/content-single.php:111 templates/content-single.php:113
+#: templates/content-single.php:115 templates/content-single.php:117
 msgid "Next Post"
 msgstr "下一篇"
 
-#: templates/content-single.php:118
+#: templates/content-single.php:122
 msgid "Pages:"
 msgstr ""
 
 #: templates/content-stocklist.php:34
 msgid "LOCATIONS"
 msgstr "地區"
+
+#: templates/content-stocklist.php:36
+msgid "All regions"
+msgstr ""
 
 #: templates/content-testimonial.php:96
 msgid "BY PRODUCTS"
@@ -416,11 +418,11 @@ msgstr "立即訂閱以獲取最新產品情報及優惠資訊！"
 msgid "Please enter your email to subscribe. Mobile is optional."
 msgstr "請鍵入電郵訂閱。手機號碼並非必須。"
 
-#: templates/header-top-navbar.php:4
+#: templates/header-top-navbar.php:4 templates/header-top-navbar.php:50
 msgid "STAY CONNECTED"
 msgstr "訂閱電子通訊"
 
-#: templates/header-top-navbar.php:4
+#: templates/header-top-navbar.php:4 templates/header-top-navbar.php:53
 msgid "Enquiries/Order"
 msgstr "查詢／訂購"
 
@@ -446,7 +448,7 @@ msgstr "成分"
 
 #: woocommerce/content-single-product.php:87
 msgid "how to use"
-msgstr "如何使用"
+msgstr "使用方法"
 
 #: woocommerce/content-single-product.php:117
 msgid "you may also like"
