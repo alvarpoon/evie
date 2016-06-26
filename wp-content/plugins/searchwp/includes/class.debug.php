@@ -2,8 +2,11 @@
 
 global $wp_filesystem;
 
-if( !defined( 'ABSPATH' ) ) die();
+if ( ! defined( 'ABSPATH' ) ) {
+	die();
+}
 
+/** @noinspection PhpIncludeInspection */
 include_once ABSPATH . 'wp-admin/includes/file.php';
 
 /**
@@ -13,35 +16,52 @@ class SearchWPDebug {
 
 	public $active;
 	private $logfile;
-	private $remoteMeta;
-	private $apiPrefix = 'swpapi';
 
+	/**
+	 * @param $dir
+	 */
 	function init( $dir ) {
 		global $wp_filesystem;
 
 		$this->active = true;
-		$this->logfile = trailingslashit( $dir ) . 'debug.log';
+		$this->logfile = trailingslashit( $dir ) . 'searchwp-debug.txt';
 
 		// init environment
-		if( ! file_exists( $this->logfile ) ) {
+		if ( ! file_exists( $this->logfile ) ) {
 			WP_Filesystem();
-			if( ! $wp_filesystem->put_contents( $this->logfile, '' ) ); {
-				$this->active = false;
+			if ( method_exists( $wp_filesystem, 'put_contents' ) ) {
+				if ( ! $wp_filesystem->put_contents( $this->logfile, '' ) ) {
+					$this->active = false;
+				}
 			}
 		}
 
 		// after determining whether we can write to the logfile, add our action
-		if( $this->active ) {
+		if ( $this->active ) {
 			add_action( 'searchwp_log', array( $this, 'log' ), 1, 2 );
 		}
 	}
 
+	/**
+	 * @param string $message
+	 * @param string $type
+	 *
+	 * @return bool
+	 */
 	function log( $message = '', $type = 'notice' ) {
 		global $wp_filesystem;
 		WP_Filesystem();
 
 		// if we're not active, don't do anything
 		if ( ! $this->active || ! file_exists( $this->logfile ) ) {
+			return false;
+		}
+
+		if ( ! method_exists( $wp_filesystem, 'get_contents' ) ) {
+			return false;
+		}
+
+		if ( ! method_exists( $wp_filesystem, 'put_contents' ) ) {
 			return false;
 		}
 
@@ -52,7 +72,7 @@ class SearchWPDebug {
 		$entry = '[' . date( 'Y-d-m G:i:s', current_time( 'timestamp' ) ) . '][' . sanitize_text_field( $type ) . ']';
 
 		// flag it with the process ID
-		$entry .= '[' . SearchWP::instance()->getPid() . ']';
+		$entry .= '[' . SearchWP::instance()->get_pid() . ']';
 
 		// sanitize the message
 		$message = sanitize_text_field( esc_html( $message ) );
@@ -68,6 +88,8 @@ class SearchWPDebug {
 
 		// write log
 		$wp_filesystem->put_contents( $this->logfile, $log );
+
+		return true;
 	}
 
 }

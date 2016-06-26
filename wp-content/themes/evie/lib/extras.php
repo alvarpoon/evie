@@ -76,3 +76,20 @@ function force_template_override( $template ) {
   return $template;
 
 }
+
+//https://searchwp.com/docs/hooks/searchwp_basic_auth_creds/
+function my_searchwp_basic_auth_creds() {
+  
+  // NOTE: this needs to be your HTTP BASIC AUTH login
+  //
+  //                 *** NOT *** your WordPress login
+  //
+  //
+  $credentials = array( 
+    'username' => 'evie', // the HTTP BASIC AUTH username
+    'password' => 'evie123'  // the HTTP BASIC AUTH password
+  );
+  
+  return $credentials;
+}
+add_filter( 'searchwp_basic_auth_creds', 'my_searchwp_basic_auth_creds' );
