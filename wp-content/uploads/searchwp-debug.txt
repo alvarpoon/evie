@@ -1498,3 +1498,63 @@
 [2016-26-07 0:09:59][notice][swppid579639d22d141814059037] 
 [2016-26-07 0:09:59][notice][swppid579639d22d141814059037] ========== END swppid579639d22d141814059037 ==========
 [2016-26-07 0:09:59][notice][swppid579639d22d141814059037] 
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] 
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] ========== INIT swppid57963ddf19343346641963 2.8.1 ==========
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] 
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] check_for_main_query(): It is the main query
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] It is a search
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] maybe_cancel_wp_query() canceled the query
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] wp_search()
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] $wpPaged = 1
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] $terms = '幹細胞'
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] $terms after searchwp_terms = '幹細胞'
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] $terms after sanitization = array ( 0 => '幹細胞', )
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] $order = DESC
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] $maxSearchTerms = 6
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] SearchWPSearch __construct()
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] $args = array ( 'terms' => array ( 0 => '幹細胞', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] is_valid_engine( default ) = true
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] $terms = array ( 0 => '幹細胞', )
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] searchwp_pre_search_terms $terms = array ( 0 => '幹細胞', )
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] query()
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] query_for_post_ids()
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] $excludeIDs = array ( )
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] After taxonomy exclusion $excludeIDs = array ( )
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] $doAnd = false
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] Search results: array ( 0 => 724, )
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] found_posts = 1
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] max_num_pages = 1
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] 
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] ========== END swppid57963ddf19343346641963 ==========
+[2016-26-07 0:27:13][notice][swppid57963ddf19343346641963] 
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] 
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] ========== INIT swppid57963de2baf60151283109 2.8.1 ==========
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] 
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] check_for_main_query(): It is the main query
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] It is a search
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] maybe_cancel_wp_query() canceled the query
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] wp_search()
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] $wpPaged = 1
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] $terms = '幹細胞'
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] $terms after searchwp_terms = '幹細胞'
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] $terms after sanitization = array ( 0 => '幹細胞', )
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] $order = DESC
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] $maxSearchTerms = 6
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] SearchWPSearch __construct()
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] $args = array ( 'terms' => array ( 0 => '幹細胞', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] is_valid_engine( default ) = true
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] $terms = array ( 0 => '幹細胞', )
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] searchwp_pre_search_terms $terms = array ( 0 => '幹細胞', )
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] query()
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] query_for_post_ids()
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] $excludeIDs = array ( )
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] After taxonomy exclusion $excludeIDs = array ( )
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] $doAnd = false
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] Search results: array ( 0 => 724, )
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] found_posts = 1
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] max_num_pages = 1
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] 
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] ========== END swppid57963de2baf60151283109 ==========
+[2016-26-07 0:27:17][notice][swppid57963de2baf60151283109] 
