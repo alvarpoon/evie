@@ -67,6 +67,12 @@ var Roots = {
 		});
 		
 		initStayConnect();
+
+		function close_contact_popup(){
+			alert('close_contact_popup');
+			$('#connect-popup').fadeOut();
+		}
+
       });
     }
   },
