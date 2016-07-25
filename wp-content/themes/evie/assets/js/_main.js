@@ -24,6 +24,12 @@ var Roots = {
     init: function() {
       // JavaScript to be fired on all pages
       $(document).ready(function() {
+
+		/*function close_contact_popup(){
+			$('#connect-popup').fadeOut();
+			alert('close_contact_popup');
+		}
+*/
         $(".subscribe-container a").fancybox({
           wrapCSS    : 'fancybox-custom',
           //closeClick : true,
@@ -67,6 +73,7 @@ var Roots = {
 		});
 		
 		initStayConnect();
+
       });
     }
   },
@@ -188,6 +195,11 @@ var UTIL = {
 };
 
 $(document).ready(UTIL.loadEvents);
+
+/*function close_contact_popup(){
+	$('#connect-popup').fadeOut();
+	alert('close_contact_popup');
+}*/
 
 function initStayConnect(){
 	$('.toggle_connect').click(function(){

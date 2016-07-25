@@ -1,0 +1,1500 @@
+
+[2016-27-06 22:30:51][notice][swppid57713893b27e9911528677] 
+[2016-27-06 22:30:51][notice][swppid57713893b27e9911528677] ========== INIT swppid57713893b27e9911528677 2.8.1 ==========
+[2016-27-06 22:30:51][notice][swppid57713893b27e9911528677] 
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] 
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] ========== INIT swppid577138949535c096118615 2.8.1 ==========
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] 
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] check_for_main_query(): It is the main query
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] It is a search
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] wp_search()
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] $wpPaged = 1
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] $terms = '卸妝油'
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] $terms after searchwp_terms = '卸妝油'
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] $terms after sanitization = array ( 0 => '卸妝油', )
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] $order = DESC
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] $maxSearchTerms = 6
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] SearchWPSearch __construct()
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] $args = array ( 'terms' => array ( 0 => '卸妝油', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:30:51][notice][swppid57713893b27e9911528677] 
+[2016-27-06 22:30:51][notice][swppid57713893b27e9911528677] ========== END swppid57713893b27e9911528677 ==========
+[2016-27-06 22:30:51][notice][swppid57713893b27e9911528677] 
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] $terms = array ( 0 => '卸妝油', )
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] searchwp_pre_search_terms $terms = array ( 0 => '卸妝油', )
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] query()
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] query_for_post_ids()
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] $excludeIDs = array ( )
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] $doAnd = false
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] Search results: array ( )
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] found_posts = 0
+[2016-27-06 22:30:51][notice][swppid577138949535c096118615] max_num_pages = 0
+[2016-27-06 22:30:52][notice][swppid577138949535c096118615] 
+[2016-27-06 22:30:52][notice][swppid577138949535c096118615] ========== END swppid577138949535c096118615 ==========
+[2016-27-06 22:30:52][notice][swppid577138949535c096118615] 
+[2016-27-06 22:30:57][notice][swppid5771389dcb4b3581314316] 
+[2016-27-06 22:30:57][notice][swppid5771389dcb4b3581314316] ========== INIT swppid5771389dcb4b3581314316 2.8.1 ==========
+[2016-27-06 22:30:57][notice][swppid5771389dcb4b3581314316] 
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] check_for_main_query(): It is the main query
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] It is a search
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] wp_search()
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] $wpPaged = 1
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] $terms = '卸妝油'
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] $terms after searchwp_terms = '卸妝油'
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] $terms after sanitization = array ( 0 => '卸妝油', )
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] $order = DESC
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] $maxSearchTerms = 6
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] SearchWPSearch __construct()
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] $args = array ( 'terms' => array ( 0 => '卸妝油', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] is_valid_engine( default ) = true
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] $terms = array ( 0 => '卸妝油', )
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] searchwp_pre_search_terms $terms = array ( 0 => '卸妝油', )
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] query()
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] query_for_post_ids()
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] $excludeIDs = array ( )
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] $doAnd = false
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] Search results: array ( )
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] found_posts = 0
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] max_num_pages = 0
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] 
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] ========== END swppid5771389dcb4b3581314316 ==========
+[2016-27-06 22:30:58][notice][swppid5771389dcb4b3581314316] 
+[2016-27-06 22:31:00][notice][swppid577138a1adce9250010000] 
+[2016-27-06 22:31:00][notice][swppid577138a1adce9250010000] ========== INIT swppid577138a1adce9250010000 2.8.1 ==========
+[2016-27-06 22:31:00][notice][swppid577138a1adce9250010000] 
+[2016-27-06 22:31:00][notice][swppid577138a1adce9250010000] 
+[2016-27-06 22:31:00][notice][swppid577138a1adce9250010000] ========== END swppid577138a1adce9250010000 ==========
+[2016-27-06 22:31:00][notice][swppid577138a1adce9250010000] 
+[2016-27-06 22:31:10][notice][swppid577138aaba627732868793] 
+[2016-27-06 22:31:10][notice][swppid577138aaba627732868793] ========== INIT swppid577138aaba627732868793 2.8.1 ==========
+[2016-27-06 22:31:10][notice][swppid577138aaba627732868793] 
+[2016-27-06 22:31:11][notice][swppid577138aaba627732868793] 
+[2016-27-06 22:31:11][notice][swppid577138aaba627732868793] ========== END swppid577138aaba627732868793 ==========
+[2016-27-06 22:31:11][notice][swppid577138aaba627732868793] 
+[2016-27-06 22:31:12][notice][swppid577138aaafe2c094167431] 
+[2016-27-06 22:31:12][notice][swppid577138aaafe2c094167431] ========== INIT swppid577138aaafe2c094167431 2.8.1 ==========
+[2016-27-06 22:31:12][notice][swppid577138aaafe2c094167431] 
+[2016-27-06 22:31:12][notice][swppid577138aaafe2c094167431] 
+[2016-27-06 22:31:12][notice][swppid577138aaafe2c094167431] ========== END swppid577138aaafe2c094167431 ==========
+[2016-27-06 22:31:12][notice][swppid577138aaafe2c094167431] 
+[2016-27-06 22:31:14][notice][swppid577138ad9aee3790151754] 
+[2016-27-06 22:31:14][notice][swppid577138ad9aee3790151754] ========== INIT swppid577138ad9aee3790151754 2.8.1 ==========
+[2016-27-06 22:31:14][notice][swppid577138ad9aee3790151754] 
+[2016-27-06 22:31:14][notice][swppid577138ad9aee3790151754] check_for_main_query(): It is the main query
+[2016-27-06 22:31:15][notice][swppid577138ad9aee3790151754] 
+[2016-27-06 22:31:15][notice][swppid577138ad9aee3790151754] ========== END swppid577138ad9aee3790151754 ==========
+[2016-27-06 22:31:15][notice][swppid577138ad9aee3790151754] 
+[2016-27-06 22:31:22][notice][swppid577138b41e43e202405411] 
+[2016-27-06 22:31:22][notice][swppid577138b41e43e202405411] ========== INIT swppid577138b41e43e202405411 2.8.1 ==========
+[2016-27-06 22:31:22][notice][swppid577138b41e43e202405411] 
+[2016-27-06 22:31:22][notice][swppid577138b41e43e202405411] check_for_main_query(): It is the main query
+[2016-27-06 22:31:22][notice][swppid577138b41e43e202405411] 
+[2016-27-06 22:31:22][notice][swppid577138b41e43e202405411] ========== END swppid577138b41e43e202405411 ==========
+[2016-27-06 22:31:22][notice][swppid577138b41e43e202405411] 
+[2016-27-06 22:31:23][notice][swppid577138b4dd703692992291] 
+[2016-27-06 22:31:23][notice][swppid577138b4dd703692992291] ========== INIT swppid577138b4dd703692992291 2.8.1 ==========
+[2016-27-06 22:31:23][notice][swppid577138b4dd703692992291] 
+[2016-27-06 22:31:23][notice][swppid577138b4dd703692992291] 
+[2016-27-06 22:31:23][notice][swppid577138b4dd703692992291] ========== END swppid577138b4dd703692992291 ==========
+[2016-27-06 22:31:23][notice][swppid577138b4dd703692992291] 
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] 
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] ========== INIT swppid577138bc5f527269627364 2.8.1 ==========
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] 
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] check_for_main_query(): It is the main query
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] It is a search
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] wp_search()
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] $wpPaged = 1
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] $terms = '嫩手霜'
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] $terms after searchwp_terms = '嫩手霜'
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] $terms after sanitization = array ( 0 => '嫩手霜', )
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] $order = DESC
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] $maxSearchTerms = 6
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] SearchWPSearch __construct()
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] $args = array ( 'terms' => array ( 0 => '嫩手霜', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] is_valid_engine( default ) = true
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] searchwp_pre_search_terms $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] query()
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] query_for_post_ids()
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] $excludeIDs = array ( )
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] $doAnd = false
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] Search results: array ( )
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] found_posts = 0
+[2016-27-06 22:31:27][notice][swppid577138bc5f527269627364] max_num_pages = 0
+[2016-27-06 22:31:28][notice][swppid577138bc5f527269627364] 
+[2016-27-06 22:31:28][notice][swppid577138bc5f527269627364] ========== END swppid577138bc5f527269627364 ==========
+[2016-27-06 22:31:28][notice][swppid577138bc5f527269627364] 
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] 
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] ========== INIT swppid577138c1394dc923464519 2.8.1 ==========
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] 
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] check_for_main_query(): It is the main query
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] It is a search
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] wp_search()
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] $wpPaged = 1
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] $terms = '嫩手霜'
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] $terms after searchwp_terms = '嫩手霜'
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] $terms after sanitization = array ( 0 => '嫩手霜', )
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] $order = DESC
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] $maxSearchTerms = 6
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] SearchWPSearch __construct()
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] $args = array ( 'terms' => array ( 0 => '嫩手霜', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] is_valid_engine( default ) = true
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] searchwp_pre_search_terms $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] query()
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] query_for_post_ids()
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] $excludeIDs = array ( )
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] $doAnd = false
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] Search results: array ( )
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] found_posts = 0
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] max_num_pages = 0
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] 
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] ========== END swppid577138c1394dc923464519 ==========
+[2016-27-06 22:31:37][notice][swppid577138c1394dc923464519] 
+[2016-27-06 22:31:37][notice][swppid577138c1e3b94433912669] 
+[2016-27-06 22:31:37][notice][swppid577138c1e3b94433912669] ========== INIT swppid577138c1e3b94433912669 2.8.1 ==========
+[2016-27-06 22:31:37][notice][swppid577138c1e3b94433912669] 
+[2016-27-06 22:31:38][notice][swppid577138c1e3b94433912669] 
+[2016-27-06 22:31:38][notice][swppid577138c1e3b94433912669] ========== END swppid577138c1e3b94433912669 ==========
+[2016-27-06 22:31:38][notice][swppid577138c1e3b94433912669] 
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] 
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] ========== INIT swppid577138c4779ae575855061 2.8.1 ==========
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] 
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] check_for_main_query(): It is the main query
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] It is a search
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] wp_search()
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] $wpPaged = 1
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] $terms = '絲觸強效再生嫩手霜'
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] $terms after searchwp_terms = '絲觸強效再生嫩手霜'
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] $terms after sanitization = array ( 0 => '絲觸強效再生嫩手霜', )
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] $order = DESC
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] $maxSearchTerms = 6
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] SearchWPSearch __construct()
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] $args = array ( 'terms' => array ( 0 => '絲觸強效再生嫩手霜', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] is_valid_engine( default ) = true
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] $terms = array ( 0 => '絲觸強效再生嫩手霜', )
+[2016-27-06 22:31:38][notice][swppid577138c4779ae575855061] searchwp_pre_search_terms $terms = array ( 0 => '絲觸強效再生嫩手霜', )
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] query()
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] query_for_post_ids()
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] $excludeIDs = array ( )
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] $doAnd = false
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] Search results: array ( 0 => 705, )
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] found_posts = 1
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] max_num_pages = 1
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] 
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] ========== END swppid577138c4779ae575855061 ==========
+[2016-27-06 22:31:39][notice][swppid577138c4779ae575855061] 
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] 
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] ========== INIT swppid577138cca07d9390207020 2.8.1 ==========
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] 
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] check_for_main_query(): It is the main query
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] It is a search
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] wp_search()
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] $wpPaged = 1
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] $terms = '絲觸強效再生嫩手霜'
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] $terms after searchwp_terms = '絲觸強效再生嫩手霜'
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] $terms after sanitization = array ( 0 => '絲觸強效再生嫩手霜', )
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] $order = DESC
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] $maxSearchTerms = 6
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] SearchWPSearch __construct()
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] $args = array ( 'terms' => array ( 0 => '絲觸強效再生嫩手霜', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] is_valid_engine( default ) = true
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] $terms = array ( 0 => '絲觸強效再生嫩手霜', )
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] searchwp_pre_search_terms $terms = array ( 0 => '絲觸強效再生嫩手霜', )
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] query()
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] query_for_post_ids()
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] $excludeIDs = array ( )
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] $doAnd = false
+[2016-27-06 22:31:45][notice][swppid577138cca07d9390207020] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:31:46][notice][swppid577138cca07d9390207020] Search results: array ( 0 => 705, )
+[2016-27-06 22:31:46][notice][swppid577138cca07d9390207020] found_posts = 1
+[2016-27-06 22:31:46][notice][swppid577138cca07d9390207020] max_num_pages = 1
+[2016-27-06 22:31:46][notice][swppid577138cca07d9390207020] 
+[2016-27-06 22:31:46][notice][swppid577138cca07d9390207020] ========== END swppid577138cca07d9390207020 ==========
+[2016-27-06 22:31:46][notice][swppid577138cca07d9390207020] 
+[2016-27-06 22:31:49][notice][swppid577138d0b8b7c093629771] 
+[2016-27-06 22:31:49][notice][swppid577138d0b8b7c093629771] ========== INIT swppid577138d0b8b7c093629771 2.8.1 ==========
+[2016-27-06 22:31:49][notice][swppid577138d0b8b7c093629771] 
+[2016-27-06 22:31:49][notice][swppid577138d0b8b7c093629771] 
+[2016-27-06 22:31:49][notice][swppid577138d0b8b7c093629771] ========== END swppid577138d0b8b7c093629771 ==========
+[2016-27-06 22:31:49][notice][swppid577138d0b8b7c093629771] 
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] 
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] ========== INIT swppid577138d409788693490945 2.8.1 ==========
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] 
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] check_for_main_query(): It is the main query
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] It is a search
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] wp_search()
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] $wpPaged = 1
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] $terms = '再生嫩手霜'
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] $terms after searchwp_terms = '再生嫩手霜'
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] $terms after sanitization = array ( 0 => '再生嫩手霜', )
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] $order = DESC
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] $maxSearchTerms = 6
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] SearchWPSearch __construct()
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] $args = array ( 'terms' => array ( 0 => '再生嫩手霜', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] is_valid_engine( default ) = true
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] $terms = array ( 0 => '再生嫩手霜', )
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] searchwp_pre_search_terms $terms = array ( 0 => '再生嫩手霜', )
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] query()
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] query_for_post_ids()
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] $excludeIDs = array ( )
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] $doAnd = false
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] Search results: array ( )
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] found_posts = 0
+[2016-27-06 22:31:52][notice][swppid577138d409788693490945] max_num_pages = 0
+[2016-27-06 22:31:53][notice][swppid577138d409788693490945] 
+[2016-27-06 22:31:53][notice][swppid577138d409788693490945] ========== END swppid577138d409788693490945 ==========
+[2016-27-06 22:31:53][notice][swppid577138d409788693490945] 
+[2016-27-06 22:31:55][notice][swppid577138d5bf22b263816615] 
+[2016-27-06 22:31:55][notice][swppid577138d5bf22b263816615] ========== INIT swppid577138d5bf22b263816615 2.8.1 ==========
+[2016-27-06 22:31:55][notice][swppid577138d5bf22b263816615] 
+[2016-27-06 22:31:56][notice][swppid577138d5bf22b263816615] 
+[2016-27-06 22:31:56][notice][swppid577138d5bf22b263816615] ========== END swppid577138d5bf22b263816615 ==========
+[2016-27-06 22:31:56][notice][swppid577138d5bf22b263816615] 
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] 
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] ========== INIT swppid577138da918c7026214466 2.8.1 ==========
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] 
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] check_for_main_query(): It is the main query
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] It is a search
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] wp_search()
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] $wpPaged = 1
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] $terms = '再生嫩手霜'
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] $terms after searchwp_terms = '再生嫩手霜'
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] $terms after sanitization = array ( 0 => '再生嫩手霜', )
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] $order = DESC
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] $maxSearchTerms = 6
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] SearchWPSearch __construct()
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] $args = array ( 'terms' => array ( 0 => '再生嫩手霜', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] is_valid_engine( default ) = true
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] $terms = array ( 0 => '再生嫩手霜', )
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] searchwp_pre_search_terms $terms = array ( 0 => '再生嫩手霜', )
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] query()
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] query_for_post_ids()
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] $excludeIDs = array ( )
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] $doAnd = false
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] Search results: array ( )
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] found_posts = 0
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] max_num_pages = 0
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] 
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] ========== END swppid577138da918c7026214466 ==========
+[2016-27-06 22:32:01][notice][swppid577138da918c7026214466] 
+[2016-27-06 22:32:01][notice][swppid577138dbcb2ed498060425] 
+[2016-27-06 22:32:01][notice][swppid577138dbcb2ed498060425] ========== INIT swppid577138dbcb2ed498060425 2.8.1 ==========
+[2016-27-06 22:32:01][notice][swppid577138dbcb2ed498060425] 
+[2016-27-06 22:32:02][notice][swppid577138dbcb2ed498060425] 
+[2016-27-06 22:32:02][notice][swppid577138dbcb2ed498060425] ========== END swppid577138dbcb2ed498060425 ==========
+[2016-27-06 22:32:02][notice][swppid577138dbcb2ed498060425] 
+[2016-27-06 22:32:12][notice][swppid577138e89f6ab432115409] 
+[2016-27-06 22:32:12][notice][swppid577138e89f6ab432115409] ========== INIT swppid577138e89f6ab432115409 2.8.1 ==========
+[2016-27-06 22:32:12][notice][swppid577138e89f6ab432115409] 
+[2016-27-06 22:32:12][notice][swppid577138e89f6ab432115409] 
+[2016-27-06 22:32:12][notice][swppid577138e89f6ab432115409] ========== END swppid577138e89f6ab432115409 ==========
+[2016-27-06 22:32:12][notice][swppid577138e89f6ab432115409] 
+[2016-27-06 22:32:22][notice][swppid577138f29e55e172959931] 
+[2016-27-06 22:32:22][notice][swppid577138f29e55e172959931] ========== INIT swppid577138f29e55e172959931 2.8.1 ==========
+[2016-27-06 22:32:22][notice][swppid577138f29e55e172959931] 
+[2016-27-06 22:32:23][notice][swppid577138f29e55e172959931] 
+[2016-27-06 22:32:23][notice][swppid577138f29e55e172959931] ========== END swppid577138f29e55e172959931 ==========
+[2016-27-06 22:32:23][notice][swppid577138f29e55e172959931] 
+[2016-27-06 22:32:33][notice][swppid577138fca1293637897271] 
+[2016-27-06 22:32:33][notice][swppid577138fca1293637897271] ========== INIT swppid577138fca1293637897271 2.8.1 ==========
+[2016-27-06 22:32:33][notice][swppid577138fca1293637897271] 
+[2016-27-06 22:32:33][notice][swppid577138fca1293637897271] 
+[2016-27-06 22:32:33][notice][swppid577138fca1293637897271] ========== END swppid577138fca1293637897271 ==========
+[2016-27-06 22:32:33][notice][swppid577138fca1293637897271] 
+[2016-27-06 22:32:43][notice][swppid57713907a43e9325462195] 
+[2016-27-06 22:32:43][notice][swppid57713907a43e9325462195] ========== INIT swppid57713907a43e9325462195 2.8.1 ==========
+[2016-27-06 22:32:43][notice][swppid57713907a43e9325462195] 
+[2016-27-06 22:32:44][notice][swppid57713907a43e9325462195] 
+[2016-27-06 22:32:44][notice][swppid57713907a43e9325462195] ========== END swppid57713907a43e9325462195 ==========
+[2016-27-06 22:32:44][notice][swppid57713907a43e9325462195] 
+[2016-27-06 22:32:53][notice][swppid57713911ba9a2036536761] 
+[2016-27-06 22:32:53][notice][swppid57713911ba9a2036536761] ========== INIT swppid57713911ba9a2036536761 2.8.1 ==========
+[2016-27-06 22:32:53][notice][swppid57713911ba9a2036536761] 
+[2016-27-06 22:32:54][notice][swppid57713911ba9a2036536761] 
+[2016-27-06 22:32:54][notice][swppid57713911ba9a2036536761] ========== END swppid57713911ba9a2036536761 ==========
+[2016-27-06 22:32:54][notice][swppid57713911ba9a2036536761] 
+[2016-27-06 22:33:04][notice][swppid5771391caf47d802634859] 
+[2016-27-06 22:33:04][notice][swppid5771391caf47d802634859] ========== INIT swppid5771391caf47d802634859 2.8.1 ==========
+[2016-27-06 22:33:04][notice][swppid5771391caf47d802634859] 
+[2016-27-06 22:33:05][notice][swppid5771391caf47d802634859] 
+[2016-27-06 22:33:05][notice][swppid5771391caf47d802634859] ========== END swppid5771391caf47d802634859 ==========
+[2016-27-06 22:33:05][notice][swppid5771391caf47d802634859] 
+[2016-27-06 22:33:13][notice][swppid57713923ae285223638561] 
+[2016-27-06 22:33:13][notice][swppid57713923ae285223638561] ========== INIT swppid57713923ae285223638561 2.8.1 ==========
+[2016-27-06 22:33:13][notice][swppid57713923ae285223638561] 
+[2016-27-06 22:33:13][notice][swppid57713923ae285223638561] 
+[2016-27-06 22:33:13][notice][swppid57713923ae285223638561] ========== END swppid57713923ae285223638561 ==========
+[2016-27-06 22:33:13][notice][swppid57713923ae285223638561] 
+[2016-27-06 22:33:17][notice][swppid57713925cfe0f738253563] 
+[2016-27-06 22:33:17][notice][swppid57713925cfe0f738253563] ========== INIT swppid57713925cfe0f738253563 2.8.1 ==========
+[2016-27-06 22:33:17][notice][swppid57713925cfe0f738253563] 
+[2016-27-06 22:33:17][notice][swppid57713926a2b96257358046] 
+[2016-27-06 22:33:17][notice][swppid57713926a2b96257358046] ========== INIT swppid57713926a2b96257358046 2.8.1 ==========
+[2016-27-06 22:33:17][notice][swppid57713926a2b96257358046] 
+[2016-27-06 22:33:18][notice][swppid57713926a2b96257358046] 
+[2016-27-06 22:33:18][notice][swppid57713926a2b96257358046] ========== END swppid57713926a2b96257358046 ==========
+[2016-27-06 22:33:18][notice][swppid57713926a2b96257358046] 
+[2016-27-06 22:33:25][notice][swppid57713925cfe0f738253563] 
+[2016-27-06 22:33:25][notice][swppid57713925cfe0f738253563] ========== END swppid57713925cfe0f738253563 ==========
+[2016-27-06 22:33:25][notice][swppid57713925cfe0f738253563] 
+[2016-27-06 22:33:30][notice][swppid57713933b47c1408757829] 
+[2016-27-06 22:33:30][notice][swppid57713933b47c1408757829] ========== INIT swppid57713933b47c1408757829 2.8.1 ==========
+[2016-27-06 22:33:30][notice][swppid57713933b47c1408757829] 
+[2016-27-06 22:33:31][notice][swppid57713933b47c1408757829] 
+[2016-27-06 22:33:31][notice][swppid57713933b47c1408757829] ========== END swppid57713933b47c1408757829 ==========
+[2016-27-06 22:33:31][notice][swppid57713933b47c1408757829] 
+[2016-27-06 22:33:54][notice][swppid5771394ea386e647659979] 
+[2016-27-06 22:33:54][notice][swppid5771394ea386e647659979] ========== INIT swppid5771394ea386e647659979 2.8.1 ==========
+[2016-27-06 22:33:54][notice][swppid5771394ea386e647659979] 
+[2016-27-06 22:33:55][notice][swppid5771394ea386e647659979] 
+[2016-27-06 22:33:55][notice][swppid5771394ea386e647659979] ========== END swppid5771394ea386e647659979 ==========
+[2016-27-06 22:33:55][notice][swppid5771394ea386e647659979] 
+[2016-27-06 22:33:58][notice][swppid577139528f12e045192712] 
+[2016-27-06 22:33:58][notice][swppid577139528f12e045192712] ========== INIT swppid577139528f12e045192712 2.8.1 ==========
+[2016-27-06 22:33:58][notice][swppid577139528f12e045192712] 
+[2016-27-06 22:33:59][notice][swppid577139528f12e045192712] 
+[2016-27-06 22:33:59][notice][swppid577139528f12e045192712] ========== END swppid577139528f12e045192712 ==========
+[2016-27-06 22:33:59][notice][swppid577139528f12e045192712] 
+[2016-27-06 22:34:04][notice][swppid5771395812650462324535] 
+[2016-27-06 22:34:04][notice][swppid5771395812650462324535] ========== INIT swppid5771395812650462324535 2.8.1 ==========
+[2016-27-06 22:34:04][notice][swppid5771395812650462324535] 
+[2016-27-06 22:34:05][notice][swppid5771395812650462324535] 
+[2016-27-06 22:34:05][notice][swppid5771395812650462324535] ========== END swppid5771395812650462324535 ==========
+[2016-27-06 22:34:05][notice][swppid5771395812650462324535] 
+[2016-27-06 22:34:14][notice][swppid57713962d752a719479371] 
+[2016-27-06 22:34:14][notice][swppid57713962d752a719479371] ========== INIT swppid57713962d752a719479371 2.8.1 ==========
+[2016-27-06 22:34:14][notice][swppid57713962d752a719479371] 
+[2016-27-06 22:34:14][notice][swppid57713962d752a719479371] check_for_main_query(): It is the main query
+[2016-27-06 22:34:15][notice][swppid57713962d752a719479371] 
+[2016-27-06 22:34:15][notice][swppid57713962d752a719479371] ========== END swppid57713962d752a719479371 ==========
+[2016-27-06 22:34:15][notice][swppid57713962d752a719479371] 
+[2016-27-06 22:34:21][notice][swppid5771396840c36610373162] 
+[2016-27-06 22:34:21][notice][swppid5771396840c36610373162] ========== INIT swppid5771396840c36610373162 2.8.1 ==========
+[2016-27-06 22:34:21][notice][swppid5771396840c36610373162] 
+[2016-27-06 22:34:21][notice][swppid5771396840c36610373162] check_for_main_query(): It is the main query
+[2016-27-06 22:34:21][notice][swppid5771396840c36610373162] 
+[2016-27-06 22:34:21][notice][swppid5771396840c36610373162] ========== END swppid5771396840c36610373162 ==========
+[2016-27-06 22:34:21][notice][swppid5771396840c36610373162] 
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] 
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] ========== INIT swppid57713972cb182916772208 2.8.1 ==========
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] 
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] check_for_main_query(): It is the main query
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] It is a search
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] wp_search()
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] $wpPaged = 1
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] $terms = '潔面乳'
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] $terms after searchwp_terms = '潔面乳'
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] $terms after sanitization = array ( 0 => '潔面乳', )
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] $order = DESC
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] $maxSearchTerms = 6
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] SearchWPSearch __construct()
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] $args = array ( 'terms' => array ( 0 => '潔面乳', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] is_valid_engine( default ) = true
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] $terms = array ( 0 => '潔面乳', )
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] searchwp_pre_search_terms $terms = array ( 0 => '潔面乳', )
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] query()
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] query_for_post_ids()
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] $excludeIDs = array ( )
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] $doAnd = false
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] Search results: array ( 0 => 691, )
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] found_posts = 1
+[2016-27-06 22:34:30][notice][swppid57713972cb182916772208] max_num_pages = 1
+[2016-27-06 22:34:31][notice][swppid57713972cb182916772208] 
+[2016-27-06 22:34:31][notice][swppid57713972cb182916772208] ========== END swppid57713972cb182916772208 ==========
+[2016-27-06 22:34:31][notice][swppid57713972cb182916772208] 
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] 
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] ========== INIT swppid57713977f1409658786003 2.8.1 ==========
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] 
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] check_for_main_query(): It is the main query
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] It is a search
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] wp_search()
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] $wpPaged = 1
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] $terms = '潔面乳'
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] $terms after searchwp_terms = '潔面乳'
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] $terms after sanitization = array ( 0 => '潔面乳', )
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] $order = DESC
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] $maxSearchTerms = 6
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] SearchWPSearch __construct()
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] $args = array ( 'terms' => array ( 0 => '潔面乳', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] is_valid_engine( default ) = true
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] $terms = array ( 0 => '潔面乳', )
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] searchwp_pre_search_terms $terms = array ( 0 => '潔面乳', )
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] query()
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] query_for_post_ids()
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] $excludeIDs = array ( )
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] $doAnd = false
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] Search results: array ( 0 => 691, )
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] found_posts = 1
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] max_num_pages = 1
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] 
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] ========== END swppid57713977f1409658786003 ==========
+[2016-27-06 22:34:36][notice][swppid57713977f1409658786003] 
+[2016-27-06 22:34:42][notice][swppid5771397ec23a6336443946] 
+[2016-27-06 22:34:42][notice][swppid5771397ec23a6336443946] ========== INIT swppid5771397ec23a6336443946 2.8.1 ==========
+[2016-27-06 22:34:42][notice][swppid5771397ec23a6336443946] 
+[2016-27-06 22:34:42][notice][swppid5771397ec23a6336443946] check_for_main_query(): It is the main query
+[2016-27-06 22:34:43][notice][swppid5771397ec23a6336443946] 
+[2016-27-06 22:34:43][notice][swppid5771397ec23a6336443946] ========== END swppid5771397ec23a6336443946 ==========
+[2016-27-06 22:34:43][notice][swppid5771397ec23a6336443946] 
+[2016-27-06 22:34:49][notice][swppid577139843b89e185204225] 
+[2016-27-06 22:34:49][notice][swppid577139843b89e185204225] ========== INIT swppid577139843b89e185204225 2.8.1 ==========
+[2016-27-06 22:34:49][notice][swppid577139843b89e185204225] 
+[2016-27-06 22:34:49][notice][swppid577139843b89e185204225] check_for_main_query(): It is the main query
+[2016-27-06 22:34:49][notice][swppid577139843b89e185204225] 
+[2016-27-06 22:34:49][notice][swppid577139843b89e185204225] ========== END swppid577139843b89e185204225 ==========
+[2016-27-06 22:34:49][notice][swppid577139843b89e185204225] 
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] 
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] ========== INIT swppid5771398d6cfbc561659193 2.8.1 ==========
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] 
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] check_for_main_query(): It is the main query
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] It is a search
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] wp_search()
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] $wpPaged = 1
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] $terms = '嫩手霜'
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] $terms after searchwp_terms = '嫩手霜'
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] $terms after sanitization = array ( 0 => '嫩手霜', )
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] $order = DESC
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] $maxSearchTerms = 6
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] SearchWPSearch __construct()
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] $args = array ( 'terms' => array ( 0 => '嫩手霜', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] is_valid_engine( default ) = true
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] searchwp_pre_search_terms $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] query()
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] query_for_post_ids()
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] $excludeIDs = array ( )
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] $doAnd = false
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:34:56][notice][swppid5771398d6cfbc561659193] Search results: array ( 0 => 705, )
+[2016-27-06 22:34:57][notice][swppid5771398d6cfbc561659193] found_posts = 1
+[2016-27-06 22:34:57][notice][swppid5771398d6cfbc561659193] max_num_pages = 1
+[2016-27-06 22:34:57][notice][swppid5771398d6cfbc561659193] 
+[2016-27-06 22:34:57][notice][swppid5771398d6cfbc561659193] ========== END swppid5771398d6cfbc561659193 ==========
+[2016-27-06 22:34:57][notice][swppid5771398d6cfbc561659193] 
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] 
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] ========== INIT swppid577139924f82b001571131 2.8.1 ==========
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] 
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] check_for_main_query(): It is the main query
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] It is a search
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] wp_search()
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] $wpPaged = 1
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] $terms = '嫩手霜'
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] $terms after searchwp_terms = '嫩手霜'
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] $terms after sanitization = array ( 0 => '嫩手霜', )
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] $order = DESC
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] $maxSearchTerms = 6
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] SearchWPSearch __construct()
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] $args = array ( 'terms' => array ( 0 => '嫩手霜', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] is_valid_engine( default ) = true
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] searchwp_pre_search_terms $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] query()
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] query_for_post_ids()
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] $excludeIDs = array ( )
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] $doAnd = false
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] Search results: array ( 0 => 705, )
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] found_posts = 1
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] max_num_pages = 1
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] 
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] ========== END swppid577139924f82b001571131 ==========
+[2016-27-06 22:35:03][notice][swppid577139924f82b001571131] 
+[2016-27-06 22:35:06][notice][swppid57713996f170e617101936] 
+[2016-27-06 22:35:06][notice][swppid57713996f170e617101936] ========== INIT swppid57713996f170e617101936 2.8.1 ==========
+[2016-27-06 22:35:06][notice][swppid57713996f170e617101936] 
+[2016-27-06 22:35:06][notice][swppid57713996f170e617101936] check_for_main_query(): It is the main query
+[2016-27-06 22:35:08][notice][swppid57713996f170e617101936] 
+[2016-27-06 22:35:08][notice][swppid57713996f170e617101936] ========== END swppid57713996f170e617101936 ==========
+[2016-27-06 22:35:08][notice][swppid57713996f170e617101936] 
+[2016-27-06 22:35:14][notice][swppid5771399ab7635902150291] 
+[2016-27-06 22:35:14][notice][swppid5771399ab7635902150291] ========== INIT swppid5771399ab7635902150291 2.8.1 ==========
+[2016-27-06 22:35:14][notice][swppid5771399ab7635902150291] 
+[2016-27-06 22:35:15][notice][swppid5771399ce9393996174075] 
+[2016-27-06 22:35:15][notice][swppid5771399ce9393996174075] ========== INIT swppid5771399ce9393996174075 2.8.1 ==========
+[2016-27-06 22:35:15][notice][swppid5771399ce9393996174075] 
+[2016-27-06 22:35:15][notice][swppid5771399ce9393996174075] check_for_main_query(): It is the main query
+[2016-27-06 22:35:15][notice][swppid5771399ab7635902150291] 
+[2016-27-06 22:35:15][notice][swppid5771399ab7635902150291] ========== END swppid5771399ab7635902150291 ==========
+[2016-27-06 22:35:15][notice][swppid5771399ab7635902150291] 
+[2016-27-06 22:35:15][notice][swppid5771399ce9393996174075] 
+[2016-27-06 22:35:15][notice][swppid5771399ce9393996174075] ========== END swppid5771399ce9393996174075 ==========
+[2016-27-06 22:35:15][notice][swppid5771399ce9393996174075] 
+[2016-27-06 22:35:18][notice][swppid577139a1005eb962041367] 
+[2016-27-06 22:35:18][notice][swppid577139a1005eb962041367] ========== INIT swppid577139a1005eb962041367 2.8.1 ==========
+[2016-27-06 22:35:18][notice][swppid577139a1005eb962041367] 
+[2016-27-06 22:35:18][notice][swppid577139a1005eb962041367] check_for_main_query(): It is the main query
+[2016-27-06 22:35:19][notice][swppid577139a1005eb962041367] 
+[2016-27-06 22:35:19][notice][swppid577139a1005eb962041367] ========== END swppid577139a1005eb962041367 ==========
+[2016-27-06 22:35:19][notice][swppid577139a1005eb962041367] 
+[2016-27-06 22:35:26][notice][swppid577139a801333500284106] 
+[2016-27-06 22:35:26][notice][swppid577139a801333500284106] ========== INIT swppid577139a801333500284106 2.8.1 ==========
+[2016-27-06 22:35:26][notice][swppid577139a801333500284106] 
+[2016-27-06 22:35:26][notice][swppid577139a801333500284106] check_for_main_query(): It is the main query
+[2016-27-06 22:35:26][notice][swppid577139a801333500284106] 
+[2016-27-06 22:35:26][notice][swppid577139a801333500284106] ========== END swppid577139a801333500284106 ==========
+[2016-27-06 22:35:26][notice][swppid577139a801333500284106] 
+[2016-27-06 22:35:28][notice][swppid577139ab1ae0d635940625] 
+[2016-27-06 22:35:28][notice][swppid577139ab1ae0d635940625] ========== INIT swppid577139ab1ae0d635940625 2.8.1 ==========
+[2016-27-06 22:35:28][notice][swppid577139ab1ae0d635940625] 
+[2016-27-06 22:35:29][notice][swppid577139ab1ae0d635940625] check_for_main_query(): It is the main query
+[2016-27-06 22:35:29][notice][swppid577139ab1ae0d635940625] 
+[2016-27-06 22:35:29][notice][swppid577139ab1ae0d635940625] ========== END swppid577139ab1ae0d635940625 ==========
+[2016-27-06 22:35:29][notice][swppid577139ab1ae0d635940625] 
+[2016-27-06 22:35:30][notice][swppid577139ad6bf72259019775] 
+[2016-27-06 22:35:30][notice][swppid577139ad6bf72259019775] ========== INIT swppid577139ad6bf72259019775 2.8.1 ==========
+[2016-27-06 22:35:30][notice][swppid577139ad6bf72259019775] 
+[2016-27-06 22:35:30][notice][swppid577139ad6bf72259019775] check_for_main_query(): It is the main query
+[2016-27-06 22:35:31][notice][swppid577139ad6bf72259019775] 
+[2016-27-06 22:35:31][notice][swppid577139ad6bf72259019775] ========== END swppid577139ad6bf72259019775 ==========
+[2016-27-06 22:35:31][notice][swppid577139ad6bf72259019775] 
+[2016-27-06 22:35:37][notice][swppid577139b483420848990354] 
+[2016-27-06 22:35:37][notice][swppid577139b483420848990354] ========== INIT swppid577139b483420848990354 2.8.1 ==========
+[2016-27-06 22:35:37][notice][swppid577139b483420848990354] 
+[2016-27-06 22:35:37][notice][swppid577139b483420848990354] check_for_main_query(): It is the main query
+[2016-27-06 22:35:37][notice][swppid577139b483420848990354] 
+[2016-27-06 22:35:37][notice][swppid577139b483420848990354] ========== END swppid577139b483420848990354 ==========
+[2016-27-06 22:35:37][notice][swppid577139b483420848990354] 
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] 
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] ========== INIT swppid577139b9bdecc803364128 2.8.1 ==========
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] 
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] check_for_main_query(): It is the main query
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] It is a search
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] wp_search()
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] $wpPaged = 1
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] $terms = '嫩手霜'
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] $terms after searchwp_terms = '嫩手霜'
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] $terms after sanitization = array ( 0 => '嫩手霜', )
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] $order = DESC
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] $maxSearchTerms = 6
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] SearchWPSearch __construct()
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] $args = array ( 'terms' => array ( 0 => '嫩手霜', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] is_valid_engine( default ) = true
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] searchwp_pre_search_terms $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] query()
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] query_for_post_ids()
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] $excludeIDs = array ( )
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] $doAnd = false
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] Search results: array ( 0 => 702, )
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] found_posts = 1
+[2016-27-06 22:35:41][notice][swppid577139b9bdecc803364128] max_num_pages = 1
+[2016-27-06 22:35:42][notice][swppid577139b9bdecc803364128] 
+[2016-27-06 22:35:42][notice][swppid577139b9bdecc803364128] ========== END swppid577139b9bdecc803364128 ==========
+[2016-27-06 22:35:42][notice][swppid577139b9bdecc803364128] 
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] 
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] ========== INIT swppid577139bef23e6054548529 2.8.1 ==========
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] 
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] check_for_main_query(): It is the main query
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] It is a search
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] wp_search()
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] $wpPaged = 1
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] $terms = '嫩手霜'
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] $terms after searchwp_terms = '嫩手霜'
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] $terms after sanitization = array ( 0 => '嫩手霜', )
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] $order = DESC
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] $maxSearchTerms = 6
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] SearchWPSearch __construct()
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] $args = array ( 'terms' => array ( 0 => '嫩手霜', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] is_valid_engine( default ) = true
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] searchwp_pre_search_terms $terms = array ( 0 => '嫩手霜', )
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] query()
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] query_for_post_ids()
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] $excludeIDs = array ( )
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] $doAnd = false
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:35:47][notice][swppid577139bef23e6054548529] Search results: array ( 0 => 702, )
+[2016-27-06 22:35:48][notice][swppid577139bef23e6054548529] found_posts = 1
+[2016-27-06 22:35:48][notice][swppid577139bef23e6054548529] max_num_pages = 1
+[2016-27-06 22:35:48][notice][swppid577139bef23e6054548529] 
+[2016-27-06 22:35:48][notice][swppid577139bef23e6054548529] ========== END swppid577139bef23e6054548529 ==========
+[2016-27-06 22:35:48][notice][swppid577139bef23e6054548529] 
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] 
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] ========== INIT swppid577139c5096b0082574335 2.8.1 ==========
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] 
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] check_for_main_query(): It is the main query
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] It is a search
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] wp_search()
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] $wpPaged = 1
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] $terms = '丝触'
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] $terms after searchwp_terms = '丝触'
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] $terms after sanitization = array ( 0 => '丝触', )
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] $order = DESC
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] $maxSearchTerms = 6
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] SearchWPSearch __construct()
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] $args = array ( 'terms' => array ( 0 => '丝触', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] is_valid_engine( default ) = true
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] $terms = array ( 0 => '丝触', )
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] searchwp_pre_search_terms $terms = array ( 0 => '丝触', )
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] query()
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] query_for_post_ids()
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] $excludeIDs = array ( )
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] $doAnd = false
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] Search results: array ( 0 => 702, )
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] found_posts = 1
+[2016-27-06 22:35:53][notice][swppid577139c5096b0082574335] max_num_pages = 1
+[2016-27-06 22:35:54][notice][swppid577139c5096b0082574335] 
+[2016-27-06 22:35:54][notice][swppid577139c5096b0082574335] ========== END swppid577139c5096b0082574335 ==========
+[2016-27-06 22:35:54][notice][swppid577139c5096b0082574335] 
+[2016-27-06 22:35:56][notice][swppid577139c6bbe8b960266871] 
+[2016-27-06 22:35:56][notice][swppid577139c6bbe8b960266871] ========== INIT swppid577139c6bbe8b960266871 2.8.1 ==========
+[2016-27-06 22:35:56][notice][swppid577139c6bbe8b960266871] 
+[2016-27-06 22:35:57][notice][swppid577139c6bbe8b960266871] 
+[2016-27-06 22:35:57][notice][swppid577139c6bbe8b960266871] ========== END swppid577139c6bbe8b960266871 ==========
+[2016-27-06 22:35:57][notice][swppid577139c6bbe8b960266871] 
+[2016-27-06 22:36:00][notice][swppid577139cb81a03854519689] 
+[2016-27-06 22:36:00][notice][swppid577139cb81a03854519689] ========== INIT swppid577139cb81a03854519689 2.8.1 ==========
+[2016-27-06 22:36:00][notice][swppid577139cb81a03854519689] 
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] check_for_main_query(): It is the main query
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] It is a search
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] wp_search()
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] $wpPaged = 1
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] $terms = '丝触'
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] $terms after searchwp_terms = '丝触'
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] $terms after sanitization = array ( 0 => '丝触', )
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] $order = DESC
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] $maxSearchTerms = 6
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] SearchWPSearch __construct()
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] $args = array ( 'terms' => array ( 0 => '丝触', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] is_valid_engine( default ) = true
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] $terms = array ( 0 => '丝触', )
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] searchwp_pre_search_terms $terms = array ( 0 => '丝触', )
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] query()
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] query_for_post_ids()
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] $excludeIDs = array ( )
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] $doAnd = false
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] Search results: array ( 0 => 702, )
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] found_posts = 1
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] max_num_pages = 1
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] 
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] ========== END swppid577139cb81a03854519689 ==========
+[2016-27-06 22:36:01][notice][swppid577139cb81a03854519689] 
+[2016-27-06 22:36:57][notice][swppid57713a03cfce1218002217] 
+[2016-27-06 22:36:57][notice][swppid57713a03cfce1218002217] ========== INIT swppid57713a03cfce1218002217 2.8.1 ==========
+[2016-27-06 22:36:57][notice][swppid57713a03cfce1218002217] 
+[2016-27-06 22:36:58][notice][swppid57713a03cfce1218002217] 
+[2016-27-06 22:36:58][notice][swppid57713a03cfce1218002217] ========== END swppid57713a03cfce1218002217 ==========
+[2016-27-06 22:36:58][notice][swppid57713a03cfce1218002217] 
+[2016-27-06 22:37:11][notice][swppid57713a13c77ba261142562] 
+[2016-27-06 22:37:11][notice][swppid57713a13c77ba261142562] ========== INIT swppid57713a13c77ba261142562 2.8.1 ==========
+[2016-27-06 22:37:11][notice][swppid57713a13c77ba261142562] 
+[2016-27-06 22:37:12][notice][swppid57713a13c77ba261142562] 
+[2016-27-06 22:37:12][notice][swppid57713a13c77ba261142562] ========== END swppid57713a13c77ba261142562 ==========
+[2016-27-06 22:37:12][notice][swppid57713a13c77ba261142562] 
+[2016-27-06 22:38:55][notice][swppid57713a7b9f2f5862162708] 
+[2016-27-06 22:38:55][notice][swppid57713a7b9f2f5862162708] ========== INIT swppid57713a7b9f2f5862162708 2.8.1 ==========
+[2016-27-06 22:38:55][notice][swppid57713a7b9f2f5862162708] 
+[2016-27-06 22:38:55][notice][swppid57713a7b9f2f5862162708] 
+[2016-27-06 22:38:55][notice][swppid57713a7b9f2f5862162708] ========== END swppid57713a7b9f2f5862162708 ==========
+[2016-27-06 22:38:55][notice][swppid57713a7b9f2f5862162708] 
+[2016-27-06 22:39:13][notice][swppid57713a8cc294a589597972] 
+[2016-27-06 22:39:13][notice][swppid57713a8cc294a589597972] ========== INIT swppid57713a8cc294a589597972 2.8.1 ==========
+[2016-27-06 22:39:13][notice][swppid57713a8cc294a589597972] 
+[2016-27-06 22:39:14][notice][swppid57713a8cc294a589597972] 
+[2016-27-06 22:39:14][notice][swppid57713a8cc294a589597972] ========== END swppid57713a8cc294a589597972 ==========
+[2016-27-06 22:39:14][notice][swppid57713a8cc294a589597972] 
+[2016-27-06 22:40:56][notice][swppid57713af4a7b60372745302] 
+[2016-27-06 22:40:56][notice][swppid57713af4a7b60372745302] ========== INIT swppid57713af4a7b60372745302 2.8.1 ==========
+[2016-27-06 22:40:56][notice][swppid57713af4a7b60372745302] 
+[2016-27-06 22:40:57][notice][swppid57713af4a7b60372745302] 
+[2016-27-06 22:40:57][notice][swppid57713af4a7b60372745302] ========== END swppid57713af4a7b60372745302 ==========
+[2016-27-06 22:40:57][notice][swppid57713af4a7b60372745302] 
+[2016-27-06 22:41:13][notice][swppid57713b05a5434269789800] 
+[2016-27-06 22:41:13][notice][swppid57713b05a5434269789800] ========== INIT swppid57713b05a5434269789800 2.8.1 ==========
+[2016-27-06 22:41:13][notice][swppid57713b05a5434269789800] 
+[2016-27-06 22:41:13][notice][swppid57713b05a5434269789800] 
+[2016-27-06 22:41:13][notice][swppid57713b05a5434269789800] ========== END swppid57713b05a5434269789800 ==========
+[2016-27-06 22:41:13][notice][swppid57713b05a5434269789800] 
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] 
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] ========== INIT swppid57713b2dd3f76572621685 2.8.1 ==========
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] 
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] check_for_main_query(): It is the main query
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] It is a search
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] wp_search()
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] $wpPaged = 1
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] $terms = '丝触'
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] $terms after searchwp_terms = '丝触'
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] $terms after sanitization = array ( 0 => '丝触', )
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] $order = DESC
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] $maxSearchTerms = 6
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] SearchWPSearch __construct()
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] $args = array ( 'terms' => array ( 0 => '丝触', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] is_valid_engine( default ) = true
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] $terms = array ( 0 => '丝触', )
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] searchwp_pre_search_terms $terms = array ( 0 => '丝触', )
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] query()
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] query_for_post_ids()
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] $excludeIDs = array ( )
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] $doAnd = false
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] Search results: array ( 0 => 702, )
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] found_posts = 1
+[2016-27-06 22:41:53][notice][swppid57713b2dd3f76572621685] max_num_pages = 1
+[2016-27-06 22:41:54][notice][swppid57713b2dd3f76572621685] 
+[2016-27-06 22:41:54][notice][swppid57713b2dd3f76572621685] ========== END swppid57713b2dd3f76572621685 ==========
+[2016-27-06 22:41:54][notice][swppid57713b2dd3f76572621685] 
+[2016-27-06 22:41:59][notice][swppid57713b30b6b5b344450021] 
+[2016-27-06 22:41:59][notice][swppid57713b30b6b5b344450021] ========== INIT swppid57713b30b6b5b344450021 2.8.1 ==========
+[2016-27-06 22:41:59][notice][swppid57713b30b6b5b344450021] 
+[2016-27-06 22:42:00][notice][swppid57713b30b6b5b344450021] 
+[2016-27-06 22:42:00][notice][swppid57713b30b6b5b344450021] ========== END swppid57713b30b6b5b344450021 ==========
+[2016-27-06 22:42:00][notice][swppid57713b30b6b5b344450021] 
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] 
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] ========== INIT swppid57713b3452e80233717568 2.8.1 ==========
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] 
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] check_for_main_query(): It is the main query
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] It is a search
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] wp_search()
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] $wpPaged = 1
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] $terms = '丝触'
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] $terms after searchwp_terms = '丝触'
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] $terms after sanitization = array ( 0 => '丝触', )
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] $order = DESC
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] $maxSearchTerms = 6
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] SearchWPSearch __construct()
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] $args = array ( 'terms' => array ( 0 => '丝触', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] is_valid_engine( default ) = true
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] $terms = array ( 0 => '丝触', )
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] searchwp_pre_search_terms $terms = array ( 0 => '丝触', )
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] query()
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] query_for_post_ids()
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] $excludeIDs = array ( )
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] $doAnd = false
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] Search results: array ( 0 => 702, )
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] found_posts = 1
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] max_num_pages = 1
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] 
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] ========== END swppid57713b3452e80233717568 ==========
+[2016-27-06 22:42:01][notice][swppid57713b3452e80233717568] 
+[2016-27-06 22:42:04][notice][swppid57713b3642937992744546] 
+[2016-27-06 22:42:04][notice][swppid57713b3642937992744546] ========== INIT swppid57713b3642937992744546 2.8.1 ==========
+[2016-27-06 22:42:04][notice][swppid57713b3642937992744546] 
+[2016-27-06 22:42:04][notice][swppid57713b3642937992744546] check_for_main_query(): It is the main query
+[2016-27-06 22:42:04][notice][swppid57713b3642937992744546] 
+[2016-27-06 22:42:04][notice][swppid57713b3642937992744546] ========== END swppid57713b3642937992744546 ==========
+[2016-27-06 22:42:04][notice][swppid57713b3642937992744546] 
+[2016-27-06 22:42:11][notice][swppid57713b3dc9ef7450111865] 
+[2016-27-06 22:42:11][notice][swppid57713b3dc9ef7450111865] ========== INIT swppid57713b3dc9ef7450111865 2.8.1 ==========
+[2016-27-06 22:42:11][notice][swppid57713b3dc9ef7450111865] 
+[2016-27-06 22:42:11][notice][swppid57713b3dc9ef7450111865] check_for_main_query(): It is the main query
+[2016-27-06 22:42:11][notice][swppid57713b3dc9ef7450111865] 
+[2016-27-06 22:42:11][notice][swppid57713b3dc9ef7450111865] ========== END swppid57713b3dc9ef7450111865 ==========
+[2016-27-06 22:42:11][notice][swppid57713b3dc9ef7450111865] 
+[2016-27-06 22:42:14][notice][swppid57713b42bdcc2480388631] 
+[2016-27-06 22:42:14][notice][swppid57713b42bdcc2480388631] ========== INIT swppid57713b42bdcc2480388631 2.8.1 ==========
+[2016-27-06 22:42:14][notice][swppid57713b42bdcc2480388631] 
+[2016-27-06 22:42:15][notice][swppid57713b42bdcc2480388631] 
+[2016-27-06 22:42:15][notice][swppid57713b42bdcc2480388631] ========== END swppid57713b42bdcc2480388631 ==========
+[2016-27-06 22:42:15][notice][swppid57713b42bdcc2480388631] 
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] 
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] ========== INIT swppid57713b46e71d9142885402 2.8.1 ==========
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] 
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] check_for_main_query(): It is the main query
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] It is a search
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] wp_search()
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] $wpPaged = 1
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] $terms = '抗氧'
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] $terms after searchwp_terms = '抗氧'
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] $terms after sanitization = array ( 0 => '抗氧', )
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] $order = DESC
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] $maxSearchTerms = 6
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] SearchWPSearch __construct()
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] $args = array ( 'terms' => array ( 0 => '抗氧', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] is_valid_engine( default ) = true
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] $terms = array ( 0 => '抗氧', )
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] searchwp_pre_search_terms $terms = array ( 0 => '抗氧', )
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] query()
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] query_for_post_ids()
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] $excludeIDs = array ( )
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] $doAnd = false
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] Search results: array ( 0 => 965, 1 => 968, 2 => 730, 3 => 722, 4 => 716, 5 => 693, 6 => 698, 7 => 702, 8 => 689, )
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] found_posts = 9
+[2016-27-06 22:42:18][notice][swppid57713b46e71d9142885402] max_num_pages = 1
+[2016-27-06 22:42:19][notice][swppid57713b46e71d9142885402] 
+[2016-27-06 22:42:19][notice][swppid57713b46e71d9142885402] ========== END swppid57713b46e71d9142885402 ==========
+[2016-27-06 22:42:19][notice][swppid57713b46e71d9142885402] 
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] 
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] ========== INIT swppid57713b4c84511976098365 2.8.1 ==========
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] 
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] check_for_main_query(): It is the main query
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] It is a search
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] wp_search()
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] $wpPaged = 1
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] $terms = '抗氧'
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] $terms after searchwp_terms = '抗氧'
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] $terms after sanitization = array ( 0 => '抗氧', )
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] $order = DESC
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] $maxSearchTerms = 6
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] SearchWPSearch __construct()
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] $args = array ( 'terms' => array ( 0 => '抗氧', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] is_valid_engine( default ) = true
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] $terms = array ( 0 => '抗氧', )
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] searchwp_pre_search_terms $terms = array ( 0 => '抗氧', )
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] query()
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] query_for_post_ids()
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] $excludeIDs = array ( )
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] $doAnd = false
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] Search results: array ( 0 => 965, 1 => 968, 2 => 730, 3 => 722, 4 => 716, 5 => 693, 6 => 698, 7 => 702, 8 => 689, )
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] found_posts = 9
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] max_num_pages = 1
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] 
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] ========== END swppid57713b4c84511976098365 ==========
+[2016-27-06 22:42:27][notice][swppid57713b4c84511976098365] 
+[2016-27-06 22:42:31][notice][swppid57713b51ae231544578910] 
+[2016-27-06 22:42:31][notice][swppid57713b51ae231544578910] ========== INIT swppid57713b51ae231544578910 2.8.1 ==========
+[2016-27-06 22:42:31][notice][swppid57713b51ae231544578910] 
+[2016-27-06 22:42:31][notice][swppid57713b51ae231544578910] check_for_main_query(): It is the main query
+[2016-27-06 22:42:31][notice][swppid57713b51ae231544578910] 
+[2016-27-06 22:42:31][notice][swppid57713b51ae231544578910] ========== END swppid57713b51ae231544578910 ==========
+[2016-27-06 22:42:31][notice][swppid57713b51ae231544578910] 
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] 
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] ========== INIT swppid57713b59ac0d2876641262 2.8.1 ==========
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] 
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] check_for_main_query(): It is the main query
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] It is a search
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] wp_search()
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] $wpPaged = 1
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] $terms = '再生精油'
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] $terms after searchwp_terms = '再生精油'
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] $terms after sanitization = array ( 0 => '再生精油', )
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] $order = DESC
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] $maxSearchTerms = 6
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] SearchWPSearch __construct()
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] $args = array ( 'terms' => array ( 0 => '再生精油', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] is_valid_engine( default ) = true
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] $terms = array ( 0 => '再生精油', )
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] searchwp_pre_search_terms $terms = array ( 0 => '再生精油', )
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] query()
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] query_for_post_ids()
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] $excludeIDs = array ( )
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] $doAnd = false
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] Search results: array ( 0 => 702, )
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] found_posts = 1
+[2016-27-06 22:42:37][notice][swppid57713b59ac0d2876641262] max_num_pages = 1
+[2016-27-06 22:42:38][notice][swppid57713b59ac0d2876641262] 
+[2016-27-06 22:42:38][notice][swppid57713b59ac0d2876641262] ========== END swppid57713b59ac0d2876641262 ==========
+[2016-27-06 22:42:38][notice][swppid57713b59ac0d2876641262] 
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] 
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] ========== INIT swppid57713b5ef3e70360019087 2.8.1 ==========
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] 
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] check_for_main_query(): It is the main query
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] It is a search
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] wp_search()
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] $wpPaged = 1
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] $terms = '再生精油'
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] $terms after searchwp_terms = '再生精油'
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] $terms after sanitization = array ( 0 => '再生精油', )
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] $order = DESC
+[2016-27-06 22:42:48][notice][swppid57713b618557a366457906] ========== INIT swppid57713b618557a366457906 2.8.1 ==========
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] $maxSearchTerms = 6
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] SearchWPSearch __construct()
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] $args = array ( 'terms' => array ( 0 => '再生精油', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] is_valid_engine( default ) = true
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] $terms = array ( 0 => '再生精油', )
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] searchwp_pre_search_terms $terms = array ( 0 => '再生精油', )
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] query()
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] query_for_post_ids()
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] $excludeIDs = array ( )
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] $doAnd = false
+[2016-27-06 22:42:48][notice][swppid57713b5ef3e70360019087] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:42:48][notice][swppid57713b618557a366457906] check_for_main_query(): It is the main query
+[2016-27-06 22:42:49][notice][swppid57713b5ef3e70360019087] Search results: array ( 0 => 702, )
+[2016-27-06 22:42:49][notice][swppid57713b618557a366457906] 
+[2016-27-06 22:42:49][notice][swppid57713b618557a366457906] ========== END swppid57713b618557a366457906 ==========
+[2016-27-06 22:42:49][notice][swppid57713b618557a366457906] 
+[2016-27-06 22:42:49][notice][swppid57713b5ef3e70360019087] found_posts = 1
+[2016-27-06 22:42:49][notice][swppid57713b5ef3e70360019087] max_num_pages = 1
+[2016-27-06 22:42:49][notice][swppid57713b5ef3e70360019087] 
+[2016-27-06 22:42:49][notice][swppid57713b5ef3e70360019087] ========== END swppid57713b5ef3e70360019087 ==========
+[2016-27-06 22:42:49][notice][swppid57713b5ef3e70360019087] 
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] 
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] ========== INIT swppid57713b69282fe870905534 2.8.1 ==========
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] 
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] check_for_main_query(): It is the main query
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] It is a search
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] wp_search()
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] $wpPaged = 1
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] $terms = '蜡菊'
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] $terms after searchwp_terms = '蜡菊'
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] $terms after sanitization = array ( 0 => '蜡菊', )
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] $order = DESC
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] $maxSearchTerms = 6
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] SearchWPSearch __construct()
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] $args = array ( 'terms' => array ( 0 => '蜡菊', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] is_valid_engine( default ) = true
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] $terms = array ( 0 => '蜡菊', )
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] searchwp_pre_search_terms $terms = array ( 0 => '蜡菊', )
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] query()
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] query_for_post_ids()
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] $excludeIDs = array ( )
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] $doAnd = false
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] Search results: array ( 0 => 702, )
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] found_posts = 1
+[2016-27-06 22:42:52][notice][swppid57713b69282fe870905534] max_num_pages = 1
+[2016-27-06 22:42:53][notice][swppid57713b69282fe870905534] 
+[2016-27-06 22:42:53][notice][swppid57713b69282fe870905534] ========== END swppid57713b69282fe870905534 ==========
+[2016-27-06 22:42:53][notice][swppid57713b69282fe870905534] 
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] 
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] ========== INIT swppid57713b6e44172450594759 2.8.1 ==========
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] 
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] check_for_main_query(): It is the main query
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] It is a search
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] wp_search()
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] $wpPaged = 1
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] $terms = '蜡菊'
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] $terms after searchwp_terms = '蜡菊'
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] $terms after sanitization = array ( 0 => '蜡菊', )
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] $order = DESC
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] $maxSearchTerms = 6
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] SearchWPSearch __construct()
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] $args = array ( 'terms' => array ( 0 => '蜡菊', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] is_valid_engine( default ) = true
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] $terms = array ( 0 => '蜡菊', )
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] searchwp_pre_search_terms $terms = array ( 0 => '蜡菊', )
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] query()
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] query_for_post_ids()
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] $excludeIDs = array ( )
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] $doAnd = false
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] Search results: array ( 0 => 702, )
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] found_posts = 1
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] max_num_pages = 1
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] 
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] ========== END swppid57713b6e44172450594759 ==========
+[2016-27-06 22:43:02][notice][swppid57713b6e44172450594759] 
+[2016-27-06 22:43:04][notice][swppid57713b71887ee801511936] 
+[2016-27-06 22:43:04][notice][swppid57713b71887ee801511936] ========== INIT swppid57713b71887ee801511936 2.8.1 ==========
+[2016-27-06 22:43:04][notice][swppid57713b71887ee801511936] 
+[2016-27-06 22:43:04][notice][swppid57713b71887ee801511936] check_for_main_query(): It is the main query
+[2016-27-06 22:43:04][notice][swppid57713b71887ee801511936] 
+[2016-27-06 22:43:04][notice][swppid57713b71887ee801511936] ========== END swppid57713b71887ee801511936 ==========
+[2016-27-06 22:43:04][notice][swppid57713b71887ee801511936] 
+[2016-27-06 22:43:14][notice][swppid57713b7e9ee53103904669] 
+[2016-27-06 22:43:14][notice][swppid57713b7e9ee53103904669] ========== INIT swppid57713b7e9ee53103904669 2.8.1 ==========
+[2016-27-06 22:43:14][notice][swppid57713b7e9ee53103904669] 
+[2016-27-06 22:43:14][notice][swppid57713b7e9ee53103904669] 
+[2016-27-06 22:43:14][notice][swppid57713b7e9ee53103904669] ========== END swppid57713b7e9ee53103904669 ==========
+[2016-27-06 22:43:14][notice][swppid57713b7e9ee53103904669] 
+[2016-27-06 22:43:31][notice][swppid57713b8e1819e783862902] 
+[2016-27-06 22:43:31][notice][swppid57713b8e1819e783862902] ========== INIT swppid57713b8e1819e783862902 2.8.1 ==========
+[2016-27-06 22:43:31][notice][swppid57713b8e1819e783862902] 
+[2016-27-06 22:43:32][notice][swppid57713b8e1819e783862902] 
+[2016-27-06 22:43:32][notice][swppid57713b8e1819e783862902] ========== END swppid57713b8e1819e783862902 ==========
+[2016-27-06 22:43:32][notice][swppid57713b8e1819e783862902] 
+[2016-27-06 22:44:31][notice][swppid57713bcaa2a47702038872] 
+[2016-27-06 22:44:31][notice][swppid57713bcaa2a47702038872] ========== INIT swppid57713bcaa2a47702038872 2.8.1 ==========
+[2016-27-06 22:44:31][notice][swppid57713bcaa2a47702038872] 
+[2016-27-06 22:44:31][notice][swppid57713bcaa2a47702038872] 
+[2016-27-06 22:44:31][notice][swppid57713bcaa2a47702038872] ========== END swppid57713bcaa2a47702038872 ==========
+[2016-27-06 22:44:31][notice][swppid57713bcaa2a47702038872] 
+[2016-27-06 22:45:46][notice][swppid57713c1682412818883350] 
+[2016-27-06 22:45:46][notice][swppid57713c1682412818883350] ========== INIT swppid57713c1682412818883350 2.8.1 ==========
+[2016-27-06 22:45:46][notice][swppid57713c1682412818883350] 
+[2016-27-06 22:45:47][notice][swppid57713c1682412818883350] 
+[2016-27-06 22:45:47][notice][swppid57713c1682412818883350] ========== END swppid57713c1682412818883350 ==========
+[2016-27-06 22:45:47][notice][swppid57713c1682412818883350] 
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] 
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] ========== INIT swppid57713c1a04539412945818 2.8.1 ==========
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] 
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] check_for_main_query(): It is the main query
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] It is a search
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] wp_search()
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] $wpPaged = 1
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] $terms = '番茄红素'
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] $terms after searchwp_terms = '番茄红素'
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] $terms after sanitization = array ( 0 => '番茄红素', )
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] $order = DESC
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] $maxSearchTerms = 6
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] SearchWPSearch __construct()
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] $args = array ( 'terms' => array ( 0 => '番茄红素', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] is_valid_engine( default ) = true
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] $terms = array ( 0 => '番茄红素', )
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] searchwp_pre_search_terms $terms = array ( 0 => '番茄红素', )
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] query()
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] query_for_post_ids()
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] $excludeIDs = array ( )
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] $doAnd = false
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] Search results: array ( )
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] found_posts = 0
+[2016-27-06 22:45:49][notice][swppid57713c1a04539412945818] max_num_pages = 0
+[2016-27-06 22:45:50][notice][swppid57713c1a04539412945818] 
+[2016-27-06 22:45:50][notice][swppid57713c1a04539412945818] ========== END swppid57713c1a04539412945818 ==========
+[2016-27-06 22:45:50][notice][swppid57713c1a04539412945818] 
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] 
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] ========== INIT swppid57713c1f5303a183714041 2.8.1 ==========
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] 
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] check_for_main_query(): It is the main query
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] It is a search
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] maybe_cancel_wp_query() canceled the query
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] wp_search()
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] $wpPaged = 1
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] $terms = '番茄红素'
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] $terms after searchwp_terms = '番茄红素'
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] $terms after sanitization = array ( 0 => '番茄红素', )
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] $order = DESC
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] $maxSearchTerms = 6
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] SearchWPSearch __construct()
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] $args = array ( 'terms' => array ( 0 => '番茄红素', ), 'engine' => 'default', 'page' => 1, 'posts_per_page' => 10, 'order' => 'DESC', 'load_posts' => true, 'offset' => 0, )
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] is_valid_engine( default ) = true
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] $terms = array ( 0 => '番茄红素', )
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] searchwp_pre_search_terms $terms = array ( 0 => '番茄红素', )
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] query()
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] query_for_post_ids()
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] $excludeIDs = array ( )
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] After taxonomy exclusion $excludeIDs = array ( )
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] $doAnd = false
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] $andFields = array ( 0 => 'title', 1 => 'content', 2 => 'slug', 3 => 'excerpt', 4 => 'comment', 5 => 'tax', 6 => 'meta', )
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] Search results: array ( )
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] found_posts = 0
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] max_num_pages = 0
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] 
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] ========== END swppid57713c1f5303a183714041 ==========
+[2016-27-06 22:45:56][notice][swppid57713c1f5303a183714041] 
+[2016-27-06 22:46:46][notice][swppid57713c52cd8f3189833119] 
+[2016-27-06 22:46:46][notice][swppid57713c52cd8f3189833119] ========== INIT swppid57713c52cd8f3189833119 2.8.1 ==========
+[2016-27-06 22:46:46][notice][swppid57713c52cd8f3189833119] 
+[2016-27-06 22:46:47][notice][swppid57713c52cd8f3189833119] 
+[2016-27-06 22:46:47][notice][swppid57713c52cd8f3189833119] ========== END swppid57713c52cd8f3189833119 ==========
+[2016-27-06 22:46:47][notice][swppid57713c52cd8f3189833119] 
+[2016-27-06 22:48:47][notice][swppid57713ccabb36f133746353] 
+[2016-27-06 22:48:47][notice][swppid57713ccabb36f133746353] ========== INIT swppid57713ccabb36f133746353 2.8.1 ==========
+[2016-27-06 22:48:47][notice][swppid57713ccabb36f133746353] 
+[2016-27-06 22:48:48][notice][swppid57713ccabb36f133746353] 
+[2016-27-06 22:48:48][notice][swppid57713ccabb36f133746353] ========== END swppid57713ccabb36f133746353 ==========
+[2016-27-06 22:48:48][notice][swppid57713ccabb36f133746353] 
+[2016-27-06 22:50:41][notice][swppid57713d3d9023e798571543] 
+[2016-27-06 22:50:41][notice][swppid57713d3d9023e798571543] ========== INIT swppid57713d3d9023e798571543 2.8.1 ==========
+[2016-27-06 22:50:41][notice][swppid57713d3d9023e798571543] 
+[2016-27-06 22:50:42][notice][swppid57713d3d9023e798571543] 
+[2016-27-06 22:50:42][notice][swppid57713d3d9023e798571543] ========== END swppid57713d3d9023e798571543 ==========
+[2016-27-06 22:50:42][notice][swppid57713d3d9023e798571543] 
+[2016-28-06 0:40:45][notice][swppid577157080a435557855906] 
+[2016-28-06 0:40:45][notice][swppid577157080a435557855906] ========== INIT swppid577157080a435557855906 2.8.1 ==========
+[2016-28-06 0:40:45][notice][swppid577157080a435557855906] 
+[2016-28-06 0:40:45][notice][swppid577157080a435557855906] 
+[2016-28-06 0:40:45][notice][swppid577157080a435557855906] ========== END swppid577157080a435557855906 ==========
+[2016-28-06 0:40:45][notice][swppid577157080a435557855906] 
+[2016-11-07 22:44:28][notice][swppid5783b0c76ba64918416160] 
+[2016-11-07 22:44:28][notice][swppid5783b0c76ba64918416160] ========== INIT swppid5783b0c76ba64918416160 2.8.1 ==========
+[2016-11-07 22:44:28][notice][swppid5783b0c76ba64918416160] 
+[2016-11-07 22:44:46][notice][swppid5783b0c76ba64918416160] do_maintenance()
+[2016-11-07 22:44:48][notice][swppid5783b0c76ba64918416160] License not valid
+[2016-11-07 22:47:06][notice][swppid5783b0c76ba64918416160] 
+[2016-11-07 22:47:06][notice][swppid5783b0c76ba64918416160] ========== END swppid5783b0c76ba64918416160 ==========
+[2016-11-07 22:47:06][notice][swppid5783b0c76ba64918416160] 
+[2016-11-07 23:25:04][notice][swppid5783ba4e48948683373808] 
+[2016-11-07 23:25:04][notice][swppid5783ba4e48948683373808] ========== INIT swppid5783ba4e48948683373808 2.8.1 ==========
+[2016-11-07 23:25:04][notice][swppid5783ba4e48948683373808] 
+[2016-11-07 23:25:04][notice][swppid5783ba4e48948683373808] 
+[2016-11-07 23:25:04][notice][swppid5783ba4e48948683373808] ========== END swppid5783ba4e48948683373808 ==========
+[2016-11-07 23:25:04][notice][swppid5783ba4e48948683373808] 
+[2016-25-07 23:47:23][notice][swppid5796348768861413380746] 
+[2016-25-07 23:47:23][notice][swppid5796348768861413380746] ========== INIT swppid5796348768861413380746 2.8.1 ==========
+[2016-25-07 23:47:23][notice][swppid5796348768861413380746] 
+[2016-25-07 23:47:38][notice][swppid5796348768861413380746] do_maintenance()
+[2016-25-07 23:47:40][notice][swppid5796348768861413380746] License not valid
+[2016-25-07 23:47:45][notice][swppid5796349b0b67c965010823] 
+[2016-25-07 23:47:45][notice][swppid5796349b0b67c965010823] ========== INIT swppid5796349b0b67c965010823 2.8.1 ==========
+[2016-25-07 23:47:45][notice][swppid5796349b0b67c965010823] 
+[2016-25-07 23:47:50][notice][swppid5796349b0b67c965010823] purge_post_via_term() 1222
+[2016-25-07 23:47:50][notice][swppid5796349b0b67c965010823] Prevented duplicate purge purge_post_via_edit() 1222
+[2016-25-07 23:47:50][notice][swppid5796349b0b67c965010823] setup_purge_queue() 1
+[2016-25-07 23:47:50][notice][swppid5796349b0b67c965010823] 
+[2016-25-07 23:47:50][notice][swppid5796349b0b67c965010823] ========== END swppid5796349b0b67c965010823 ==========
+[2016-25-07 23:47:50][notice][swppid5796349b0b67c965010823] 
+[2016-25-07 23:47:57][notice][swppid579634a951610447574512] 
+[2016-25-07 23:47:57][notice][swppid579634a951610447574512] ========== INIT swppid579634a951610447574512 2.8.1 ==========
+[2016-25-07 23:47:57][notice][swppid579634a951610447574512] 
+[2016-25-07 23:47:57][notice][swppid579634a951610447574512] Automatic delta index update
+[2016-25-07 23:47:57][notice][swppid579634a951610447574512] process_updates()
+[2016-25-07 23:47:57][notice][swppid579634a951610447574512] Deferred purge http://evie:evie123@local.evie.com/index.php?swppurge=1469461677.5097420215606689453125
+[2016-25-07 23:48:01][notice][swppid579634adc89ef494795307] 
+[2016-25-07 23:48:01][notice][swppid579634adc89ef494795307] ========== INIT swppid579634adc89ef494795307 2.8.1 ==========
+[2016-25-07 23:48:01][notice][swppid579634adc89ef494795307] 
+[2016-25-07 23:48:01][notice][swppid579634adc89ef494795307] ---------- Indexer has stalled, jumpstarting
+[2016-25-07 23:48:01][notice][swppid579634adc89ef494795307] Purge queue (1): 1222
+[2016-25-07 23:48:01][notice][swppid579634adc89ef494795307] Purge post 1222
+[2016-25-07 23:48:01][notice][swppid579634adc89ef494795307] purge_post() 1222
+[2016-25-07 23:48:01][notice][swppid579634adc89ef494795307] Purge queue processed, trigger_index()
+[2016-25-07 23:48:01][notice][swppid579634adc89ef494795307] $automaticallyReindex = 1
+[2016-25-07 23:48:01][notice][swppid579634adc89ef494795307] trigger_index() http://evie:evie123@local.evie.com/index.php?swpnonce=1469461681.5907590389251708984375
+[2016-25-07 23:48:02][notice][swppid579634adc89ef494795307] Shutting down after purge request
+[2016-25-07 23:48:02][notice][swppid579634adc89ef494795307] 
+[2016-25-07 23:48:02][notice][swppid579634adc89ef494795307] ========== END swppid579634adc89ef494795307 ==========
+[2016-25-07 23:48:02][notice][swppid579634adc89ef494795307] 
+[2016-25-07 23:48:02][notice][swppid579634adc89ef494795307] 
+[2016-25-07 23:48:02][notice][swppid579634adc89ef494795307] ========== END swppid579634adc89ef494795307 ==========
+[2016-25-07 23:48:02][notice][swppid579634adc89ef494795307] 
+[2016-25-07 23:48:03][notice][swppid579634a951610447574512] 
+[2016-25-07 23:48:03][notice][swppid579634a951610447574512] ========== END swppid579634a951610447574512 ==========
+[2016-25-07 23:48:03][notice][swppid579634a951610447574512] 
+[2016-25-07 23:48:09][notice][swppid579634b1e53cf448756696] 
+[2016-25-07 23:48:09][notice][swppid579634b1e53cf448756696] ========== INIT swppid579634b1e53cf448756696 2.8.1 ==========
+[2016-25-07 23:48:09][notice][swppid579634b1e53cf448756696] 
+[2016-25-07 23:48:09][notice][swppid579634b1e53cf448756696] Performing background index 1469461681.5907590389251708984375
+[2016-25-07 23:48:09][notice][swppid579634b1e53cf448756696] OK to index, proceed
+[2016-25-07 23:48:09][notice][swppid579634b1e53cf448756696] Memory usage: 33 MB - sleeping for 1s
+[2016-25-07 23:48:10][notice][swppid579634b1e53cf448756696] ---------- Indexer has stalled [alt], jumpstarting
+[2016-25-07 23:48:10][notice][swppid579634b1e53cf448756696] Indexer NOW RUNNING
+[2016-25-07 23:48:10][notice][swppid579634b1e53cf448756696] Updating counts: 128 0 128
+[2016-25-07 23:48:10][notice][swppid579634b1e53cf448756696] Setting initial
+[2016-25-07 23:48:10][notice][swppid579634b1e53cf448756696] Nothing left to index
+[2016-25-07 23:48:10][notice][swppid579634b1e53cf448756696] 
+[2016-25-07 23:48:10][notice][swppid579634b1e53cf448756696] ========== END swppid579634b1e53cf448756696 ==========
+[2016-25-07 23:48:10][notice][swppid579634b1e53cf448756696] 
+[2016-25-07 23:48:14][notice][swppid579634ba28461231919842] 
+[2016-25-07 23:48:14][notice][swppid579634ba28461231919842] ========== INIT swppid579634ba28461231919842 2.8.1 ==========
+[2016-25-07 23:48:14][notice][swppid579634ba28461231919842] 
+[2016-25-07 23:48:14][notice][swppid579634ba28461231919842] Cleaning up after processing purge queue
+[2016-25-07 23:48:16][notice][swppid579634ba28461231919842] 
+[2016-25-07 23:48:16][notice][swppid579634ba28461231919842] ========== END swppid579634ba28461231919842 ==========
+[2016-25-07 23:48:16][notice][swppid579634ba28461231919842] 
+[2016-25-07 23:48:28][notice][swppid579634c84005c726518249] 
+[2016-25-07 23:48:28][notice][swppid579634c84005c726518249] ========== INIT swppid579634c84005c726518249 2.8.1 ==========
+[2016-25-07 23:48:28][notice][swppid579634c84005c726518249] 
+[2016-25-07 23:48:30][notice][swppid579634c84005c726518249] 
+[2016-25-07 23:48:30][notice][swppid579634c84005c726518249] ========== END swppid579634c84005c726518249 ==========
+[2016-25-07 23:48:30][notice][swppid579634c84005c726518249] 
+[2016-25-07 23:49:06][notice][swppid579634eb2fcfe085480874] 
+[2016-25-07 23:49:06][notice][swppid579634eb2fcfe085480874] ========== INIT swppid579634eb2fcfe085480874 2.8.1 ==========
+[2016-25-07 23:49:06][notice][swppid579634eb2fcfe085480874] 
+[2016-25-07 23:49:07][notice][swppid579634eb2fcfe085480874] purge_post_via_edit() 105
+[2016-25-07 23:49:07][notice][swppid579634eb2fcfe085480874] setup_purge_queue() 1
+[2016-25-07 23:49:07][notice][swppid579634eb2fcfe085480874] 
+[2016-25-07 23:49:07][notice][swppid579634eb2fcfe085480874] ========== END swppid579634eb2fcfe085480874 ==========
+[2016-25-07 23:49:07][notice][swppid579634eb2fcfe085480874] 
+[2016-25-07 23:49:13][notice][swppid579634f451a8f619794399] 
+[2016-25-07 23:49:13][notice][swppid579634f451a8f619794399] ========== INIT swppid579634f451a8f619794399 2.8.1 ==========
+[2016-25-07 23:49:13][notice][swppid579634f451a8f619794399] 
+[2016-25-07 23:49:13][notice][swppid579634f451a8f619794399] Automatic delta index update
+[2016-25-07 23:49:13][notice][swppid579634f451a8f619794399] process_updates()
+[2016-25-07 23:49:13][notice][swppid579634f451a8f619794399] Deferred purge http://evie:evie123@local.evie.com/index.php?swppurge=1469461753.1405529975891113281250
+[2016-25-07 23:49:15][notice][swppid579634f451a8f619794399] 
+[2016-25-07 23:49:15][notice][swppid579634f451a8f619794399] ========== END swppid579634f451a8f619794399 ==========
+[2016-25-07 23:49:15][notice][swppid579634f451a8f619794399] 
+[2016-25-07 23:49:20][notice][swppid579634f985cdb078418006] 
+[2016-25-07 23:49:20][notice][swppid579634f985cdb078418006] ========== INIT swppid579634f985cdb078418006 2.8.1 ==========
+[2016-25-07 23:49:20][notice][swppid579634f985cdb078418006] 
+[2016-25-07 23:49:20][notice][swppid579634f985cdb078418006] Purge queue (1): 105
+[2016-25-07 23:49:20][notice][swppid579634f985cdb078418006] Purge post 105
+[2016-25-07 23:49:20][notice][swppid579634f985cdb078418006] purge_post() 105
+[2016-25-07 23:49:20][notice][swppid579634f985cdb078418006] Purge queue processed, trigger_index()
+[2016-25-07 23:49:20][notice][swppid579634f985cdb078418006] $automaticallyReindex = 1
+[2016-25-07 23:49:20][notice][swppid579634f985cdb078418006] trigger_index() http://evie:evie123@local.evie.com/index.php?swpnonce=1469461760.9266850948333740234375
+[2016-25-07 23:49:21][notice][swppid579634f985cdb078418006] Shutting down after purge request
+[2016-25-07 23:49:21][notice][swppid579634f985cdb078418006] 
+[2016-25-07 23:49:21][notice][swppid579634f985cdb078418006] ========== END swppid579634f985cdb078418006 ==========
+[2016-25-07 23:49:21][notice][swppid579634f985cdb078418006] 
+[2016-25-07 23:49:21][notice][swppid579634f985cdb078418006] 
+[2016-25-07 23:49:21][notice][swppid579634f985cdb078418006] ========== END swppid579634f985cdb078418006 ==========
+[2016-25-07 23:49:21][notice][swppid579634f985cdb078418006] 
+[2016-25-07 23:49:26][notice][swppid5796350148ba3063516409] 
+[2016-25-07 23:49:26][notice][swppid5796350148ba3063516409] ========== INIT swppid5796350148ba3063516409 2.8.1 ==========
+[2016-25-07 23:49:26][notice][swppid5796350148ba3063516409] 
+[2016-25-07 23:49:26][notice][swppid5796350148ba3063516409] Performing background index 1469461760.9266850948333740234375
+[2016-25-07 23:49:26][notice][swppid5796350148ba3063516409] OK to index, proceed
+[2016-25-07 23:49:26][notice][swppid5796350148ba3063516409] Memory usage: 33 MB - sleeping for 1s
+[2016-25-07 23:49:27][notice][swppid5796350148ba3063516409] ---------- Indexer has stalled [alt], jumpstarting
+[2016-25-07 23:49:27][notice][swppid5796350148ba3063516409] Indexer NOW RUNNING
+[2016-25-07 23:49:27][notice][swppid5796350148ba3063516409] Updating counts: 128 0 128
+[2016-25-07 23:49:27][notice][swppid5796350148ba3063516409] Setting initial
+[2016-25-07 23:49:27][notice][swppid5796350148ba3063516409] Nothing left to index
+[2016-25-07 23:49:27][notice][swppid5796350148ba3063516409] 
+[2016-25-07 23:49:27][notice][swppid5796350148ba3063516409] ========== END swppid5796350148ba3063516409 ==========
+[2016-25-07 23:49:27][notice][swppid5796350148ba3063516409] 
+[2016-25-07 23:50:20][notice][swppid57963539dda8e477397493] 
+[2016-25-07 23:50:20][notice][swppid57963539dda8e477397493] ========== INIT swppid57963539dda8e477397493 2.8.1 ==========
+[2016-25-07 23:50:20][notice][swppid57963539dda8e477397493] 
+[2016-25-07 23:50:20][notice][swppid57963539dda8e477397493] Cleaning up after processing purge queue
+[2016-25-07 23:50:21][notice][swppid57963539dda8e477397493] 
+[2016-25-07 23:50:21][notice][swppid57963539dda8e477397493] ========== END swppid57963539dda8e477397493 ==========
+[2016-25-07 23:50:21][notice][swppid57963539dda8e477397493] 
+[2016-25-07 23:50:38][notice][swppid5796354766e06329605312] 
+[2016-25-07 23:50:38][notice][swppid5796354766e06329605312] ========== INIT swppid5796354766e06329605312 2.8.1 ==========
+[2016-25-07 23:50:38][notice][swppid5796354766e06329605312] 
+[2016-25-07 23:50:38][notice][swppid5796354766e06329605312] check_for_main_query(): It is the main query
+[2016-25-07 23:50:39][notice][swppid5796348768861413380746] 
+[2016-25-07 23:50:39][notice][swppid5796348768861413380746] ========== END swppid5796348768861413380746 ==========
+[2016-25-07 23:50:39][notice][swppid5796348768861413380746] 
+[2016-25-07 23:50:39][notice][swppid5796354766e06329605312] 
+[2016-25-07 23:50:39][notice][swppid5796354766e06329605312] ========== END swppid5796354766e06329605312 ==========
+[2016-25-07 23:50:39][notice][swppid5796354766e06329605312] 
+[2016-25-07 23:50:46][notice][swppid579635514e9f2069842661] 
+[2016-25-07 23:50:46][notice][swppid579635514e9f2069842661] ========== INIT swppid579635514e9f2069842661 2.8.1 ==========
+[2016-25-07 23:50:46][notice][swppid579635514e9f2069842661] 
+[2016-25-07 23:50:46][notice][swppid579635514e9f2069842661] check_for_main_query(): It is the main query
+[2016-25-07 23:50:46][notice][swppid579635514e9f2069842661] 
+[2016-25-07 23:50:46][notice][swppid579635514e9f2069842661] ========== END swppid579635514e9f2069842661 ==========
+[2016-25-07 23:50:46][notice][swppid579635514e9f2069842661] 
+[2016-25-07 23:51:25][notice][swppid579635765934a471375781] 
+[2016-25-07 23:51:25][notice][swppid579635765934a471375781] ========== INIT swppid579635765934a471375781 2.8.1 ==========
+[2016-25-07 23:51:25][notice][swppid579635765934a471375781] 
+[2016-25-07 23:51:25][notice][swppid579635765934a471375781] 
+[2016-25-07 23:51:25][notice][swppid579635765934a471375781] ========== END swppid579635765934a471375781 ==========
+[2016-25-07 23:51:25][notice][swppid579635765934a471375781] 
+[2016-25-07 23:52:01][notice][swppid5796359ed42d4568295491] 
+[2016-25-07 23:52:01][notice][swppid5796359ed42d4568295491] ========== INIT swppid5796359ed42d4568295491 2.8.1 ==========
+[2016-25-07 23:52:01][notice][swppid5796359ed42d4568295491] 
+[2016-25-07 23:52:01][notice][swppid5796359ed42d4568295491] check_for_main_query(): It is the main query
+[2016-25-07 23:52:02][notice][swppid5796359ed42d4568295491] 
+[2016-25-07 23:52:02][notice][swppid5796359ed42d4568295491] ========== END swppid5796359ed42d4568295491 ==========
+[2016-25-07 23:52:02][notice][swppid5796359ed42d4568295491] 
+[2016-25-07 23:52:06][notice][swppid579635a36c116718446877] 
+[2016-25-07 23:52:06][notice][swppid579635a36c116718446877] ========== INIT swppid579635a36c116718446877 2.8.1 ==========
+[2016-25-07 23:52:06][notice][swppid579635a36c116718446877] 
+[2016-25-07 23:52:06][notice][swppid579635a36c116718446877] check_for_main_query(): It is the main query
+[2016-25-07 23:52:07][notice][swppid579635a36c116718446877] 
+[2016-25-07 23:52:07][notice][swppid579635a36c116718446877] ========== END swppid579635a36c116718446877 ==========
+[2016-25-07 23:52:07][notice][swppid579635a36c116718446877] 
+[2016-25-07 23:52:08][notice][swppid579635a51e8f4263070448] 
+[2016-25-07 23:52:08][notice][swppid579635a51e8f4263070448] ========== INIT swppid579635a51e8f4263070448 2.8.1 ==========
+[2016-25-07 23:52:08][notice][swppid579635a51e8f4263070448] 
+[2016-25-07 23:52:08][notice][swppid579635a51e8f4263070448] check_for_main_query(): It is the main query
+[2016-25-07 23:52:09][notice][swppid579635a51e8f4263070448] 
+[2016-25-07 23:52:09][notice][swppid579635a51e8f4263070448] ========== END swppid579635a51e8f4263070448 ==========
+[2016-25-07 23:52:09][notice][swppid579635a51e8f4263070448] 
+[2016-25-07 23:52:13][notice][swppid579635a9e6682322288268] 
+[2016-25-07 23:52:13][notice][swppid579635a9e6682322288268] ========== INIT swppid579635a9e6682322288268 2.8.1 ==========
+[2016-25-07 23:52:13][notice][swppid579635a9e6682322288268] 
+[2016-25-07 23:52:13][notice][swppid579635a9e6682322288268] check_for_main_query(): It is the main query
+[2016-25-07 23:52:13][notice][swppid579635a9e6682322288268] 
+[2016-25-07 23:52:13][notice][swppid579635a9e6682322288268] ========== END swppid579635a9e6682322288268 ==========
+[2016-25-07 23:52:13][notice][swppid579635a9e6682322288268] 
+[2016-25-07 23:52:21][notice][swppid579635af7832b279990399] 
+[2016-25-07 23:52:21][notice][swppid579635af7832b279990399] ========== INIT swppid579635af7832b279990399 2.8.1 ==========
+[2016-25-07 23:52:21][notice][swppid579635af7832b279990399] 
+[2016-25-07 23:52:21][notice][swppid579635af7832b279990399] check_for_main_query(): It is the main query
+[2016-25-07 23:52:21][notice][swppid579635af7832b279990399] 
+[2016-25-07 23:52:21][notice][swppid579635af7832b279990399] ========== END swppid579635af7832b279990399 ==========
+[2016-25-07 23:52:21][notice][swppid579635af7832b279990399] 
+[2016-25-07 23:53:22][notice][swppid579635ef3f050683312538] 
+[2016-25-07 23:53:22][notice][swppid579635ef3f050683312538] ========== INIT swppid579635ef3f050683312538 2.8.1 ==========
+[2016-25-07 23:53:22][notice][swppid579635ef3f050683312538] 
+[2016-25-07 23:53:23][notice][swppid579635ef3f050683312538] 
+[2016-25-07 23:53:23][notice][swppid579635ef3f050683312538] ========== END swppid579635ef3f050683312538 ==========
+[2016-25-07 23:53:23][notice][swppid579635ef3f050683312538] 
+[2016-25-07 23:53:56][notice][swppid57963611bd13c873139462] 
+[2016-25-07 23:53:56][notice][swppid57963611bd13c873139462] ========== INIT swppid57963611bd13c873139462 2.8.1 ==========
+[2016-25-07 23:53:56][notice][swppid57963611bd13c873139462] 
+[2016-25-07 23:53:56][notice][swppid57963611bd13c873139462] check_for_main_query(): It is the main query
+[2016-25-07 23:53:57][notice][swppid57963611bd13c873139462] 
+[2016-25-07 23:53:57][notice][swppid57963611bd13c873139462] ========== END swppid57963611bd13c873139462 ==========
+[2016-25-07 23:53:57][notice][swppid57963611bd13c873139462] 
+[2016-25-07 23:54:03][notice][swppid579636172f7ef787138248] 
+[2016-25-07 23:54:03][notice][swppid579636172f7ef787138248] ========== INIT swppid579636172f7ef787138248 2.8.1 ==========
+[2016-25-07 23:54:03][notice][swppid579636172f7ef787138248] 
+[2016-25-07 23:54:03][notice][swppid579636172f7ef787138248] check_for_main_query(): It is the main query
+[2016-25-07 23:54:03][notice][swppid579636172f7ef787138248] 
+[2016-25-07 23:54:03][notice][swppid579636172f7ef787138248] ========== END swppid579636172f7ef787138248 ==========
+[2016-25-07 23:54:03][notice][swppid579636172f7ef787138248] 
+[2016-25-07 23:54:16][notice][swppid57963625ec26c673047970] 
+[2016-25-07 23:54:16][notice][swppid57963625ec26c673047970] ========== INIT swppid57963625ec26c673047970 2.8.1 ==========
+[2016-25-07 23:54:16][notice][swppid57963625ec26c673047970] 
+[2016-25-07 23:54:19][notice][swppid579636292773e168900261] 
+[2016-25-07 23:54:19][notice][swppid579636292773e168900261] ========== INIT swppid579636292773e168900261 2.8.1 ==========
+[2016-25-07 23:54:19][notice][swppid579636292773e168900261] 
+[2016-25-07 23:54:19][notice][swppid579636292773e168900261] check_for_main_query(): It is the main query
+[2016-25-07 23:54:19][notice][swppid579636292773e168900261] 
+[2016-25-07 23:54:19][notice][swppid579636292773e168900261] ========== END swppid579636292773e168900261 ==========
+[2016-25-07 23:54:19][notice][swppid579636292773e168900261] 
+[2016-25-07 23:54:20][notice][swppid57963625ec26c673047970] 
+[2016-25-07 23:54:20][notice][swppid57963625ec26c673047970] ========== END swppid57963625ec26c673047970 ==========
+[2016-25-07 23:54:20][notice][swppid57963625ec26c673047970] 
+[2016-25-07 23:55:24][notice][swppid5796366809b6e733335977] 
+[2016-25-07 23:55:24][notice][swppid5796366809b6e733335977] ========== INIT swppid5796366809b6e733335977 2.8.1 ==========
+[2016-25-07 23:55:24][notice][swppid5796366809b6e733335977] 
+[2016-25-07 23:55:25][notice][swppid5796366809b6e733335977] 
+[2016-25-07 23:55:25][notice][swppid5796366809b6e733335977] ========== END swppid5796366809b6e733335977 ==========
+[2016-25-07 23:55:25][notice][swppid5796366809b6e733335977] 
+[2016-25-07 23:56:52][notice][swppid579636b844713507880888] 
+[2016-25-07 23:56:52][notice][swppid579636b844713507880888] ========== INIT swppid579636b844713507880888 2.8.1 ==========
+[2016-25-07 23:56:52][notice][swppid579636b844713507880888] 
+[2016-25-07 23:56:53][notice][swppid579636b844713507880888] 
+[2016-25-07 23:56:53][notice][swppid579636b844713507880888] ========== END swppid579636b844713507880888 ==========
+[2016-25-07 23:56:53][notice][swppid579636b844713507880888] 
+[2016-25-07 23:58:23][notice][swppid5796371bc9130961382877] 
+[2016-25-07 23:58:23][notice][swppid5796371bc9130961382877] ========== INIT swppid5796371bc9130961382877 2.8.1 ==========
+[2016-25-07 23:58:23][notice][swppid5796371bc9130961382877] 
+[2016-25-07 23:58:24][notice][swppid5796371bc9130961382877] 
+[2016-25-07 23:58:24][notice][swppid5796371bc9130961382877] ========== END swppid5796371bc9130961382877 ==========
+[2016-25-07 23:58:24][notice][swppid5796371bc9130961382877] 
+[2016-25-07 23:59:22][notice][swppid579637567cf44803280208] 
+[2016-25-07 23:59:22][notice][swppid579637567cf44803280208] ========== INIT swppid579637567cf44803280208 2.8.1 ==========
+[2016-25-07 23:59:22][notice][swppid579637567cf44803280208] 
+[2016-25-07 23:59:23][notice][swppid579637567cf44803280208] 
+[2016-25-07 23:59:23][notice][swppid579637567cf44803280208] ========== END swppid579637567cf44803280208 ==========
+[2016-25-07 23:59:23][notice][swppid579637567cf44803280208] 
+[2016-25-07 23:59:44][notice][swppid5796376cb9e4e451670453] 
+[2016-25-07 23:59:44][notice][swppid5796376cb9e4e451670453] ========== INIT swppid5796376cb9e4e451670453 2.8.1 ==========
+[2016-25-07 23:59:44][notice][swppid5796376cb9e4e451670453] 
+[2016-25-07 23:59:44][notice][swppid5796376cb9e4e451670453] check_for_main_query(): It is the main query
+[2016-25-07 23:59:45][notice][swppid5796376cb9e4e451670453] 
+[2016-25-07 23:59:45][notice][swppid5796376cb9e4e451670453] ========== END swppid5796376cb9e4e451670453 ==========
+[2016-25-07 23:59:45][notice][swppid5796376cb9e4e451670453] 
+[2016-25-07 23:59:49][notice][swppid57963772b1fb5344946069] 
+[2016-25-07 23:59:49][notice][swppid57963772b1fb5344946069] ========== INIT swppid57963772b1fb5344946069 2.8.1 ==========
+[2016-25-07 23:59:50][notice][swppid57963772b1fb5344946069] 
+[2016-25-07 23:59:50][notice][swppid57963772b1fb5344946069] check_for_main_query(): It is the main query
+[2016-25-07 23:59:50][notice][swppid57963772b1fb5344946069] 
+[2016-25-07 23:59:50][notice][swppid57963772b1fb5344946069] ========== END swppid57963772b1fb5344946069 ==========
+[2016-25-07 23:59:50][notice][swppid57963772b1fb5344946069] 
+[2016-26-07 0:00:29][notice][swppid579637993b762606973460] 
+[2016-26-07 0:00:29][notice][swppid579637993b762606973460] ========== INIT swppid579637993b762606973460 2.8.1 ==========
+[2016-26-07 0:00:29][notice][swppid579637993b762606973460] 
+[2016-26-07 0:00:29][notice][swppid579637993b762606973460] 
+[2016-26-07 0:00:29][notice][swppid579637993b762606973460] ========== END swppid579637993b762606973460 ==========
+[2016-26-07 0:00:29][notice][swppid579637993b762606973460] 
+[2016-26-07 0:01:41][notice][swppid579637e1527b6562255390] 
+[2016-26-07 0:01:41][notice][swppid579637e1527b6562255390] ========== INIT swppid579637e1527b6562255390 2.8.1 ==========
+[2016-26-07 0:01:41][notice][swppid579637e1527b6562255390] 
+[2016-26-07 0:01:42][notice][swppid579637e1527b6562255390] 
+[2016-26-07 0:01:42][notice][swppid579637e1527b6562255390] ========== END swppid579637e1527b6562255390 ==========
+[2016-26-07 0:01:42][notice][swppid579637e1527b6562255390] 
+[2016-26-07 0:01:46][notice][swppid579637e740514161233133] 
+[2016-26-07 0:01:46][notice][swppid579637e740514161233133] ========== INIT swppid579637e740514161233133 2.8.1 ==========
+[2016-26-07 0:01:46][notice][swppid579637e740514161233133] 
+[2016-26-07 0:01:46][notice][swppid579637e740514161233133] check_for_main_query(): It is the main query
+[2016-26-07 0:01:47][notice][swppid579637e740514161233133] 
+[2016-26-07 0:01:47][notice][swppid579637e740514161233133] ========== END swppid579637e740514161233133 ==========
+[2016-26-07 0:01:47][notice][swppid579637e740514161233133] 
+[2016-26-07 0:01:52][notice][swppid579637ece178b650757806] 
+[2016-26-07 0:01:52][notice][swppid579637ece178b650757806] ========== INIT swppid579637ece178b650757806 2.8.1 ==========
+[2016-26-07 0:01:52][notice][swppid579637ece178b650757806] 
+[2016-26-07 0:01:52][notice][swppid579637ece178b650757806] check_for_main_query(): It is the main query
+[2016-26-07 0:01:52][notice][swppid579637ece178b650757806] 
+[2016-26-07 0:01:52][notice][swppid579637ece178b650757806] ========== END swppid579637ece178b650757806 ==========
+[2016-26-07 0:01:52][notice][swppid579637ece178b650757806] 
+[2016-26-07 0:03:24][notice][swppid57963847cb3bc548502310] 
+[2016-26-07 0:03:24][notice][swppid57963847cb3bc548502310] ========== INIT swppid57963847cb3bc548502310 2.8.1 ==========
+[2016-26-07 0:03:24][notice][swppid57963847cb3bc548502310] 
+[2016-26-07 0:03:24][notice][swppid57963847cb3bc548502310] check_for_main_query(): It is the main query
+[2016-26-07 0:03:24][notice][swppid57963847cb3bc548502310] 
+[2016-26-07 0:03:24][notice][swppid57963847cb3bc548502310] ========== END swppid57963847cb3bc548502310 ==========
+[2016-26-07 0:03:24][notice][swppid57963847cb3bc548502310] 
+[2016-26-07 0:03:30][notice][swppid5796384e802f7290314384] 
+[2016-26-07 0:03:30][notice][swppid5796384e802f7290314384] ========== INIT swppid5796384e802f7290314384 2.8.1 ==========
+[2016-26-07 0:03:30][notice][swppid5796384e802f7290314384] 
+[2016-26-07 0:03:30][notice][swppid5796384e802f7290314384] check_for_main_query(): It is the main query
+[2016-26-07 0:03:30][notice][swppid5796384e802f7290314384] 
+[2016-26-07 0:03:30][notice][swppid5796384e802f7290314384] ========== END swppid5796384e802f7290314384 ==========
+[2016-26-07 0:03:30][notice][swppid5796384e802f7290314384] 
+[2016-26-07 0:03:42][notice][swppid5796385a0da8f993023865] 
+[2016-26-07 0:03:42][notice][swppid5796385a0da8f993023865] ========== INIT swppid5796385a0da8f993023865 2.8.1 ==========
+[2016-26-07 0:03:42][notice][swppid5796385a0da8f993023865] 
+[2016-26-07 0:03:42][notice][swppid5796385a0da8f993023865] 
+[2016-26-07 0:03:42][notice][swppid5796385a0da8f993023865] ========== END swppid5796385a0da8f993023865 ==========
+[2016-26-07 0:03:42][notice][swppid5796385a0da8f993023865] 
+[2016-26-07 0:04:46][notice][swppid5796389ba06b2513516373] 
+[2016-26-07 0:04:46][notice][swppid5796389ba06b2513516373] ========== INIT swppid5796389ba06b2513516373 2.8.1 ==========
+[2016-26-07 0:04:46][notice][swppid5796389ba06b2513516373] 
+[2016-26-07 0:04:46][notice][swppid5796389ba06b2513516373] 
+[2016-26-07 0:04:46][notice][swppid5796389ba06b2513516373] ========== END swppid5796389ba06b2513516373 ==========
+[2016-26-07 0:04:46][notice][swppid5796389ba06b2513516373] 
+[2016-26-07 0:06:47][notice][swppid57963913d582f776868613] 
+[2016-26-07 0:06:47][notice][swppid57963913d582f776868613] ========== INIT swppid57963913d582f776868613 2.8.1 ==========
+[2016-26-07 0:06:47][notice][swppid57963913d582f776868613] 
+[2016-26-07 0:06:48][notice][swppid57963913d582f776868613] 
+[2016-26-07 0:06:48][notice][swppid57963913d582f776868613] ========== END swppid57963913d582f776868613 ==========
+[2016-26-07 0:06:48][notice][swppid57963913d582f776868613] 
+[2016-26-07 0:08:47][notice][swppid5796398b8f806980467298] 
+[2016-26-07 0:08:47][notice][swppid5796398b8f806980467298] ========== INIT swppid5796398b8f806980467298 2.8.1 ==========
+[2016-26-07 0:08:47][notice][swppid5796398b8f806980467298] 
+[2016-26-07 0:08:47][notice][swppid5796398b8f806980467298] 
+[2016-26-07 0:08:47][notice][swppid5796398b8f806980467298] ========== END swppid5796398b8f806980467298 ==========
+[2016-26-07 0:08:47][notice][swppid5796398b8f806980467298] 
+[2016-26-07 0:09:41][notice][swppid579639c183aa5955854931] 
+[2016-26-07 0:09:41][notice][swppid579639c183aa5955854931] ========== INIT swppid579639c183aa5955854931 2.8.1 ==========
+[2016-26-07 0:09:41][notice][swppid579639c183aa5955854931] 
+[2016-26-07 0:09:41][notice][swppid579639c183aa5955854931] check_for_main_query(): It is the main query
+[2016-26-07 0:09:42][notice][swppid579639c183aa5955854931] 
+[2016-26-07 0:09:42][notice][swppid579639c183aa5955854931] ========== END swppid579639c183aa5955854931 ==========
+[2016-26-07 0:09:42][notice][swppid579639c183aa5955854931] 
+[2016-26-07 0:09:46][notice][swppid579639c80c0f9628272991] 
+[2016-26-07 0:09:46][notice][swppid579639c80c0f9628272991] ========== INIT swppid579639c80c0f9628272991 2.8.1 ==========
+[2016-26-07 0:09:46][notice][swppid579639c80c0f9628272991] 
+[2016-26-07 0:09:46][notice][swppid579639c80c0f9628272991] check_for_main_query(): It is the main query
+[2016-26-07 0:09:46][notice][swppid579639c80c0f9628272991] 
+[2016-26-07 0:09:46][notice][swppid579639c80c0f9628272991] ========== END swppid579639c80c0f9628272991 ==========
+[2016-26-07 0:09:46][notice][swppid579639c80c0f9628272991] 
+[2016-26-07 0:09:51][notice][swppid579639cca5e85786021031] 
+[2016-26-07 0:09:51][notice][swppid579639cca5e85786021031] ========== INIT swppid579639cca5e85786021031 2.8.1 ==========
+[2016-26-07 0:09:51][notice][swppid579639cca5e85786021031] 
+[2016-26-07 0:09:51][notice][swppid579639cca5e85786021031] check_for_main_query(): It is the main query
+[2016-26-07 0:09:52][notice][swppid579639cca5e85786021031] 
+[2016-26-07 0:09:52][notice][swppid579639cca5e85786021031] ========== END swppid579639cca5e85786021031 ==========
+[2016-26-07 0:09:52][notice][swppid579639cca5e85786021031] 
+[2016-26-07 0:09:58][notice][swppid579639d22d141814059037] 
+[2016-26-07 0:09:58][notice][swppid579639d22d141814059037] ========== INIT swppid579639d22d141814059037 2.8.1 ==========
+[2016-26-07 0:09:58][notice][swppid579639d22d141814059037] 
+[2016-26-07 0:09:58][notice][swppid579639d22d141814059037] check_for_main_query(): It is the main query
+[2016-26-07 0:09:59][notice][swppid579639d22d141814059037] 
+[2016-26-07 0:09:59][notice][swppid579639d22d141814059037] ========== END swppid579639d22d141814059037 ==========
+[2016-26-07 0:09:59][notice][swppid579639d22d141814059037] 

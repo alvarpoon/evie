@@ -12,7 +12,12 @@
     get_template_part('templates/header-top-navbar');
 	$template_name = get_post_meta( $post->ID, '_wp_page_template', true );
   ?>
-
+  <script>
+  function close_contact_popup(){
+    $('#connect-popup').fadeOut();
+    //alert('close_contact_popup');
+  }
+  </script>
   <main class="main" role="main">
   	<div id="main-content">
 	    <?php include roots_template_path(); ?>
