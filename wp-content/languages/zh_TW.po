@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: EVIE website\n"
-"POT-Creation-Date: 2016-06-26 20:52+0800\n"
-"PO-Revision-Date: 2016-07-26 01:08+0800\n"
+"POT-Creation-Date: 2016-07-26 01:30+0800\n"
+"PO-Revision-Date: 2016-07-26 01:38+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -64,12 +64,12 @@ msgid "Sorry, no results were found."
 msgstr "對不起，沒有找到結果。"
 
 #: index.php:37
-msgid "&larr; Older posts"
-msgstr "&larr; 上一頁"
-
-#: index.php:38
 msgid "Newer posts &rarr;"
 msgstr "下一頁 &rarr;"
+
+#: index.php:38
+msgid "&larr; Older posts"
+msgstr "&larr; 上一頁"
 
 #: lib/activation.php:28 lib/activation.php:29
 msgid "Theme Activation"
@@ -348,11 +348,11 @@ msgstr "返回"
 
 #: templates/content-single.php:102 templates/content-single.php:104
 msgid "Previous Post"
-msgstr "上一篇"
+msgstr "上一頁"
 
 #: templates/content-single.php:115 templates/content-single.php:117
 msgid "Next Post"
-msgstr "下一篇"
+msgstr "下一頁"
 
 #: templates/content-single.php:122
 msgid "Pages:"

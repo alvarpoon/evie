@@ -93,3 +93,11 @@ function my_searchwp_basic_auth_creds() {
   return $credentials;
 }
 add_filter( 'searchwp_basic_auth_creds', 'my_searchwp_basic_auth_creds' );
+
+//https://searchwp.com/docs/hooks/searchwp_minimum_word_length/
+/*function my_searchwp_minimum_word_length() {
+  // index and search for words with at least two characters
+  return 1;
+}
+ 
+add_filter( 'searchwp_minimum_word_length', 'my_searchwp_minimum_word_length' );*/
